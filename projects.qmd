@@ -5,7 +5,7 @@ format: html
 ---
 ## Welcome to my Engineering Class Projects page!
 
-During the semester, I love working on hands-on projects to develop new
+During the semester, I engjoy working on hands-on projects to develop new
 and useful skills to broaden my problem solving toolbox. I believe projects and experiments are 
 the best way to learn for yourself what works and what doesn't, and adjust as needed to keep
 moving foward. My projects bring me great satisfaction and I love putting in the time and effort
@@ -265,8 +265,8 @@ __constraint__, __functions__, and __means__.
 <p> 
   I worked with my lab partner, [Brock Bownds](https://www.linkedin.com/in/brockbownds/),
   to build an underwater remotely operated vehicle (ROV) to gather depth and temperature 
-  data of designated 3D location in [Phake Lake](http://bfs.claremont.edu/) neighboring
-  the Harvey Mudd College campus.
+  data of designated 3D location in [Phake Lake](https://fbbfs.org/about.html) (Robert J. 
+  Bernard Biological Field Station) neighboring the Harvey Mudd College campus.
 </p>
 </div>
 </div>
@@ -389,7 +389,7 @@ Temp (ºC): [-3.80, 19.18].
   determine whether my dorm desk was level. For this project, I used a [SparkFun 
   RED-V ThingPlus](images/digital_level/redvthingpluspins.PNG) board. 
   <br><br>
-  Click [Digital Demo](images/digital_level/level.mp4) to view a video demo of 
+  Click [Digital Demo](level.mp4) to view a video demo of 
   the level on my desk. 
 
 </p>
@@ -450,7 +450,7 @@ y axes.
 <div style="padding: 5px;">
 </div>
 
-- Click [Digital Demo](images/digital_level/level.mp4) to view a video demo of 
+- Click [Digital Demo](level.mp4) to view a video demo of 
 the level on my desk. 
 
 - Wrote embedded software using [C Code](documents/Lab8_DSH_FINAL.txt) to control __external peripherals__. 
