@@ -1,6 +1,5 @@
 project:
   type: website # Indicates website format
-  output-dir: docs
 
 website:
   title: "D. Sebastian Heredia" # Sets side-wide title

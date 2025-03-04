@@ -1,0 +1,13 @@
+---
+title: Demo Project
+author: D. Sebastian Heredia
+date: 2024-11-11
+---
+
+## Demo Section
+
+::: {#fig-test-figure}
+![alt text](/images/e155-kit.jpeg)
+
+This is the figure caption.
+:::

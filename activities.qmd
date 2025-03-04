@@ -32,7 +32,7 @@ Santa Monica High School 2022 Symphony Orchestra tour to NYC, performing at Carn
 <div class="row">
 <div class="column">
   <video controls style="width:100%; max-width:800px; border-radius:15px;">
-    <source src="images/practice_clip.mp4" type="video/mp4">
+    <source src="practice_clip.mp4" type="video/mp4">
   </video>
 
 <p>
@@ -44,15 +44,14 @@ Santa Monica High School 2022 Symphony Orchestra tour to NYC, performing at Carn
 <div class="column">
 
   <video controls style="width:100%; max-width:800px; border-radius:15px;">
-    <source src="images/festive_overture.mp4" type="video/mp4">
+    <source src="festive_overture.mp4" type="video/mp4">
   </video>
 
 <p>
-  Antonín Dvořák <br>
-  *Serenade in E major, Op. 22, III. Scherzo: Vivace* <br><br>
-  Mar. 24, 2022 | Barnum Hall | Santa Monica, CA <br><br>
-  Click [Festive Overture](https://www.youtube.com/watch?v=A8r7CQNidUc) to watch 
-  the entire performance.
+  Dmitri Shostakovich <br>
+  *Festive Overture, Op. 96* <br><br>
+  Mar. 24, 2022 | Barnum Hall | Santa Monica, CA <br>
+  Click [Shostakovich](https://youtu.be/2u4-zyMKtSE?si=sCINWS23zQr_Lcvh) to watch our performance.
 </p>
 
 </div>
@@ -98,7 +97,7 @@ Below are two of my first projects from high school.
 <div class="column">
 
   <video controls style="width:100%; max-width:800px; border-radius:15px;">
-    <source src="images/batman.mp4" type="video/mp4">
+    <source src="batman.mp4" type="video/mp4">
   </video>
 
 <p>
@@ -113,7 +112,7 @@ Below are two of my first projects from high school.
 <div class="column">
 
   <video controls style="width:100%; max-width:800px; border-radius:15px;">
-    <source src="images/duet.mp4" type="video/mp4">
+    <source src="duet.mp4" type="video/mp4">
   </video>
 
 <p>
