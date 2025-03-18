@@ -83,9 +83,6 @@ __2022 All-State High School Symphony Orchestra__
 </div>
 </p>
 
-
-
-
 ### GarageBand Compositions ###
 
 I've recorded myself making music since I was 9-years old. Through 
@@ -105,7 +102,7 @@ Below are two of my first projects from high school.
   <br><br>
   I really liked the opening theme to "Pressure" by Billy Joel and wondered
   what it would sound like if it were remixed. In this project, I was aiming
-  for an ominous and dark tone, and I had a lot of fun layering parts!
+  for an ominous and dark tone. I had a lot of fun stacking parts!
 </p>
 
 </div>
@@ -118,18 +115,13 @@ Below are two of my first projects from high school.
 <p>
   *Improvised Duet*, 2021 
   <br><br>
-  Here, I chose the key of D minor and improvised a duet that I 
+  Here, I chose the key of d minor and improvised a duet that I 
   played on my viola. Each part was recorded in one take. I love how 
-  this piece captures a sense of reflection and optimism towards the end.  
+  this piece captures a sense of reflection and hope.  
 </p>
 
 </div>
 </div>
-
-
-
-
-
 
 
 
@@ -142,8 +134,7 @@ Below are two of my first projects from high school.
   Today, you'll find me jamming with my friends Kai Mawhinney on keys
   and Emmett Levine on voice and guitar. We've performed on the 
   Claremont College student radio, [KSPC](https://kspc.org/), several times
-  and are incredibly thankful to them for hosting us. Click the icon to the 
-  right to learn more about KSPC. 
+  and are incredibly thankful to them for hosting us.
 </p>
 
 </div>
@@ -155,8 +146,6 @@ Below are two of my first projects from high school.
 
 </div>
 </div>
-
-
 
 
 
@@ -208,10 +197,10 @@ I'm working on running 100 miles!
 <div class="column">
 
 <p> 
-  <img src="images/Art.png" alt="Woman" style="width:100%; border-radius: 15px;">
+  <img src="images/face.jpg" alt="Face" style="width:100%; border-radius: 15px;">
   <div> </div>
   *Untitled*, 2023 <br>
-  Pencil on paper 
+  Pen and pencil on paper 
 </p>
 
 </div>
