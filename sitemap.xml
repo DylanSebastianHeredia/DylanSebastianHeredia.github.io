@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://DylanSebastianHeredia.github.io/activities.html</loc>
-    <lastmod>2025-03-18T00:35:53.198Z</lastmod>
+    <loc>https://DylanSebastianHeredia.github.io/engineering.html</loc>
+    <lastmod>2025-07-10T21:18:56.348Z</lastmod>
   </url>
   <url>
     <loc>https://DylanSebastianHeredia.github.io/projects.html</loc>
-    <lastmod>2025-03-05T19:43:51.072Z</lastmod>
+    <lastmod>2025-07-10T20:17:34.342Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DylanSebastianHeredia.github.io/music.html</loc>
+    <lastmod>2025-07-10T20:16:35.824Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DylanSebastianHeredia.github.io/outdoors.html</loc>
+    <lastmod>2025-07-10T20:12:17.830Z</lastmod>
   </url>
   <url>
     <loc>https://DylanSebastianHeredia.github.io/projects/demo-project/index.html</loc>
@@ -14,6 +22,6 @@
   </url>
   <url>
     <loc>https://DylanSebastianHeredia.github.io/index.html</loc>
-    <lastmod>2025-03-18T01:01:56.822Z</lastmod>
+    <lastmod>2025-07-10T21:20:12.512Z</lastmod>
   </url>
 </urlset>
