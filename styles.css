@@ -94,6 +94,10 @@ img {
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
+  .sidebar, .toc, nav.toc {
+    display: none !important;
+  }
+
   body {
     font-size: 0.95rem;
     padding: 12px;
@@ -112,17 +116,9 @@ img {
     margin: 0;
   }
 
-  /* Optional: Hide sidebar or TOC on mobile */
-  .sidebar, .toc, nav.toc {
-    display: none;
-  }
-
-  /* Optional: Stack navbar items vertically if needed */
-  @media (max-width: 768px) {
-    .navbar-nav,
-    .navbar ul {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+  .navbar-nav,
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
