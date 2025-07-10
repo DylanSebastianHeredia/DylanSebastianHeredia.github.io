@@ -1,6 +1,6 @@
 ---
 title: "Music & Performance"
-toc: true
+toc: false
 format: html
 ---
 ## 11 Years of Viola  ##

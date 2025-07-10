@@ -1,6 +1,6 @@
 ---
 title: "Sports & Outdoors"
-toc: true
+toc: false
 format: html
 ---
 ## Ultimate Frisbee ##

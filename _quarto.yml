@@ -18,7 +18,7 @@ format:
   html:
     theme: flatly # Applies built-in "jolla" style across site
     css: styles.css # Adds custom style/theme sheets acrros site
-    toc: true # toc = Table of Contents
+    toc: false # toc = Table of Contents
 
 # Darkly, Cyborg, United, Solar
 # Original: flatly

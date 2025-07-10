@@ -1,6 +1,6 @@
 ---
 title: "Engineering Class Projects"
-toc: true
+toc: false
 format: html
 ---
 <p class="justified-indent"> 
