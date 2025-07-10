@@ -1,0 +1,102 @@
+---
+title: "Sports & Outdoors"
+toc: true
+format: html
+---
+## Ultimate Frisbee ##
+
+<p class="justified-indent"> 
+  The [Claremont Braineaters](https://linktr.ee/brainsult) are a group of frisbee enthusiasts from all over the Claremont Colleges. 
+  We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, 
+  and have a good time. We represented the South West region at the 2024 and 2025 USAU Men's Division-III Nationals, earning the 
+  Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I've made countless memories with the 
+  team both on and off field, and I'm excited to see where we go this season.
+</p>
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+  <img src="images/braineaters_nationals.png" alt="Braineater Team Picture" style="width:100%; border-radius: 15px;">
+  <div style="height: 10px;"></div>
+  <p>
+    *Braineaters at 2024 D-III Nationals in Milwaukee, WI*
+  </p>
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <img src="images/spirit_award_cropped.png" alt="D3 2024 Spirit Award" style="width:100%; border-radius: 15px;">
+  <div style="height: 10px;"></div>
+  <p>
+    *Recipients of the 2024 Men's D-III Spirit Award*
+  </p>
+</div>
+</div>
+
+## Running ##
+
+<p class="justified-indent"> 
+  I started running consistently in Summer 2024 and have since reached many of my milestones and goals. In the Fall, I ran a 10k Turkey Trot
+  with my dad, for Winter I ran 100 miles over the course of my college winter break, and most recently, I ran a Half Marathon for the Summer. 
+  I often supplement my runs with jump rope, stair climbing, yoga, and weight training. Feel free to friend me on [Strava](https://strava.app.link/4ifxnmrPQUb)!
+</p>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+  <div style="flex: 1 1 100px;">
+  <img src="images/strava.png" alt="Sunset 7 mile run" style="width: 100%; border-radius: 15px;">
+  <div style="height: 10px;"></div>
+  <p>
+    *Run at sunset in Los Angeles, CA*
+  </p>
+  </div>
+
+  <div style="flex: 1 1 100px;">
+  <img src="images/run_club.jpg" alt="Brentwood Run Club" style="width: 100%; border-radius: 15px;">
+  <div style="height: 10px;"></div>
+  <p>
+    *Neighborhood run club with friends*
+  </p>
+  </div>
+
+  <div style="flex: 1 1 100px;">
+  <img src="images/sunset_run.jpg" alt="Sunset 5 mile run" style="width: 100%; border-radius: 15px;">
+  <div style="height: 10px;"></div>
+  <p>
+    *Beach run in Santa Monica, CA*
+  </p>
+  </div>
+</div>
+
+
+
+## Pickleball ##
+
+<p class="justified-indent"> 
+  On weekends, my friends and I play pickleball at the [Robert's Pavillion](https://roberts-pavilion.cmc.edu/) at Claremont McKenna College. 
+  We play singles, doubles, and king of the court style play. It's always a good time and our play sessions last anywhere from 2-4 hours each.
+</p>
+
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+  <div style="flex: 1 1 100px;">
+  <img src="images/broderick_pickleball.png" alt="Weekend pickleball at Robert's Pavillion" style="width: 100%; border-radius: 15px;">
+  <div style="height: 10px;"></div>
+  <p>
+    *Weekend pickleball with friends*
+  </p>
+  </div>
+
+  <div style="flex: 1 1 100px;">
+  <img src="images/proctor_pb.png" alt="Machine Shop tournament" style="width: 100%; border-radius: 15px;">
+  <div style="height: 10px;"></div>
+  <p>
+    *Machine Shop proctor tournament*
+  </p>
+  </div>
+
+  <div style="flex: 1 1 100px;">
+  <img src="images/frisbee_pb.png" alt="Pickeball in Westchester, CA" style="width: 100%; border-radius: 15px;">
+  <div style="height: 10px;"></div>
+  <p>
+    *Pickleball in Westchester, CA*
+  </p>
+  </div>
+</div>

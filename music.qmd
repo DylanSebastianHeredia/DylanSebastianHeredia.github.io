@@ -1,0 +1,143 @@
+---
+title: "Music & Performance"
+toc: true
+format: html
+---
+## 11 Years of Viola  ##
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/first_viola.jpg" alt="Holding my viola in 6th grade" style="width:100%; border-radius: 15px;">
+</div>
+  <div style="flex: 2; min-width: 300px;">
+<p class="justify-text"> 
+  My musical journey with the viola started in 4th grade through the Santa Monica Malibu
+  Unified School District (SMMUSD) music program. I began taking lessons in 5th grade 
+  under the direction of [Dr. Lindsey Strand-Polyak](https://www.strandpolyak.com/). I 
+  have now played the viola for 11 years and music has contributed to so many of my most
+  special experiences and memories. Through various fundraiser performances, seasonal 
+  concerts, weddings, and tours, I've met incredible people and made life-long
+  friends. 
+</p>
+</div>
+</div>
+
+## Orchestra Tours ##
+
+### New York, USA (2022) ###
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/symphony_ny.png" alt="Symphony Orchestra group photo on the Rockefeller Building" style="width:100%; border-radius: 15px;">
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <p class="justify-text"> 
+    In June 2022, the Santa Monica High School (SAMOHI) [Symphony Orchestra](https://www.samohiorchestras.org/orchestras),
+    a full orchestra comprised of over 80 student musicians toured New York City, performing at [Carnegie Hall](https://www.carnegiehall.org/) 
+    and [St. Malachy Church](https://actorschapel.org/). During the tour we attended workshops and master-classes. Additionally,
+    we visited locations like the Rockefeller Building, Statue of Liberty, and the 9/11 Memorial Pool to
+    learn more about the city's important history.
+  </p>
+
+  <div style="display: flex; gap: 10px;">
+  <a href="https://youtu.be/Q0KRxaMR6uk?si=Tk_s9-C9N-cCaTrH" target="_blank">
+    <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
+      ▶ Watch Video
+    </button>
+  </a>
+</div>
+</div>
+</div>
+
+### Ireland (2023) ###
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/cropped_ireland.jpg" alt="Chamber Orchestra performing in Dublin" style="width:100%; border-radius: 15px;">
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <p style="text-align: justify;"> 
+  In April 2023, the SAMOHI <a href="https://www.samohiorchestras.org/orchestras" target="_blank">Chamber Orchestra</a>, an
+  ensemble made of the first two rows of strings from the Symphony Orchestra toured Ireland, 
+  performing in Derry, Belfast, and Dublin. One of my favorite pieces from the program was 
+  Elgar's <em>Introduction & Allegro for Strings, Op. 47</em>. The piece was written for a string 
+  quartet and accompanying string ensemble. I performed the viola solo in the quartet and 
+  had a great time performing with my friends.
+</p>
+
+<div style="display: flex; gap: 10px;">
+  <a href="https://www.youtube.com/watch?v=S-Q4q2CwhvA" target="_blank">
+    <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
+      ▶ Watch Video
+    </button>
+  </a>
+  
+  </a>
+</div>
+</div>
+</div>
+
+
+## Private & Public Gigs ##
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/gigs.jpg" alt="Musicians at a Samohi Orchestra fundraiser gig" style="width:100%; border-radius: 15px;">
+</div>
+  <div style="flex: 2; min-width: 300px;">
+<p class="justify-text"> 
+  As the Principal of the SAMOHI Chamber Orchestra for 2 years, I played in
+  over 50 string ensemble gigs. As the orchestra librarian, I also selected repetoire and 
+  repaired sheet music for performances. Gig events include: Weddings, birthdays, memorials, 
+  fundraisers, private dinners, and award ceremories. Gig venues included: 
+  [Los Angeles Country Club](https://www.thelacc.org/), [Jonathan Club](https://www.jc.org/),
+  Culver Hotel, Indigo Hotel, [Santa Monica Pier](https://www.santamonicapier.org/),
+  elementary schools, and various homes.
+</p>
+</div>
+</div>
+
+## Honor Orchestras ##
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/CODA.jpg" alt="Playing my viola at a CODA rehearsal" style="width:100%; border-radius: 15px;">
+</div>
+  <div style="flex: 2; min-width: 300px;">
+<p class="justify-text"> 
+  I've been a part of the California Orchestra Directors Association ([CODA](https://www.codaorchestras.org/about/)) for 4 
+  years and the Sourthern California Band & Orchestra Association ([SCSBOA](https://www.scsboa.org/)) for 5 
+  years, sitting Assistant Principalfor 1 year and Principal for 3 years. Each year
+  100+ students apply for CODA and 60+ students for SCSBOA. Musicians are selected
+  via audition to come together for a week to prepare a concert at the music educator
+  conferences in Fresno, CA and Orange County, CA. 
+</p>
+  <a href="https://youtu.be/IHsU_v2hrqA?si=alCWZBNHVwGcafLG" target="_blank">
+      <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
+        ▶ Watch Video
+      </button>
+  </a>
+</div>
+</div>
+
+## Recordings & Compositions
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/jam_session.png" alt="Playing music outside with friends" style="width:100%; border-radius: 15px;">
+</div>
+  <div style="flex: 2; min-width: 300px;">
+<p class="justify-text"> 
+  I love playing duets with recordings of myself or digital instruments, and throughout the
+  years I've started writing down my compositions. After class and on weekends, I also 
+  enjoy learning pop songs with my friends, pianist ,Kai Mawhinney, and vocalist and guitarist, Emmett 
+  Levine. We often improvise together and have performed on the Claremont College
+  student radio, [KSPC](https://kspc.org/), and at Emmett's Guitar Club recitals. 
+</p>
+  <a href="duet.mp4" target="_blank">
+      <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
+        ▶ Watch Video
+      </button>
+  </a>
+</div>
+</div>
