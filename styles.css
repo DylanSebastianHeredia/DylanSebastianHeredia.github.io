@@ -1,3 +1,5 @@
+
+
 /* css styles */
 body {
     text-align: left;
@@ -26,7 +28,6 @@ body {
     color: #6c757d;
   }
   
-
   .row {
     display: flex;
     justify-content: space-between;
@@ -36,4 +37,92 @@ body {
     padding: 10px;
     margin: 10px;
     box-sizing: border-box;
+}
+
+/* === Navigation Bar / Banner === 
+.navbar {
+  background-color: #0d2a59; 
+  padding: 0.75rem 1rem;
+}
+
+
+.navbar a {
+  color: #f1f3d0 !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+.navbar a:hover {
+  color: #fa7d00 !important;
+}
+*/
+
+/* === Link Styling === */
+a {
+  color: #176BEF;
+  text-decoration: none;
+}
+
+/* Sidebar links */
+.sidebar a {
+  color: #545454 !important;
+  text-decoration: none;
+}
+
+/* Global justification for all texts!
+p {
+  text-align: justify;
+}
+*/
+
+.justify-text {
+  text-align: justify;
+}
+
+.justified-indent {
+  text-align: justify;
+  text-indent: 2em;
+}
+
+/* UPDATED for MOBILE devices: Justified text for only speceific sections */
+/* Make images scale to screen width */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+    padding: 12px;
   }
+
+  h1, h2, h3 {
+    font-size: 1.25rem;
+  }
+
+  .row {
+    display: block;
+  }
+
+  .column {
+    padding: 8px 0;
+    margin: 0;
+  }
+
+  /* Optional: Hide sidebar or TOC on mobile */
+  .sidebar, .toc, nav.toc {
+    display: none;
+  }
+
+  /* Optional: Stack navbar items vertically if needed */
+  @media (max-width: 768px) {
+    .navbar-nav,
+    .navbar ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}

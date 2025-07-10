@@ -1,23 +1,31 @@
 ---
 title: "D. Sebastian Heredia"
-image: "images/profile_picture.png"
+image: "images/headshot.jpg"
 about:
-    template: jolla
+  template: jolla
 ---
 
-## Welcome To My Online Portfolio!
+<p style="text-align: center; font-size: 1rem; color: gray; margin-top: -2rem; margin-bottom: 1rem;">
+  He/Him
+</p>
 
-Hello! My name is Sebastian (He/Him) and I’m a Sophomore Engineering 
-major at [Harvey Mudd College](https://www.hmc.edu) in Claremont, CA. I am passionate about electronics 
-and manufacturing, and hope to leverage these fields to make a positive impact on 
-the world. To make my goals a reality, I seek hands-on, professional experience in 
-technical engineering projects. 
+<p class="justified-indent"> 
+    Hello! My name is Sebastian and I’m Junior Engineering 
+    major at [Harvey Mudd College](https://www.hmc.edu) in Claremont, CA. I am passionate about electronics 
+    and manufacturing, and hope to leverage these fields to make a positive impact on 
+    the world. To make my goals a reality, I seek hands-on, professional experience in 
+    technical engineering projects. 
+</p>
 
-As an engineer, machinist, and tutor, I’ve gained technical skills in CAD and computer 
-programming, design and manufacturing, and teaching that I’m excited to apply to helping 
-communities all over. I love challenging myself to not only learn, but master new skills. 
-I hope to combine skills in new and unique ways to make novel creations that help people. 
-Check out my resume and additional links below! 
+<p class="justified-indent"> 
+    As an engineer, machinist, and tutor, I’ve gained technical skills in CAD and computer 
+    programming, design, prototyping, and teaching that I’m excited to apply to helping all communities.
+    I love challenging myself to not only learn, but master new skills. I aim to combine skills in 
+    new and unique ways to make novel creations that help people. Check out my resume and additional 
+    links below! 
+</p>
+
+<div style="height: 10px;"></div>
 
 ## Resume 2024-2025
 
