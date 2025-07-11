@@ -29,19 +29,18 @@ h1, h2, h3, p {
 .row {
   display: flex;
   justify-content: space-between;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  width: 1200px;
-  max-width: 100%;
+  flex-wrap: wrap;     
+  width: 100%;  
+  margin: 0 auto;
 }
 
 .column {
-  flex: 1;
+  flex: 1 1 30%;  
+  max-width: 33.33%;   
   padding: 10px;
-  margin: 10px;
   box-sizing: border-box;
-  min-width: 300px;
 }
+
 
 /* === Navigation Bar / Banner === 
 .navbar {
