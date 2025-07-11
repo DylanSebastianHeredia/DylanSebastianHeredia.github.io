@@ -29,8 +29,8 @@ h1, h2, h3, p {
 .row {
   display: flex;
   justify-content: space-between;
-  flex-wrap: nowrap;       /* ✅ Prevents wrapping of columns on small screens */
-  overflow-x: auto;         /* ✅ Enables horizontal scroll on small screens if needed */
+  flex-wrap: nowrap;      
+  overflow-x: auto;      
 }
 
 .column {
@@ -38,7 +38,7 @@ h1, h2, h3, p {
   padding: 10px;
   margin: 10px;
   box-sizing: border-box;
-  min-width: 200px;         /* ✅ Ensures column width stays readable on mobile */
+  min-width: 200px;        
 }
 
 /* === Navigation Bar / Banner === 
@@ -99,8 +99,8 @@ img {
   }
 
   body {
-    font-size: 0.95rem;
-    padding: 12px;
+    font-size: 1rem;        
+    padding: 6px;        
   }
 
   h1, h2, h3 {
@@ -110,15 +110,15 @@ img {
   /* ✅ Preserve horizontal column layout on mobile */
   .row {
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    flex-wrap: wrap;        
+    overflow-x: hidden;     
   }
 
   .column {
     flex: 1;
     min-width: 200px;
-    padding: 10px;
-    margin: 10px;
+    padding: 8px;          
+    margin: 4px;            
     box-sizing: border-box;
   }
 
@@ -126,5 +126,9 @@ img {
   .navbar ul {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  p, .justify-text, .justified-indent {
+    max-width: 95vw;        
   }
 }
