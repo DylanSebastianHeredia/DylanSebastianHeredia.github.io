@@ -161,7 +161,7 @@ handle finish.
   </p>
 
   <div style="display: flex; gap: 10px;">
-  <button id="toggleButton" onclick="toggleContenta()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
+  <button id="toggleButtona" onclick="toggleContenta()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
     Show More
   </button>
 
@@ -273,7 +273,7 @@ __constraint__, __functions__, and __means__.
     skills in mechanical design, sensor integration, and control systems.
   </p>
 
-  <button id="toggleButton" onclick="toggleContent3()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
+  <button id="toggleButton3" onclick="toggleContent3()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
     Show More
     </button>
 </div>
@@ -373,7 +373,7 @@ Temp (ºC): [-3.80, 19.18].
     revolutions, and a pressure sensor. 
   </p>
  <div style="display: flex; gap: 10px;">
-  <button id="toggleButton" onclick="toggleContentA()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
+  <button id="toggleButtonA" onclick="toggleContentA()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
       Show More
     </button>
 
@@ -494,7 +494,7 @@ in order to interface all components at specific times.
   </p>
 
   <div style="display: flex; gap: 10px;">
-  <button id="toggleButton" onclick="toggleContent2()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
+  <button id="toggleButton2" onclick="toggleContent2()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
     Show More
   </button>
 
@@ -592,7 +592,7 @@ the level on my desk.
 
     if (content.style.display === "none") {
       content.style.display = "block";
-      button.innerHTML = "S Less";  // Change button text to "Show Less"
+      button.innerHTML = "Show Less";  // Change button text to "Show Less"
     } else {
       content.style.display = "none";
       button.innerHTML = "Show More";  // Change button text to "Show More"
@@ -614,7 +614,7 @@ the level on my desk.
   </p>
 
   <div style="display: flex; gap: 10px;">
-  <button id="toggleButton" onclick="toggleContent5()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
+  <button id="toggleButton5" onclick="toggleContent5()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
     Show More
   </button>
 
