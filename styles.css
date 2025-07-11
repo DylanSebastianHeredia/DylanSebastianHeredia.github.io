@@ -29,18 +29,17 @@ h1, h2, h3, p {
 .row {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;     
-  width: 100%;  
-  margin: 0 auto;
+  flex-wrap: nowrap;       /* ✅ Prevents wrapping of columns on small screens */
+  overflow-x: auto;         /* ✅ Enables horizontal scroll on small screens if needed */
 }
 
 .column {
-  flex: 1 1 30%;  
-  max-width: 33.33%;   
+  flex: 1;
   padding: 10px;
+  margin: 10px;
   box-sizing: border-box;
+  min-width: 200px;         /* ✅ Ensures column width stays readable on mobile */
 }
-
 
 /* === Navigation Bar / Banner === 
 .navbar {
@@ -102,23 +101,22 @@ img {
   body {
     font-size: 0.95rem;
     padding: 12px;
-    overflow-x: auto;
   }
 
   h1, h2, h3 {
     font-size: 1.25rem;
   }
 
+  /* ✅ Preserve horizontal column layout on mobile */
   .row {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    width: 1200px;
   }
 
   .column {
     flex: 1;
-    min-width: 300px;
+    min-width: 200px;
     padding: 10px;
     margin: 10px;
     box-sizing: border-box;
