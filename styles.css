@@ -105,7 +105,7 @@ img {
         /* Scale down visually */
         transform: scale(0.45);
         transform-origin: top left;
-        width: 200%;  /* counteracts scale */
+        width: 220%;  /* counteracts scale */
     }
 
     p { font-size: 0.58em; }
