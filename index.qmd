@@ -28,18 +28,18 @@ about:
 
 <div style="height: 10px;"></div>
 
-## Resume Fall 2025
+<h2 style="margin: 0; padding: 0; text-align: left;">Resume Fall 2025</h2>
+<a href="documents/HEREDIA_CV_08182025.pdf" target="_blank" style="display:block; text-align:center; margin:0; padding:0px 0;">
+  *Open Full Resume in New Tab*
+</a>
 
-<p style="text-align:center; margin-top:10px;">
-  <a href="documents/HEREDIA_CV_08182025.pdf" target="_blank">*Open Full Resume in New Tab*</a>
-</p>
+<div style="position: relative; width: 90%; height: 0; padding-bottom: 80%; margin: 0 auto; border: 3px solid grey;">
+  <iframe src="documents/HEREDIA_CV_08182025.pdf" 
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+  </iframe>
+</div>
 
-<div style="max-width: 900px; margin: auto;">
-<div style="position: relative; width: 100%; height: 80vh;">
-<iframe src="documents/HEREDIA_CV_08182025.pdf" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
-</iframe>
-</div>
-</div>
+<br>
 
 ## Additional Links
 
