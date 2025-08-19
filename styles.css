@@ -98,16 +98,21 @@ img {
     }
 
     body {
-        font-size: 0.9rem;   /* slightly smaller text */
+        font-size: 0.85rem;  
         line-height: 1.5;
-        padding: 8px;        /* reduce padding instead of scaling */
+        padding: 10px;
+
+        /* Scale down visually */
+        transform: scale(0.5);
+        transform-origin: top left;
+        width: 200%;  /* counteracts scale */
     }
 
-    p { font-size: 0.85rem; }
+    p { font-size: 0.75rem; }
 
-    h1 { font-size: 1.3rem; }
-    h2 { font-size: 1.1rem; }
-    h3 { font-size: 0.95rem; }
+    h1 { font-size: 1.2rem; }
+    h2 { font-size: 1rem; }
+    h3 { font-size: 0.9rem; }
 
     .row {
         display: flex;
@@ -129,11 +134,6 @@ img {
 
 /* === Extra Small Screens (≤480px) === */
 @media (max-width: 480px) {
-    body {
-        font-size: 0.8rem;   /* even smaller text */
-        padding: 6px;
-    }
-
     .column {
         flex: 1 1 100% !important;
         max-width: 100% !important;
