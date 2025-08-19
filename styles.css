@@ -99,16 +99,13 @@ img {
 
     body {
         font-size: 0.85rem;  
-        line-height: 1.5;
+        line-height: 1.45;
         padding: 10px;
-
-        /* Scale down visually */
-        transform: scale(0.45);
-        transform-origin: top left;
-        width: 220%;  /* counteracts scale */
     }
 
-    p { font-size: 0.58em; }
+    p { 
+        font-size: 0.8rem; 
+    }
 
     h1 { font-size: 1.2rem; }
     h2 { font-size: 1rem; }
@@ -134,6 +131,11 @@ img {
 
 /* === Extra Small Screens (≤480px) === */
 @media (max-width: 480px) {
+    body {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
     .column {
         flex: 1 1 100% !important;
         max-width: 100% !important;
