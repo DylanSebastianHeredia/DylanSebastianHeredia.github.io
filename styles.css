@@ -1,4 +1,3 @@
-/* css styles */
 body {
     text-align: left;
     font-size: 1rem;      /* base size */
@@ -11,7 +10,7 @@ h1, h2, h3 {
 }
 
 p {
-    font-size: 0.95rem;   /* slightly smaller than base */
+    font-size: 0.95rem;
     margin-bottom: 1em;
 }
   
@@ -22,7 +21,7 @@ p {
   
 .breadcrumbs a {
     text-decoration: none;
-    color: #0000EE;   /* hyper link blue*/
+    color: #0000EE;
 }
   
 .breadcrumbs a:hover {
@@ -37,30 +36,30 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: nowrap;   /* keep columns side-by-side */
+    flex-wrap: nowrap;
 }
 
 .column {
-    flex: 1;             /* 🔑 equal width for all columns */
+    flex: 1;
     padding: 10px;
     margin: 10px;
     box-sizing: border-box;
-    min-width: 0;        /* prevent overflow shrink issues */
+    min-width: 0;
 }
 
 .column img {
-    width: 100%;         /* make images scale inside their half */
+    width: 100%;
     height: auto;
 }
 
 /* === Link Styling === */
 a {
-    color: #176BEF;   /* default link color */
+    color: #176BEF;
     text-decoration: none;
 }
 
 a:hover {
-    color: #fa7d00;   /* link color when hovered */
+    color: #fa7d00;
     text-decoration: underline;
 }
 
@@ -71,7 +70,7 @@ a:hover {
 }
 
 .sidebar a:hover {
-    color: #fa7d00 !important;  /* sidebar link hover color */
+    color: #fa7d00 !important;
 }
 
 /* Text alignment helpers */
@@ -84,43 +83,45 @@ a:hover {
     text-indent: 2em;
 }
 
-/* Images scale correctly */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Responsive adjustments */
+/* === Mobile Fix === */
 @media (max-width: 768px) {
-    /* Hide sidebars + TOC */
     .sidebar, .toc, nav.toc {
         display: none !important;
     }
 
-    /* Body text adjustments */
     body {
-        font-size: 0.9rem;  
+        font-size: 0.85rem;  
         line-height: 1.5;
         padding: 10px;
     }
 
     p {
-        font-size: 0.85rem; /* make normal text less bulky */
+        font-size: 0.8rem;  /* smaller body text */
     }
 
-    /* Headings scale */
-    h1 { font-size: 1.3rem; }
-    h2 { font-size: 1.1rem; }
-    h3 { font-size: 1rem; }
+    h1 { font-size: 1.2rem; }
+    h2 { font-size: 1rem; }
+    h3 { font-size: 0.9rem; }
 
-    /* Keep side-by-side proportions */
+    /* Fix row for mobile */
     .row {
-        flex-wrap: nowrap;    
-        overflow-x: auto;     /* allow swipe if screen too narrow */
+        display: flex;
+        flex-wrap: nowrap;
     }
 
     .column {
-        flex: 1;              /* ✅ always equal 50/50 */
-        min-width: 250px;     /* prevent collapse */
+        flex: 0 0 50%;     /* ✅ Force 50/50 split */
+        max-width: 50%;
+        margin: 5px;
+    }
+
+    .column img {
+        max-width: 100%;
+        height: auto;
     }
 }
