@@ -50,11 +50,15 @@ buttons below, learn more about the __What__, __How__, and __Results__ of each p
 
 <div style="flex: 2; min-width: 300px;">
   <p class="justify-text"> 
-    I gained proficiency in basic machining techniques, 
-    joined the long hammer-building history of Harvey Mudd College engineers, and 
-    discovered a deeper appreciation for machining that led me to working as a shop 
-    proctor at the [Harvey Mudd Machine Shop](https://www.hmc.edu/engineering/current-student-information/engineering-machine-shop/). 
-    The student Machine Shop is a fundamental resource to many student projects and experiences across the Claremont Colleges.
+    __Overview:__ <br>
+    Crafted a functional machinist hammer from clear oak, AISI 1015 & 4340 steel, and nylon, following strict technical specifications.
+    The experience inspired me to become a [Harvey Mudd Machine Shop]((https://www.hmc.edu/engineering/current-student-information/engineering-machine-shop/))
+    proctor. 
+  </p>
+
+  <p class="justify-text"> 
+    __Skills:__ <br>
+    Lathe, Mill, Router, Taps, Oven, HRC Hardness Tester, Sand Blaster, Bandsaws, 3D-Printer, Laser Cutter
   </p>
 
   <div style="display: flex; gap: 10px;">
@@ -78,12 +82,10 @@ buttons below, learn more about the __What__, __How__, and __Results__ of each p
 <p> ### What? ### 
   <img src="images/hammer/Hammer_Labeled.png" alt="Hammer" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 5px;">
+<div style="padding: 5px; font-size: 0.9rem;">
 
-- All Harvey Mudd students in E4 manufacture identical machinist hammers by following specific 
-__process routers__ and tolerances listed in __tech drawings__. 
-
-- Crafted a machinist hammer from clear oak, AISI 1015 steel, AISI 4340 steel, and nylon. 
+- Manufactured a functional machinist hammer from oak, steel, and nylon, meeting precise technical drawing specifications.
+- Contributed to the Harvey Mudd College tradition of student-made hammers while developing hands-on machining skills. 
 
 </div>
 </p>
@@ -93,12 +95,10 @@ __process routers__ and tolerances listed in __tech drawings__.
 
 <img src="images/hammer/hammer_oven.png" alt="Hammer" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 5px;">
+<div style="padding: 5px; font-size: 0.9rem;">
 
 - Machined head stock to length and specification using __lathe__ and __milling operations__. 
-
 - Heat treated hardface and determined __HRC Hardness__.
-
 - __Lasercut__ hammer stand and shaped handle using the __bandsaw__ and spindle sander. 
 
 </div>
@@ -109,13 +109,10 @@ __process routers__ and tolerances listed in __tech drawings__.
 
 <img src="images/hammer/hammer_selfie.png" alt="Hammer" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 5px; font-size: 14px;">
+<div style="padding: 5px; font-size: 0.9rem;">
 
-- Created a functional hammer with __heat treated__ hard face, well fastened soft face, and smooth 
-handle finish. 
-
+- Created a functional hammer with __heat treated__ hard face, well fastened soft face, and smooth handle finish. 
 - Hammer is durable and approved as high quality of manufacturing. 
-
 - Inspired to become a machine __shop proctor__ and train new users. 
 
 </div>
