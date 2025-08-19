@@ -78,14 +78,14 @@ buttons below, learn more about the __What__, __How__, and __Results__ of each p
 <p> ### What? ### 
   <img src="images/hammer/Hammer_Labeled.png" alt="Hammer" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 5px;">
-</div>
+<div style="padding: 5px; font-size: 14px;">
 
 - All Harvey Mudd students in E4 manufacture identical machinist hammers by following specific 
 __process routers__ and tolerances listed in __tech drawings__. 
 
 - Crafted a machinist hammer from clear oak, AISI 1015 steel, AISI 4340 steel, and nylon. 
 
+</div>
 </p>
 </div>
 <div class="column">
@@ -93,8 +93,7 @@ __process routers__ and tolerances listed in __tech drawings__.
 
 <img src="images/hammer/hammer_oven.png" alt="Hammer" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 5px;">
-</div>
+<div style="padding: 5px; font-size: 14px;">
 
 - Machined head stock to length and specification using __lathe__ and __milling operations__. 
 
@@ -102,7 +101,7 @@ __process routers__ and tolerances listed in __tech drawings__.
 
 - __Lasercut__ hammer stand and shaped handle using the __bandsaw__ and spindle sander. 
 
-
+</div>
 </p>
 </div>
 <div class="column">
@@ -110,8 +109,7 @@ __process routers__ and tolerances listed in __tech drawings__.
 
 <img src="images/hammer/hammer_selfie.png" alt="Hammer" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 5px;">
-</div>
+<div style="padding: 5px; font-size: 14px;">
 
 - Created a functional hammer with __heat treated__ hard face, well fastened soft face, and smooth 
 handle finish. 
@@ -120,6 +118,7 @@ handle finish.
 
 - Inspired to become a machine __shop proctor__ and train new users. 
 
+</div>
 </p>
 </div>
 </div>
