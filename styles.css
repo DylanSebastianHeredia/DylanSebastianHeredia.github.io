@@ -2,6 +2,8 @@ body {
     text-align: left;
     font-size: 1rem;      /* base size */
     line-height: 1.6;     /* good readability */
+    margin: 0;
+    padding: 0;
 }
   
 h1, h2, h3 {
@@ -88,7 +90,7 @@ img {
     height: auto;
 }
 
-/* === Mobile Fix === */
+/* === Mobile Fix (≤768px) === */
 @media (max-width: 768px) {
     .sidebar, .toc, nav.toc {
         display: none !important;
@@ -108,20 +110,30 @@ img {
     h2 { font-size: 1rem; }
     h3 { font-size: 0.9rem; }
 
-    /* Fix row for mobile */
+    /* ✅ Force true 50/50 split */
     .row {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;     
     }
 
     .column {
-        flex: 0 0 50%;     /* ✅ Force 50/50 split */
-        max-width: 50%;
-        margin: 5px;
+        flex: 1 1 50% !important;  
+        max-width: 50% !important; 
+        margin: 5px 0;             
+        box-sizing: border-box;
     }
 
     .column img {
         max-width: 100%;
         height: auto;
+    }
+}
+
+/* === Extra Small Screens (≤480px) === */
+/* ✅ Stack text + image vertically for readability */
+@media (max-width: 480px) {
+    .column {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
     }
 }

@@ -130,8 +130,8 @@ format: html
 <p class="justify-text"> 
   I love playing duets with recordings of myself or digital instruments, and throughout the
   years I've started writing down my compositions. After class and on weekends, I also 
-  enjoy learning pop songs with my friends, pianist ,Kai Mawhinney, and vocalist and guitarist, Emmett 
-  Levine. We often improvise together and have performed on the Claremont College
+  enjoy learning pop songs with my friends, pianist, Kai Mawhinney, and vocalist and guitarist, [Emmett 
+  Levine](https://www.linkedin.com/in/emmett-levine/). We often improvise together and have performed on the Claremont College
   student radio, [KSPC](https://kspc.org/), and at Emmett's Guitar Club recitals. 
 </p>
   <a href="duet.mp4" target="_blank">
