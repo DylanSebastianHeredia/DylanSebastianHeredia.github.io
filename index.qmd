@@ -11,7 +11,7 @@ about:
 
 <p class="justified-indent"> 
     Hello! My name is Sebastian and I’m a Junior at [Harvey Mudd College](https://www.hmc.edu) majoring in Engineering, with a strong foundation in math and a growing 
-    nterest in electrical engineering—especially as it connects to embedded systems, robotics, and automation. 
+    interest in electrical engineering—especially as it connects to embedded systems, robotics, and automation. 
     I’m passionate about working at the intersection of hardware and systems that sense, respond, and interact 
     in the world. I thrive in hands-on, fast paced environments and seek technical opportunities that will allow 
     me to deepen my engineering skills and contribute to meaningful, systems-driven projects.
