@@ -30,7 +30,16 @@ about:
 
 ## Resume Fall 2025
 
-<iframe src="documents/HEREDIA_CV_08182025.pdf" width="100%" height="800" style="border:none;"></iframe>
+<p style="text-align:center; margin-top:10px;">
+  <a href="documents/HEREDIA_CV_08182025.pdf" target="_blank">*Open Full Resume in New Tab*</a>
+</p>
+
+<div style="max-width: 900px; margin: auto;">
+<div style="position: relative; width: 100%; height: 80vh;">
+<iframe src="documents/HEREDIA_CV_08182025.pdf" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+</iframe>
+</div>
+</div>
 
 ## Additional Links
 
