@@ -103,12 +103,12 @@ img {
         padding: 10px;
 
         /* Scale down visually */
-        transform: scale(0.5);
+        transform: scale(0.45);
         transform-origin: top left;
         width: 200%;  /* counteracts scale */
     }
 
-    p { font-size: 0.5rem; }
+    p { font-size: 0.58em; }
 
     h1 { font-size: 1.2rem; }
     h2 { font-size: 1rem; }
