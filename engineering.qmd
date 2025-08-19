@@ -356,12 +356,12 @@ thermistor circuits to the project PCB.
 <div style="flex: 2; min-width: 300px;">
   <p class="justify-text"> 
     Designed and built an AUV to measure water depth at [Baby Beach]((https://visitdanapoint.com/what-to-do/baby-beach/)), Dana 
-    Point Harbor, CA. The project integrated mechanical, electrical, and pressure sensing systems to capture depth data. 
+    Point Harbor, CA. The project integrated mechanical, electrical, and pressure sensing systems to measure depth. 
   </p>
 
   <p class="justify-text"> 
     __Skills:__ <br>
-    Arduino, MATLAB, Power Tools, BOM, Circuit Design
+    Arduino, MATLAB, Power Tools, BOM
   </p>
 
   <p class="justify-text"> 
