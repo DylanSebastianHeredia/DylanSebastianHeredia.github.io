@@ -6,7 +6,7 @@ about:
 ---
 
 <p style="text-align: center; font-size: 1rem; color: gray; margin-top: -2rem; margin-bottom: 1rem;">
-  He/Him
+  *He/Him*
 </p>
 
 <p class="justified-indent"> 
@@ -26,22 +26,24 @@ about:
     efficiently, communicate ideas clearly, and approach challenges both methodically and creatively.
 </p>
 
-<div style="height: 10px;"></div>
+<div style="height: 15px;"></div>
 
 <h2 style="margin: 0; padding: 0; text-align: left;">Resume Fall 2025</h2>
 <a href="documents/HEREDIA_CV_08182025.pdf" target="_blank" style="display:block; text-align:center; margin:0; padding:0px 0;">
   *Open Full Resume in New Tab*
 </a>
 
-<div style="position: relative; width: 90%; height: 0; padding-bottom: 80%; margin: 0 auto; border: 3px solid grey;">
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 100%;">
   <iframe src="documents/HEREDIA_CV_08182025.pdf" 
           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
   </iframe>
 </div>
 
-<br>
+<div style="height: 45px;"></div>
 
 ## Additional Links
+
+<div style="height: 15px;"></div>
 
 ::: {.flex-container style="display: flex; gap: 20px; align-items: center;"}
 <a href="https://www.linkedin.com/in/sebastian-heredia4/" target="_blank">
