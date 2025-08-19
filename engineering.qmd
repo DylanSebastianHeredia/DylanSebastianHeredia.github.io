@@ -61,7 +61,7 @@ buttons below, learn more about the __What__, __How__, and __Results__ of each p
     GD&T, Lathe, Mill, Bandsaw, Router, Taps, Digital Micrometers, HRC Hardness Tester, Laser Cutter
   </p>
 
-<div style="display: flex; gap: 5px;">
+<div style="display: flex; gap: 10px;">
   <button id="toggleButton" onclick="toggleContent()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
     Show More
   </button>
@@ -165,14 +165,14 @@ buttons below, learn more about the __What__, __How__, and __Results__ of each p
     [Gabrielle R.](https://www.linkedin.com/in/gabbyreynolds/).
   </p>
 
- <div style="display: flex; gap: 5px;">
+<div style="display: flex; gap: 10px;">
   <button id="toggleButtona" onclick="toggleContenta()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
     Show More
   </button>
 
   <a href="documents/e4_final_memo.pdf" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #056f06; color: white; border: none; font-weight: bold; cursor: pointer;">
-      See Memo
+      Memo
     </button>
   </a>
 </div>
@@ -371,7 +371,7 @@ thermistor circuits to the project PCB.
     [Simone Y.](https://www.linkedin.com/in/simone-yang/)
   </p>
 
- <div style="display: flex; gap: 5px;">
+<div style="display: flex; gap: 10px;">
   <button id="toggleButtonA" onclick="toggleContentA()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
       Show More
     </button>
@@ -383,7 +383,7 @@ thermistor circuits to the project PCB.
   </a>
   <a href="documents/E80_tech_memo.pdf" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #056f06; color: white; border: none; font-weight: bold; cursor: pointer;">
-      See Memo
+      Memo
     </button>
   </a>
  </div>
@@ -483,7 +483,7 @@ thermistor circuits to the project PCB.
     project was to write embedded software to control external peripherals.
   </p>
 
- <div style="display: flex; gap: 5px;">
+<div style="display: flex; gap: 10px;">
   <button id="toggleButton2" onclick="toggleContent2()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
     Show More
   </button>
@@ -496,7 +496,7 @@ thermistor circuits to the project PCB.
 
   <a href="documents/Lab8_DSH_FINAL.txt" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #1128dc; color: rgb(255, 255, 255); border: none; font-weight: bold; cursor: pointer;">
-      See Code
+      Code
     </button>
   </a>
  </div>
@@ -513,7 +513,7 @@ thermistor circuits to the project PCB.
 
 <img src="images/digital_level/level_portrait.png" alt="Level" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 5px;">
+<div style="padding: 10px;">
 </div>
 
 - The LED matrix displays a red "bubble" indicating the orientation of the __accelerometer__ in the x and 
@@ -532,7 +532,7 @@ y axes.
 
 <img src="images/digital_level/level_soldering1.png" alt="Level" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 5px;">
+<div style="padding: 10px;">
 </div>
 
 - Interpreted LED __data sheet__ to determine current limiting resistor values as well as pinout configuration. 
@@ -551,7 +551,7 @@ y axes.
 
 <img src="images/digital_level/level_image.jpg" alt="Level" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 5px;">
+<div style="padding: 10px;">
 </div>
 
 - Click [Digital Demo](level.mp4) to view a video demo of 
@@ -603,14 +603,14 @@ the level on my desk.
     as my code, click the options below. 
   </p>
 
-<div style="display: flex; gap: 5px;">
+<div style="display: flex; gap: 10px;">
   <button id="toggleButton5" onclick="toggleContent5()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
     Show More
   </button>
 
   <a href="images/multicycle/Multicycle_Code.pdf" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #1128dc; color: rgb(255, 255, 255); border: none; font-weight: bold; cursor: pointer;">
-      See Code
+      Code
     </button>
   </a>
   </div>
@@ -625,7 +625,7 @@ the level on my desk.
 
 <img src="images/multicycle/schematic_top.jpg" alt="Multicycle" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 5px;">
+<div style="padding: 10px;">
 </div>
 
 - Created a 32-bit multicycle computer processor that can compute arithmetic operations,
@@ -640,7 +640,7 @@ manage memory, and execute instructions in real-time.
 
 <img src="images/multicycle/instantiation.jpg" alt="Multicycle" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 5px;">
+<div style="padding: 10px;">
 </div>
 
 - Wrote a datapath in __SystemVerilog__ to connect controller, memory, and register file components.
@@ -657,7 +657,7 @@ identifying error origins.
 
 <img src="images/multicycle/waveforms.jpg" alt="Multicycle" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 5px;">
+<div style="padding: 10px;">
 </div>
 
 - 32-Bit RISC-V Multicycle processor matched waveform expectations, indicating that the corret values where

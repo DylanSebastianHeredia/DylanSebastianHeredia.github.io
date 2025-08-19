@@ -59,13 +59,13 @@ about:
 </a>
 
 <a href="documents/judgingperformance.pdf" target="_blank">
-    <button style="padding: 10px 20px; background-color: rgb(71, 71, 62); color: white; border: none; border-radius: 5px; cursor: pointer;">
+    <button style="padding: 10px 20px; background-color: rgb(71, 71, 62); color: white; border: none; border-radius: 6px; cursor: pointer;">
         Judging Performance
     </button>  
 </a>
 
 <a href="documents/transcriptkey.pdf" target="_blank">
-    <button style="padding: 10px 20px; background-color: rgb(164, 159, 19); color: white; border: none; border-radius: 5px; cursor: pointer;">
+    <button style="padding: 10px 20px; background-color: rgb(164, 159, 19); color: white; border: none; border-radius: 6px; cursor: pointer;">
         Transcript Key
     </button>  
 </a>
