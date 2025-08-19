@@ -61,7 +61,7 @@ buttons below, learn more about the __What__, __How__, and __Results__ of each p
     GD&T, Lathe, Mill, Bandsaw, Router, Taps, Digital Micrometers, HRC Hardness Tester, Laser Cutter
   </p>
 
-  <div style="display: flex; gap: 10px;">
+<div style="display: flex; gap: 5px;">
   <button id="toggleButton" onclick="toggleContent()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
     Show More
   </button>
@@ -165,7 +165,7 @@ buttons below, learn more about the __What__, __How__, and __Results__ of each p
     [Gabrielle R.](https://www.linkedin.com/in/gabbyreynolds/).
   </p>
 
-  <div style="display: flex; gap: 10px;">
+ <div style="display: flex; gap: 5px;">
   <button id="toggleButtona" onclick="toggleContenta()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
     Show More
   </button>
@@ -371,7 +371,7 @@ thermistor circuits to the project PCB.
     [Simone Y.](https://www.linkedin.com/in/simone-yang/)
   </p>
 
- <div style="display: flex; gap: 10px;">
+ <div style="display: flex; gap: 5px;">
   <button id="toggleButtonA" onclick="toggleContentA()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
       Show More
     </button>
@@ -483,7 +483,7 @@ thermistor circuits to the project PCB.
     project was to write embedded software to control external peripherals.
   </p>
 
-  <div style="display: flex; gap: 10px;">
+ <div style="display: flex; gap: 5px;">
   <button id="toggleButton2" onclick="toggleContent2()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
     Show More
   </button>
@@ -603,7 +603,7 @@ the level on my desk.
     as my code, click the options below. 
   </p>
 
-  <div style="display: flex; gap: 10px;">
+<div style="display: flex; gap: 5px;">
   <button id="toggleButton5" onclick="toggleContent5()" style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
     Show More
   </button>
