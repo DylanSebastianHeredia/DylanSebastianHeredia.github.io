@@ -102,13 +102,13 @@ img {
         line-height: 1.5;
         padding: 10px;
 
-        /* Scale down visually */
-        transform: scale(0.45);
+        /* Scale down visually to ~75% */
+        transform: scale(0.75);
         transform-origin: top left;
-        width: 220%;  /* counteracts scale */
+        width: 133.33%;  /* counteracts scale for 75% */
     }
 
-    p { font-size: 0.58em; }
+    p { font-size: 0.85em; }
 
     h1 { font-size: 1.2rem; }
     h2 { font-size: 1rem; }
