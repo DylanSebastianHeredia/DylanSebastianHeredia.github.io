@@ -92,47 +92,24 @@ img {
 }
 
 /* === MOBILE TEXT SIZE OVERRIDE === */
-@media (max-width: 768px) {
-    body {
-        font-size: 0.8rem !important;
-        line-height: 1.4 !important;
-        padding: 10px !important;
-    }
-
-    /* Make paragraph text smaller */
-    p {
-        font-size: 0.75rem !important;
-    }
-
-    /* Readable headings but smaller */
-    h1 { font-size: 1rem !important; }
-    h2 { font-size: 0.9rem !important; }
-    h3 { font-size: 0.85rem !important; }
-    h4 { font-size: 0.8rem !important; }
-    h5 { font-size: 0.75rem !important; }
-    h6 { font-size: 0.7rem !important; }
-
-    /* Other common text elements */
-    li, td, th, span, div {
-        font-size: 0.75rem !important;
-    }
-}
-
-/* === EXTRA SMALL SCREENS === */
-@media (max-width: 480px) {
-    body {
+@media screen and (max-width: 768px) {
+    html, body, * {
         font-size: 0.75rem !important;
     }
     
-    p {
-        font-size: 0.7rem !important;
-    }
+    /* Specific overrides for headings */
+    h1, .h1 { font-size: 1rem !important; }
+    h2, .h2 { font-size: 0.9rem !important; }
+    h3, .h3 { font-size: 0.85rem !important; }
     
-    h1 { font-size: 0.95rem !important; }
-    h2 { font-size: 0.85rem !important; }
-    h3 { font-size: 0.8rem !important; }
-    
-    li, td, th, span, div {
-        font-size: 0.7rem !important;
+    /* Target common Quarto classes */
+    .quarto-title, .title, .subtitle, 
+    .quarto-section-identifier,
+    .panel-tabset, .tab-content,
+    .callout, .callout-body,
+    .sidebar, .sidebar *,
+    .content, .content *,
+    p, li, td, th, span, div, a {
+        font-size: 0.75rem !important;
     }
 }
