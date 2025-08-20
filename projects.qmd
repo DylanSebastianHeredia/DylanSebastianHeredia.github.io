@@ -194,7 +194,7 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
     Developed a user-frienly, web-based application using Streamlit for creating, editing, and exporting 
     CVs in compliance with the General Internal Medicine (GIM) CV Guidelines. Designed an interactive dashboard 
     interface where users can select a CV from a manager panel, populate accordion-style surveys corresponding 
-    to guideline sections (e.g. Business Information, Education), and export a formatted MS Word file.
+    to guideline sections, and export a formatted MS Word file.
   </p>
 
   <p>
