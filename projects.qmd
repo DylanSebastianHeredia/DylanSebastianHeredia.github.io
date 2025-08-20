@@ -102,6 +102,7 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
 </div>
 </div>
 
+
 ### Pickleball Paddle ###
 
 <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
@@ -129,7 +130,6 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
       ▶ Video
     </button>
   </a>
-</div>
 </div>
 </div>
 
