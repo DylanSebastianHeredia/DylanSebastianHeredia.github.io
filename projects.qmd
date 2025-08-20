@@ -4,13 +4,11 @@ toc: false
 format: html
 ---
 <p class="justified-indent"> 
-Through a breadth and depth of hands-on personal projects, I've develop new
-and useful skills to broaden my engineering problem solving toolbox. I believe projects and experiments are 
-the best way to learn for yourself what works and what doesn't, and adjust as needed to keep
-moving foward. My projects bring me great satisfaction and I love putting in the time and effort
-to bringing my ideas to life. If they work, wonderful! And if they don't turn out as expected, 
-I take what I've learned and quickly and efficiently modify my methods until I reach my goal. 
-Check out some of the projects I've worked on so far!
+Through a wide range of hands-on projects, I’ve applied engineering principles beyond the classroom to design, 
+prototype, and build solutions across electronics, manufacturing, and web development. These projects reflect 
+my curiosity and persistence. Wwhether programming microcontrollers, machining custom hardware, or developing 
+user-friendly software tools, I approach each challenge with an iterative problem-solving mindset. By experimenting, 
+testing, and refining, I’ve expanded my technical toolbox while cultivating creativity, precision, and adaptability.
 </p>
 
 ## Electronics ##
@@ -32,7 +30,7 @@ Check out some of the projects I've worked on so far!
 
   <p class="justify-text"> 
     __Skills:__ <br>
-    Arduino
+    Arduino, Breadboarding, DMM
   </p>
 
   <a href="stopwatch.mp4" target="_blank">
@@ -47,7 +45,7 @@ Check out some of the projects I've worked on so far!
 
 <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
 <div style="flex: 2; width: 300px;">
-<img src="images/simon_says.png" alt="Simon" style="width:100%; border-radius: 15px;">
+<img src="images/simon_says.png" alt="Simon Says" style="width:100%; border-radius: 15px;">
 </div>
   <div style="flex: 2; min-width: 300px;">
   <p class="justify-text"> 
@@ -60,7 +58,7 @@ Check out some of the projects I've worked on so far!
 
   <p> 
     __Skills:__ <br>
-    Arduino
+    Arduino, Breadboarding, DMM
   </p>
 
   <a href="simon.mp4" target="_blank">
@@ -74,11 +72,41 @@ Check out some of the projects I've worked on so far!
 
 ## Manufacturing ##
 
+### Mudd Amateur Rocketry Club ###
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/Gladius_3.jpg" alt="Gladius 3" style="width:100%; border-radius: 15px;">
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <p class="justify-text">
+    __Overview:__ <br>
+    Contributed to the design and fabrication of fins for the Mudd Amateur Rocketry Club (MARC) 
+    high-powered rocket. Machined and attached carbon fiber fins using power tools, sand paper, 
+    and epoxy to ensure accurate fit within the aft rocket body. Pursuing L1 certification
+    (*Expected Fall 2025*).
+  </p>
+
+  <p>
+    __Skills:__ <br>
+    Dremel, Power Tools, Epoxy
+  </p>
+
+  <div style="display: flex; gap: 10px;">
+  <a href="gladius.mp4" target="_blank">
+    <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
+      ▶ Video
+    </button>
+  </a>
+</div>
+</div>
+
 ### Pickleball Paddle ###
 
 <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
 <div style="flex: 2; width: 300px;">
-<img src="images/pickleball.jpg" alt="ROV" style="width:100%; border-radius: 15px;">
+<img src="images/pickleball.jpg" alt="Pickleball Paddle" style="width:100%; border-radius: 15px;">
 </div>
 
 <div style="flex: 2; min-width: 300px;">
@@ -109,7 +137,7 @@ Check out some of the projects I've worked on so far!
 
 <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
 <div style="flex: 2; width: 300px;">
-<img src="images/wooden_pen.jpg" alt="ROV" style="width:100%; border-radius: 15px;">
+<img src="images/wooden_pen.jpg" alt="Ballpoint Pen" style="width:100%; border-radius: 15px;">
 </div>
 
 <div style="flex: 2; min-width: 300px;">
@@ -131,7 +159,7 @@ Check out some of the projects I've worked on so far!
 
 <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
 <div style="flex: 2; width: 300px;">
-<img src="images/cheese_knife.png" alt="ROV" style="width:100%; border-radius: 15px;">
+<img src="images/cheese_knife.png" alt="Cheese Knife" style="width:100%; border-radius: 15px;">
 </div>
 
 <div style="flex: 2; min-width: 300px;">
@@ -146,6 +174,54 @@ Check out some of the projects I've worked on so far!
   <p>
     __Skills:__ <br>
     Bandsaw, Belt Sander, Spindle Sander
+  </p>
+</div>
+</div>
+
+
+## Web Development ##
+
+### UCLA GIM CV Formatter ###
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/GIM_CV.jpg" alt="GIM CV Formatter" style="width:100%; border-radius: 15px;">
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <p class="justify-text">
+    __Overview:__ <br>
+    Developed a user-frienly, web-based application using Streamlit for creating, editing, and exporting 
+    CVs in compliance with the General Internal Medicine (GIM) CV Guidelines. Designed an interactive dashboard 
+    interface where users can select a CV from a manager panel, populate accordion-style surveys corresponding 
+    to guideline sections (e.g. Business Information, Education), and export a formatted MS Word file.
+  </p>
+
+  <p>
+    __Skills:__ <br>
+    Python, Streamlit, APIs, Firebase, Design Process
+  </p>
+</div>
+</div>
+
+### UCLA DOMStat Website ###
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/DOMStat_Website.jpg" alt="DOMStat Website" style="width:100%; border-radius: 15px;">
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <p class="justify-text">
+    __Overview:__ <br>
+    Contributed to the redesign and population of the updated UCLA Department of Medicine Statistics Core (DOMStat) 
+    [website](https://domstat.med.ucla.edu/), ensuring a user-centered interface with emphasis on accessibility and 
+    induitinve navigation. Applied consistent visual design principles to align wiht UCLA Health brand identity. 
+  </p>
+
+  <p>
+    __Skills:__ <br>
+    Content Strategy, UI/UX, SEO
   </p>
 </div>
 </div>
