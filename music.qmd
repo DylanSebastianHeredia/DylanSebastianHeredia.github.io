@@ -34,9 +34,7 @@ format: html
   <p class="justify-text"> 
     In June 2022, the Santa Monica High School (SAMOHI) [Symphony Orchestra](https://www.samohiorchestras.org/orchestras),
     a full orchestra comprised of over 80 student musicians toured New York City, performing at [Carnegie Hall](https://www.carnegiehall.org/) 
-    and [St. Malachy Church](https://actorschapel.org/). During the tour we attended workshops and master-classes. Additionally,
-    we visited locations like the Rockefeller Building, Statue of Liberty, and the 9/11 Memorial Pool to
-    learn more about the city's important history.
+    and [St. Malachy Church](https://actorschapel.org/). During the tour we attended workshops and master-classes.
   </p>
 
   <div style="display: flex; gap: 10px;">
@@ -105,7 +103,7 @@ format: html
 <p class="justify-text"> 
   I've been a part of the California Orchestra Directors Association ([CODA](https://www.codaorchestras.org/about/)) for 4 
   years and the Sourthern California Band & Orchestra Association ([SCSBOA](https://www.scsboa.org/)) for 5 
-  years, sitting Assistant Principalfor 1 year and Principal for 3 years. Each year
+  years, sitting Assistant Principal for 1 year and Principal for 3 years. Each year
   100+ students apply for CODA and 60+ students for SCSBOA. Musicians are selected
   via audition to come together for a week to prepare a concert at the music educator
   conferences in Fresno, CA and Orange County, CA. 
