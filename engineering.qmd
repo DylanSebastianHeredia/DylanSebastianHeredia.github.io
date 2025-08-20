@@ -378,7 +378,7 @@ thermistor circuits to the project PCB.
 
   <a href="asv_demo.mp4" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
-      ▶ Watch Video
+      ▶ Video
     </button>
   </a>
   <a href="documents/E80_tech_memo.pdf" target="_blank">
@@ -490,7 +490,7 @@ thermistor circuits to the project PCB.
 
   <a href="level.mp4" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
-      ▶ Watch Video
+      ▶ Video
     </button>
   </a>
   <a href="documents/Lab8_DSH_FINAL.txt" target="_blank">

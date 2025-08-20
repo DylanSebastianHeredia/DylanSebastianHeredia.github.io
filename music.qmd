@@ -42,7 +42,7 @@ format: html
   <div style="display: flex; gap: 10px;">
   <a href="https://youtu.be/Q0KRxaMR6uk?si=Tk_s9-C9N-cCaTrH" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
-      ▶ Watch Video
+      ▶ Video
     </button>
   </a>
 </div>
@@ -68,7 +68,7 @@ format: html
 <div style="display: flex; gap: 10px;">
   <a href="https://www.youtube.com/watch?v=S-Q4q2CwhvA" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
-      ▶ Watch Video
+      ▶ Video
     </button>
   </a>
   
@@ -114,7 +114,7 @@ format: html
 </p>
   <a href="https://youtu.be/IHsU_v2hrqA?si=alCWZBNHVwGcafLG" target="_blank">
       <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
-        ▶ Watch Video
+        ▶ Video
       </button>
   </a>
 </div>
@@ -136,7 +136,7 @@ format: html
 </p>
   <a href="duet.mp4" target="_blank">
       <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
-        ▶ Watch Video
+        ▶ Video
       </button>
   </a>
 </div>
