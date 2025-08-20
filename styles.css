@@ -115,7 +115,7 @@ img {
         box-sizing: border-box;
 
         /* Scale down content inside the container */
-        transform: scale(0.75);       /* visually smaller content */
+        transform: scale(0.5);       /* visually smaller content */
         transform-origin: top left;   /* scale relative to top-left */
     }
 
@@ -125,7 +125,7 @@ img {
     }
 
     /* Optional: adjust headings and paragraphs slightly */
-    p { font-size: 0.5rem; }
+    p { font-size: 0.9rem; }
     h1 { font-size: 1.1rem; }
     h2 { font-size: 1rem; }
     h3 { font-size: 0.9rem; }
