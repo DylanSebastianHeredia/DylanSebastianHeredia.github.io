@@ -91,45 +91,48 @@ img {
     height: auto;
 }
 
-/* === Mobile Fix (≤768px) === */
+/* === MOBILE TEXT SIZE OVERRIDE === */
 @media (max-width: 768px) {
     body {
-        font-size: 0.85rem;  /* base font for headings etc */
-        line-height: 1.4;
-        padding: 10px;
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+        padding: 10px !important;
     }
 
-    /* Make only paragraph text smaller */
+    /* Make paragraph text smaller */
     p {
-        font-size: 0.8rem;
+        font-size: 0.75rem !important;
     }
 
-    /* Headings stay readable */
-    h1 { font-size: 1.1rem; }
-    h2 { font-size: 1rem; }
-    h3 { font-size: 0.9rem; }
+    /* Readable headings but smaller */
+    h1 { font-size: 1rem !important; }
+    h2 { font-size: 0.9rem !important; }
+    h3 { font-size: 0.85rem !important; }
+    h4 { font-size: 0.8rem !important; }
+    h5 { font-size: 0.75rem !important; }
+    h6 { font-size: 0.7rem !important; }
 
-    .row {
-        display: flex;
-        flex-wrap: wrap;     
-    }
-
-    .column {
-        flex: 1 1 100% !important;
-        max-width: 100% !important;
-        margin: 5px 0;
-        box-sizing: border-box;
-    }
-
-    .column img {
-        width: 100%;
-        height: auto;
+    /* Other common text elements */
+    li, td, th, span, div {
+        font-size: 0.75rem !important;
     }
 }
 
-/* === Extra Small Screens (≤480px) === */
+/* === EXTRA SMALL SCREENS === */
 @media (max-width: 480px) {
+    body {
+        font-size: 0.75rem !important;
+    }
+    
     p {
-        font-size: 0.75rem;  /* even smaller paragraphs */
+        font-size: 0.7rem !important;
+    }
+    
+    h1 { font-size: 0.95rem !important; }
+    h2 { font-size: 0.85rem !important; }
+    h3 { font-size: 0.8rem !important; }
+    
+    li, td, th, span, div {
+        font-size: 0.7rem !important;
     }
 }
