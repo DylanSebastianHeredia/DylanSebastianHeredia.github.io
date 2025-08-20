@@ -98,21 +98,16 @@ img {
     }
 
     body {
-        font-size: 0.85rem;  
-        line-height: 1.5;
+        font-size: 0.75rem;  /* smaller text */
+        line-height: 1.4;
         padding: 10px;
-
-        /* Scale down visually to ~75% */
-        transform: scale(0.75);
-        transform-origin: top left;
-        width: 133.33%;  /* counteracts scale for 75% */
     }
 
-    p { font-size: 0.85em; }
+    p { font-size: 0.8rem; }
 
-    h1 { font-size: 1.2rem; }
-    h2 { font-size: 1rem; }
-    h3 { font-size: 0.9rem; }
+    h1 { font-size: 1.1rem; }
+    h2 { font-size: 0.95rem; }
+    h3 { font-size: 0.85rem; }
 
     .row {
         display: flex;
