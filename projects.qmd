@@ -216,7 +216,7 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
     __Overview:__ <br>
     Contributed to the redesign and population of the updated UCLA Department of Medicine Statistics Core (DOMStat) 
     [website](https://domstat.med.ucla.edu/), ensuring a user-centered interface with emphasis on accessibility and 
-    induitinve navigation. Applied consistent visual design principles to align wiht UCLA Health brand identity. 
+    intuitive navigation. Applied consistent visual design principles to align with UCLA Health brand identity. 
   </p>
 
   <p>
