@@ -56,7 +56,7 @@ buttons below, learn more about the __What__, __How__, and __Results__ of each p
     proctor. 
   </p>
 
-  <p class="justify-text"> 
+  <p> 
     __Skills:__ <br>
     GD&T, Lathe, Mill, Bandsaw, Router, Taps, Digital Micrometers, HRC Hardness Tester, Laser Cutter
   </p>
@@ -153,7 +153,7 @@ buttons below, learn more about the __What__, __How__, and __Results__ of each p
     addressing signal loss from thick or dark hair. 
   </p>
 
-  <p class="justify-text"> 
+  <p> 
     __Skills:__ <br>
     Project & Design Management, Client Communication 
   </p>  
@@ -261,7 +261,7 @@ buttons below, learn more about the __What__, __How__, and __Results__ of each p
     [Robert J. Bernard Biological Field Station](https://fbbfs.org/about.html).
   </p>
 
-  <p class="justify-text"> 
+  <p> 
     __Skills:__ <br>
     LabVIEW, Soldering, Oscilloscope, PCB Assembly, DMM, Breadboarding
   </p>
@@ -355,11 +355,12 @@ thermistor circuits to the project PCB.
 
 <div style="flex: 2; min-width: 300px;">
   <p class="justify-text"> 
-    Designed and built an AUV to measure water depth at [Baby Beach]((https://visitdanapoint.com/what-to-do/baby-beach/)), Dana 
-    Point Harbor, CA. The project integrated mechanical, electrical, and pressure sensing systems to measure depth. 
+    __Overview:__ <br>
+    Designed and built an AUV to measure water depth at [Baby Beach](https://visitdanapoint.com/what-to-do/baby-beach/), Dana 
+    Point Harbor, CA through mechanical, electrical, and pressure-based methods.
   </p>
 
-  <p class="justify-text"> 
+  <p> 
     __Skills:__ <br>
     Arduino, MATLAB, Power Tools, BOM
   </p>
@@ -476,11 +477,15 @@ thermistor circuits to the project PCB.
 
 <div style="flex: 2; min-width: 300px;">
   <p class="justify-text">
-    Combining an accelerometer and 7x7 of the LEDs in a [JMM-788BS](documents/JMM-788BS.pdf) LED array with technical skills in 
-    soldering, breadboaring, and C Code, I created a 2D-digital level to 
-    determine whether or not my dorm desk was level. For this project, I used a [SparkFun 
-    RED-V ThingPlus](images/digital_level/redvthingpluspins.PNG) board. The purpose of this
-    project was to write embedded software to control external peripherals.
+    __Overview:__ <br>
+    Built a 2D-digital level using a [SparkFun RED-V ThingPlus](images/digital_level/redvthingpluspins.PNG) microcontroller, 
+    a 7x7 LED matrix, and a triple-axis accelerometer with SPI communication. Gained experince with embedded software and 
+    signal processing in real-time.
+  </p>
+
+  <p>
+    __Skills:__ <br>
+    C/C++, SPI Communication, Calibration, Soldering
   </p>
 
 <div style="display: flex; gap: 10px;">
@@ -512,16 +517,12 @@ thermistor circuits to the project PCB.
 
 <img src="images/digital_level/level_portrait.png" alt="Level" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 10px;">
+<div style="padding: 5px; font-size: 0.8rem;">
+
+- Created a digital level that maps tilt angles from a triple-axis accelerometer to a 7x7 LED matrix "bubble" display. <br><br>
+- Bubble motion indicated surface tilt in X and Y axes, stopping at matrix edges for extreme angles. 
+
 </div>
-
-- The LED matrix displays a red "bubble" indicating the orientation of the __accelerometer__ in the x and 
-y axes. 
-
--  When the accelerometer is level, the bubble lies at the center of the 7x7 LED matrix display. 
-
-- The bubble stops at the edge of the matrix if the tilt of the breadboard is too large. 
-
 </p>
 </div>
 <div class="column">
@@ -531,15 +532,12 @@ y axes.
 
 <img src="images/digital_level/level_soldering1.png" alt="Level" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 10px;">
+<div style="padding: 5px; font-size: 0.8rem;">
+
+- Programmed RED-V ThingPlus in C using SPI communication to interface with the accelerometer. <br><br>
+- Implemented real-time signal processing and calibration to ensure smooth, flicker-free bubble motion across the display. <br><br>
+
 </div>
-
-- Interpreted LED __data sheet__ to determine current limiting resistor values as well as pinout configuration. 
-
-- __Soldered__ accelerometer and created a __circuit schematic__ to streamline __C Code__. 
-
-- Calibrated accelerometer by tilting in 5º intevals along axes and recording output readings. 
-
 </p>
 </div>
 <div class="column">
@@ -547,21 +545,14 @@ y axes.
 </p>
 <p> 
 
-
 <img src="images/digital_level/level_image.jpg" alt="Level" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 10px;">
+<div style="padding: 5px; font-size: 0.8rem;">
+
+- Achieved accurate, smooth, and reliable bubble display, validating full end-to-end embeded system integration. <br><br>
+- Designed a sensitive and practical 2D-digital tool with immediate real-world use. 
+
 </div>
-
-- Click [Digital Demo](level.mp4) to view a video demo of 
-the level on my desk. 
-
-- Wrote embedded software using [C Code](documents/Lab8_DSH_FINAL.txt) to control __external peripherals__. 
-
-- Designed an accurate and sensitive 2D-digital level.
-
-- Determined that my dorm desk is level!
-
 </p>
 </div>
 </div>
@@ -596,10 +587,14 @@ the level on my desk.
 
 <div style="flex: 2; min-width: 300px;">
   <p class="justify-text">
-    My final project for E85 was to build, simulate, and debug a multicycle processor in SystemVerilog. 
-    This project built upon the ALU Decoder and Single-cycle processor we designed in previous labs. This CPU was able to 
-    store memory and could execute arithmetic operations. To view a larger version of the images for this project as well
-    as my code, click the options below. 
+    __Overview:__ <br>
+    Designed and implemented a 32-bit RISC-V multicycle processor in SystemVerilog usign Quartus and Questa. Developed experience in digital 
+    design, datapath and control logic, and modular architecture. 
+  </p>
+
+  <p>
+    __Skills:__ <br>
+    SystemVerilog, HDL, Assembly, Machine Language, RISC-V, Quartus FPGA, Questa
   </p>
 
 <div style="display: flex; gap: 10px;">
@@ -624,14 +619,13 @@ the level on my desk.
 
 <img src="images/multicycle/schematic_top.jpg" alt="Multicycle" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 10px;">
+<div style="padding: 5px; font-size: 0.8rem;">
+
+- Click [here](images/multicycle/Multicycle_Code.pdf) to see diagrams. <br><br>
+- Built a multicycle CPU capable of executing arithmetic instructions, managing memory, adn performing real-time instruction execution. <br><br>
+- Leveraged single-cycle processor components such as muxes, registers, adders, and control logic to construct a modular multicycle architecture.
+
 </div>
-
-- Created a 32-bit multicycle computer processor that can compute arithmetic operations,
-manage memory, and execute instructions in real-time. 
-
-- Click [Multicycle Code](images/multicycle/Multicycle_Code.pdf) to view my code starting on page 2.  
-
 </p>
 </div>
 <div class="column">
@@ -639,16 +633,13 @@ manage memory, and execute instructions in real-time.
 
 <img src="images/multicycle/instantiation.jpg" alt="Multicycle" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 10px;">
+<div style="padding: 5px; font-size: 0.8rem;">
+
+- Wrote SystemVerilog datapath connecting controller, memory, and register file modules. <br><br>
+- Systematically debugged by comparing assembly and machine language test benches against waveforms to correct errors. <br><br>
+- Consulted Quartus RLT schematic to ensure accurate I/O connections.
+
 </div>
-
-- Wrote a datapath in __SystemVerilog__ to connect controller, memory, and register file components.
-
-- Systematically __debugged__ my code by comparing __assembly__ and __machine language__ test benches against waveforms, 
-identifying error origins.
-
-- Consulted Quartus RLT schematic to ensure accurate I/O ports.
-
 </p>
 </div>
 <div class="column">
@@ -656,16 +647,12 @@ identifying error origins.
 
 <img src="images/multicycle/waveforms.jpg" alt="Multicycle" style="width:100%; border-radius: 15px;">
 
-<div style="padding: 10px;">
+<div style="padding: 5px; font-size: 0.8rem;">
+
+- 32-Bit RISC-V Multicycle processor matched waveform expectations, indicating that the corret values where written to the correct addresses. <br><br>
+- Deepened understanding of RISC-V architecture, processor design principles, and real-time instruction execution.
+
 </div>
-
-- 32-Bit RISC-V Multicycle processor matched waveform expectations, indicating that the corret values where
-written to the correct address. 
-
-- Adapted Single-cycle processor building blocks such as muxes, registers, and adders for Multicycle processor use. 
-
-- Deep understanding of function instantiation and module hierarchy for SystemVerilog.
-
 </p>
 </div>
 </div>
