@@ -71,8 +71,6 @@ format: html
       ▶ Video
     </button>
   </a>
-  
-  </a>
 </div>
 </div>
 </div>
