@@ -366,7 +366,7 @@ thermistor circuits to the project PCB.
   </p>
 
   <p class="justify-text"> 
-    __Team:__ <br>
+    __Team:__
     John S. | 
     [Georgia T.](https://www.linkedin.com/in/georgia-tai/) |
     [Simone Y.](https://www.linkedin.com/in/simone-yang/)
