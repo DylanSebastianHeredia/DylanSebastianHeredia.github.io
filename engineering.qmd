@@ -160,8 +160,8 @@ buttons below, learn more about the __What__, __How__, and __Results__ of each p
 
   <p class="justify-text"> 
     __Team:__ 
-    [Annette C.](https://www.linkedin.com/in/annette-chang-b31b592ba/) |
     [Brock B.](https://www.linkedin.com/in/brockbownds/) |
+    [Annette C.](https://www.linkedin.com/in/annette-chang-b31b592ba/) |
     [Gabrielle R.](https://www.linkedin.com/in/gabbyreynolds/).
   </p>
 
