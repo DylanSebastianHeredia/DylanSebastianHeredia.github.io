@@ -356,13 +356,13 @@ thermistor circuits to the project PCB.
 <div style="flex: 2; min-width: 300px;">
   <p class="justify-text"> 
     __Overview:__ <br>
-    Designed and built an AUV to measure water depth at [Baby Beach](https://visitdanapoint.com/what-to-do/baby-beach/), Dana 
-    Point Harbor, CA through mechanical, electrical, and pressure-based methods.
+    Designed and deployed an Autonomous Surface Vehicle (ASV) to map water depth at [Baby Beach](https://visitdanapoint.com/what-to-do/baby-beach/), 
+    Dana Point Harbor, CA using mechanical, electrical, and pressure-based sensing techniques.
   </p>
 
   <p> 
     __Skills:__ <br>
-    Arduino, MATLAB, Power Tools, BOM
+    Arduino, MATLAB, Power Tools, BOM, 3D-Printing
   </p>
 
   <p class="justify-text"> 
@@ -403,9 +403,10 @@ thermistor circuits to the project PCB.
 
 <div style="padding: 5px; font-size: 0.8rem;">
 
-1. When lowered, the Hall effect sensor counts revolutions of the winch spool with a known radius. <br><br>
-2. When lowered, The pressure sensor can be related to depth via a calibration curve. <br><br>
-3. When raised, integrating motor-pulling speed with respect to time to find distance.
+- Measured underwater depth using three complementary sensing methods: <br>
+1. __Hall effect sensor__ embedded in a 3D-printed winch and spool for mechanical depth measurement. <br><br>
+2. __Pressure sensor__ calibrated for direct depth readings. <br><br>
+3. __Motor-based voltage integration__ to estimate depth during retrieval. <br><br>
 
 </div>
 </p>
@@ -419,9 +420,11 @@ thermistor circuits to the project PCB.
 
 <div style="padding: 5px; font-size: 0.8rem;">
 
-- Researched electrical components to safety design circuitry. <br><br>
-- Used power tools to construct a lightweight, buoyant ASV frame. <br><br>
-- Iterated Arduino code on the [Teensy 4.0](https://www.pjrc.com/teensy/card10a_rev2_web.pdf) in order to interface all components at specific times.
+- Designed and created a lightweight, buoyant ASV frame using power tools. <br><br>
+- Waterproofed electronics housing container using epoxy and Parafilm. <br><br>
+- Iterated Arduino code on the [Teensy 4.0](https://www.pjrc.com/teensy/card10a_rev2_web.pdf) microcontroller in order to interface components. <br><br>
+- Performed magnetometer calibration on the ASV's IMU.
+
 
 </div>
 </p>
@@ -436,8 +439,8 @@ thermistor circuits to the project PCB.
 <div style="padding: 5px; font-size: 0.8rem;">
 
 - Gained experience with the fast-pace reality of product development in a real-world environment. <br><br>
-- Learned how to effectively manage a project and meet budget and time constraints. <br><br>
-- Mapped a depth path from the Baby Beach dock to the shore with low-cost sensors ($50 budget).
+- Learned how to effectively manage a project and adhere to time and budget constraints. <br><br>
+- Validated the effectiveness of low-cost ($50 budget), multi-sensor ASVs for generating high-resolution shore plots.
 
 </div>
 </p>
