@@ -98,16 +98,10 @@ img {
     }
 
     body {
-        font-size: 0.75rem;  /* smaller text */
+        font-size: 0.75rem;  /* base font smaller */
         line-height: 1.4;
         padding: 10px;
     }
-
-    p { font-size: 0.8rem; }
-
-    h1 { font-size: 1.1rem; }
-    h2 { font-size: 0.95rem; }
-    h3 { font-size: 0.85rem; }
 
     .row {
         display: flex;
@@ -115,16 +109,26 @@ img {
     }
 
     .column {
-        flex: 1 1 50% !important;  
-        max-width: 50% !important; 
-        margin: 5px 0;             
+        flex: 1 1 100% !important;  /* full width containers */
+        max-width: 100% !important;
+        margin: 5px 0;
         box-sizing: border-box;
+
+        /* Scale down content inside the container */
+        transform: scale(0.75);       /* visually smaller content */
+        transform-origin: top left;   /* scale relative to top-left */
     }
 
     .column img {
-        max-width: 100%;
+        width: 100%;
         height: auto;
     }
+
+    /* Optional: adjust headings and paragraphs slightly */
+    p { font-size: 0.9rem; }
+    h1 { font-size: 1.1rem; }
+    h2 { font-size: 1rem; }
+    h3 { font-size: 0.9rem; }
 }
 
 /* === Extra Small Screens (≤480px) === */
@@ -132,5 +136,7 @@ img {
     .column {
         flex: 1 1 100% !important;
         max-width: 100% !important;
+        transform: scale(0.7);          /* scale even smaller for tiny screens */
+        transform-origin: top left;
     }
 }
