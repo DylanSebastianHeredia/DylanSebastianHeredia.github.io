@@ -478,9 +478,8 @@ thermistor circuits to the project PCB.
 <div style="flex: 2; min-width: 300px;">
   <p class="justify-text">
     __Overview:__ <br>
-    Built a 2D-digital level using a [SparkFun RED-V ThingPlus](images/digital_level/redvthingpluspins.PNG) microcontroller, 
-    a 7x7 LED matrix, and a triple-axis accelerometer with SPI communication. Gained experince with embedded software and 
-    signal processing in real-time.
+    Built a 2D-digital level using a microcontroller, a 7x7 LED matrix, and a triple-axis accelerometer with SPI communication. 
+    Gained experince with embedded software and signal processing in real-time.
   </p>
 
   <p>
@@ -534,7 +533,7 @@ thermistor circuits to the project PCB.
 
 <div style="padding: 5px; font-size: 0.8rem;">
 
-- Programmed RED-V ThingPlus in C using SPI communication to interface with the accelerometer. <br><br>
+- Programmed a [RED-V ThingPlus](images/digital_level/redvthingpluspins.PNG) microcontroller in C using SPI communication to interface with the accelerometer. <br><br>
 - Implemented real-time signal processing and calibration to ensure smooth, flicker-free bubble motion across the display. <br><br>
 
 </div>
