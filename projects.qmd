@@ -40,7 +40,6 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
   </a>
 </div>
 </div>
-</div>
 
 ### Simon Says ###
 
@@ -67,7 +66,6 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
       ▶ Video
     </button>
   </a>
-</div>
 </div>
 </div>
 
@@ -103,7 +101,6 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
   </a>
 </div>
 </div>
-</div>
 
 ### Pickleball Paddle ###
 
@@ -134,7 +131,6 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
   </a>
 </div>
 </div>
-</div>
 
 ### Ballpoint Pen ###
 
@@ -155,7 +151,6 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
     __Skills:__ <br>
     Wood Lathe, Gouges, Wood Varnish, Arbor Press
   </p>
-</div>
 </div>
 </div>
 
@@ -179,7 +174,6 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
     __Skills:__ <br>
     Bandsaw, Belt Sander, Spindle Sander
   </p>
-</div>
 </div>
 </div>
 
@@ -208,7 +202,6 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
   </p>
 </div>
 </div>
-</div>
 
 ### UCLA DOMStat Website ###
 
@@ -229,6 +222,5 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
     __Skills:__ <br>
     Content Strategy, UI/UX, SEO
   </p>
-</div>
 </div>
 </div>
