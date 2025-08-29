@@ -93,7 +93,6 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
     Dremel, Power Tools, Epoxy
   </p>
 
-  <div style="display: flex; gap: 10px;">
   <a href="gladius.mp4" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
       ▶ Video
@@ -123,7 +122,6 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
     ShopBot, CNC Router, Laser Cutter, Calipers
   </p>
 
-  <div style="display: flex; gap: 10px;">
   <a href="shopbot.mp4" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
       ▶ Video
