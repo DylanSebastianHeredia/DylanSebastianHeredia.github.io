@@ -13,7 +13,13 @@ website:
         text: Music & Performance
       - href: outdoors.qmd
         text: Sports & Outdoors
-        
+      - text: E155 Microprocessor Labs
+        menu:
+          - href: E155_Lab_1.qmd
+            text: Lab 1 - FPGA & MCU Setup
+      - href: blog.qmd
+        text: Blog
+
 format:
   html:
     theme: flatly # Applies built-in "jolla" style across site
