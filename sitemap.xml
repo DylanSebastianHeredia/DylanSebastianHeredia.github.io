@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://DylanSebastianHeredia.github.io/blog.html</loc>
+    <lastmod>2025-08-29T20:26:22.478Z</lastmod>
+  </url>
+  <url>
     <loc>https://DylanSebastianHeredia.github.io/engineering.html</loc>
     <lastmod>2025-08-20T08:56:27.782Z</lastmod>
   </url>
   <url>
     <loc>https://DylanSebastianHeredia.github.io/projects.html</loc>
-    <lastmod>2025-08-21T02:32:10.566Z</lastmod>
-  </url>
-  <url>
-    <loc>https://DylanSebastianHeredia.github.io/music.html</loc>
-    <lastmod>2025-08-20T17:22:39.985Z</lastmod>
+    <lastmod>2025-08-26T05:15:07.359Z</lastmod>
   </url>
   <url>
     <loc>https://DylanSebastianHeredia.github.io/outdoors.html</loc>
     <lastmod>2025-08-20T07:42:32.722Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DylanSebastianHeredia.github.io/music.html</loc>
+    <lastmod>2025-08-20T17:22:39.985Z</lastmod>
   </url>
   <url>
     <loc>https://DylanSebastianHeredia.github.io/projects/demo-project/index.html</loc>
@@ -23,5 +27,9 @@
   <url>
     <loc>https://DylanSebastianHeredia.github.io/index.html</loc>
     <lastmod>2025-08-19T23:49:42.927Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DylanSebastianHeredia.github.io/E155_Lab_1.html</loc>
+    <lastmod>2025-08-29T20:27:54.044Z</lastmod>
   </url>
 </urlset>

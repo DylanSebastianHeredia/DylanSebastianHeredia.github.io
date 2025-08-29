@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Coming Soon"
+  },
+  {
     "objectID": "engineering.html",
     "href": "engineering.html",
     "title": "Engineering Class Projects",
@@ -53,7 +60,7 @@
     "href": "projects.html#manufacturing",
     "title": "Personal Projects",
     "section": "Manufacturing",
-    "text": "Manufacturing\n\nMudd Amateur Rocketry Club\n\n\n\n\n\n\nOverview:  Contributed to the design and fabrication of fins for the Mudd Amateur Rocketry Club (MARC) high-powered rocket. Machined and attached carbon fiber fins using power tools, sand paper, and epoxy to ensure accurate fit within the aft rocket body. Pursuing L1 certification (Expected Fall 2025).\n\n\nSkills:  Dremel, Power Tools, Epoxy\n\n\n  ▶ Video  \n\n\n\nPickleball Paddle\n\n\n\n\n\n\nOverview:  Designed and built a pickleball paddle for the 2025 Machine Shop Proctor Tournament. Modeled paddle dimensions based on reference measurements and programmed toolpaths on the ShopBot CNC Router, including cutting strategies, feed rates, and tab placement for safe and precise milling. Painted and laser-cut a stencil for precise lettering.\n\n\nSkills:  ShopBot, CNC Router, Laser Cutter, Calipers\n\n\n  ▶ Video  \n\n\n\nBallpoint Pen\n\n\n\n\n\n\nOverview:  Created a ballpoint pen through precision woodturning. Operated a lathe with gouges to achieve consistent cylindrical symmetry, followed by progressive grit sanding for smoothness. Applied protective varnish finishing before press-fitting the mechanical hardware using an arbor press.\n\n\nSkills:  Wood Lathe, Gouges, Wood Varnish, Arbor Press\n\n\n\n\n\nCheese Knife\n\n\n\n\n\n\nOverview:  Produced a set of custom wooden utensils, including a cheese knife, as family holiday gifts. Sketched utensil profiles based on Wooden Utensils from the Bandsaw. Rough-cut stock material on the bandsaw, and shaped contours with sanders and hand-finishing. Applied mineral oil treatment for food safety and durability.\n\n\nSkills:  Bandsaw, Belt Sander, Spindle Sander\n\n\n\n\n\nWeb Development\n\nUCLA GIM CV Formatter\n\n\n\n\n\n\nOverview:  Developed a user-frienly, web-based application using Streamlit for creating, editing, and exporting CVs in compliance with the General Internal Medicine (GIM) CV Guidelines. Designed an interactive dashboard interface where users can select a CV from a manager panel, populate accordion-style surveys corresponding to guideline sections, and export a formatted MS Word file.\n\n\nSkills:  Python, Streamlit, APIs, Firebase, Design Process\n\n\n\n\n\nUCLA DOMStat Website\n\n\n\n\n\n\nOverview:  Contributed to the redesign and population of the updated UCLA Department of Medicine Statistics Core (DOMStat) website, ensuring a user-centered interface with emphasis on accessibility and intuitive navigation. Applied consistent visual design principles to align with UCLA Health brand identity.\n\n\nSkills:  Content Strategy, UI/UX, SEO"
+    "text": "Manufacturing\n\nMudd Amateur Rocketry Club\n\n\n\n\n\n\nOverview:  Contributed to the design and fabrication of fins for the Mudd Amateur Rocketry Club (MARC) high-powered rocket. Machined and attached carbon fiber fins using power tools, sand paper, and epoxy to ensure accurate fit within the aft rocket body. Pursuing L1 certification (Expected Fall 2025).\n\n\nSkills:  Dremel, Power Tools, Epoxy\n\n  ▶ Video  \n\n\n\n\nPickleball Paddle\n\n\n\n\n\n\nOverview:  Designed and built a pickleball paddle for the 2025 Machine Shop Proctor Tournament. Modeled paddle dimensions based on reference measurements and programmed toolpaths on the ShopBot CNC Router, including cutting strategies, feed rates, and tab placement for safe and precise milling. Painted and laser-cut a stencil for precise lettering.\n\n\nSkills:  ShopBot, CNC Router, Laser Cutter, Calipers\n\n  ▶ Video  \n\n\n\n\nBallpoint Pen\n\n\n\n\n\n\nOverview:  Created a ballpoint pen through precision woodturning. Operated a lathe with gouges to achieve consistent cylindrical symmetry, followed by progressive grit sanding for smoothness. Applied protective varnish finishing before press-fitting the mechanical hardware using an arbor press.\n\n\nSkills:  Wood Lathe, Gouges, Wood Varnish, Arbor Press\n\n\n\n\n\nCheese Knife\n\n\n\n\n\n\nOverview:  Produced a set of custom wooden utensils, including a cheese knife, as family holiday gifts. Sketched utensil profiles based on Wooden Utensils from the Bandsaw. Rough-cut stock material on the bandsaw, and shaped contours with sanders and hand-finishing. Applied mineral oil treatment for food safety and durability.\n\n\nSkills:  Bandsaw, Belt Sander, Spindle Sander"
   },
   {
     "objectID": "projects.html#web-development",
@@ -61,6 +68,34 @@
     "title": "Personal Projects",
     "section": "Web Development",
     "text": "Web Development\n\nUCLA GIM CV Formatter\n\n\n\n\n\n\nOverview:  Developed a user-frienly, web-based application using Streamlit for creating, editing, and exporting CVs in compliance with the General Internal Medicine (GIM) CV Guidelines. Designed an interactive dashboard interface where users can select a CV from a manager panel, populate accordion-style surveys corresponding to guideline sections, and export a formatted MS Word file.\n\n\nSkills:  Python, Streamlit, APIs, Firebase, Design Process\n\n\n\n\n\nUCLA DOMStat Website\n\n\n\n\n\n\nOverview:  Contributed to the redesign and population of the updated UCLA Department of Medicine Statistics Core (DOMStat) website, ensuring a user-centered interface with emphasis on accessibility and intuitive navigation. Applied consistent visual design principles to align with UCLA Health brand identity.\n\n\nSkills:  Content Strategy, UI/UX, SEO"
+  },
+  {
+    "objectID": "outdoors.html",
+    "href": "outdoors.html",
+    "title": "Sports & Outdoors",
+    "section": "",
+    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
+  },
+  {
+    "objectID": "outdoors.html#ultimate-frisbee",
+    "href": "outdoors.html#ultimate-frisbee",
+    "title": "Sports & Outdoors",
+    "section": "",
+    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
+  },
+  {
+    "objectID": "outdoors.html#running",
+    "href": "outdoors.html#running",
+    "title": "Sports & Outdoors",
+    "section": "Running",
+    "text": "Running\n\nI began running consistently in Summer 2024 and have since achieved several personal milestones. Fall 2024, I ran a 10K Turkey Trot with my dad. Over Winter break, I logged 100 miles. And most recently, I completed my first half marathon this Summer 2025. I often complement my runs with jump rope, stair climbing, yoga, and weight training. Feel free to connect with me on Strava!\n\n\n\n\n\n\n\n\nRun at sunset in Los Angeles, CA\n\n\n\n\n\n\n\n\nNeighborhood run club with friends\n\n\n\n\n\n\n\n\nHalf marathon in Santa Monica, CA"
+  },
+  {
+    "objectID": "outdoors.html#pickleball",
+    "href": "outdoors.html#pickleball",
+    "title": "Sports & Outdoors",
+    "section": "Pickleball",
+    "text": "Pickleball\n\nOn weekends, my friends and I play pickleball at the Robert’s Pavillion at Claremont McKenna College. We play singles, doubles, and king of the court style play. It’s always a good time and our play sessions last anywhere from 2-4 hours each.\n\n\n\n\n\n\n\n\nWeekend pickleball with friends\n\n\n\n\n\n\n\n\nMachine Shop proctor tournament\n\n\n\n\n\n\n\n\nPickleball in Westchester, CA"
   },
   {
     "objectID": "music.html",
@@ -105,34 +140,6 @@
     "text": "Recordings & Compositions\n\n\n\n\n\n\nI love playing duets with recordings of myself or digital instruments, and throughout the years I’ve started writing down my compositions. After class and on weekends, I also enjoy learning pop songs with my friends, pianist, Kai Mawhinney, and vocalist and guitarist, Emmett Levine. We often improvise together and have performed on the Claremont College student radio, KSPC, and at Emmett’s Guitar Club recitals.\n\n  ▶ Video"
   },
   {
-    "objectID": "outdoors.html",
-    "href": "outdoors.html",
-    "title": "Sports & Outdoors",
-    "section": "",
-    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
-  },
-  {
-    "objectID": "outdoors.html#ultimate-frisbee",
-    "href": "outdoors.html#ultimate-frisbee",
-    "title": "Sports & Outdoors",
-    "section": "",
-    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
-  },
-  {
-    "objectID": "outdoors.html#running",
-    "href": "outdoors.html#running",
-    "title": "Sports & Outdoors",
-    "section": "Running",
-    "text": "Running\n\nI began running consistently in Summer 2024 and have since achieved several personal milestones. Fall 2024, I ran a 10K Turkey Trot with my dad. Over Winter break, I logged 100 miles. And most recently, I completed my first half marathon this Summer 2025. I often complement my runs with jump rope, stair climbing, yoga, and weight training. Feel free to connect with me on Strava!\n\n\n\n\n\n\n\n\nRun at sunset in Los Angeles, CA\n\n\n\n\n\n\n\n\nNeighborhood run club with friends\n\n\n\n\n\n\n\n\nHalf marathon in Santa Monica, CA"
-  },
-  {
-    "objectID": "outdoors.html#pickleball",
-    "href": "outdoors.html#pickleball",
-    "title": "Sports & Outdoors",
-    "section": "Pickleball",
-    "text": "Pickleball\n\nOn weekends, my friends and I play pickleball at the Robert’s Pavillion at Claremont McKenna College. We play singles, doubles, and king of the court style play. It’s always a good time and our play sessions last anywhere from 2-4 hours each.\n\n\n\n\n\n\n\n\nWeekend pickleball with friends\n\n\n\n\n\n\n\n\nMachine Shop proctor tournament\n\n\n\n\n\n\n\n\nPickleball in Westchester, CA"
-  },
-  {
     "objectID": "projects/demo-project/index.html",
     "href": "projects/demo-project/index.html",
     "title": "Demo Project",
@@ -159,5 +166,12 @@
     "title": "D. Sebastian Heredia",
     "section": "Additional Links",
     "text": "Additional Links\n\n\n\n  \n  Judging Performance \n\n  Transcript Key"
+  },
+  {
+    "objectID": "E155_Lab_1.html",
+    "href": "E155_Lab_1.html",
+    "title": "Lab 1: FPGA & MCU Setup and Testing",
+    "section": "",
+    "text": "Coming Soon"
   }
 ]
