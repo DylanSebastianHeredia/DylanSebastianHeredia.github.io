@@ -1,6 +1,6 @@
 ---
 title: "Lab 1: FPGA & MCU Setup and Testing"
-subtitle: "Sebastian Heredia | dheredia@g.hmc.edu | September 9, 2025"
+subtitle: "Sebastian Heredia | dheredia@g.hmc.edu | September 3, 2025"
 toc: true
 format: html
 css: styles.css
@@ -42,7 +42,7 @@ css: styles.css
 <p class="justify-text"> 
     After hardware verification, the FPGA was programmed to complete the lab tasks: Demonstrate hexademical counting from 
     `0` to `F` on a 7-Segment display and correct LED sequences when DIP switches are selected. *Table 1* sourced from the 
-    [E155 Lab 1 Instruction](https://hmc-e155.github.io/lab/lab1/#fpga-design) shows types of signals used for the project. 
+    [E155 Lab 1 Instructions](https://hmc-e155.github.io/lab/lab1/#fpga-design) shows types of signals used for the project. 
     Moreover, `led[0]` and `led[1]` were designed according to *Table 2* and *Table 3*, respectively. Notably, `led[2]` was 
     intended to follow a different sequence.
 </p>
@@ -52,10 +52,10 @@ css: styles.css
 
 | Signal Name | Signal Type | Description |
 |-------------|-------------|-------------|
-|    clk      | input       | 48MHz clock on FPGA                      |
-|    s[3:0]   | input       | The 4 DIP switches (SW6)                 |
-|    led[2:0] | output      | 3 LEDS (on-board LEDs)                   |
-|    seg[6:0] | output      | Common-anode 7-segment display segments  |
+|    `clk`      | input       | 48MHz clock on FPGA                      |
+|    `s[3:0]`   | input       | The 4 DIP switches (SW6)                 |
+|    `led[2:0]` | output      | 3 LEDS (on-board LEDs)                   |
+|    `seg[6:0]` | output      | Common-anode 7-segment display segments  |
 
 <br>
 *Table 2: Expected behavior of* `led[0]`.
@@ -95,7 +95,7 @@ Notably, `led[2]` was set to blink at 2.4Hz.
     block diagram relationship of the modules. 
 </p>
 
-<img src="images/E155_Lab1/block_diagram.jpg" alt="functional Near-Infrared Spectroscopy cap" style="width:100%; border-radius: 15px;">
+<img src="images/E155_Lab1/block_diagram_2.jpg" alt="Block Diagram" style="width:100%; border-radius: 15px;">
 *Figure 2: Block diagram showing the relationship between* `lab1_DSH.sv` *and* `SevenSegment.sv`.
 
 ### LED Implementation in `lab1_DSH.sv` ###
@@ -118,7 +118,7 @@ Notably, `led[2]` was set to blink at 2.4Hz.
     Furthermore, *Figure 4* provides the justification for pull-down resistor values for the 7-segment display. 
 </p>
 
-<img src="images/E155_Lab1/schematic.jpg" alt="Schematic" style="width:100%; border-radius: 15px;">
+<img src="images/E155_Lab1/schematic_updated.jpg" alt="Schematic" style="width:100%; border-radius: 15px;">
 *Figure 3: Schematic showing the wiring of the 7-segment display to the FPGA and DIP switches.*
 
 <br>
