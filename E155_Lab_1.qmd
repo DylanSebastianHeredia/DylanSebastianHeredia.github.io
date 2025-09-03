@@ -129,8 +129,8 @@ Notably, `led[2]` was set to blink at 2.4Hz.
 
 <p class="justify-text"> 
     The design accomplished all the prescribed tasks. [Testbenches](https://github.com/DylanSebastianHeredia/E155_Lab_1/tree/main/FPGA/sim) 
-    and testvectors were written for each module and were successfully simulated in Questa. *Figure 5* shows that top-level `lab1_DSH.sv` 
-    module matches all expectations for LED patterns and 7-segment display values.
+    and [testvectors](https://github.com/DylanSebastianHeredia/E155_Lab_1/tree/main/FPGA/sim) were written for each module and were successfully 
+    simulated in Questa. *Figure 5* shows that top-level `lab1_DSH.sv` module matches all expectations for LED patterns and 7-segment display values.
 </p>
 
 <br>
