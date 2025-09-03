@@ -185,11 +185,15 @@ of SystemVerilog syntax, for example, using logic instead of wire and reg.
     Initially, ChatGPT 5.0 was unable to produce synthasizable code since the the libraries it instatiated were not setup in the Lattice Radiant project. 
     By nudging the LLM with phrases such as 'write a fully functional" and providing it error feedback from Lattice Radiant, the LLM was able to produce 
     synthasizable code by its third iteration. 
-    
+</p>
+
+<p class="justify-text"> 
     In terms of speed to produce a solution, the LLM was very fast, producing detailed solutions with comments in seconds. Although the code contained 1-2 
     errors initially, after very little prompting adjustments, the LLM was able to produce a succinct and accurate code chunk that followed similar logic 
     to the counter divider that was used in this lab.
+</p>
 
+<p class="justify-text"> 
     Overall, ChatGPT 5.0's output is impressive since it was generated nearly instantly, synthasized within a few attempts, and eventually produced a reasonable
     and detailed solution with surface-level guidance. Moreover, the errors made were not forseeable given the original prompting context. To avoid programming 
     errors in the future when working with LLMs, it is important to provide the full context of your project (e.g. List of installed libraries).
