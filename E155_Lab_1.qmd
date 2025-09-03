@@ -26,7 +26,7 @@ css: styles.css
     DIP switches, LEDS, resistors, capacitor, voltage regulators, and jumpers to provide power to the FPGA and MCU. 
 </p>
 
-<img src="images/E155_Lab1/development_board.png" alt="E155 Development Board" style="width:100%; border-radius: 15px;">
+<img src="images/E155_Lab1/v4_dev_board.png" alt="E155 Development Board" style="width:100%; border-radius: 15px;">
 *Figure 1: Complete μP Dev Board v4 with all components soldered.*
 
 ### Testing FPGA & MCU ###
