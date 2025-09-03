@@ -11,7 +11,7 @@ css: styles.css
 <p class="justify-text"> 
     In this lab, components were soldered to an FPGA and designs were implemented on the FPGA to demonstrate the functionality of the 
     on-board high-speed oscillator to light up three on-board LEDs in specific sequences and demonstrate hexademical counting from 
-    `0` to `F` on a 7-Segment display. 
+    `0` to `F` on a 7-segment display. 
 </p>
 
 ## Methods & Design ##
@@ -41,7 +41,7 @@ css: styles.css
 
 <p class="justify-text"> 
     After hardware verification, the FPGA was programmed to complete the lab tasks: Demonstrate hexademical counting from 
-    `0` to `F` on a 7-Segment display and correct LED sequences when DIP switches are selected. *Table 1* sourced from the 
+    `0` to `F` on a 7-segment display and correct LED sequences when DIP switches are selected. *Table 1* sourced from the 
     [E155 Lab 1 Instructions](https://hmc-e155.github.io/lab/lab1/#fpga-design) shows types of signals used for the project. 
     Moreover, `led[0]` and `led[1]` were designed according to *Table 2* and *Table 3*, respectively. Notably, `led[2]` was 
     intended to follow a different sequence.
