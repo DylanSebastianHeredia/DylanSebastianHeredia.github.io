@@ -95,6 +95,7 @@ Notably, `led[2]` was set to blink at 2.4Hz.
     block diagram relationship of the modules. 
 </p>
 
+
 <img src="images/E155_Lab1/block_diagram_4.jpg" alt="Block Diagram" style="width:100%; border-radius: 15px;">
 *Figure 2: Block diagram showing the relationship between* `lab1_DSH.sv` *and* `SevenSegment.sv`.
 
