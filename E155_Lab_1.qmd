@@ -164,7 +164,7 @@ Notably, `led[2]` was set to blink at 2.4Hz.
     not been an issue, the time to complete the lab might be cut down by a third. 
 </p>
 
-<a href="lab1_demo_2.mp4" target="_blank">
+<a href="lab1_demo_new.mp4" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
       ▶ Lab 1 FPGA Video
     </button>
