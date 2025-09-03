@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -131,14 +131,38 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#methods-design" id="toc-methods-design" class="nav-link" data-scroll-target="#methods-design">Methods &amp; Design</a>
+  <ul class="collapse">
+  <li><a href="#development-board-setup" id="toc-development-board-setup" class="nav-link" data-scroll-target="#development-board-setup">Development Board Setup</a></li>
+  <li><a href="#testing-fpga-mcu" id="toc-testing-fpga-mcu" class="nav-link" data-scroll-target="#testing-fpga-mcu">Testing FPGA &amp; MCU</a></li>
+  <li><a href="#fpga-project-overview" id="toc-fpga-project-overview" class="nav-link" data-scroll-target="#fpga-project-overview">FPGA Project Overview</a></li>
+  </ul></li>
+  <li><a href="#technical-documentation" id="toc-technical-documentation" class="nav-link" data-scroll-target="#technical-documentation">Technical Documentation</a>
+  <ul class="collapse">
+  <li><a href="#led-implementation-in-lab1_dsh.sv" id="toc-led-implementation-in-lab1_dsh.sv" class="nav-link" data-scroll-target="#led-implementation-in-lab1_dsh.sv">LED Implementation in <code>lab1_DSH.sv</code></a></li>
+  <li><a href="#segment-implementation-in-sevensegment.sv" id="toc-segment-implementation-in-sevensegment.sv" class="nav-link" data-scroll-target="#segment-implementation-in-sevensegment.sv">7-Segment Implementation in <code>SevenSegment.sv</code></a></li>
+  </ul></li>
+  <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion">Results &amp; Discussion</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a>
+  <ul class="collapse">
+  <li><a href="#ai-prototype" id="toc-ai-prototype" class="nav-link" data-scroll-target="#ai-prototype">AI Prototype</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Lab 1: FPGA &amp; MCU Setup and Testing</h1>
-<p class="subtitle lead">Sebastian Heredia | dheredia@g.hmc.edu | September 9, 2025</p>
+<p class="subtitle lead">Sebastian Heredia | dheredia@g.hmc.edu | September 3, 2025</p>
 </div>
 
 
@@ -155,10 +179,200 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="coming-soon" class="level3">
-<h3 class="anchored" data-anchor-id="coming-soon">Coming Soon</h3>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p class="justify-text">
+In this lab, components were soldered to an FPGA and designs were implemented on the FPGA to demonstrate the functionality of the on-board high-speed oscillator to light up three on-board LEDs in specific sequences and demonstrate hexademical counting from <code>0</code> to <code>F</code> on a 7-Segment display.
+</p>
+</section>
+<section id="methods-design" class="level2">
+<h2 class="anchored" data-anchor-id="methods-design">Methods &amp; Design</h2>
+<section id="development-board-setup" class="level3">
+<h3 class="anchored" data-anchor-id="development-board-setup">Development Board Setup</h3>
+<p class="justify-text">
+The development board system was constructed by soldering surface mount technology (SMT) and through hole technology (THT) components. The development boards used for the project were the <a href="https://upduino.readthedocs.io/en/latest/features/specs.html">UPduino v3.1 FPGA</a> and the <a href="https://www.st.com/resource/en/data_brief/nucleo-f031k6.pdf">Nucleo-L432KC MCU</a> which were connected to the board via female header pins. <em>Figure 1</em> below shows the other components soldered to the board, including: DIP switches, LEDS, resistors, capacitor, voltage regulators, and jumpers to provide power to the FPGA and MCU.
+</p>
+<p><img src="images/E155_Lab1/v4_dev_board.png" alt="E155 Development Board" style="width:100%; border-radius: 15px;"> <em>Figure 1: Complete μP Dev Board v4 with all components soldered.</em></p>
+</section>
+<section id="testing-fpga-mcu" class="level3">
+<h3 class="anchored" data-anchor-id="testing-fpga-mcu">Testing FPGA &amp; MCU</h3>
+<p class="justify-text">
+Before proceeding, the FPGA and MCU were individually tested using on-board LED blink code to verify proper hardware function. SMT LEDs and resistors were soldered by hand with a soldering iron, however, applying a heat method could have resulted in a aesthetically cleanear look.
+</p>
+</section>
+<section id="fpga-project-overview" class="level3">
+<h3 class="anchored" data-anchor-id="fpga-project-overview">FPGA Project Overview</h3>
+<p class="justify-text">
+After hardware verification, the FPGA was programmed to complete the lab tasks: Demonstrate hexademical counting from <code>0</code> to <code>F</code> on a 7-Segment display and correct LED sequences when DIP switches are selected. <em>Table 1</em> sourced from the <a href="https://hmc-e155.github.io/lab/lab1/#fpga-design">E155 Lab 1 Instructions</a> shows types of signals used for the project. Moreover, <code>led[0]</code> and <code>led[1]</code> were designed according to <em>Table 2</em> and <em>Table 3</em>, respectively. Notably, <code>led[2]</code> was intended to follow a different sequence.
+</p>
+<p><br> <em>Table 1: Signal name, type, and brief description for each signal used in the project.</em></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Signal Name</th>
+<th>Signal Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>clk</code></td>
+<td>input</td>
+<td>48MHz clock on FPGA</td>
+</tr>
+<tr class="even">
+<td><code>s[3:0]</code></td>
+<td>input</td>
+<td>The 4 DIP switches (SW6)</td>
+</tr>
+<tr class="odd">
+<td><code>led[2:0]</code></td>
+<td>output</td>
+<td>3 LEDS (on-board LEDs)</td>
+</tr>
+<tr class="even">
+<td><code>seg[6:0]</code></td>
+<td>output</td>
+<td>Common-anode 7-segment display segments</td>
+</tr>
+</tbody>
+</table>
+<p><br> <em>Table 2: Expected behavior of</em> <code>led[0]</code>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><code>S1</code></th>
+<th><code>S0</code></th>
+<th><code>led[0]</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>OFF</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>ON</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>ON</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>OFF</td>
+</tr>
+</tbody>
+</table>
+<p><br> <em>Table 3: Expected behavior of</em> <code>led[1]</code>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><code>S3</code></th>
+<th><code>S2</code></th>
+<th><code>led[1]</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>OFF</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>OFF</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>OFF</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>ON</td>
+</tr>
+</tbody>
+</table>
+<p><br> Notably, <code>led[2]</code> was set to blink at 2.4Hz. <br></p>
+<p class="justify-text">
+For the 7-segment display, each of the four DIP switches should correspond to a bit in the 4-bit binary number that produces hexadecimal characters <code>0</code> to <code>F</code> on the display. For example, if the 4-bit DIP switch input is <code>4'b1010</code>, then the 7-segment display would show <code>A</code> for hexadecimal representation fo decimal <code>10</code>.
+</p>
+</section>
+</section>
+<section id="technical-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
+<p class="justify-text">
+The project was contructed using two modules: <a href="https://github.com/DylanSebastianHeredia/E155_Lab_1/blob/main/FPGA/src/lab1_DSH.sv">lab1_DSH.sv</a> and <a href="https://github.com/DylanSebastianHeredia/E155_Lab_1/blob/main/FPGA/src/SevenSegment.sv">SevenSegment.sv</a>. <em>Figure 2</em> below shows the block diagram relationship of the modules.
+</p>
+<p><img src="images/E155_Lab1/block_diagram_2.jpg" alt="Block Diagram" style="width:100%; border-radius: 15px;"> <em>Figure 2: Block diagram showing the relationship between</em> <code>lab1_DSH.sv</code> <em>and</em> <code>SevenSegment.sv</code>.</p>
+<section id="led-implementation-in-lab1_dsh.sv" class="level3">
+<h3 class="anchored" data-anchor-id="led-implementation-in-lab1_dsh.sv">LED Implementation in <code>lab1_DSH.sv</code></h3>
+<p class="justify-text">
+By inspection of the LED tables, <code>led[0]</code> is turned <code>ON</code> according to the XOR of inputs <code>s[0]</code> and <code>s[1]</code>. Meanwhile, <code>led[1]</code> is turned <code>ON</code> according to the AND of inputs <code>s[2]</code> and <code>s[3]</code>. In order to generate a blinking frequency of 2.4Hz for <code>led[2]</code>, a clock divider was adapted to cycle down the 48MHz on-board HSOSC. First the HSOSC was divided in half using <code>CLKHF_DIV(2'b01)</code> from the HSOSC library. A frequency of 2.4Hz means <code>led[2]</code> cycles blinks every 0.4167 seconds. Since a full ON-OFF or OFF-ON cycle takes two toggles, the updated clock must count every 0.2083 seconds. Thus, 5,000,000 counts of the now 24MHz clock will register one toggle for <code>led[2]</code> to cycle every 0.2803 seconds = 5,000,000 / 24MHz.
+</p>
+</section>
+<section id="segment-implementation-in-sevensegment.sv" class="level3">
+<h3 class="anchored" data-anchor-id="segment-implementation-in-sevensegment.sv">7-Segment Implementation in <code>SevenSegment.sv</code></h3>
+<p class="justify-text">
+The 7-segment display was designed using combination logic to map sixteen DIP switch cases to output <code>0</code> to <code>F</code> on the display. Since the 7-segment display had a common anode design, pins were driven <code>LOW</code> to light up their respective segments. <em>Figure 3</em> shows the schematic for how the 7-segment display was wired to the FPGA and the connection to the LEDs and SW6 DIP switches. Furthermore, <em>Figure 4</em> provides the justification for pull-down resistor values for the 7-segment display.
+</p>
+<p><img src="images/E155_Lab1/schematic_updated.jpg" alt="Schematic" style="width:100%; border-radius: 15px;"> <em>Figure 3: Schematic showing the wiring of the 7-segment display to the FPGA and DIP switches.</em></p>
+<p><br> <img src="images/E155_Lab1/resistor_calc.jpg" alt="Resistor Calculations" style="width:100%; border-radius: 15px;"> <em>Figure 4: Calculations to justify the 7-segment display resistor values.</em></p>
+</section>
+</section>
+<section id="results-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-discussion">Results &amp; Discussion</h2>
+<p class="justify-text">
+The design accomplished all the prescribed tasks. <a href="https://github.com/DylanSebastianHeredia/E155_Lab_1/tree/main/FPGA/sim">Testbenches</a> and testvectors were written for each module and were successfully simulated in Questa. <em>Figure 5</em> shows that top-level <code>lab1_DSH.sv</code> module matches all expectations for LED patterns and 7-segment display values.
+</p>
+<p><br> <img src="images/E155_Lab1/WaveSim.png" alt="WaveSim" style="width:100%; border-radius: 15px;"> <em>Figure 5: All LED and 7-segment display outcomes matched expectations in Questa.</em></p>
+<p class="justify-text">
+Since, the WaveSim did not reflect <code>led[2]</code> blinking accuracy, an oscilloscope was used to measure the LED component’s frequency in real-time. <em>Figure 6</em> verifies that <code>led[2]</code> blinked at a frequency of 2.404Hz.
+</p>
+<p><img src="images/E155_Lab1/Oscilloscope.png" alt="Oscilloscope Trace" style="width:100%; border-radius: 15px;"> <em>Figure 6: The blinking frequency of <code>led[2]</code> was confirmed to be 2.404Hz using an oscilloscope.</em></p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p class="justify-text">
+All designs were successfuly implemented on the FPGA. All simulations matched expectations and the physical hardware behaved as intended. The lab took a total of 27 hours to complete.
+</p>
+<section id="ai-prototype" class="level3">
+<h3 class="anchored" data-anchor-id="ai-prototype">AI Prototype</h3>
+<p>The purpose of the AI Prototype is to experiment with usign AI as a coding assistant to produce HDL. The following prompt was entered to ChatGPT 5.0.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+LLM Prompt
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write SystemVerilog HDL to leverage the internal high speed oscillator in the Lattice UP5K FPGA and blink an LED at 2 Hz. Take full advantage of SystemVerilog syntax, for example, using logic instead of wire and reg.</p>
+</div>
+</div>
+<p class="justify-text">
+</p><p>Initially, ChatGPT 5.0 was unable to produce synthasizable code since the the libraries it instatiated were not setup in the Lattice Radiant project. By nudging the LLM with phrases such as ’write a fully functional” and providing it error feedback from Lattice Radiant, the LLM was able to produce synthasizable code by its third iteration.</p>
+<p>In terms of speed to produce a solution, the LLM was very fast, producing detailed solutions with comments in seconds. Although the code contained 1-2 errors initially, after very little prompting adjustments, the LLM was able to produce a succinct and accurate code chunk that followed similar logic to the counter divider that was used in this lab.</p>
+Overall, ChatGPT 5.0’s output is impressive since it was generated nearly instantly, synthasized within a few attempts, and eventually produced a reasonable and detailed solution with surface-level guidance. Moreover, the errors made were not forseeable given the original prompting context. To avoid programming errors in the future when working with LLMs, it is important to provide the full context of your project (e.g.&nbsp;List of installed libraries).
+<p></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
