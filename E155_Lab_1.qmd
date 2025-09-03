@@ -95,7 +95,7 @@ Notably, `led[2]` was set to blink at 2.4Hz.
     block diagram relationship of the modules. 
 </p>
 
-<img src="images/E155_Lab1/block_diagram_2.jpg" alt="Block Diagram" style="width:100%; border-radius: 15px;">
+<img src="images/E155_Lab1/block_diagram_4.jpg" alt="Block Diagram" style="width:100%; border-radius: 15px;">
 *Figure 2: Block diagram showing the relationship between* `lab1_DSH.sv` *and* `SevenSegment.sv`.
 
 ### LED Implementation in `lab1_DSH.sv` ###
@@ -163,6 +163,12 @@ Notably, `led[2]` was set to blink at 2.4Hz.
     Third, inconsistency of the port connections when connecting the FPGA to the lab computer never worked immediately. Had these external factors been 
     not been an issue, the time to complete the lab might be cut down by a third. 
 </p>
+
+<a href="lab1_demo_2.mp4" target="_blank">
+    <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
+      ▶ Lab 1 FPGA Video
+    </button>
+  </a>
 
 ### AI Prototype ### 
 
