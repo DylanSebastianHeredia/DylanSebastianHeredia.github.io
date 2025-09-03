@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 1: FPGA &amp; MCU Setup and Testing – D. Sebastian Heredia</title>
+<title>Lab 1: FPGA &amp; MCU Setup &amp; Testing – D. Sebastian Heredia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -149,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#segment-implementation-in-sevensegment.sv" id="toc-segment-implementation-in-sevensegment.sv" class="nav-link" data-scroll-target="#segment-implementation-in-sevensegment.sv">7-Segment Implementation in <code>SevenSegment.sv</code></a></li>
   </ul></li>
   <li><a href="#results-discussion" id="toc-results-discussion" class="nav-link" data-scroll-target="#results-discussion">Results &amp; Discussion</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a>
+  <li><a href="#conclusion-demo" id="toc-conclusion-demo" class="nav-link" data-scroll-target="#conclusion-demo">Conclusion &amp; Demo</a>
   <ul class="collapse">
   <li><a href="#ai-prototype" id="toc-ai-prototype" class="nav-link" data-scroll-target="#ai-prototype">AI Prototype</a></li>
   </ul></li>
@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 1: FPGA &amp; MCU Setup and Testing</h1>
+<h1 class="title">Lab 1: FPGA &amp; MCU Setup &amp; Testing</h1>
 <p class="subtitle lead">Sebastian Heredia | dheredia@g.hmc.edu | September 3, 2025</p>
 </div>
 
@@ -344,8 +344,8 @@ Since, the WaveSim did not reflect <code>led[2]</code> blinking accuracy, an osc
 </p>
 <p><img src="images/E155_Lab1/Oscilloscope.png" alt="Oscilloscope Trace" style="width:100%; border-radius: 15px;"> <em>Figure 6: The blinking frequency of <code>led[2]</code> was confirmed to be 2.404Hz using an oscilloscope.</em></p>
 </section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<section id="conclusion-demo" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-demo">Conclusion &amp; Demo</h2>
 <p class="justify-text">
 All designs were successfuly implemented on the FPGA. All simulations matched expectations and the physical hardware behaved as intended. The lab took a total of 27 hours to complete.
 </p>
@@ -373,10 +373,14 @@ LLM Prompt
 </div>
 </div>
 <p class="justify-text">
-</p><p>Initially, ChatGPT 5.0 was unable to produce synthasizable code since the the libraries it instatiated were not setup in the Lattice Radiant project. By nudging the LLM with phrases such as ’write a fully functional” and providing it error feedback from Lattice Radiant, the LLM was able to produce synthasizable code by its third iteration.</p>
-<p>In terms of speed to produce a solution, the LLM was very fast, producing detailed solutions with comments in seconds. Although the code contained 1-2 errors initially, after very little prompting adjustments, the LLM was able to produce a succinct and accurate code chunk that followed similar logic to the counter divider that was used in this lab.</p>
+Initially, ChatGPT 5.0 was unable to produce synthasizable code since the the libraries it instatiated were not setup in the Lattice Radiant project. By nudging the LLM with phrases such as ’write a fully functional” and providing it error feedback from Lattice Radiant, the LLM was able to produce synthasizable code by its third iteration.
+</p>
+<p class="justify-text">
+In terms of speed to produce a solution, the LLM was very fast, producing detailed solutions with comments in seconds. Although the code contained 1-2 errors initially, after very little prompting adjustments, the LLM was able to produce a succinct and accurate code chunk that followed similar logic to the counter divider that was used in this lab.
+</p>
+<p class="justify-text">
 Overall, ChatGPT 5.0’s output is impressive since it was generated nearly instantly, synthasized within a few attempts, and eventually produced a reasonable and detailed solution with surface-level guidance. Moreover, the errors made were not forseeable given the original prompting context. To avoid programming errors in the future when working with LLMs, it is important to provide the full context of your project (e.g.&nbsp;List of installed libraries).
-<p></p>
+</p>
 
 
 </section>
