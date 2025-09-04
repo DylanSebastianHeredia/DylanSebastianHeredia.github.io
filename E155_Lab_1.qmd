@@ -144,7 +144,7 @@ Notably, `led[2]` was set to blink at 2.4Hz.
 </p>
 
 <img src="images/E155_Lab1/Oscilloscope.png" alt="Oscilloscope Trace" style="width:100%; border-radius: 15px;">
-*Figure 6: The blinking frequency of `led[2]` was confirmed to be 2.404Hz using an oscilloscope.*
+*Figure 6: The blinking frequency of* `led[2]` *was confirmed to be 2.404Hz using an oscilloscope.*
 
 ## Conclusion & Demo ##
 <p class="justify-text"> 
