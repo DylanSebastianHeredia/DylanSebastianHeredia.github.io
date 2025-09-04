@@ -1,0 +1,9 @@
+---
+title: "Lab 2: Multiplexed 7-Segment Display"
+subtitle: "Sebastian Heredia | dheredia@g.hmc.edu | September 10, 2025"
+toc: false
+format: html
+css: styles.css
+---
+
+### Coming Soon ###

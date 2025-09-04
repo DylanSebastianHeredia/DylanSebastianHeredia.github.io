@@ -17,6 +17,8 @@ website:
         menu:
           - href: E155_Lab_1.qmd
             text: Lab 1 - FPGA & MCU Setup
+          - href: E155_Lab_2.qmd
+            text: Lab 2 - Multiplexing
       - href: blog.qmd
         text: Blog
 
