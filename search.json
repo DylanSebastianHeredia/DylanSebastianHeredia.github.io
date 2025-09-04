@@ -7,95 +7,74 @@
     "text": "Coming Soon"
   },
   {
-    "objectID": "engineering.html",
-    "href": "engineering.html",
-    "title": "Engineering Class Projects",
+    "objectID": "E155_Lab_1.html",
+    "href": "E155_Lab_1.html",
+    "title": "Lab 1: FPGA & MCU Setup & Testing",
     "section": "",
-    "text": "At Harvey Mudd, the General Engineering major is highly robust. Our program consists of three main approaches to tackling Engineering: Systems, Sciences, and Design. The Systems appraoch focuses on how to apply mathematically model general system outputs and functions of their input. The Sciences are intended to give a broad education in engineering, where students explore Chemical and Thermal Processes, Mechanics, Electronic and Magnet Circuits, Computer Architecture, and Material Science. Lastly, the Design field teaches Professional skills necessary to apply theory learned in class. These skills include, teamwork, communication, project management, and design and prototyping. During my time at Mudd, I’ve worked on a variety of interesting projects to complete practical tasks. Below, I’ve listed a few of my favorite Engineering class projects.\nBy clicking the  Show More  buttons below, learn more about the What, How, and Results of each project."
+    "text": "In this lab, components were soldered to an FPGA and designs were implemented on the FPGA to demonstrate the functionality of the on-board high-speed oscillator to light up three on-board LEDs in specific sequences and demonstrate hexademical counting from 0 to F on a 7-segment display."
   },
   {
-    "objectID": "engineering.html#e4-design-manufacturing",
-    "href": "engineering.html#e4-design-manufacturing",
-    "title": "Engineering Class Projects",
-    "section": "E4: Design & Manufacturing",
-    "text": "E4: Design & Manufacturing\n\nMachinist Hammer\n\n\n\n\n\n\n\nOverview:  Manufactured a functional machinist hammer from clear oak, AISI 1015 & 4340 steel, and nylon, following strict technical specifications. The experience inspired me to become a Harvey Mudd Machine Shop proctor.\n\n\nSkills:  GD&T, Lathe, Mill, Bandsaw, Router, Taps, Digital Micrometers, HRC Hardness Tester, Laser Cutter\n\n\n Show More \n  Tech Drawing  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nCrafted a functional machinist hammer from oak, steel, and nylon, adhering to precise GD&T specifications. \nContributed to the Harvey Mudd College tradition of student-made hammers while developing hands-on machining skills.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nMachined head stock to length using lathe and milling operations and verified with digital micrometers. \nHeat treated hardface, verified HRC Hardness for durability, and sandblasted for smooth finish. \n\n\n\n\n\n\n\n\nResults\n\n\n\nDelivered a high-quality, durable machinist hammer that scored near perfect in quality of manufacturing. \nBecame a Machine Shop proctor, training and mentoring new students to ensure shop safety.\n\n\n\n\n\n\n\n\n\n\n\n\n\nOptimizing Neuroimaging Device\n\n\n\n\n\n\n\nOverview:  Developed three mechanisms to improve Functional Near-Infrared Spectroscopy (fNIRS) infrared (IR) light delivery to the scalp, addressing signal loss from thick or dark hair.\n\n\nSkills:  Project & Design Management, Client Communication\n\n\nTeam: Brock B. | Annette C. | Gabrielle R..\n\n\n Show More \n  Memo  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nFiber Optic Attachment with Custom Spring Cap: Threads IR light through thick hair to the scalp. \nHair Moving Pick: Moves hair away from covering the scalp. \nWider Mounting Base: Improves contact between the IR emitters and scalp.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nMachined prototypes to verify proof of concept and refined iterations based on client input and professor feedback. \nDeveloped process routers for all prototype designs and documented findings into reports to be shared with the team and the client.\n\n\n\n\n\n\n\n\nResults\n\n\n\nIncreased signal clarity of fNIR device for users with dense hair types (3C, 4A), improving readings from critical to acceptable. \nGained experience arranging and executing client meetings to determine client needs and pain points."
-  },
-  {
-    "objectID": "engineering.html#e79-engineering-systems",
-    "href": "engineering.html#e79-engineering-systems",
-    "title": "Engineering Class Projects",
-    "section": "E79: Engineering Systems",
-    "text": "E79: Engineering Systems\n\nRemotely Operated Vehicle (ROV)\n\n\n\n\n\n\n\nOverview:  Built an underwater Remotely Operated Vehicle (ROV) to simultaneously measure depth and temperature at the Robert J. Bernard Biological Field Station.\n\n\nSkills:  LabVIEW, Soldering, Oscilloscope, PCB Assembly, DMM, Breadboarding\n\n\nTeam: Brock B.\n\n Show More \n\n\n\n\n\n\n\n\nWhat?\n\n\n\nCreated a fully waterproof ROV to measure temperature across varying depths. \nImplemented P control for motor operation.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nModeled and simulated vertical motion of the ROV by changing the motor PWM duty cycle in LabVIEW. \nSoldered MPX5700 pressure sensor and NXFT15XH103 thermistor circuits to the project PCB.\n\n\n\n\n\n\n\n\nResults\n\n\n\nDeployed ROV in a real-world application and collected reasonable environmental data. \nGained hands-on experience in circuit breadboarding, soldering, and oscilloscope use."
-  },
-  {
-    "objectID": "engineering.html#e80-experimental-engineering",
-    "href": "engineering.html#e80-experimental-engineering",
-    "title": "Engineering Class Projects",
-    "section": "E80: Experimental Engineering",
-    "text": "E80: Experimental Engineering\n\nAutonomous Surface Vehicle (ASV)\n\n\n\n\n\n\n\nOverview:  Designed and deployed an Autonomous Surface Vehicle (ASV) to map water depth at Baby Beach, Dana Point Harbor, CA using mechanical, electrical, and pressure-based sensing techniques.\n\n\nSkills:  Arduino, MATLAB, Power Tools, BOM, 3D-Printing\n\n\nTeam: John S. | Georgia T. | Simone Y.\n\n\n Show More \n  ▶ Video     Memo  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\n\n\nMeasured underwater depth using three complementary sensing methods: \n\n\nHall effect sensor embedded in a 3D-printed winch and spool for mechanical depth measurement. \nPressure sensor calibrated for direct depth readings. \nMotor-based voltage integration to estimate depth during retrieval. \n\n\n\n\n\n\n\n\nHow?\n\n\n\n\n\nDesigned and created a lightweight, buoyant ASV frame using power tools. \nWaterproofed electronics housing container using epoxy and Parafilm. \nIterated Arduino code on the Teensy 4.0 microcontroller in order to interface components. \nPerformed magnetometer calibration on the ASV’s IMU.\n\n\n\n\n\n\n\n\nResults\n\n\n\n\n\nGained experience with the fast-pace reality of product development in a real-world environment. \nLearned how to effectively manage a project and adhere to time and budget constraints. \nValidated the effectiveness of low-cost ($50 budget), multi-sensor ASVs for generating high-resolution shore plots."
-  },
-  {
-    "objectID": "engineering.html#e85-digital-electronics-comp.-architecture-risc-v",
-    "href": "engineering.html#e85-digital-electronics-comp.-architecture-risc-v",
-    "title": "Engineering Class Projects",
-    "section": "E85: Digital Electronics & Comp. Architecture (RISC-V)",
-    "text": "E85: Digital Electronics & Comp. Architecture (RISC-V)\n\n2D-Digital Level\n\n\n\n\n\n\n\nOverview:  Built a 2D-digital level using a microcontroller, a 7x7 LED matrix, and a triple-axis accelerometer with SPI communication. Gained experince with embedded software and signal processing in real-time.\n\n\nSkills:  C/C++, SPI Communication, Calibration, Soldering\n\n\n Show More \n  ▶ Video     Code  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\n\n\nCreated a digital level that maps tilt angles from a triple-axis accelerometer to a 7x7 LED matrix “bubble” display. \nBubble motion indicated surface tilt in X and Y axes, stopping at matrix edges for extreme angles.\n\n\n\n\n\n\n\n\nHow?\n\n\n\n\n\nProgrammed a RED-V ThingPlus microcontroller in C using SPI communication to interface with the accelerometer. \nImplemented real-time signal processing and calibration to ensure smooth, flicker-free bubble motion across the display. \n\n\n\n\n\n\n\n\nResults\n\n\n\n\n\nAchieved accurate, smooth, and reliable bubble display, validating full end-to-end embeded system integration. \nDesigned a sensitive and practical 2D-digital tool with immediate real-world use.\n\n\n\n\n\n\n\n\n\n\n\n\n\n32-Bit Multicycle Processor\n\n\n\n\n\n\n\nOverview:  Designed and implemented a 32-bit RISC-V multicycle processor in SystemVerilog usign Quartus and Questa. Developed experience in digital design, datapath and control logic, and modular architecture.\n\n\nSkills:  SystemVerilog, HDL, Assembly, Machine Language, RISC-V, Quartus FPGA, Questa\n\n\n Show More \n  Code  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nClick here to see diagrams. \nBuilt a multicycle CPU capable of executing arithmetic instructions, managing memory, adn performing real-time instruction execution. \nLeveraged single-cycle processor components such as muxes, registers, adders, and control logic to construct a modular multicycle architecture.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nWrote SystemVerilog datapath connecting controller, memory, and register file modules. \nSystematically debugged by comparing assembly and machine language test benches against waveforms to correct errors. \nConsulted Quartus RLT schematic to ensure accurate I/O connections.\n\n\n\n\n\n\n\n\nResults\n\n\n\n32-Bit RISC-V Multicycle processor matched waveform expectations, indicating that the corret values where written to the correct addresses. \nDeepened understanding of RISC-V architecture, processor design principles, and real-time instruction execution."
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Personal Projects",
+    "objectID": "E155_Lab_1.html#introduction",
+    "href": "E155_Lab_1.html#introduction",
+    "title": "Lab 1: FPGA & MCU Setup & Testing",
     "section": "",
-    "text": "Through a wide range of hands-on projects, I’ve applied engineering principles beyond the classroom to design, prototype, and build solutions across electronics, manufacturing, and web development. These projects reflect my curiosity and persistence. Whether programming microcontrollers, machining custom hardware, or developing user-friendly software tools, I approach each challenge with an iterative problem-solving mindset. By experimenting, testing, and refining, I’ve expanded my technical toolbox while cultivating creativity, precision, and adaptability."
+    "text": "In this lab, components were soldered to an FPGA and designs were implemented on the FPGA to demonstrate the functionality of the on-board high-speed oscillator to light up three on-board LEDs in specific sequences and demonstrate hexademical counting from 0 to F on a 7-segment display."
   },
   {
-    "objectID": "projects.html#electronics",
-    "href": "projects.html#electronics",
-    "title": "Personal Projects",
-    "section": "Electronics",
-    "text": "Electronics\n\nDigital Stop Watch\n\n\n\n\n\n\nOverview:  Programmed an Arduino UNO R3 microcontroller and a 5461BS 7-segment 4-digit display to create a stopwatch-style timer. The timer was equipped with two buttons: one to play/pause and another to reset the time. Gained proficiency with multiplexing, managing states, and debouncing.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video  \n\n\n\n\nSimon Says\n\n\n\n\n\n\nOverview:  Designed an interactive memory game on a Teensy 4.0 microcontroller. A sequence is played on the white LEDs and players repeat the correct pattern. Incorrect answers light the red LED and correct answers light the green LED to increase the sequence length by 1. If the final sequence is played correctly, the yellow LED will flash indicating a win.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video"
+    "objectID": "E155_Lab_1.html#methods-design",
+    "href": "E155_Lab_1.html#methods-design",
+    "title": "Lab 1: FPGA & MCU Setup & Testing",
+    "section": "Methods & Design",
+    "text": "Methods & Design\n\nDevelopment Board Setup\n\nThe development board system was constructed by soldering surface mount technology (SMT) and through hole technology (THT) components. The development boards used for the project were the UPduino v3.1 FPGA and the Nucleo-L432KC MCU which were connected to the board via female header pins. Figure 1 below shows the other components soldered to the board, including: DIP switches, LEDS, resistors, capacitor, voltage regulators, and jumpers to provide power to the FPGA and MCU.\n\n Figure 1: Complete μP Dev Board v4 with all components soldered.\n\n\nTesting FPGA & MCU\n\nBefore proceeding, the FPGA and MCU were individually tested using on-board LED blink code to verify proper hardware function. SMT LEDs and resistors were soldered by hand with a soldering iron, however, applying a heat method could have resulted in a aesthetically cleanear look.\n\n\n\nFPGA Project Overview\n\nAfter hardware verification, the FPGA was programmed to complete the lab tasks: Demonstrate hexademical counting from 0 to F on a 7-segment display and correct LED sequences when DIP switches are selected. Table 1 sourced from the E155 Lab 1 Instructions shows types of signals used for the project. Moreover, led[0] and led[1] were designed according to Table 2 and Table 3, respectively. Notably, led[2] was intended to follow a different sequence.\n\n Table 1: Signal name, type, and brief description for each signal used in the project.\n\n\n\n\n\n\n\n\nSignal Name\nSignal Type\nDescription\n\n\n\n\nclk\ninput\n48MHz clock on FPGA\n\n\ns[3:0]\ninput\nThe 4 DIP switches (SW6)\n\n\nled[2:0]\noutput\n3 LEDS (on-board LEDs)\n\n\nseg[6:0]\noutput\nCommon-anode 7-segment display segments\n\n\n\n Table 2: Expected behavior of led[0].\n\n\n\nS1\nS0\nled[0]\n\n\n\n\n0\n0\nOFF\n\n\n0\n1\nON\n\n\n1\n0\nON\n\n\n1\n1\nOFF\n\n\n\n Table 3: Expected behavior of led[1].\n\n\n\nS3\nS2\nled[1]\n\n\n\n\n0\n0\nOFF\n\n\n0\n1\nOFF\n\n\n1\n0\nOFF\n\n\n1\n1\nON\n\n\n\n Notably, led[2] was set to blink at 2.4Hz. \n\nFor the 7-segment display, each of the four DIP switches should correspond to a bit in the 4-bit binary number that produces hexadecimal characters 0 to F on the display. For example, if the 4-bit DIP switch input is 4'b1010, then the 7-segment display would show A for hexadecimal representation fo decimal 10."
   },
   {
-    "objectID": "projects.html#manufacturing",
-    "href": "projects.html#manufacturing",
-    "title": "Personal Projects",
-    "section": "Manufacturing",
-    "text": "Manufacturing\n\nMudd Amateur Rocketry Club\n\n\n\n\n\n\nOverview:  Contributed to the design and fabrication of fins for the Mudd Amateur Rocketry Club (MARC) high-powered rocket. Machined and attached carbon fiber fins using power tools, sand paper, and epoxy to ensure accurate fit within the aft rocket body. Pursuing L1 certification (Expected Fall 2025).\n\n\nSkills:  Dremel, Power Tools, Epoxy\n\n  ▶ Video  \n\n\n\n\nPickleball Paddle\n\n\n\n\n\n\nOverview:  Designed and built a pickleball paddle for the 2025 Machine Shop Proctor Tournament. Modeled paddle dimensions based on reference measurements and programmed toolpaths on the ShopBot CNC Router, including cutting strategies, feed rates, and tab placement for safe and precise milling. Painted and laser-cut a stencil for precise lettering.\n\n\nSkills:  ShopBot, CNC Router, Laser Cutter, Calipers\n\n  ▶ Video  \n\n\n\n\nBallpoint Pen\n\n\n\n\n\n\nOverview:  Created a ballpoint pen through precision woodturning. Operated a lathe with gouges to achieve consistent cylindrical symmetry, followed by progressive grit sanding for smoothness. Applied protective varnish finishing before press-fitting the mechanical hardware using an arbor press.\n\n\nSkills:  Wood Lathe, Gouges, Wood Varnish, Arbor Press\n\n\n\n\n\nCheese Knife\n\n\n\n\n\n\nOverview:  Produced a set of custom wooden utensils, including a cheese knife, as family holiday gifts. Sketched utensil profiles based on Wooden Utensils from the Bandsaw. Rough-cut stock material on the bandsaw, and shaped contours with sanders and hand-finishing. Applied mineral oil treatment for food safety and durability.\n\n\nSkills:  Bandsaw, Belt Sander, Spindle Sander"
+    "objectID": "E155_Lab_1.html#technical-documentation",
+    "href": "E155_Lab_1.html#technical-documentation",
+    "title": "Lab 1: FPGA & MCU Setup & Testing",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\n\nThe project was contructed using two modules: lab1_DSH.sv and SevenSegment.sv. Figure 2 below shows the block diagram relationship of the modules.\n\n Figure 2: Block diagram showing the relationship between lab1_DSH.sv and SevenSegment.sv.\n\nLED Implementation in lab1_DSH.sv\n\nBy inspection of the LED tables, led[0] is turned ON according to the XOR of inputs s[0] and s[1]. Meanwhile, led[1] is turned ON according to the AND of inputs s[2] and s[3]. In order to generate a blinking frequency of 2.4Hz for led[2], a clock divider was adapted to cycle down the 48MHz on-board HSOSC. First the HSOSC was divided in half using CLKHF_DIV(2'b01) from the HSOSC library. A frequency of 2.4Hz means led[2] cycles blinks every 0.4167 seconds. Since a full ON-OFF or OFF-ON cycle takes two toggles, the updated clock must count every 0.2083 seconds. Thus, 5,000,000 counts of the now 24MHz clock will register one toggle for led[2] to cycle every 0.2803 seconds = 5,000,000 / 24MHz.\n\n\n\n7-Segment Implementation in SevenSegment.sv\n\nThe 7-segment display was designed using combination logic to map sixteen DIP switch cases to output 0 to F on the display. Since the 7-segment display had a common anode design, pins were driven LOW to light up their respective segments. Figure 3 shows the schematic for how the 7-segment display was wired to the FPGA and the connection to the LEDs and SW6 DIP switches. Furthermore, Figure 4 provides the justification for pull-down resistor values for the 7-segment display.\n\n Figure 3: Schematic showing the wiring of the 7-segment display to the FPGA and DIP switches.\n  Figure 4: Calculations to justify the 7-segment display resistor values."
   },
   {
-    "objectID": "projects.html#web-development",
-    "href": "projects.html#web-development",
-    "title": "Personal Projects",
-    "section": "Web Development",
-    "text": "Web Development\n\nUCLA GIM CV Formatter\n\n\n\n\n\n\nOverview:  Developed a user-frienly, web-based application using Streamlit for creating, editing, and exporting CVs in compliance with the General Internal Medicine (GIM) CV Guidelines. Designed an interactive dashboard interface where users can select a CV from a manager panel, populate accordion-style surveys corresponding to guideline sections, and export a formatted MS Word file.\n\n\nSkills:  Python, Streamlit, APIs, Firebase, Design Process\n\n\n\n\n\nUCLA DOMStat Website\n\n\n\n\n\n\nOverview:  Contributed to the redesign and population of the updated UCLA Department of Medicine Statistics Core (DOMStat) website, ensuring a user-centered interface with emphasis on accessibility and intuitive navigation. Applied consistent visual design principles to align with UCLA Health brand identity.\n\n\nSkills:  Content Strategy, UI/UX, SEO"
+    "objectID": "E155_Lab_1.html#results-discussion",
+    "href": "E155_Lab_1.html#results-discussion",
+    "title": "Lab 1: FPGA & MCU Setup & Testing",
+    "section": "Results & Discussion",
+    "text": "Results & Discussion\n\nThe design accomplished all the prescribed tasks. Testbenches and testvectors were written for each module and were successfully simulated in Questa. Figure 5 shows that top-level lab1_DSH.sv module matches all expectations for LED patterns and 7-segment display values.\n\n  Figure 5: All LED and 7-segment display outcomes matched expectations in Questa.\n\nSince, the WaveSim did not reflect led[2] blinking accuracy, an oscilloscope was used to measure the LED component’s frequency in real-time. Figure 6 verifies that led[2] blinked at a frequency of 2.404Hz.\n\n Figure 6: The blinking frequency of led[2] was confirmed to be 2.404Hz using an oscilloscope."
   },
   {
-    "objectID": "outdoors.html",
-    "href": "outdoors.html",
-    "title": "Sports & Outdoors",
+    "objectID": "E155_Lab_1.html#conclusion-demo",
+    "href": "E155_Lab_1.html#conclusion-demo",
+    "title": "Lab 1: FPGA & MCU Setup & Testing",
+    "section": "Conclusion & Demo",
+    "text": "Conclusion & Demo\n\nAll designs were successfuly implemented on the FPGA. All simulations matched expectations and the physical hardware behaved as intended. The lab took a total of 27 hours to complete.\n\n\nThrough this lab, I gained hands-on practice with assembling a development board and testing hardware, programming hardware through SystemVerilog, and interfacing a 7-segment display to the FPGA board. Overall, Lab 1 was a good practice with soldering and a solid introduction to programming with Lattice Radiant.\n\n\nThe most significant issues with the lab were with the lack of materials and inefficient tools. First, there was a shortage of key equipment such as SMT LEDs and ribbon cables. Second, the software itself was very slow to open, often taking 10 minutes to start up. Third, inconsistency of the port connections when connecting the FPGA to the lab computer never worked immediately. Had these external factors been not been an issue, the time to complete the lab might be cut down by a third.\n\n  ▶ Lab 1 FPGA Video  \n\nAI Prototype\nThe purpose of the AI Prototype is to experiment with usign AI as a coding assistant to produce HDL. The following prompt was entered to ChatGPT 5.0.\n\n\n\n\n\n\nLLM Prompt\n\n\n\nWrite SystemVerilog HDL to leverage the internal high speed oscillator in the Lattice UP5K FPGA and blink an LED at 2 Hz. Take full advantage of SystemVerilog syntax, for example, using logic instead of wire and reg.\n\n\n\nInitially, ChatGPT 5.0 was unable to produce synthasizable code since the the libraries it instatiated were not setup in the Lattice Radiant project. By nudging the LLM with phrases such as ’write a fully functional” and providing it error feedback from Lattice Radiant, the LLM was able to produce synthasizable code by its third iteration.\n\n\nIn terms of speed to produce a solution, the LLM was very fast, producing detailed solutions with comments in seconds. Although the code contained 1-2 errors initially, after very little prompting adjustments, the LLM was able to produce a succinct and accurate code chunk that followed similar logic to the counter divider that was used in this lab.\n\n\nOverall, ChatGPT 5.0’s output is impressive since it was generated nearly instantly, synthasized within a few attempts, and eventually produced a reasonable and detailed solution with surface-level guidance. Moreover, the errors made were not forseeable given the original prompting context. To avoid programming errors in the future when working with LLMs, it is important to provide the full context of your project (e.g. List of installed libraries)."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "D. Sebastian Heredia",
     "section": "",
-    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
+    "text": "He/Him\nHello! My name is Sebastian and I’m a Junior at Harvey Mudd College majoring in Engineering, with a strong foundation in math and a growing interest in electrical engineering—especially as it connects to embedded systems, robotics, and automation. I’m passionate about working at the intersection of hardware and systems that sense, respond, and interact in the world. I thrive in hands-on, fast paced environments and seek technical opportunities that will allow me to deepen my engineering skills and contribute to meaningful, systems-driven projects.\nOutside of engineering, I’m drawn to visual and audio storytelling in the form of photography, sketching, and editing sound and video. These hobbies sharpen my attention to detail, structure, and rhythm, which contribute to how I approach engineering problems. Whether I’m designing an electrical system, writing embedded code, or building a website—like the one I created here using Quarto x GitHub—I focus on how components work together and how the system behaves as a whole. This perspective allows me to prototype efficiently, communicate ideas clearly, and approach challenges both methodically and creatively.\nOpen Full Resume in New Tab"
   },
   {
-    "objectID": "outdoors.html#ultimate-frisbee",
-    "href": "outdoors.html#ultimate-frisbee",
-    "title": "Sports & Outdoors",
+    "objectID": "index.html#additional-links",
+    "href": "index.html#additional-links",
+    "title": "D. Sebastian Heredia",
+    "section": "Additional Links",
+    "text": "Additional Links\n\n\n\n  \n  Judging Performance \n\n  Transcript Key"
+  },
+  {
+    "objectID": "projects/demo-project/index.html",
+    "href": "projects/demo-project/index.html",
+    "title": "Demo Project",
     "section": "",
-    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
+    "text": "alt text\n\n\n\n\nFigure 1: This is the figure caption."
   },
   {
-    "objectID": "outdoors.html#running",
-    "href": "outdoors.html#running",
-    "title": "Sports & Outdoors",
-    "section": "Running",
-    "text": "Running\n\nI began running consistently in Summer 2024 and have since achieved several personal milestones. Fall 2024, I ran a 10K Turkey Trot with my dad. Over Winter break, I logged 100 miles. And most recently, I completed my first half marathon this Summer 2025. I often complement my runs with jump rope, stair climbing, yoga, and weight training. Feel free to connect with me on Strava!\n\n\n\n\n\n\n\n\nRun at sunset in Los Angeles, CA\n\n\n\n\n\n\n\n\nNeighborhood run club with friends\n\n\n\n\n\n\n\n\nHalf marathon in Santa Monica, CA"
-  },
-  {
-    "objectID": "outdoors.html#pickleball",
-    "href": "outdoors.html#pickleball",
-    "title": "Sports & Outdoors",
-    "section": "Pickleball",
-    "text": "Pickleball\n\nOn weekends, my friends and I play pickleball at the Robert’s Pavillion at Claremont McKenna College. We play singles, doubles, and king of the court style play. It’s always a good time and our play sessions last anywhere from 2-4 hours each.\n\n\n\n\n\n\n\n\nWeekend pickleball with friends\n\n\n\n\n\n\n\n\nMachine Shop proctor tournament\n\n\n\n\n\n\n\n\nPickleball in Westchester, CA"
+    "objectID": "projects/demo-project/index.html#demo-section",
+    "href": "projects/demo-project/index.html#demo-section",
+    "title": "Demo Project",
+    "section": "",
+    "text": "alt text\n\n\n\n\nFigure 1: This is the figure caption."
   },
   {
     "objectID": "music.html",
@@ -140,73 +119,101 @@
     "text": "Recordings & Compositions\n\n\n\n\n\n\nI love playing duets with recordings of myself or digital instruments, and throughout the years I’ve started writing down my compositions. After class and on weekends, I also enjoy learning pop songs with my friends, pianist, Kai Mawhinney, and vocalist and guitarist, Emmett Levine. We often improvise together and have performed on the Claremont College student radio, KSPC, and at Emmett’s Guitar Club recitals.\n\n  ▶ Video"
   },
   {
-    "objectID": "projects/demo-project/index.html",
-    "href": "projects/demo-project/index.html",
-    "title": "Demo Project",
+    "objectID": "outdoors.html",
+    "href": "outdoors.html",
+    "title": "Sports & Outdoors",
     "section": "",
-    "text": "alt text\n\n\n\n\nFigure 1: This is the figure caption."
+    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
   },
   {
-    "objectID": "projects/demo-project/index.html#demo-section",
-    "href": "projects/demo-project/index.html#demo-section",
-    "title": "Demo Project",
+    "objectID": "outdoors.html#ultimate-frisbee",
+    "href": "outdoors.html#ultimate-frisbee",
+    "title": "Sports & Outdoors",
     "section": "",
-    "text": "alt text\n\n\n\n\nFigure 1: This is the figure caption."
+    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "D. Sebastian Heredia",
+    "objectID": "outdoors.html#running",
+    "href": "outdoors.html#running",
+    "title": "Sports & Outdoors",
+    "section": "Running",
+    "text": "Running\n\nI began running consistently in Summer 2024 and have since achieved several personal milestones. Fall 2024, I ran a 10K Turkey Trot with my dad. Over Winter break, I logged 100 miles. And most recently, I completed my first half marathon this Summer 2025. I often complement my runs with jump rope, stair climbing, yoga, and weight training. Feel free to connect with me on Strava!\n\n\n\n\n\n\n\n\nRun at sunset in Los Angeles, CA\n\n\n\n\n\n\n\n\nNeighborhood run club with friends\n\n\n\n\n\n\n\n\nHalf marathon in Santa Monica, CA"
+  },
+  {
+    "objectID": "outdoors.html#pickleball",
+    "href": "outdoors.html#pickleball",
+    "title": "Sports & Outdoors",
+    "section": "Pickleball",
+    "text": "Pickleball\n\nOn weekends, my friends and I play pickleball at the Robert’s Pavillion at Claremont McKenna College. We play singles, doubles, and king of the court style play. It’s always a good time and our play sessions last anywhere from 2-4 hours each.\n\n\n\n\n\n\n\n\nWeekend pickleball with friends\n\n\n\n\n\n\n\n\nMachine Shop proctor tournament\n\n\n\n\n\n\n\n\nPickleball in Westchester, CA"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Personal Projects",
     "section": "",
-    "text": "He/Him\nHello! My name is Sebastian and I’m a Junior at Harvey Mudd College majoring in Engineering, with a strong foundation in math and a growing interest in electrical engineering—especially as it connects to embedded systems, robotics, and automation. I’m passionate about working at the intersection of hardware and systems that sense, respond, and interact in the world. I thrive in hands-on, fast paced environments and seek technical opportunities that will allow me to deepen my engineering skills and contribute to meaningful, systems-driven projects.\nOutside of engineering, I’m drawn to visual and audio storytelling in the form of photography, sketching, and editing sound and video. These hobbies sharpen my attention to detail, structure, and rhythm, which contribute to how I approach engineering problems. Whether I’m designing an electrical system, writing embedded code, or building a website—like the one I created here using Quarto x GitHub—I focus on how components work together and how the system behaves as a whole. This perspective allows me to prototype efficiently, communicate ideas clearly, and approach challenges both methodically and creatively.\nOpen Full Resume in New Tab"
+    "text": "Through a wide range of hands-on projects, I’ve applied engineering principles beyond the classroom to design, prototype, and build solutions across electronics, manufacturing, and web development. These projects reflect my curiosity and persistence. Whether programming microcontrollers, machining custom hardware, or developing user-friendly software tools, I approach each challenge with an iterative problem-solving mindset. By experimenting, testing, and refining, I’ve expanded my technical toolbox while cultivating creativity, precision, and adaptability."
   },
   {
-    "objectID": "index.html#additional-links",
-    "href": "index.html#additional-links",
-    "title": "D. Sebastian Heredia",
-    "section": "Additional Links",
-    "text": "Additional Links\n\n\n\n  \n  Judging Performance \n\n  Transcript Key"
+    "objectID": "projects.html#electronics",
+    "href": "projects.html#electronics",
+    "title": "Personal Projects",
+    "section": "Electronics",
+    "text": "Electronics\n\nDigital Stop Watch\n\n\n\n\n\n\nOverview:  Programmed an Arduino UNO R3 microcontroller and a 5461BS 7-segment 4-digit display to create a stopwatch-style timer. The timer was equipped with two buttons: one to play/pause and another to reset the time. Gained proficiency with multiplexing, managing states, and debouncing.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video  \n\n\n\n\nSimon Says\n\n\n\n\n\n\nOverview:  Designed an interactive memory game on a Teensy 4.0 microcontroller. A sequence is played on the white LEDs and players repeat the correct pattern. Incorrect answers light the red LED and correct answers light the green LED to increase the sequence length by 1. If the final sequence is played correctly, the yellow LED will flash indicating a win.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video"
   },
   {
-    "objectID": "E155_Lab_1.html",
-    "href": "E155_Lab_1.html",
-    "title": "Lab 1: FPGA & MCU Setup & Testing",
+    "objectID": "projects.html#manufacturing",
+    "href": "projects.html#manufacturing",
+    "title": "Personal Projects",
+    "section": "Manufacturing",
+    "text": "Manufacturing\n\nMudd Amateur Rocketry Club\n\n\n\n\n\n\nOverview:  Contributed to the design and fabrication of fins for the Mudd Amateur Rocketry Club (MARC) high-powered rocket. Machined and attached carbon fiber fins using power tools, sand paper, and epoxy to ensure accurate fit within the aft rocket body. Pursuing L1 certification (Expected Fall 2025).\n\n\nSkills:  Dremel, Power Tools, Epoxy\n\n  ▶ Video  \n\n\n\n\nPickleball Paddle\n\n\n\n\n\n\nOverview:  Designed and built a pickleball paddle for the 2025 Machine Shop Proctor Tournament. Modeled paddle dimensions based on reference measurements and programmed toolpaths on the ShopBot CNC Router, including cutting strategies, feed rates, and tab placement for safe and precise milling. Painted and laser-cut a stencil for precise lettering.\n\n\nSkills:  ShopBot, CNC Router, Laser Cutter, Calipers\n\n  ▶ Video  \n\n\n\n\nBallpoint Pen\n\n\n\n\n\n\nOverview:  Created a ballpoint pen through precision woodturning. Operated a lathe with gouges to achieve consistent cylindrical symmetry, followed by progressive grit sanding for smoothness. Applied protective varnish finishing before press-fitting the mechanical hardware using an arbor press.\n\n\nSkills:  Wood Lathe, Gouges, Wood Varnish, Arbor Press\n\n\n\n\n\nCheese Knife\n\n\n\n\n\n\nOverview:  Produced a set of custom wooden utensils, including a cheese knife, as family holiday gifts. Sketched utensil profiles based on Wooden Utensils from the Bandsaw. Rough-cut stock material on the bandsaw, and shaped contours with sanders and hand-finishing. Applied mineral oil treatment for food safety and durability.\n\n\nSkills:  Bandsaw, Belt Sander, Spindle Sander"
+  },
+  {
+    "objectID": "projects.html#web-development",
+    "href": "projects.html#web-development",
+    "title": "Personal Projects",
+    "section": "Web Development",
+    "text": "Web Development\n\nUCLA GIM CV Formatter\n\n\n\n\n\n\nOverview:  Developed a user-frienly, web-based application using Streamlit for creating, editing, and exporting CVs in compliance with the General Internal Medicine (GIM) CV Guidelines. Designed an interactive dashboard interface where users can select a CV from a manager panel, populate accordion-style surveys corresponding to guideline sections, and export a formatted MS Word file.\n\n\nSkills:  Python, Streamlit, APIs, Firebase, Design Process\n\n\n\n\n\nUCLA DOMStat Website\n\n\n\n\n\n\nOverview:  Contributed to the redesign and population of the updated UCLA Department of Medicine Statistics Core (DOMStat) website, ensuring a user-centered interface with emphasis on accessibility and intuitive navigation. Applied consistent visual design principles to align with UCLA Health brand identity.\n\n\nSkills:  Content Strategy, UI/UX, SEO"
+  },
+  {
+    "objectID": "engineering.html",
+    "href": "engineering.html",
+    "title": "Engineering Class Projects",
     "section": "",
-    "text": "In this lab, components were soldered to an FPGA and designs were implemented on the FPGA to demonstrate the functionality of the on-board high-speed oscillator to light up three on-board LEDs in specific sequences and demonstrate hexademical counting from 0 to F on a 7-segment display."
+    "text": "At Harvey Mudd, the General Engineering major is highly robust. Our program consists of three main approaches to tackling Engineering: Systems, Sciences, and Design. The Systems appraoch focuses on how to apply mathematically model general system outputs and functions of their input. The Sciences are intended to give a broad education in engineering, where students explore Chemical and Thermal Processes, Mechanics, Electronic and Magnet Circuits, Computer Architecture, and Material Science. Lastly, the Design field teaches Professional skills necessary to apply theory learned in class. These skills include, teamwork, communication, project management, and design and prototyping. During my time at Mudd, I’ve worked on a variety of interesting projects to complete practical tasks. Below, I’ve listed a few of my favorite Engineering class projects.\nBy clicking the  Show More  buttons below, learn more about the What, How, and Results of each project."
   },
   {
-    "objectID": "E155_Lab_1.html#introduction",
-    "href": "E155_Lab_1.html#introduction",
-    "title": "Lab 1: FPGA & MCU Setup & Testing",
+    "objectID": "engineering.html#e4-design-manufacturing",
+    "href": "engineering.html#e4-design-manufacturing",
+    "title": "Engineering Class Projects",
+    "section": "E4: Design & Manufacturing",
+    "text": "E4: Design & Manufacturing\n\nMachinist Hammer\n\n\n\n\n\n\n\nOverview:  Manufactured a functional machinist hammer from clear oak, AISI 1015 & 4340 steel, and nylon, following strict technical specifications. The experience inspired me to become a Harvey Mudd Machine Shop proctor.\n\n\nSkills:  GD&T, Lathe, Mill, Bandsaw, Router, Taps, Digital Micrometers, HRC Hardness Tester, Laser Cutter\n\n\n Show More \n  Tech Drawing  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nCrafted a functional machinist hammer from oak, steel, and nylon, adhering to precise GD&T specifications. \nContributed to the Harvey Mudd College tradition of student-made hammers while developing hands-on machining skills.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nMachined head stock to length using lathe and milling operations and verified with digital micrometers. \nHeat treated hardface, verified HRC Hardness for durability, and sandblasted for smooth finish. \n\n\n\n\n\n\n\n\nResults\n\n\n\nDelivered a high-quality, durable machinist hammer that scored near perfect in quality of manufacturing. \nBecame a Machine Shop proctor, training and mentoring new students to ensure shop safety.\n\n\n\n\n\n\n\n\n\n\n\n\n\nOptimizing Neuroimaging Device\n\n\n\n\n\n\n\nOverview:  Developed three mechanisms to improve Functional Near-Infrared Spectroscopy (fNIRS) infrared (IR) light delivery to the scalp, addressing signal loss from thick or dark hair.\n\n\nSkills:  Project & Design Management, Client Communication\n\n\nTeam: Brock B. | Annette C. | Gabrielle R..\n\n\n Show More \n  Memo  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nFiber Optic Attachment with Custom Spring Cap: Threads IR light through thick hair to the scalp. \nHair Moving Pick: Moves hair away from covering the scalp. \nWider Mounting Base: Improves contact between the IR emitters and scalp.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nMachined prototypes to verify proof of concept and refined iterations based on client input and professor feedback. \nDeveloped process routers for all prototype designs and documented findings into reports to be shared with the team and the client.\n\n\n\n\n\n\n\n\nResults\n\n\n\nIncreased signal clarity of fNIR device for users with dense hair types (3C, 4A), improving readings from critical to acceptable. \nGained experience arranging and executing client meetings to determine client needs and pain points."
+  },
+  {
+    "objectID": "engineering.html#e79-engineering-systems",
+    "href": "engineering.html#e79-engineering-systems",
+    "title": "Engineering Class Projects",
+    "section": "E79: Engineering Systems",
+    "text": "E79: Engineering Systems\n\nRemotely Operated Vehicle (ROV)\n\n\n\n\n\n\n\nOverview:  Built an underwater Remotely Operated Vehicle (ROV) to simultaneously measure depth and temperature at the Robert J. Bernard Biological Field Station.\n\n\nSkills:  LabVIEW, Soldering, Oscilloscope, PCB Assembly, DMM, Breadboarding\n\n\nTeam: Brock B.\n\n Show More \n\n\n\n\n\n\n\n\nWhat?\n\n\n\nCreated a fully waterproof ROV to measure temperature across varying depths. \nImplemented P control for motor operation.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nModeled and simulated vertical motion of the ROV by changing the motor PWM duty cycle in LabVIEW. \nSoldered MPX5700 pressure sensor and NXFT15XH103 thermistor circuits to the project PCB.\n\n\n\n\n\n\n\n\nResults\n\n\n\nDeployed ROV in a real-world application and collected reasonable environmental data. \nGained hands-on experience in circuit breadboarding, soldering, and oscilloscope use."
+  },
+  {
+    "objectID": "engineering.html#e80-experimental-engineering",
+    "href": "engineering.html#e80-experimental-engineering",
+    "title": "Engineering Class Projects",
+    "section": "E80: Experimental Engineering",
+    "text": "E80: Experimental Engineering\n\nAutonomous Surface Vehicle (ASV)\n\n\n\n\n\n\n\nOverview:  Designed and deployed an Autonomous Surface Vehicle (ASV) to map water depth at Baby Beach, Dana Point Harbor, CA using mechanical, electrical, and pressure-based sensing techniques.\n\n\nSkills:  Arduino, MATLAB, Power Tools, BOM, 3D-Printing\n\n\nTeam: John S. | Georgia T. | Simone Y.\n\n\n Show More \n  ▶ Video     Memo  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\n\n\nMeasured underwater depth using three complementary sensing methods: \n\n\nHall effect sensor embedded in a 3D-printed winch and spool for mechanical depth measurement. \nPressure sensor calibrated for direct depth readings. \nMotor-based voltage integration to estimate depth during retrieval. \n\n\n\n\n\n\n\n\nHow?\n\n\n\n\n\nDesigned and created a lightweight, buoyant ASV frame using power tools. \nWaterproofed electronics housing container using epoxy and Parafilm. \nIterated Arduino code on the Teensy 4.0 microcontroller in order to interface components. \nPerformed magnetometer calibration on the ASV’s IMU.\n\n\n\n\n\n\n\n\nResults\n\n\n\n\n\nGained experience with the fast-pace reality of product development in a real-world environment. \nLearned how to effectively manage a project and adhere to time and budget constraints. \nValidated the effectiveness of low-cost ($50 budget), multi-sensor ASVs for generating high-resolution shore plots."
+  },
+  {
+    "objectID": "engineering.html#e85-digital-electronics-comp.-architecture-risc-v",
+    "href": "engineering.html#e85-digital-electronics-comp.-architecture-risc-v",
+    "title": "Engineering Class Projects",
+    "section": "E85: Digital Electronics & Comp. Architecture (RISC-V)",
+    "text": "E85: Digital Electronics & Comp. Architecture (RISC-V)\n\n2D-Digital Level\n\n\n\n\n\n\n\nOverview:  Built a 2D-digital level using a microcontroller, a 7x7 LED matrix, and a triple-axis accelerometer with SPI communication. Gained experince with embedded software and signal processing in real-time.\n\n\nSkills:  C/C++, SPI Communication, Calibration, Soldering\n\n\n Show More \n  ▶ Video     Code  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\n\n\nCreated a digital level that maps tilt angles from a triple-axis accelerometer to a 7x7 LED matrix “bubble” display. \nBubble motion indicated surface tilt in X and Y axes, stopping at matrix edges for extreme angles.\n\n\n\n\n\n\n\n\nHow?\n\n\n\n\n\nProgrammed a RED-V ThingPlus microcontroller in C using SPI communication to interface with the accelerometer. \nImplemented real-time signal processing and calibration to ensure smooth, flicker-free bubble motion across the display. \n\n\n\n\n\n\n\n\nResults\n\n\n\n\n\nAchieved accurate, smooth, and reliable bubble display, validating full end-to-end embeded system integration. \nDesigned a sensitive and practical 2D-digital tool with immediate real-world use.\n\n\n\n\n\n\n\n\n\n\n\n\n\n32-Bit Multicycle Processor\n\n\n\n\n\n\n\nOverview:  Designed and implemented a 32-bit RISC-V multicycle processor in SystemVerilog usign Quartus and Questa. Developed experience in digital design, datapath and control logic, and modular architecture.\n\n\nSkills:  SystemVerilog, HDL, Assembly, Machine Language, RISC-V, Quartus FPGA, Questa\n\n\n Show More \n  Code  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nClick here to see diagrams. \nBuilt a multicycle CPU capable of executing arithmetic instructions, managing memory, adn performing real-time instruction execution. \nLeveraged single-cycle processor components such as muxes, registers, adders, and control logic to construct a modular multicycle architecture.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nWrote SystemVerilog datapath connecting controller, memory, and register file modules. \nSystematically debugged by comparing assembly and machine language test benches against waveforms to correct errors. \nConsulted Quartus RLT schematic to ensure accurate I/O connections.\n\n\n\n\n\n\n\n\nResults\n\n\n\n32-Bit RISC-V Multicycle processor matched waveform expectations, indicating that the corret values where written to the correct addresses. \nDeepened understanding of RISC-V architecture, processor design principles, and real-time instruction execution."
+  },
+  {
+    "objectID": "E155_Lab_2.html",
+    "href": "E155_Lab_2.html",
+    "title": "Lab 2: Multiplexed 7-Segment Display",
     "section": "",
-    "text": "In this lab, components were soldered to an FPGA and designs were implemented on the FPGA to demonstrate the functionality of the on-board high-speed oscillator to light up three on-board LEDs in specific sequences and demonstrate hexademical counting from 0 to F on a 7-segment display."
-  },
-  {
-    "objectID": "E155_Lab_1.html#methods-design",
-    "href": "E155_Lab_1.html#methods-design",
-    "title": "Lab 1: FPGA & MCU Setup & Testing",
-    "section": "Methods & Design",
-    "text": "Methods & Design\n\nDevelopment Board Setup\n\nThe development board system was constructed by soldering surface mount technology (SMT) and through hole technology (THT) components. The development boards used for the project were the UPduino v3.1 FPGA and the Nucleo-L432KC MCU which were connected to the board via female header pins. Figure 1 below shows the other components soldered to the board, including: DIP switches, LEDS, resistors, capacitor, voltage regulators, and jumpers to provide power to the FPGA and MCU.\n\n Figure 1: Complete μP Dev Board v4 with all components soldered.\n\n\nTesting FPGA & MCU\n\nBefore proceeding, the FPGA and MCU were individually tested using on-board LED blink code to verify proper hardware function. SMT LEDs and resistors were soldered by hand with a soldering iron, however, applying a heat method could have resulted in a aesthetically cleanear look.\n\n\n\nFPGA Project Overview\n\nAfter hardware verification, the FPGA was programmed to complete the lab tasks: Demonstrate hexademical counting from 0 to F on a 7-segment display and correct LED sequences when DIP switches are selected. Table 1 sourced from the E155 Lab 1 Instructions shows types of signals used for the project. Moreover, led[0] and led[1] were designed according to Table 2 and Table 3, respectively. Notably, led[2] was intended to follow a different sequence.\n\n Table 1: Signal name, type, and brief description for each signal used in the project.\n\n\n\n\n\n\n\n\nSignal Name\nSignal Type\nDescription\n\n\n\n\nclk\ninput\n48MHz clock on FPGA\n\n\ns[3:0]\ninput\nThe 4 DIP switches (SW6)\n\n\nled[2:0]\noutput\n3 LEDS (on-board LEDs)\n\n\nseg[6:0]\noutput\nCommon-anode 7-segment display segments\n\n\n\n Table 2: Expected behavior of led[0].\n\n\n\nS1\nS0\nled[0]\n\n\n\n\n0\n0\nOFF\n\n\n0\n1\nON\n\n\n1\n0\nON\n\n\n1\n1\nOFF\n\n\n\n Table 3: Expected behavior of led[1].\n\n\n\nS3\nS2\nled[1]\n\n\n\n\n0\n0\nOFF\n\n\n0\n1\nOFF\n\n\n1\n0\nOFF\n\n\n1\n1\nON\n\n\n\n Notably, led[2] was set to blink at 2.4Hz. \n\nFor the 7-segment display, each of the four DIP switches should correspond to a bit in the 4-bit binary number that produces hexadecimal characters 0 to F on the display. For example, if the 4-bit DIP switch input is 4'b1010, then the 7-segment display would show A for hexadecimal representation fo decimal 10."
-  },
-  {
-    "objectID": "E155_Lab_1.html#technical-documentation",
-    "href": "E155_Lab_1.html#technical-documentation",
-    "title": "Lab 1: FPGA & MCU Setup & Testing",
-    "section": "Technical Documentation",
-    "text": "Technical Documentation\n\nThe project was contructed using two modules: lab1_DSH.sv and SevenSegment.sv. Figure 2 below shows the block diagram relationship of the modules.\n\n Figure 2: Block diagram showing the relationship between lab1_DSH.sv and SevenSegment.sv.\n\nLED Implementation in lab1_DSH.sv\n\nBy inspection of the LED tables, led[0] is turned ON according to the XOR of inputs s[0] and s[1]. Meanwhile, led[1] is turned ON according to the AND of inputs s[2] and s[3]. In order to generate a blinking frequency of 2.4Hz for led[2], a clock divider was adapted to cycle down the 48MHz on-board HSOSC. First the HSOSC was divided in half using CLKHF_DIV(2'b01) from the HSOSC library. A frequency of 2.4Hz means led[2] cycles blinks every 0.4167 seconds. Since a full ON-OFF or OFF-ON cycle takes two toggles, the updated clock must count every 0.2083 seconds. Thus, 5,000,000 counts of the now 24MHz clock will register one toggle for led[2] to cycle every 0.2803 seconds = 5,000,000 / 24MHz.\n\n\n\n7-Segment Implementation in SevenSegment.sv\n\nThe 7-segment display was designed using combination logic to map sixteen DIP switch cases to output 0 to F on the display. Since the 7-segment display had a common anode design, pins were driven LOW to light up their respective segments. Figure 3 shows the schematic for how the 7-segment display was wired to the FPGA and the connection to the LEDs and SW6 DIP switches. Furthermore, Figure 4 provides the justification for pull-down resistor values for the 7-segment display.\n\n Figure 3: Schematic showing the wiring of the 7-segment display to the FPGA and DIP switches.\n  Figure 4: Calculations to justify the 7-segment display resistor values."
-  },
-  {
-    "objectID": "E155_Lab_1.html#results-discussion",
-    "href": "E155_Lab_1.html#results-discussion",
-    "title": "Lab 1: FPGA & MCU Setup & Testing",
-    "section": "Results & Discussion",
-    "text": "Results & Discussion\n\nThe design accomplished all the prescribed tasks. Testbenches and testvectors were written for each module and were successfully simulated in Questa. Figure 5 shows that top-level lab1_DSH.sv module matches all expectations for LED patterns and 7-segment display values.\n\n  Figure 5: All LED and 7-segment display outcomes matched expectations in Questa.\n\nSince, the WaveSim did not reflect led[2] blinking accuracy, an oscilloscope was used to measure the LED component’s frequency in real-time. Figure 6 verifies that led[2] blinked at a frequency of 2.404Hz.\n\n Figure 6: The blinking frequency of led[2] was confirmed to be 2.404Hz using an oscilloscope."
-  },
-  {
-    "objectID": "E155_Lab_1.html#conclusion-demo",
-    "href": "E155_Lab_1.html#conclusion-demo",
-    "title": "Lab 1: FPGA & MCU Setup & Testing",
-    "section": "Conclusion & Demo",
-    "text": "Conclusion & Demo\n\nAll designs were successfuly implemented on the FPGA. All simulations matched expectations and the physical hardware behaved as intended. The lab took a total of 27 hours to complete.\n\n\nThrough this lab, I gained hands-on practice with assembling a development board and testing hardware, programming hardware through SystemVerilog, and interfacing a 7-segment display to the FPGA board. Overall, Lab 1 was a good practice with soldering and a solid introduction to programming with Lattice Radiant.\n\n\nThe most significant issues with the lab were with the lack of materials and inefficient tools. First, there was a shortage of key equipment such as SMT LEDs and ribbon cables. Second, the software itself was very slow to open, often taking 10 minutes to start up. Third, inconsistency of the port connections when connecting the FPGA to the lab computer never worked immediately. Had these external factors been not been an issue, the time to complete the lab might be cut down by a third.\n\n  ▶ Lab 1 FPGA Video  \n\nAI Prototype\nThe purpose of the AI Prototype is to experiment with usign AI as a coding assistant to produce HDL. The following prompt was entered to ChatGPT 5.0.\n\n\n\n\n\n\nLLM Prompt\n\n\n\nWrite SystemVerilog HDL to leverage the internal high speed oscillator in the Lattice UP5K FPGA and blink an LED at 2 Hz. Take full advantage of SystemVerilog syntax, for example, using logic instead of wire and reg.\n\n\n\nInitially, ChatGPT 5.0 was unable to produce synthasizable code since the the libraries it instatiated were not setup in the Lattice Radiant project. By nudging the LLM with phrases such as ’write a fully functional” and providing it error feedback from Lattice Radiant, the LLM was able to produce synthasizable code by its third iteration.\n\n\nIn terms of speed to produce a solution, the LLM was very fast, producing detailed solutions with comments in seconds. Although the code contained 1-2 errors initially, after very little prompting adjustments, the LLM was able to produce a succinct and accurate code chunk that followed similar logic to the counter divider that was used in this lab.\n\n\nOverall, ChatGPT 5.0’s output is impressive since it was generated nearly instantly, synthasized within a few attempts, and eventually produced a reasonable and detailed solution with surface-level guidance. Moreover, the errors made were not forseeable given the original prompting context. To avoid programming errors in the future when working with LLMs, it is important to provide the full context of your project (e.g. List of installed libraries)."
+    "text": "Coming Soon"
   }
 ]
