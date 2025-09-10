@@ -159,10 +159,172 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="coming-soon" class="level3">
-<h3 class="anchored" data-anchor-id="coming-soon">Coming Soon</h3>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p class="justify-text">
+In this lab, time-divsion multiplexing (DTM) was implemented to drive a single dual 7-segment display with only nine FPGA I/O pins. The hexadecimal values displayed on each half of the dual 7-segment display were added and the sum was displayed as a 5-bit binary number on five external LEDs. Notably, PNP transistors were used to drive sufficient current to power the common anodes of the dual 7-segment display while respecting the FGPA’s current capacity.
+</p>
+<p class="justify-text">
+In this system, the same hexadecimal signal from a DIP switch is sent to both halves of the dual 7-segment display. However, by powering only one common anode of the display at a time, only that corresponding side of the 7-segment display will be lit. By quickly switching which anodes were powered, the right and left sides of the display appear to show two independent numbers simultaneously.
+</p>
+</section>
+<section id="methods-design" class="level2">
+<h2 class="anchored" data-anchor-id="methods-design">Methods &amp; Design</h2>
+<section id="lab-setup" class="level3">
+<h3 class="anchored" data-anchor-id="lab-setup">Lab Setup</h3>
+<p class="justify-text">
+Given limited resources, time-multiplexing leverages synchronized timing to allow expensive hardware to be used for different purposes at designated times. <em>Figure 1</em> shows the physical setup of the lab which included two binary encoded quad DIP switches, one deep red <a href="https://docs.broadcom.com/doc/HDSP-521A-523A-Dual-Digit-General-Purpose-7-Segment-Display-DS">HDSP-521A</a> dual 7-segment showing hexadecimal numbers <code>0</code> to <code>F</code> on each side corresponding to the switch inputs, two <a href="https://www.onsemi.com/pdf/datasheet/2n3906-d.pdf">2N3906 PNP</a> transistors, and five green LEDs that represent the binary sum of the switch inputs.
+</p>
+<p><img src="images/E155_Lab2/setup.jpg" alt="Time-Multiplexing Setup" style="width:100%; border-radius: 15px;"> <em>Figure 1: Setup of the breadboarded system display</em> <code>8</code> <em>and</em> <code>A</code><em>, and their sum</em> <code>5'b10010</code> on the LEDs.</p>
+<p class="justify-text">
+To implement the desired function, the signals shown in <em>Table 1</em> were used. Notably, the <code>sevensegment.sv</code> module from Lab 1 reused to convert quad DIP switch inputs to visual numbers on the 7-segment displays.
+</p>
+<p><br> <em>Table 1: Signal name, type, and brief description for each signal used in the project.</em></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Signal Name</th>
+<th>Signal Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>clk</code></td>
+<td>input</td>
+<td>48MHz clock on FPGA</td>
+</tr>
+<tr class="even">
+<td><code>reset</code></td>
+<td>input</td>
+<td>Turns off display when held</td>
+</tr>
+<tr class="odd">
+<td><code>s0[3:0]</code></td>
+<td>input</td>
+<td>Switch for left display number</td>
+</tr>
+<tr class="even">
+<td><code>s1[3:0]</code></td>
+<td>input</td>
+<td>Switch for right display number</td>
+</tr>
+<tr class="odd">
+<td><code>select</code></td>
+<td>output</td>
+<td>Power for left display number</td>
+</tr>
+<tr class="even">
+<td><code>notselect</code></td>
+<td>output</td>
+<td>Power for right display number</td>
+</tr>
+<tr class="odd">
+<td><code>led[4:0]</code></td>
+<td>output</td>
+<td>5 LEDS to display sum</td>
+</tr>
+<tr class="even">
+<td><code>seg[6:0]</code></td>
+<td>output</td>
+<td>Dual 7-segment display segments</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</section>
+</section>
+<section id="technical-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
+<p class="justify-text">
+The project was contructued using two modules: <a href="https://github.com/DylanSebastianHeredia/E155_Lab_2/blob/main/fpga/src/lab2_dsh.sv">lab2_dsh.sv</a> and <a href="https://github.com/DylanSebastianHeredia/E155_Lab_2/blob/main/fpga/src/sevensegment.sv">sevensegment.sv</a>. In addition, the <code>HSOSC</code> library was reused to generate a system counter to toggle between powering each side of the display. <em>Figure 2</em> shows SystemVerilog module hierarchy block diagram.
+</p>
+<p><img src="images/E155_Lab2/updated_block.jpg" alt="Lab 2 Block Diagram" style="width:100%; border-radius: 15px;"> <em>Figure 2: Block diagram representation of SystemVerilog module hierarchy.</em></p>
+<section id="multiplexing-implentation-in-lab1_dsh.sv" class="level3">
+<h3 class="anchored" data-anchor-id="multiplexing-implentation-in-lab1_dsh.sv">Multiplexing Implentation in <code>lab1_dsh.sv</code></h3>
+<p class="justify-text">
+Given fewer FPGA I/O pins than pins on the dual 7-segment display, a multiplexer was used to select which switch input should be fed into the 7-segment display at a given time. The signal to toggle the multiplexer was the internal variable <code>state</code> was a slowed down version of the <code>HSOSC</code> clock native to the board. In order to synchronize the multiplexing of the switch inputs with their visual numbers on the display, <code>state</code> was directly set to toggle output variables <code>select</code> and <code>notselect</code> which correspond to powering the left and right common anodes of the dual 7-segment display, respectively. Importatnly, <code>state</code> was set to toggle at at a frequency of 240Hz means a given display side flashes 120 per second—a rate faster than the human eye can detect which ensured seamless appearance.
+</p>
+</section>
+<section id="adding-implentation-in-lab1_dsh.sv" class="level3">
+<h3 class="anchored" data-anchor-id="adding-implentation-in-lab1_dsh.sv">Adding Implentation in <code>lab1_dsh.sv</code></h3>
+<p class="justify-text">
+A simple adder was used to determine the sum of the DIP switch values. The sum was stored in the output variable <code>led</code> and bit LED was assigned a bit such that the sequence would correctly display the sum in binary.
+</p>
+</section>
+<section id="segment-implementation-in-sevensegment.sv" class="level3">
+<h3 class="anchored" data-anchor-id="segment-implementation-in-sevensegment.sv">7-Segment Implementation in <code>sevensegment.sv</code></h3>
+<p class="justify-text">
+Identical to Lab 1, the 7-segment display was designed using combinational logic to map all quad DIP switch cases to output number <code>0</code> to <code>F</code> on the display. Furthermore, <em>Figure 3</em> shows the schematic for how the two DIP switches, dual 7-segment display, PNP transistor, and five LEDs were wired to the FPGA. Furthermore, <em>Figure 4</em> provides justification for all current limiting resistors since the FPGA can sustain a maximum current of 8mA.
+</p>
+<p><img src="images/E155_Lab2/lab2_schematic.jpg" alt="Lab 2 Circuit Schematic" style="width:100%; border-radius: 15px;"> <em>Figure 3: Schematic showing the wiring of all componts to the FPGA.</em></p>
+<p><img src="images/E155_Lab2/lab2_calc.jpg" alt="Resistor Calculations" style="width:100%; border-radius: 15px;"> <em>Figure 4: Calculations to justify current limiting resistor values through the PNP transistor base, green LEDs, and dual 7-segment display.</em></p>
+</section>
+</section>
+<section id="results-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-discussion">Results &amp; Discussion</h2>
+<p class="justify-text">
+The design accomplished all the intended tasks. Testbenches for both <code>lab2_dsh.sv</code> and <code>sevensegment.sv</code> modules were succesfully simulated in Questa to verify correct LED sum, correct segmenet display representation, and that displays toggle between ON and OFF and are never the same value. All 256 addition combinations were simulated in the testbench using a loop. <em>Figure 5</em> shows that <code>lab2_dsh.sv</code> matches all expectations. <em>Figure 6</em> shows that <code>sevensegment.sv</code> also matches all expectations.
+</p>
+<p><img src="images/E155_Lab2/lab2_dsh_tb.png" alt="lab2_dsh.sv WaveSim" style="width:100%; border-radius: 15px;"> <em>Figure 5: Multiplexing, adding, and LED displaying features simulated as expected in Questa for</em> <code>lab2_dsh.sv</code> <em>for all combinations of switch inputs.</em></p>
+<p><img src="images/E155_Lab2/sevensegment_tb.png" alt="sevensegment.sv WaveSim" style="width:100%; border-radius: 15px;"> <em>Figure 6: All 7-segment display outcomes matched expectation in Questa for</em> <code>sevensegment.sv</code>.</p>
+</section>
+<section id="conclusion-demo" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-demo">Conclusion &amp; Demo</h2>
+<p class="justify-text">
+All designs were successfully implemented. All simulations matched expectation and the physical hardware behaved as intended. The lab took 14 hours to complete.
+</p>
+<p class="justify-text">
+Beyond reinforcing concepts of time-multiplexing to overcome challenges with limited hardware, I also gained valuable practice with hardware-aware digital design. That is, I learned how to integrate PNP transistors to source current common-anode displays, calculate and justify current-limiting resistor values using datasheets, and synchronize a divided oscillator signal with human perception to achieve a smooth visual output. This lab also strengthened my workflow of simulating modules in Questa prior to hardware implementation, which helped ensure correctness and streamline debugging.
+</p>
+<p><a href="https://youtu.be/jsT2PJhZEE0" target="_blank"> <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;"> ▶ Lab 2: Multiplexing Video </button> </a></p>
+<section id="ai-prototype" class="level3">
+<h3 class="anchored" data-anchor-id="ai-prototype">AI Prototype</h3>
+<p>The purpose of the AI Prototype is to experiment with usign AI as a coding assistant to produce HDL. The following prompt was entered to ChatGPT 5.0.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+LLM Prompt
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits.</p>
+</div>
+</div>
+<p class="justify-text">
+Within 10 seconds of <em>thinking</em>, ChatGPT 5.0 produced a SystemVerilog script that was capable of being synthesized in Lattice Radiant on the first try. <em>Figure 7</em> below shows the RTL schematic of the generated script. Looking at the schematic, the number of inputs matches expectations as there are two 4-bit inputs, clk, and reset. In terms of outputs, the schematic correctly shows two sets of 7-segment displays as well as toggle bits held in <code>anode[1:0]</code>, however, there is an extra set of outputs called <code>seg_bus[6:0]</code> which appears to acts a docking location for the display value before it is output on <code>seg[0]</code> or <code>seg[1]</code>. Nevertheless, <code>seg_bus[6:0]</code> should be an internal variable not an output.
+</p>
+<p><img src="images/E155_Lab2/lab2_ai_v1.png" alt="sevensegment.sv WaveSim" style="width:100%; border-radius: 15px;"> <em>Figure 7: RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.</em></p>
+<p class="justify-text">
+Within the same AI conversation with the LLM, the following follow-up prompt was asked.
+</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+LLM Prompt
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits. Use the seven segment decoder and oscillator provided in the attached files.</p>
+</div>
+</div>
+<p class="justify-text">
+For some reason, when sharing my Lab 1 files with ChatGPT, it was unable to produce a script capable of being synthesized in Lattice Radiant. I prompted the LLM three times, encouraging it to implement insights from the attached documents and it was never able to correctly do so.
+</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

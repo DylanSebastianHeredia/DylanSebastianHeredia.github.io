@@ -307,7 +307,7 @@ By inspection of the LED tables, <code>led[0]</code> is turned <code>ON</code> a
 <section id="segment-implementation-in-sevensegment.sv" class="level3">
 <h3 class="anchored" data-anchor-id="segment-implementation-in-sevensegment.sv">7-Segment Implementation in <code>SevenSegment.sv</code></h3>
 <p class="justify-text">
-The 7-segment display was designed using combination logic to map sixteen DIP switch cases to output <code>0</code> to <code>F</code> on the display. Since the 7-segment display had a common anode design, pins were driven <code>LOW</code> to light up their respective segments. <em>Figure 3</em> shows the schematic for how the 7-segment display was wired to the FPGA and the connection to the LEDs and SW6 DIP switches. Furthermore, <em>Figure 4</em> provides the justification for pull-down resistor values for the 7-segment display.
+The 7-segment display was designed using combinational logic to map sixteen DIP switch cases to output <code>0</code> to <code>F</code> on the display. Since the 7-segment display had a common anode design, pins were driven <code>LOW</code> to light up their respective segments. <em>Figure 3</em> shows the schematic for how the 7-segment display was wired to the FPGA and the connection to the LEDs and SW6 DIP switches. Furthermore, <em>Figure 4</em> provides the justification for pull-down resistor values for the 7-segment display.
 </p>
 <p><img src="images/E155_Lab1/schematic_updated.jpg" alt="Schematic" style="width:100%; border-radius: 15px;"> <em>Figure 3: Schematic showing the wiring of the 7-segment display to the FPGA and DIP switches.</em></p>
 <p><br> <img src="images/E155_Lab1/resistor_calc.jpg" alt="Resistor Calculations" style="width:100%; border-radius: 15px;"> <em>Figure 4: Calculations to justify the 7-segment display resistor values.</em></p>
@@ -316,7 +316,7 @@ The 7-segment display was designed using combination logic to map sixteen DIP sw
 <section id="results-discussion" class="level2">
 <h2 class="anchored" data-anchor-id="results-discussion">Results &amp; Discussion</h2>
 <p class="justify-text">
-The design accomplished all the prescribed tasks. <a href="https://github.com/DylanSebastianHeredia/E155_Lab_1/tree/main/FPGA/sim">Testbenches</a> and <a href="https://github.com/DylanSebastianHeredia/E155_Lab_1/tree/main/FPGA/sim">testvectors</a> were written for each module and were successfully simulated in Questa. <em>Figure 5</em> shows that top-level <code>lab1_DSH.sv</code> module matches all expectations for LED patterns and 7-segment display values.
+The design accomplished all the prescribed tasks. <a href="https://github.com/DylanSebastianHeredia/E155_Lab_1/tree/main/FPGA/sim">Testbenches</a> and <a href="https://github.com/DylanSebastianHeredia/E155_Lab_1/tree/main/FPGA/sim">testvectors</a> were written for each module and were successfully simulated in Questa. <em>Figure 5</em> shows that the top-level <code>lab1_DSH.sv</code> module matches all expectations for LED patterns and 7-segment display values.
 </p>
 <p><br> <img src="images/E155_Lab1/WaveSim.png" alt="WaveSim" style="width:100%; border-radius: 15px;"> <em>Figure 5: All LED and 7-segment display outcomes matched expectations in Questa.</em></p>
 <p class="justify-text">
