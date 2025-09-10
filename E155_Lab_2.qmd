@@ -105,7 +105,7 @@ css: styles.css
 </p>
 
 
-<img src="images/E155_Lab2/lab2_schematic.jpg" alt="Lab 2 Circuit Schematic" style="width:100%; border-radius: 15px;">
+<img src="images/E155_Lab2/lab2_updated_schematic_v2.jpg" alt="Lab 2 Circuit Schematic" style="width:100%; border-radius: 15px;">
 *Figure 3: Schematic showing the wiring of all componts to the FPGA.*
 
 <img src="images/E155_Lab2/lab2_calc.jpg" alt="Resistor Calculations" style="width:100%; border-radius: 15px;">
