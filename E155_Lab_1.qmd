@@ -113,7 +113,7 @@ Notably, `led[2]` was set to blink at 2.4Hz.
 ### 7-Segment Implementation in `SevenSegment.sv` ### 
 
 <p class="justify-text"> 
-    The 7-segment display was designed using combination logic to map sixteen DIP switch cases to output `0` to `F` on the display. 
+    The 7-segment display was designed using combinational logic to map sixteen DIP switch cases to output `0` to `F` on the display. 
     Since the 7-segment display had a common anode design, pins were driven `LOW` to light up their respective segments. *Figure 3* 
     shows the schematic for how the 7-segment display was wired to the FPGA and the connection to the LEDs and SW6 DIP switches. 
     Furthermore, *Figure 4* provides the justification for pull-down resistor values for the 7-segment display. 
@@ -131,7 +131,7 @@ Notably, `led[2]` was set to blink at 2.4Hz.
 <p class="justify-text"> 
     The design accomplished all the prescribed tasks. [Testbenches](https://github.com/DylanSebastianHeredia/E155_Lab_1/tree/main/FPGA/sim) 
     and [testvectors](https://github.com/DylanSebastianHeredia/E155_Lab_1/tree/main/FPGA/sim) were written for each module and were successfully 
-    simulated in Questa. *Figure 5* shows that top-level `lab1_DSH.sv` module matches all expectations for LED patterns and 7-segment display values.
+    simulated in Questa. *Figure 5* shows that the top-level `lab1_DSH.sv` module matches all expectations for LED patterns and 7-segment display values.
 </p>
 
 <br>
