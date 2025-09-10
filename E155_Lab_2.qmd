@@ -21,6 +21,20 @@ css: styles.css
     switching which anodes were powered, the right and left sides of the display appear to show two independent numbers simultaneously.
 </p>
 
+<div style="display: flex; gap: 10px;">
+<a href="https://youtu.be/jsT2PJhZEE0" target="_blank">
+    <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
+      ▶ Lab 2: Multiplexing Video
+    </button>
+  </a>
+
+<a href="https://github.com/DylanSebastianHeredia/E155_Lab_2" target="_blank">
+    <button style="border-radius: 6px; padding: 8px 14px; background-color: #1128dc; color: rgb(255, 255, 255); border: none; font-weight: bold; cursor: pointer;">
+      Code
+    </button>
+  </a>
+</div>
+
 ## Methods & Design ##
 
 ### Lab Setup ###
@@ -99,7 +113,7 @@ css: styles.css
 
 ## Results & Discussion ##
 <p class="justify-text">
-    The design accomplished all the intended tasks. Testbenches for both `lab2_dsh.sv` and `sevensegment.sv` modules were succesfully simulated in Questa to verify correct 
+    The design accomplished all the intended tasks. [Testbenches](https://github.com/DylanSebastianHeredia/E155_Lab_2/tree/main/fpga/sim) for both `lab2_dsh.sv` and `sevensegment.sv` modules were succesfully simulated in Questa to verify correct 
     LED sum, correct segmenet display representation, and that displays toggle between ON and OFF and are never the same value. All 256 addition combinations were simulated
     in the testbench using a loop. *Figure 5* shows that `lab2_dsh.sv` matches all expectations. *Figure 6* shows that `sevensegment.sv` also matches all expectations. 
 </p>
@@ -113,7 +127,7 @@ css: styles.css
 ## Conclusion & Demo ##
 
 <p class="justify-text"> 
-    All designs were successfully implemented. All simulations matched expectation and the physical hardware behaved as intended. The lab took 14 hours to complete. 
+    All designs were successfully implemented. All simulations matched expectation and the physical hardware behaved as intended. The lab took 15 hours to complete. 
 </p>
 
 <p class="justify-text"> 
