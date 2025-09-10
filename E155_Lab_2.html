@@ -165,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
 In this lab, time-divsion multiplexing (DTM) was implemented to drive a single dual 7-segment display with only nine FPGA I/O pins. The hexadecimal values displayed on each half of the dual 7-segment display were added and the sum was displayed as a 5-bit binary number on five external LEDs. Notably, PNP transistors were used to drive sufficient current to power the common anodes of the dual 7-segment display while respecting the FGPA’s current capacity.
 </p>
 <p class="justify-text">
-In this system, the same hexadecimal signal from a DIP switch is sent to both halves of the dual 7-segment display. However, by powering only one common anode of the display at a time, only that corresponding side of the 7-segment display will be lit. By quickly switching which anodes were powered, the right and left sides of the display appear to show two independent numbers simultaneously.
+In this system, the same hexadecimal signal from a DIP switch was sent to both halves of the dual 7-segment display. By powering only one common anode of the display at a time, only that corresponding side of the 7-segment display would light up. By quickly switching which anodes receiving power, the right and left sides of the display appeared to show two independent numbers simultaneously.
 </p>
 <div style="display: flex; gap: 10px;">
 <p><a href="https://youtu.be/jsT2PJhZEE0" target="_blank"> <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;"> ▶ Lab 2: Multiplexing Video </button> </a></p>
