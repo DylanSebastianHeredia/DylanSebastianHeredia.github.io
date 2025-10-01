@@ -18,7 +18,11 @@ website:
           - href: E155_Lab_1.qmd
             text: Lab 1 - FPGA & MCU Setup
           - href: E155_Lab_2.qmd
-            text: Lab 2 - Multiplexing
+            text: Lab 2 - Time Multiplexing
+          - href: E155_Lab_3.qmd
+            text: Lab 3 - Keypad Scanner
+          - href: E155_Lab_4.qmd
+            text: Lab 4 - Digital Audio
       - href: blog.qmd
         text: Blog
 
