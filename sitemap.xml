@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://DylanSebastianHeredia.github.io/blog.html</loc>
-    <lastmod>2025-09-03T18:30:26.740Z</lastmod>
+    <loc>https://DylanSebastianHeredia.github.io/E155_Lab_3.html</loc>
+    <lastmod>2025-10-01T21:13:36.311Z</lastmod>
   </url>
   <url>
-    <loc>https://DylanSebastianHeredia.github.io/E155_Lab_1.html</loc>
-    <lastmod>2025-09-10T04:04:40.262Z</lastmod>
+    <loc>https://DylanSebastianHeredia.github.io/E155_Lab_2.html</loc>
+    <lastmod>2025-09-10T05:50:25.916Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DylanSebastianHeredia.github.io/E155_Lab_4.html</loc>
+    <lastmod>2025-10-01T22:06:10.322Z</lastmod>
   </url>
   <url>
     <loc>https://DylanSebastianHeredia.github.io/index.html</loc>
@@ -33,7 +37,11 @@
     <lastmod>2025-09-03T18:30:26.891Z</lastmod>
   </url>
   <url>
-    <loc>https://DylanSebastianHeredia.github.io/E155_Lab_2.html</loc>
-    <lastmod>2025-09-10T05:50:25.916Z</lastmod>
+    <loc>https://DylanSebastianHeredia.github.io/E155_Lab_1.html</loc>
+    <lastmod>2025-09-10T04:04:40.262Z</lastmod>
+  </url>
+  <url>
+    <loc>https://DylanSebastianHeredia.github.io/blog.html</loc>
+    <lastmod>2025-09-03T18:30:26.740Z</lastmod>
   </url>
 </urlset>
