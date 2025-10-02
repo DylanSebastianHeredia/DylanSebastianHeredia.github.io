@@ -172,7 +172,10 @@ ul.task-list li input[type="checkbox"] {
 <p class="justify-text">
 In this lab, the internal peripheral timers of the <a href="https://hmc-e155.github.io/assets/doc/ds11451-stm32l432kc.pdf">STM32L432KC MCU</a> were used to drive a small speaker to play music. To implement this function, the PWM timers on the MCU generated square waves to toggle a GPIO pin at a specific frequency and manage note duration. The MCU was programmed to play <em>Für Elise</em> by Beethoven and <em>Blue (Da Be Dee)</em> by Eiffel 65.
 </p>
+<div style="display: flex; gap: 10px;">
+<p><a href="https://youtu.be/cxhU5bDPtMg" target="_blank"> <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;"> ▶ Lab 4: Für Elise &amp; Blue Video </button> </a></p>
 <p><a href="https://github.com/DylanSebastianHeredia/E155_Lab_4" target="_blank"> <button style="border-radius: 6px; padding: 8px 14px; background-color: #1128dc; color: rgb(255, 255, 255); border: none; font-weight: bold; cursor: pointer;"> Code </button> </a></p>
+</div>
 </section>
 <section id="methods-design" class="level2">
 <h2 class="anchored" data-anchor-id="methods-design">Methods &amp; Design</h2>
@@ -253,11 +256,12 @@ The final implementation successfully played <em>Für Elise</em> and <em>Blue (D
 <section id="conclusion-demo" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion-demo">Conclusion &amp; Demo</h2>
 <p class="justify-text">
-All designs were successfully implemented. The lab took <strong>24 hours</strong> to complete.
+All designs were successfully implemented. The lab took 18 to complete.
 </p>
 <p class="justify-text">
-The lab reinforced the importance of prcise timers configuration and sequencingin PWM updates for digital audio. Notable challenges included ensuring smooth PWM output when changing frequencies, accurately calculating PSC and ARR values for a wide range of notes, and finding base addresses in the MCU datasheet. After overcoming these challenges, the implementation was capable of playign mutiple songs with correct pitch and timing, which provided practical experience with bare-metal C programming.
+The lab reinforced the importance of precise timers configuration and sequencingin PWM updates for digital audio. Notable challenges included ensuring smooth PWM output when changing frequencies, accurately calculating PSC and ARR values for a wide range of notes, and finding base addresses in the MCU datasheet. After overcoming these challenges, the implementation was capable of playign mutiple songs with correct pitch and timing, which provided practical experience with bare-metal C programming.
 </p>
+<p><a href="https://youtu.be/cxhU5bDPtMg" target="_blank"> <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;"> ▶ Lab 4: Für Elise &amp; Blue Video </button> </a></p>
 <section id="ai-prototype" class="level3">
 <h3 class="anchored" data-anchor-id="ai-prototype">AI Prototype</h3>
 <p>The purpose of the AI Prototype is to experiment with usign AI as a coding assistant to navigate memory maps and guide the configuration of various peripherals. The following prompt was entered to ChatGPT 5.0.</p>
