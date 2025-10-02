@@ -243,7 +243,7 @@ After verifying the maximum and minimum frequencies and durations according to t
 <section id="technical-documentation" class="level2">
 <h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
 <p class="justify-text">
-The TIM16 output on <code>PA6</code> was connected to a small speaker through an LM348 audio amplifier to boost the 5.0V MCU signal to audible levels. A 10kΩ potentiometer allowed volume control. This setup provided sufficient volume while protecting the MCU from excessive current draw. <em>Figure 4</em> below shows the electrical schematic for the design.
+The TIM16 output on <code>PA6</code> was connected to a small speaker through an LM348 audio amplifier to boost the 5.0V MCU signal to audible levels. A 10kΩ potentiometer allowed volume control. This setup provided sufficient volume while protecting the MCU from excessive current draw. <em>Figure 4</em> below shows the electrical schematic for the design. The code for this project can be accessed through <a href="https://github.com/DylanSebastianHeredia/E155_Lab_4">GitHub</a>.
 </p>
 <p><img src="images/E155_Lab4/lab4_schematic.jpg" alt="Lab 4 Schematic" style="width:100%; border-radius: 15px;"> <em>Figure 4: Schematic showing the design used a LM386N amplifier to provide sufficient voltage through the speaker.</em></p>
 </section>
@@ -259,7 +259,7 @@ The final implementation successfully played <em>Für Elise</em> and <em>Blue (D
 All designs were successfully implemented. The lab took 18 to complete.
 </p>
 <p class="justify-text">
-The lab reinforced the importance of precise timers configuration and sequencingin PWM updates for digital audio. Notable challenges included ensuring smooth PWM output when changing frequencies, accurately calculating PSC and ARR values for a wide range of notes, and finding base addresses in the MCU datasheet. After overcoming these challenges, the implementation was capable of playign mutiple songs with correct pitch and timing, which provided practical experience with bare-metal C programming.
+The lab reinforced the importance of precise timers configuration and sequencingin PWM updates for digital audio. Notable challenges included ensuring smooth PWM output when changing frequencies, accurately calculating <code>PSC</code> and <code>ARR</code> values for a wide range of notes, and finding base addresses in the MCU datasheet. After overcoming these challenges, the implementation was capable of playign mutiple songs with correct pitch and timing, which provided practical experience with bare-metal C programming.
 </p>
 <p><a href="https://youtu.be/cxhU5bDPtMg" target="_blank"> <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;"> ▶ Lab 4: Für Elise &amp; Blue Video </button> </a></p>
 <section id="ai-prototype" class="level3">

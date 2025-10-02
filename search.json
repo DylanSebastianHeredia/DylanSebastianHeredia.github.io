@@ -81,7 +81,7 @@
     "href": "E155_Lab_4.html#technical-documentation",
     "title": "Lab 4: Digital Audio",
     "section": "Technical Documentation",
-    "text": "Technical Documentation\n\nThe TIM16 output on PA6 was connected to a small speaker through an LM348 audio amplifier to boost the 5.0V MCU signal to audible levels. A 10kΩ potentiometer allowed volume control. This setup provided sufficient volume while protecting the MCU from excessive current draw. Figure 4 below shows the electrical schematic for the design.\n\n Figure 4: Schematic showing the design used a LM386N amplifier to provide sufficient voltage through the speaker."
+    "text": "Technical Documentation\n\nThe TIM16 output on PA6 was connected to a small speaker through an LM348 audio amplifier to boost the 5.0V MCU signal to audible levels. A 10kΩ potentiometer allowed volume control. This setup provided sufficient volume while protecting the MCU from excessive current draw. Figure 4 below shows the electrical schematic for the design. The code for this project can be accessed through GitHub.\n\n Figure 4: Schematic showing the design used a LM386N amplifier to provide sufficient voltage through the speaker."
   },
   {
     "objectID": "E155_Lab_4.html#results-discussion",
