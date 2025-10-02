@@ -133,7 +133,7 @@ css: styles.css
 ## Conclusion & Demo ##
 
 <p class="justify-text"> 
-    All designs were successfully implemented. The lab took 18 to complete. 
+    All designs were successfully implemented. The lab took 18 hours to complete. 
 </p>
 
 <p class="justify-text"> 
