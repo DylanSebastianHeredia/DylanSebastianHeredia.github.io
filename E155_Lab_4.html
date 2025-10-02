@@ -184,6 +184,7 @@ In this lab, the internal peripheral timers of the <a href="https://hmc-e155.git
 <p class="justify-text">
 The goals of the lab were twofold: 1) Build a circuit to enable an I/O pin from the MCU to drive a speaker and 2) Write libraries in C from scratch. To meet the outlined goals, two timers were developed. First, timer TIM15 was used to generate precise millisecond delays for note durations. Second, timer TIM16 was used to produce PWM signals corresponding to musical notes. The GPIO pin PA6 was configured to use alternate function 14 so that the TIM16 output could be routed to the audio circuit. Then, the main program iterated through arrays containing note frequencies (Hz) and durations (ms), updating the PWM output for each note and delaying the program execution according to the specified note length. This setup allowed the MCU to function as a digital audio synthesizer capable of playing sequences of notes with varying pitches.
 </p>
+<p><img src="images/E155_Lab4/cover_lab4.jpg" alt="Lab 4 circuit setup" style="width:100%; border-radius: 15px;"> <em>Figure 1: Physical circuit setup for MCU, potentiometer, and speaker components.</em></p>
 <p class="justify-text">
 Custom headers were written for the <code>RCC</code>, <code>GPIO</code>, and <code>TIM</code> modules to allow direct access to registers and bit manipulation. This was necessary to configure clocks, timers, and GPIOs. By defining the timer registers in <code>TIM.h</code> as structured data, specific registers could be modified for PWM output or delay control.
 </p>
@@ -210,7 +211,7 @@ The main program first configured wait states and system clocks, then enabled th
 <section id="calculations" class="level2">
 <h2 class="anchored" data-anchor-id="calculations">Calculations</h2>
 <p class="justify-text">
-The prescaler (<code>PSC</code>) value divides the system clock frequency of 80MHz by any factor between 1 and 65,536. <em>Figure 1</em> anf <em>Figure 2</em> below show calculations for the maximum and minimum values for frequency and duration components based on the selected <code>PSC</code> and contraints for the auto-reload register (<code>ARR</code>) noted in the <a href="https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">STM32L432KC Reference Manual</a>.
+The prescaler (<code>PSC</code>) value divides the system clock frequency of 80MHz by any factor between 1 and 65,536. <em>Figure 2a</em> anf <em>Figure 2b</em> below show calculations for the maximum and minimum values for frequency and duration components based on the selected <code>PSC</code> and contraints for the auto-reload register (<code>ARR</code>) noted in the <a href="https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">STM32L432KC Reference Manual</a>.
 </p>
 <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
 <div style="flex: 2; width: 300px;">
@@ -219,7 +220,7 @@ The prescaler (<code>PSC</code>) value divides the system clock frequency of 80M
 
 </div>
 <p>
-<em>Figure 1: Frequency range based on</em> <code>PSC = 79</code>.
+<em>Figure 2a: Frequency range based on</em> <code>PSC = 79</code>.
 </p>
 </div>
 <div style="flex: 2; min-width: 300px;">
@@ -228,7 +229,7 @@ The prescaler (<code>PSC</code>) value divides the system clock frequency of 80M
 
 </div>
 <p>
-<em>Figure 2: Duration range based on</em> <code>PSC = 3000</code>.
+<em>Figure 2b: Duration range based on</em> <code>PSC = 3000</code>.
 </p>
 </div>
 </div>
@@ -256,7 +257,7 @@ The final implementation successfully played <em>Für Elise</em> and <em>Blue (D
 <section id="conclusion-demo" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion-demo">Conclusion &amp; Demo</h2>
 <p class="justify-text">
-All designs were successfully implemented. The lab took 18 to complete.
+All designs were successfully implemented. The lab took 18 hours to complete.
 </p>
 <p class="justify-text">
 The lab reinforced the importance of precise timers configuration and sequencingin PWM updates for digital audio. Notable challenges included ensuring smooth PWM output when changing frequencies, accurately calculating <code>PSC</code> and <code>ARR</code> values for a wide range of notes, and finding base addresses in the MCU datasheet. After overcoming these challenges, the implementation was capable of playign mutiple songs with correct pitch and timing, which provided practical experience with bare-metal C programming.
