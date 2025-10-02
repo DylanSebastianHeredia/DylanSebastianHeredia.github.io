@@ -41,6 +41,9 @@ css: styles.css
   the specified note length. This setup allowed the MCU to function as a digital audio synthesizer capable of playing sequences of notes with varying pitches. 
 </p>
 
+<img src="images/E155_Lab4/cover_lab4.jpg" alt="Lab 4 circuit setup" style="width:100%; border-radius: 15px;">
+*Figure 1: Physical circuit setup for MCU, potentiometer, and speaker components.*
+
 <p class="justify-text"> 
   Custom headers were written for the `RCC`, `GPIO`, and `TIM` modules to allow direct access to registers and bit manipulation. This was necessary to configure clocks, timers, 
   and GPIOs. By defining the timer registers in `TIM.h` as structured data, specific registers could be modified for PWM output or delay control.
@@ -78,7 +81,7 @@ css: styles.css
 
 ## Calculations ##
 <p class="justify-text"> 
-  The prescaler (`PSC`) value divides the system clock frequency of 80MHz by any factor between 1 and 65,536. *Figure 1* anf *Figure 2* below show calculations for the maximum and minimum
+  The prescaler (`PSC`) value divides the system clock frequency of 80MHz by any factor between 1 and 65,536. *Figure 2a* anf *Figure 2b* below show calculations for the maximum and minimum
   values for frequency and duration components based on the selected `PSC` and contraints for the auto-reload register (`ARR`) noted in 
   the [STM32L432KC Reference Manual](https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf).
 </p>
@@ -88,7 +91,7 @@ css: styles.css
   <img src="images/E155_Lab4/freq_calc.jpg" alt="Frequency range calculations" style="width:100%; border-radius: 15px;">
   <div style="height: 10px;"></div>
   <p>
-    *Figure 1: Frequency range based on* `PSC = 79`.
+    *Figure 2a: Frequency range based on* `PSC = 79`.
   </p>
 </div>
 
@@ -96,7 +99,7 @@ css: styles.css
   <img src="images/E155_Lab4/duration_calc.jpg" alt="Duration range calculations" style="width:100%; border-radius: 15px;">
   <div style="height: 10px;"></div>
   <p>
-    *Figure 2: Duration range based on* `PSC = 3000`.
+    *Figure 2b: Duration range based on* `PSC = 3000`.
   </p>
 </div>
 </div>
