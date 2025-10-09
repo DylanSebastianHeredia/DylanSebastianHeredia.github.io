@@ -49,6 +49,216 @@
     "text": "Conclusion & Demo\n\nAll designs were successfully implemented. All simulations matched expectation and the physical hardware behaved as intended. The lab took 15 hours to complete.\n\n\nBeyond reinforcing concepts of time-multiplexing to overcome challenges with limited hardware, I also gained valuable practice with hardware-aware digital design. That is, I learned how to integrate PNP transistors to source current common-anode displays, calculate and justify current-limiting resistor values using datasheets, and synchronize a divided oscillator signal with human perception to achieve a smooth visual output. This lab also strengthened my workflow of simulating modules in Questa prior to hardware implementation, which helped ensure correctness and streamline debugging.\n\n  ▶ Lab 2: Multiplexing Video  \n\nAI Prototype\nThe purpose of the AI Prototype is to experiment with usign AI as a coding assistant to produce HDL. The following prompt was entered to ChatGPT 5.0.\n\n\n\n\n\n\nLLM Prompt\n\n\n\nWrite SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits.\n\n\n\nWithin 10 seconds of thinking, ChatGPT 5.0 produced a SystemVerilog script that was capable of being synthesized in Lattice Radiant on the first try. Figure 7 below shows the RTL schematic of the generated script. Looking at the schematic, the number of inputs matches expectations as there are two 4-bit inputs, clk, and reset. In terms of outputs, the schematic correctly shows two sets of 7-segment displays as well as toggle bits held in anode[1:0], however, there is an extra set of outputs called seg_bus[6:0] which appears to acts a docking location for the display value before it is output on seg[0] or seg[1]. Nevertheless, seg_bus[6:0] should be an internal variable not an output.\n\n Figure 7: RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.\n\nWithin the same AI conversation with the LLM, the following follow-up prompt was asked.\n\n\n\n\n\n\n\nLLM Prompt\n\n\n\nWrite SystemVerilog HDL to time multiplex a single seven segment decoder (that decodes from four bits to a common anode seven segment display) to decode two sets of input bits and drive two sets of seven output bits. Use the seven segment decoder and oscillator provided in the attached files.\n\n\n\nFor some reason, when sharing my Lab 1 files with ChatGPT, it was unable to produce a script capable of being synthesized in Lattice Radiant. I prompted the LLM three times, encouraging it to implement insights from the attached documents and it was never able to correctly do so."
   },
   {
+    "objectID": "E155_Lab_5.html",
+    "href": "E155_Lab_5.html",
+    "title": "Lab 5: Interrupts",
+    "section": "",
+    "text": "In this lab, the STM32L432KC MCU was configured with interrupts to measure the rotational speed and direction of a 25GA-370 brushed DC motor containing a quadrature encoder. Pulses from the encoder were detected on the rising and falling edges of both encoder signals to achieve a high degree of accuracy in real-time.\n\n\n  ▶ Lab 5: Encoder Demo  \n  Code"
+  },
+  {
+    "objectID": "E155_Lab_5.html#introduction",
+    "href": "E155_Lab_5.html#introduction",
+    "title": "Lab 5: Interrupts",
+    "section": "",
+    "text": "In this lab, the STM32L432KC MCU was configured with interrupts to measure the rotational speed and direction of a 25GA-370 brushed DC motor containing a quadrature encoder. Pulses from the encoder were detected on the rising and falling edges of both encoder signals to achieve a high degree of accuracy in real-time.\n\n\n  ▶ Lab 5: Encoder Demo  \n  Code"
+  },
+  {
+    "objectID": "E155_Lab_5.html#background",
+    "href": "E155_Lab_5.html#background",
+    "title": "Lab 5: Interrupts",
+    "section": "Background",
+    "text": "Background\n\nLab Overview\n\nThis lab consisted of two primary goals. The first goal was to implement an interrupt algorithm to sense quadrature encoder pulses and convert them into motor velocity. The second goal was to display the measured speed with direction to a user with an update rate of at least 1Hz. Moreover, the interrupts were set to trigger on both the rising and falling edges of the encoder pulses to optimize accuracy when determining elapsed time between pulses.\n\n\n\nQuadrature Encoder\n\nA quadrature encoder is an incremental sensor with two or more out-of-phase output channels that can detect the speed and direction of motion of a rotating shaft. Since the channels are offset by 90º as shown in Figure 1, when channel A leads channel B, the motion is clockwise (CW), and when B leads A, the direction is reversed (CCW). In this specific lab, the quadrature encoder measures the angle of the DC brushed motor axle using Hall effect sensors which count pulses in the form of magnetic fields.\n\n Figure 1: Quadrature encoder setup with Hall effect sensors 90º out of phase to determine direction.\n\nAs the motor rotates, the Hall effect sensors will output will register HIGH (1) when passing a fixed point within the motor casing, otherwise they register LOW (0). In this way, a square wave alternating between HIGH and LOW is created for each encoder."
+  },
+  {
+    "objectID": "E155_Lab_5.html#methods-designs",
+    "href": "E155_Lab_5.html#methods-designs",
+    "title": "Lab 5: Interrupts",
+    "section": "Methods & Designs",
+    "text": "Methods & Designs\n\nUnlike the previous lab, the CMSIS libraries were provided which meant structs for each register did not need to be configured from scratch. From the E155 Repository, GPIO, RCC, and TIM files were recycled. For this project, main.c was updated to implement the design. Additionally, the flow of the interrupt design can be visualized in Figure 2 pictured below.\n\n Figure 2: Flowchart illustrating the main loop, setups, and interrupt sequence of the design.\n\nDirection Logic\n\nOnce an interrupt is triggered in compute_velocity, the interrupt handler determines the direction of the motor by comparing the encoder states before the interrupt to the encoder states when the interrupt is triggered by a motor rotation. The handler, EXTI9_5_IQRHandler, determines direction by checking which encoder is “seen” first from a given initial state combination. Since there are two encoders and each encoder can occupy one of two states (HIGH or LOW), there are 2^2 = 4 total state combinations. Figure 3 below shows a visualization of how moving between the four encoder state combinations results in clockwise (CW) motion when ENCODER_A leads versus counter-clockwise (CCW) motion when ENCODER_B leads. For example, if the last state combination is A = 0 and B = 0 and the next state combination is A = 1 and B = 0, then the direction is CW since A is “seen” first and is therefore leading B. Examining this approach more closely, a future design might only check the current state of each encoder since the interrupt actually only fires when the encoder readings change. That is, the current direction does not depend on the previous direction since the interrupt only monitors the current direction.\n\n Figure 3: Visualization of leading and lagging square wave signals between ENCODER_A and ENCODER_B.\n\n\nSpeed Logic\n\nMotor speed in revolutions per second (rev/sec) was calculated by RPS = counter / (PPR * 4) where counter represents the number of pulses in 1 second and PPR = 408 is the known pulse per revolution rate provided in the motor datasheet. In this equation, PPR is scaled by 4 to account for the four flags raised per revolution by the rising and falling edge of ENCODER_A and rising and falling edge of ENCODER_B.\n\n\nMoreover, measured speed was verified by the calculations shown below in Figure 4 for a 12V input. Importantly, the frequency in Figure 4 is read straight from the oscilloscope, so it has already accounted for the four encoder edges, therefore dividing by 4 is ommitted from the RPS calculation.\n\n Figure 4: Verifying motor speed by comparing to the theoretical speed listed in the datasheet for 12V.\n\nSince the measured speed of 2.917 rev/sec at 12V is very close to the theoretical speed of 2.5 rev/sec at 12V, the measured speed matches the true motor speed. The slight variation between the measured and theoretical speeds could be a result of the motor speed itself fluctuating or the analog power supply dial being set slightly past the 12V mark internally.\n\n\n\nSchematic\n\nThe schematic for this lab was straightforward and can be viewed below in Figure 5.\n\n Figure 5: Electrical schematic for the lab consisting of the MCU, brushed motor, and power supply."
+  },
+  {
+    "objectID": "E155_Lab_5.html#polling-vs.-interrupting",
+    "href": "E155_Lab_5.html#polling-vs.-interrupting",
+    "title": "Lab 5: Interrupts",
+    "section": "Polling vs. Interrupting",
+    "text": "Polling vs. Interrupting\n\nIn order to monitor whether the two encoder signals are HIGH or LOW at a given time, they must continuously read by the MCU. One way to achieve this is through polling—a method where the main loop constantly cheks if the GPIO pins connected to the encoder outputs have changed. The issue with polling, however, is that everything inside the main while loop takes time to execute. As a result, if the processor is occupied with other operations, it may fail to detect a rapid change in the encoder signal. In other words, polling can lead to inaccurate, aliasing behavior. To address this limitation, interrupts are used. Interrupts enables the microcontroller to immediately respond to specific events, such as a change in input state, without waiting for the main loop to complete.\n\n\nThe oscilloscope trace in Figure 6 shows the following signals: Yellow = ENCODER_B, Blue = POLLING_PIN, and Pink = INTERRUPT_PIN` for a high speed set by 20V. At this fast motor speed, the trace shows that the polling signal frequency is too large to accurately sample the encoder, whereas the interrupt signal can effectively sample the encoder. According to the Nyquist-Shannon Sampling Theory, since the interrupt signal frequency of 3.85kHz is greater than double the maximum frequency of the encoder signal which is 1.85kHz, the interrupt signal can accurately read all encoder changes. This shows how applying interrupts instead of polling leads to more accurate encoder readings over a wide range of motor speeds.\n\n Figure 6: Oscilloscope trace showing Yellow = ENCODER_B where Blue = POLLING_PIN aliases and Pink = INTERRUPT_PIN samples correctly."
+  },
+  {
+    "objectID": "E155_Lab_5.html#results-discussion",
+    "href": "E155_Lab_5.html#results-discussion",
+    "title": "Lab 5: Interrupts",
+    "section": "Results & Discussion",
+    "text": "Results & Discussion\n\nThe final implementation successfully measured and displayed the motor speed in rev/sec and direction with an update rate of at least 1Hz. Moreover, all edges of the encoder pulses were used to achieve the highest resolution measurement. Lastly, the MCU did not miss any pulses at high speed and properly output a non-zero velocity at very low speeds."
+  },
+  {
+    "objectID": "E155_Lab_5.html#conclusion-demo",
+    "href": "E155_Lab_5.html#conclusion-demo",
+    "title": "Lab 5: Interrupts",
+    "section": "Conclusion & Demo",
+    "text": "Conclusion & Demo\n\nAll designs were successfully implemented. The lab took 21 hours to complete.\n\n\nThis lab solidified by understanding of interrupts the comparison between polling and interrupt-driven approaches highlighted the efficiency and accuracy advantages of using interrupts for real-time signal processing. Overall, this lab strengthened my understanding of hardware-level event handling and its importance in embedded system design.\n\n  ▶ Lab 5: Encoder Demo  \n\nAI Prototype\nThe purpose of the AI Prototype is to experiment with usign AI as a coding assistant to navigate memory maps and guide the configuration of various peripherals. The following prompt was entered to ChatGPT 5.0.\n\n\n\n\n\n\nLLM Prompt\n\n\n\nWrite me interrupt handlers to interface with a quadrature encoder. I’m using the STM32L432KC, what pins should I connect the encoder to in order to allow it to easily trigger the interrupts?\n\n\n\nWhile ChatGPT 5.0 was able to produce a response quickly, the code did not compile immediately because it contained lines that we not not spelled the same or did not exist in the libraries I used. For example, I did not have a \"stm32l4xx_hal.h\" header file. After I replaced this with &lt;stm32l432xx.h&gt;, the code compiled and ran. However, the printed output was incorrect. The magnitude of velocity was always near 0.000 and the direction was constantly CW. ChatGPT may be more helpful if it is familar with your libraries."
+  },
+  {
+    "objectID": "engineering.html",
+    "href": "engineering.html",
+    "title": "Engineering Class Projects",
+    "section": "",
+    "text": "At Harvey Mudd, the General Engineering major is highly robust. Our program consists of three main approaches to tackling Engineering: Systems, Sciences, and Design. The Systems appraoch focuses on how to apply mathematically model general system outputs and functions of their input. The Sciences are intended to give a broad education in engineering, where students explore Chemical and Thermal Processes, Mechanics, Electronic and Magnet Circuits, Computer Architecture, and Material Science. Lastly, the Design field teaches Professional skills necessary to apply theory learned in class. These skills include, teamwork, communication, project management, and design and prototyping. During my time at Mudd, I’ve worked on a variety of interesting projects to complete practical tasks. Below, I’ve listed a few of my favorite Engineering class projects.\nBy clicking the  Show More  buttons below, learn more about the What, How, and Results of each project."
+  },
+  {
+    "objectID": "engineering.html#e4-design-manufacturing",
+    "href": "engineering.html#e4-design-manufacturing",
+    "title": "Engineering Class Projects",
+    "section": "E4: Design & Manufacturing",
+    "text": "E4: Design & Manufacturing\n\nMachinist Hammer\n\n\n\n\n\n\n\nOverview:  Manufactured a functional machinist hammer from clear oak, AISI 1015 & 4340 steel, and nylon, following strict technical specifications. The experience inspired me to become a Harvey Mudd Machine Shop proctor.\n\n\nSkills:  GD&T, Lathe, Mill, Bandsaw, Router, Taps, Digital Micrometers, HRC Hardness Tester, Laser Cutter\n\n\n Show More \n  Tech Drawing  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nCrafted a functional machinist hammer from oak, steel, and nylon, adhering to precise GD&T specifications. \nContributed to the Harvey Mudd College tradition of student-made hammers while developing hands-on machining skills.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nMachined head stock to length using lathe and milling operations and verified with digital micrometers. \nHeat treated hardface, verified HRC Hardness for durability, and sandblasted for smooth finish. \n\n\n\n\n\n\n\n\nResults\n\n\n\nDelivered a high-quality, durable machinist hammer that scored near perfect in quality of manufacturing. \nBecame a Machine Shop proctor, training and mentoring new students to ensure shop safety.\n\n\n\n\n\n\n\n\n\n\n\n\n\nOptimizing Neuroimaging Device\n\n\n\n\n\n\n\nOverview:  Developed three mechanisms to improve Functional Near-Infrared Spectroscopy (fNIRS) infrared (IR) light delivery to the scalp, addressing signal loss from thick or dark hair.\n\n\nSkills:  Project & Design Management, Client Communication\n\n\nTeam: Brock B. | Annette C. | Gabrielle R..\n\n\n Show More \n  Memo  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nFiber Optic Attachment with Custom Spring Cap: Threads IR light through thick hair to the scalp. \nHair Moving Pick: Moves hair away from covering the scalp. \nWider Mounting Base: Improves contact between the IR emitters and scalp.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nMachined prototypes to verify proof of concept and refined iterations based on client input and professor feedback. \nDeveloped process routers for all prototype designs and documented findings into reports to be shared with the team and the client.\n\n\n\n\n\n\n\n\nResults\n\n\n\nIncreased signal clarity of fNIR device for users with dense hair types (3C, 4A), improving readings from critical to acceptable. \nGained experience arranging and executing client meetings to determine client needs and pain points."
+  },
+  {
+    "objectID": "engineering.html#e79-engineering-systems",
+    "href": "engineering.html#e79-engineering-systems",
+    "title": "Engineering Class Projects",
+    "section": "E79: Engineering Systems",
+    "text": "E79: Engineering Systems\n\nRemotely Operated Vehicle (ROV)\n\n\n\n\n\n\n\nOverview:  Built an underwater Remotely Operated Vehicle (ROV) to simultaneously measure depth and temperature at the Robert J. Bernard Biological Field Station.\n\n\nSkills:  LabVIEW, Soldering, Oscilloscope, PCB Assembly, DMM, Breadboarding\n\n\nTeam: Brock B.\n\n Show More \n\n\n\n\n\n\n\n\nWhat?\n\n\n\nCreated a fully waterproof ROV to measure temperature across varying depths. \nImplemented P control for motor operation.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nModeled and simulated vertical motion of the ROV by changing the motor PWM duty cycle in LabVIEW. \nSoldered MPX5700 pressure sensor and NXFT15XH103 thermistor circuits to the project PCB.\n\n\n\n\n\n\n\n\nResults\n\n\n\nDeployed ROV in a real-world application and collected reasonable environmental data. \nGained hands-on experience in circuit breadboarding, soldering, and oscilloscope use."
+  },
+  {
+    "objectID": "engineering.html#e80-experimental-engineering",
+    "href": "engineering.html#e80-experimental-engineering",
+    "title": "Engineering Class Projects",
+    "section": "E80: Experimental Engineering",
+    "text": "E80: Experimental Engineering\n\nAutonomous Surface Vehicle (ASV)\n\n\n\n\n\n\n\nOverview:  Designed and deployed an Autonomous Surface Vehicle (ASV) to map water depth at Baby Beach, Dana Point Harbor, CA using mechanical, electrical, and pressure-based sensing techniques.\n\n\nSkills:  Arduino, MATLAB, Power Tools, BOM, 3D-Printing\n\n\nTeam: John S. | Georgia T. | Simone Y.\n\n\n Show More \n  ▶ Video     Memo  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\n\n\nMeasured underwater depth using three complementary sensing methods: \n\n\nHall effect sensor embedded in a 3D-printed winch and spool for mechanical depth measurement. \nPressure sensor calibrated for direct depth readings. \nMotor-based voltage integration to estimate depth during retrieval. \n\n\n\n\n\n\n\n\nHow?\n\n\n\n\n\nDesigned and created a lightweight, buoyant ASV frame using power tools. \nWaterproofed electronics housing container using epoxy and Parafilm. \nIterated Arduino code on the Teensy 4.0 microcontroller in order to interface components. \nPerformed magnetometer calibration on the ASV’s IMU.\n\n\n\n\n\n\n\n\nResults\n\n\n\n\n\nGained experience with the fast-pace reality of product development in a real-world environment. \nLearned how to effectively manage a project and adhere to time and budget constraints. \nValidated the effectiveness of low-cost ($50 budget), multi-sensor ASVs for generating high-resolution shore plots."
+  },
+  {
+    "objectID": "engineering.html#e85-digital-electronics-comp.-architecture-risc-v",
+    "href": "engineering.html#e85-digital-electronics-comp.-architecture-risc-v",
+    "title": "Engineering Class Projects",
+    "section": "E85: Digital Electronics & Comp. Architecture (RISC-V)",
+    "text": "E85: Digital Electronics & Comp. Architecture (RISC-V)\n\n2D-Digital Level\n\n\n\n\n\n\n\nOverview:  Built a 2D-digital level using a microcontroller, a 7x7 LED matrix, and a triple-axis accelerometer with SPI communication. Gained experince with embedded software and signal processing in real-time.\n\n\nSkills:  C/C++, SPI Communication, Calibration, Soldering\n\n\n Show More \n  ▶ Video     Code  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\n\n\nCreated a digital level that maps tilt angles from a triple-axis accelerometer to a 7x7 LED matrix “bubble” display. \nBubble motion indicated surface tilt in X and Y axes, stopping at matrix edges for extreme angles.\n\n\n\n\n\n\n\n\nHow?\n\n\n\n\n\nProgrammed a RED-V ThingPlus microcontroller in C using SPI communication to interface with the accelerometer. \nImplemented real-time signal processing and calibration to ensure smooth, flicker-free bubble motion across the display. \n\n\n\n\n\n\n\n\nResults\n\n\n\n\n\nAchieved accurate, smooth, and reliable bubble display, validating full end-to-end embeded system integration. \nDesigned a sensitive and practical 2D-digital tool with immediate real-world use.\n\n\n\n\n\n\n\n\n\n\n\n\n\n32-Bit Multicycle Processor\n\n\n\n\n\n\n\nOverview:  Designed and implemented a 32-bit RISC-V multicycle processor in SystemVerilog usign Quartus and Questa. Developed experience in digital design, datapath and control logic, and modular architecture.\n\n\nSkills:  SystemVerilog, HDL, Assembly, Machine Language, RISC-V, Quartus FPGA, Questa\n\n\n Show More \n  Code  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nClick here to see diagrams. \nBuilt a multicycle CPU capable of executing arithmetic instructions, managing memory, adn performing real-time instruction execution. \nLeveraged single-cycle processor components such as muxes, registers, adders, and control logic to construct a modular multicycle architecture.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nWrote SystemVerilog datapath connecting controller, memory, and register file modules. \nSystematically debugged by comparing assembly and machine language test benches against waveforms to correct errors. \nConsulted Quartus RLT schematic to ensure accurate I/O connections.\n\n\n\n\n\n\n\n\nResults\n\n\n\n32-Bit RISC-V Multicycle processor matched waveform expectations, indicating that the corret values where written to the correct addresses. \nDeepened understanding of RISC-V architecture, processor design principles, and real-time instruction execution."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Personal Projects",
+    "section": "",
+    "text": "Through a wide range of hands-on projects, I’ve applied engineering principles beyond the classroom to design, prototype, and build solutions across electronics, manufacturing, and web development. These projects reflect my curiosity and persistence. Whether programming microcontrollers, machining custom hardware, or developing user-friendly software tools, I approach each challenge with an iterative problem-solving mindset. By experimenting, testing, and refining, I’ve expanded my technical toolbox while cultivating creativity, precision, and adaptability."
+  },
+  {
+    "objectID": "projects.html#electronics",
+    "href": "projects.html#electronics",
+    "title": "Personal Projects",
+    "section": "Electronics",
+    "text": "Electronics\n\nDigital Stop Watch\n\n\n\n\n\n\nOverview:  Programmed an Arduino UNO R3 microcontroller and a 5461BS 7-segment 4-digit display to create a stopwatch-style timer. The timer was equipped with two buttons: one to play/pause and another to reset the time. Gained proficiency with multiplexing, managing states, and debouncing.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video  \n\n\n\n\nSimon Says\n\n\n\n\n\n\nOverview:  Designed an interactive memory game on a Teensy 4.0 microcontroller. A sequence is played on the white LEDs and players repeat the correct pattern. Incorrect answers light the red LED and correct answers light the green LED to increase the sequence length by 1. If the final sequence is played correctly, the yellow LED will flash indicating a win.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video"
+  },
+  {
+    "objectID": "projects.html#manufacturing",
+    "href": "projects.html#manufacturing",
+    "title": "Personal Projects",
+    "section": "Manufacturing",
+    "text": "Manufacturing\n\nMudd Amateur Rocketry Club\n\n\n\n\n\n\nOverview:  Contributed to the design and fabrication of fins for the Mudd Amateur Rocketry Club (MARC) high-powered rocket. Machined and attached carbon fiber fins using power tools, sand paper, and epoxy to ensure accurate fit within the aft rocket body. Pursuing L1 certification (Expected Fall 2025).\n\n\nSkills:  Dremel, Power Tools, Epoxy\n\n  ▶ Video  \n\n\n\n\nPickleball Paddle\n\n\n\n\n\n\nOverview:  Designed and built a pickleball paddle for the 2025 Machine Shop Proctor Tournament. Modeled paddle dimensions based on reference measurements and programmed toolpaths on the ShopBot CNC Router, including cutting strategies, feed rates, and tab placement for safe and precise milling. Painted and laser-cut a stencil for precise lettering.\n\n\nSkills:  ShopBot, CNC Router, Laser Cutter, Calipers\n\n  ▶ Video  \n\n\n\n\nBallpoint Pen\n\n\n\n\n\n\nOverview:  Created a ballpoint pen through precision woodturning. Operated a lathe with gouges to achieve consistent cylindrical symmetry, followed by progressive grit sanding for smoothness. Applied protective varnish finishing before press-fitting the mechanical hardware using an arbor press.\n\n\nSkills:  Wood Lathe, Gouges, Wood Varnish, Arbor Press\n\n\n\n\n\nCheese Knife\n\n\n\n\n\n\nOverview:  Produced a set of custom wooden utensils, including a cheese knife, as family holiday gifts. Sketched utensil profiles based on Wooden Utensils from the Bandsaw. Rough-cut stock material on the bandsaw, and shaped contours with sanders and hand-finishing. Applied mineral oil treatment for food safety and durability.\n\n\nSkills:  Bandsaw, Belt Sander, Spindle Sander"
+  },
+  {
+    "objectID": "projects.html#web-development",
+    "href": "projects.html#web-development",
+    "title": "Personal Projects",
+    "section": "Web Development",
+    "text": "Web Development\n\nUCLA GIM CV Formatter\n\n\n\n\n\n\nOverview:  Developed a user-frienly, web-based application using Streamlit for creating, editing, and exporting CVs in compliance with the General Internal Medicine (GIM) CV Guidelines. Designed an interactive dashboard interface where users can select a CV from a manager panel, populate accordion-style surveys corresponding to guideline sections, and export a formatted MS Word file.\n\n\nSkills:  Python, Streamlit, APIs, Firebase, Design Process\n\n\n\n\n\nUCLA DOMStat Website\n\n\n\n\n\n\nOverview:  Contributed to the redesign and population of the updated UCLA Department of Medicine Statistics Core (DOMStat) website, ensuring a user-centered interface with emphasis on accessibility and intuitive navigation. Applied consistent visual design principles to align with UCLA Health brand identity.\n\n\nSkills:  Content Strategy, UI/UX, SEO"
+  },
+  {
+    "objectID": "outdoors.html",
+    "href": "outdoors.html",
+    "title": "Sports & Outdoors",
+    "section": "",
+    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
+  },
+  {
+    "objectID": "outdoors.html#ultimate-frisbee",
+    "href": "outdoors.html#ultimate-frisbee",
+    "title": "Sports & Outdoors",
+    "section": "",
+    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
+  },
+  {
+    "objectID": "outdoors.html#running",
+    "href": "outdoors.html#running",
+    "title": "Sports & Outdoors",
+    "section": "Running",
+    "text": "Running\n\nI began running consistently in Summer 2024 and have since achieved several personal milestones. Fall 2024, I ran a 10K Turkey Trot with my dad. Over Winter break, I logged 100 miles. And most recently, I completed my first half marathon this Summer 2025. I often complement my runs with jump rope, stair climbing, yoga, and weight training. Feel free to connect with me on Strava!\n\n\n\n\n\n\n\n\nRun at sunset in Los Angeles, CA\n\n\n\n\n\n\n\n\nNeighborhood run club with friends\n\n\n\n\n\n\n\n\nHalf marathon in Santa Monica, CA"
+  },
+  {
+    "objectID": "outdoors.html#pickleball",
+    "href": "outdoors.html#pickleball",
+    "title": "Sports & Outdoors",
+    "section": "Pickleball",
+    "text": "Pickleball\n\nOn weekends, my friends and I play pickleball at the Robert’s Pavillion at Claremont McKenna College. We play singles, doubles, and king of the court style play. It’s always a good time and our play sessions last anywhere from 2-4 hours each.\n\n\n\n\n\n\n\n\nWeekend pickleball with friends\n\n\n\n\n\n\n\n\nMachine Shop proctor tournament\n\n\n\n\n\n\n\n\nPickleball in Westchester, CA"
+  },
+  {
+    "objectID": "music.html",
+    "href": "music.html",
+    "title": "Music & Performance",
+    "section": "",
+    "text": "My musical journey with the viola started in 4th grade through the Santa Monica Malibu Unified School District (SMMUSD) music program. I began taking lessons in 5th grade under the direction of Dr. Lindsey Strand-Polyak. I have now played the viola for 11 years and music has contributed to so many of my most special experiences and memories. Through various fundraiser performances, seasonal concerts, weddings, and tours, I’ve met incredible people and made life-long friends."
+  },
+  {
+    "objectID": "music.html#years-of-viola",
+    "href": "music.html#years-of-viola",
+    "title": "Music & Performance",
+    "section": "",
+    "text": "My musical journey with the viola started in 4th grade through the Santa Monica Malibu Unified School District (SMMUSD) music program. I began taking lessons in 5th grade under the direction of Dr. Lindsey Strand-Polyak. I have now played the viola for 11 years and music has contributed to so many of my most special experiences and memories. Through various fundraiser performances, seasonal concerts, weddings, and tours, I’ve met incredible people and made life-long friends."
+  },
+  {
+    "objectID": "music.html#orchestra-tours",
+    "href": "music.html#orchestra-tours",
+    "title": "Music & Performance",
+    "section": "Orchestra Tours",
+    "text": "Orchestra Tours\n\nNew York, USA (2022)\n\n\n\n\n\n\nIn June 2022, the Santa Monica High School (SAMOHI) Symphony Orchestra, a full orchestra comprised of over 80 student musicians toured New York City, performing at Carnegie Hall and St. Malachy Church. During the tour we attended workshops and master-classes.\n\n\n  ▶ Video  \n\n\n\n\n\nIreland (2023)\n\n\n\n\n\n\nIn April 2023, the SAMOHI Chamber Orchestra, an ensemble made of the first two rows of strings from the Symphony Orchestra toured Ireland, performing in Derry, Belfast, and Dublin. One of my favorite pieces from the program was Elgar’s Introduction & Allegro for Strings, Op. 47. The piece was written for a string quartet and accompanying string ensemble. I performed the viola solo in the quartet and had a great time performing with my friends.\n\n\n  ▶ Video"
+  },
+  {
+    "objectID": "music.html#private-public-gigs",
+    "href": "music.html#private-public-gigs",
+    "title": "Music & Performance",
+    "section": "Private & Public Gigs",
+    "text": "Private & Public Gigs\n\n\n\n\n\n\nAs the Principal of the SAMOHI Chamber Orchestra for 2 years, I played in over 50 string ensemble gigs. As the orchestra librarian, I also selected repetoire and repaired sheet music for performances. Gig events include: Weddings, birthdays, memorials, fundraisers, private dinners, and award ceremories. Gig venues included: Los Angeles Country Club, Jonathan Club, Culver Hotel, Indigo Hotel, Santa Monica Pier, elementary schools, and various homes."
+  },
+  {
+    "objectID": "music.html#honor-orchestras",
+    "href": "music.html#honor-orchestras",
+    "title": "Music & Performance",
+    "section": "Honor Orchestras",
+    "text": "Honor Orchestras\n\n\n\n\n\n\nI’ve been a part of the California Orchestra Directors Association (CODA) for 4 years and the Sourthern California Band & Orchestra Association (SCSBOA) for 5 years, sitting Assistant Principal for 1 year and Principal for 3 years. Each year 100+ students apply for CODA and 60+ students for SCSBOA. Musicians are selected via audition to come together for a week to prepare a concert at the music educator conferences in Fresno, CA and Orange County, CA.\n\n  ▶ Video"
+  },
+  {
+    "objectID": "music.html#recordings-compositions",
+    "href": "music.html#recordings-compositions",
+    "title": "Music & Performance",
+    "section": "Recordings & Compositions",
+    "text": "Recordings & Compositions\n\n\n\n\n\n\nI love playing duets with recordings of myself or digital instruments, and throughout the years I’ve started writing down my compositions. After class and on weekends, I also enjoy learning pop songs with my friends, pianist, Kai Mawhinney, and vocalist and guitarist, Emmett Levine. We often improvise together and have performed on the Claremont College student radio, KSPC, and at Emmett’s Guitar Club recitals.\n\n  ▶ Video"
+  },
+  {
+    "objectID": "projects/demo-project/index.html",
+    "href": "projects/demo-project/index.html",
+    "title": "Demo Project",
+    "section": "",
+    "text": "alt text\n\n\n\n\nFigure 1: This is the figure caption."
+  },
+  {
+    "objectID": "projects/demo-project/index.html#demo-section",
+    "href": "projects/demo-project/index.html#demo-section",
+    "title": "Demo Project",
+    "section": "",
+    "text": "alt text\n\n\n\n\nFigure 1: This is the figure caption."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "D. Sebastian Heredia",
+    "section": "",
+    "text": "He/Him\nHello! My name is Sebastian and I’m a Junior at Harvey Mudd College majoring in Engineering, with a strong foundation in math and a growing interest in electrical engineering—especially as it connects to embedded systems, robotics, and automation. I’m passionate about working at the intersection of hardware and systems that sense, respond, and interact in the world. I thrive in hands-on, fast paced environments and seek technical opportunities that will allow me to deepen my engineering skills and contribute to meaningful, systems-driven projects.\nOutside of engineering, I’m drawn to visual and audio storytelling in the form of photography, sketching, and editing sound and video. These hobbies sharpen my attention to detail, structure, and rhythm, which contribute to how I approach engineering problems. Whether I’m designing an electrical system, writing embedded code, or building a website—like the one I created here using Quarto x GitHub—I focus on how components work together and how the system behaves as a whole. This perspective allows me to prototype efficiently, communicate ideas clearly, and approach challenges both methodically and creatively.\nOpen Full Resume in New Tab"
+  },
+  {
+    "objectID": "index.html#additional-links",
+    "href": "index.html#additional-links",
+    "title": "D. Sebastian Heredia",
+    "section": "Additional Links",
+    "text": "Additional Links\n\n\n\n  \n  Judging Performance \n\n  Transcript Key"
+  },
+  {
     "objectID": "E155_Lab_4.html",
     "href": "E155_Lab_4.html",
     "title": "Lab 4: Digital Audio",
@@ -96,167 +306,6 @@
     "title": "Lab 4: Digital Audio",
     "section": "Conclusion & Demo",
     "text": "Conclusion & Demo\n\nAll designs were successfully implemented. The lab took 18 hours to complete.\n\n\nThe lab reinforced the importance of precise timers configuration and sequencingin PWM updates for digital audio. Notable challenges included ensuring smooth PWM output when changing frequencies, accurately calculating PSC and ARR values for a wide range of notes, and finding base addresses in the MCU datasheet. After overcoming these challenges, the implementation was capable of playign mutiple songs with correct pitch and timing, which provided practical experience with bare-metal C programming.\n\n  ▶ Lab 4: Für Elise & Blue Video  \n\nAI Prototype\nThe purpose of the AI Prototype is to experiment with usign AI as a coding assistant to navigate memory maps and guide the configuration of various peripherals. The following prompt was entered to ChatGPT 5.0.\n\n\n\n\n\n\nLLM Prompt\n\n\n\n\nWhat timers should I use on the STM32L432KC to generate frequencies ranging from 220Hz to 1kHz?\nWhat’s the best choice of timer if I want to easily connect it to a GPIO pin?\nWhat formulae are relevant, and what registers need to be set to configure them properly?\n\n\n\n\nFor Question 1, the LLM suggested using TIM1, TIM2, TIM15, TIM16, TIM17 as they are general-purpose or advanced timers capable of direclty driving GPIO. This is very resonable to me because I implemented TIM15 and TIM16 in my own design approach. Notably, the STM32L432KC Reference Manual. was provided along with the prompts above.\n\n\nFor Question 2, the LLM proposed using TIM2 as a timer since TIM2_CH1 is available on PA0 which is a very accessible GPIO pin. The LLM also recommended usign TIM16_CH1 on PA6. This is reasonable to me because I used PA6 to map directly to GPIO pins with alternate function mode.\n\n\nFor Question 3, the LLM provided the formulas shown in Figure 5 below as well as advice on how to configure registers correctly. Both the formulas and register configuration approach are valid.\n\n\n\n Figure 5: LLM response to relevant formula for selecting ARR and PSC."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "D. Sebastian Heredia",
-    "section": "",
-    "text": "He/Him\nHello! My name is Sebastian and I’m a Junior at Harvey Mudd College majoring in Engineering, with a strong foundation in math and a growing interest in electrical engineering—especially as it connects to embedded systems, robotics, and automation. I’m passionate about working at the intersection of hardware and systems that sense, respond, and interact in the world. I thrive in hands-on, fast paced environments and seek technical opportunities that will allow me to deepen my engineering skills and contribute to meaningful, systems-driven projects.\nOutside of engineering, I’m drawn to visual and audio storytelling in the form of photography, sketching, and editing sound and video. These hobbies sharpen my attention to detail, structure, and rhythm, which contribute to how I approach engineering problems. Whether I’m designing an electrical system, writing embedded code, or building a website—like the one I created here using Quarto x GitHub—I focus on how components work together and how the system behaves as a whole. This perspective allows me to prototype efficiently, communicate ideas clearly, and approach challenges both methodically and creatively.\nOpen Full Resume in New Tab"
-  },
-  {
-    "objectID": "index.html#additional-links",
-    "href": "index.html#additional-links",
-    "title": "D. Sebastian Heredia",
-    "section": "Additional Links",
-    "text": "Additional Links\n\n\n\n  \n  Judging Performance \n\n  Transcript Key"
-  },
-  {
-    "objectID": "projects/demo-project/index.html",
-    "href": "projects/demo-project/index.html",
-    "title": "Demo Project",
-    "section": "",
-    "text": "alt text\n\n\n\n\nFigure 1: This is the figure caption."
-  },
-  {
-    "objectID": "projects/demo-project/index.html#demo-section",
-    "href": "projects/demo-project/index.html#demo-section",
-    "title": "Demo Project",
-    "section": "",
-    "text": "alt text\n\n\n\n\nFigure 1: This is the figure caption."
-  },
-  {
-    "objectID": "music.html",
-    "href": "music.html",
-    "title": "Music & Performance",
-    "section": "",
-    "text": "My musical journey with the viola started in 4th grade through the Santa Monica Malibu Unified School District (SMMUSD) music program. I began taking lessons in 5th grade under the direction of Dr. Lindsey Strand-Polyak. I have now played the viola for 11 years and music has contributed to so many of my most special experiences and memories. Through various fundraiser performances, seasonal concerts, weddings, and tours, I’ve met incredible people and made life-long friends."
-  },
-  {
-    "objectID": "music.html#years-of-viola",
-    "href": "music.html#years-of-viola",
-    "title": "Music & Performance",
-    "section": "",
-    "text": "My musical journey with the viola started in 4th grade through the Santa Monica Malibu Unified School District (SMMUSD) music program. I began taking lessons in 5th grade under the direction of Dr. Lindsey Strand-Polyak. I have now played the viola for 11 years and music has contributed to so many of my most special experiences and memories. Through various fundraiser performances, seasonal concerts, weddings, and tours, I’ve met incredible people and made life-long friends."
-  },
-  {
-    "objectID": "music.html#orchestra-tours",
-    "href": "music.html#orchestra-tours",
-    "title": "Music & Performance",
-    "section": "Orchestra Tours",
-    "text": "Orchestra Tours\n\nNew York, USA (2022)\n\n\n\n\n\n\nIn June 2022, the Santa Monica High School (SAMOHI) Symphony Orchestra, a full orchestra comprised of over 80 student musicians toured New York City, performing at Carnegie Hall and St. Malachy Church. During the tour we attended workshops and master-classes.\n\n\n  ▶ Video  \n\n\n\n\n\nIreland (2023)\n\n\n\n\n\n\nIn April 2023, the SAMOHI Chamber Orchestra, an ensemble made of the first two rows of strings from the Symphony Orchestra toured Ireland, performing in Derry, Belfast, and Dublin. One of my favorite pieces from the program was Elgar’s Introduction & Allegro for Strings, Op. 47. The piece was written for a string quartet and accompanying string ensemble. I performed the viola solo in the quartet and had a great time performing with my friends.\n\n\n  ▶ Video"
-  },
-  {
-    "objectID": "music.html#private-public-gigs",
-    "href": "music.html#private-public-gigs",
-    "title": "Music & Performance",
-    "section": "Private & Public Gigs",
-    "text": "Private & Public Gigs\n\n\n\n\n\n\nAs the Principal of the SAMOHI Chamber Orchestra for 2 years, I played in over 50 string ensemble gigs. As the orchestra librarian, I also selected repetoire and repaired sheet music for performances. Gig events include: Weddings, birthdays, memorials, fundraisers, private dinners, and award ceremories. Gig venues included: Los Angeles Country Club, Jonathan Club, Culver Hotel, Indigo Hotel, Santa Monica Pier, elementary schools, and various homes."
-  },
-  {
-    "objectID": "music.html#honor-orchestras",
-    "href": "music.html#honor-orchestras",
-    "title": "Music & Performance",
-    "section": "Honor Orchestras",
-    "text": "Honor Orchestras\n\n\n\n\n\n\nI’ve been a part of the California Orchestra Directors Association (CODA) for 4 years and the Sourthern California Band & Orchestra Association (SCSBOA) for 5 years, sitting Assistant Principal for 1 year and Principal for 3 years. Each year 100+ students apply for CODA and 60+ students for SCSBOA. Musicians are selected via audition to come together for a week to prepare a concert at the music educator conferences in Fresno, CA and Orange County, CA.\n\n  ▶ Video"
-  },
-  {
-    "objectID": "music.html#recordings-compositions",
-    "href": "music.html#recordings-compositions",
-    "title": "Music & Performance",
-    "section": "Recordings & Compositions",
-    "text": "Recordings & Compositions\n\n\n\n\n\n\nI love playing duets with recordings of myself or digital instruments, and throughout the years I’ve started writing down my compositions. After class and on weekends, I also enjoy learning pop songs with my friends, pianist, Kai Mawhinney, and vocalist and guitarist, Emmett Levine. We often improvise together and have performed on the Claremont College student radio, KSPC, and at Emmett’s Guitar Club recitals.\n\n  ▶ Video"
-  },
-  {
-    "objectID": "outdoors.html",
-    "href": "outdoors.html",
-    "title": "Sports & Outdoors",
-    "section": "",
-    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
-  },
-  {
-    "objectID": "outdoors.html#ultimate-frisbee",
-    "href": "outdoors.html#ultimate-frisbee",
-    "title": "Sports & Outdoors",
-    "section": "",
-    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
-  },
-  {
-    "objectID": "outdoors.html#running",
-    "href": "outdoors.html#running",
-    "title": "Sports & Outdoors",
-    "section": "Running",
-    "text": "Running\n\nI began running consistently in Summer 2024 and have since achieved several personal milestones. Fall 2024, I ran a 10K Turkey Trot with my dad. Over Winter break, I logged 100 miles. And most recently, I completed my first half marathon this Summer 2025. I often complement my runs with jump rope, stair climbing, yoga, and weight training. Feel free to connect with me on Strava!\n\n\n\n\n\n\n\n\nRun at sunset in Los Angeles, CA\n\n\n\n\n\n\n\n\nNeighborhood run club with friends\n\n\n\n\n\n\n\n\nHalf marathon in Santa Monica, CA"
-  },
-  {
-    "objectID": "outdoors.html#pickleball",
-    "href": "outdoors.html#pickleball",
-    "title": "Sports & Outdoors",
-    "section": "Pickleball",
-    "text": "Pickleball\n\nOn weekends, my friends and I play pickleball at the Robert’s Pavillion at Claremont McKenna College. We play singles, doubles, and king of the court style play. It’s always a good time and our play sessions last anywhere from 2-4 hours each.\n\n\n\n\n\n\n\n\nWeekend pickleball with friends\n\n\n\n\n\n\n\n\nMachine Shop proctor tournament\n\n\n\n\n\n\n\n\nPickleball in Westchester, CA"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Personal Projects",
-    "section": "",
-    "text": "Through a wide range of hands-on projects, I’ve applied engineering principles beyond the classroom to design, prototype, and build solutions across electronics, manufacturing, and web development. These projects reflect my curiosity and persistence. Whether programming microcontrollers, machining custom hardware, or developing user-friendly software tools, I approach each challenge with an iterative problem-solving mindset. By experimenting, testing, and refining, I’ve expanded my technical toolbox while cultivating creativity, precision, and adaptability."
-  },
-  {
-    "objectID": "projects.html#electronics",
-    "href": "projects.html#electronics",
-    "title": "Personal Projects",
-    "section": "Electronics",
-    "text": "Electronics\n\nDigital Stop Watch\n\n\n\n\n\n\nOverview:  Programmed an Arduino UNO R3 microcontroller and a 5461BS 7-segment 4-digit display to create a stopwatch-style timer. The timer was equipped with two buttons: one to play/pause and another to reset the time. Gained proficiency with multiplexing, managing states, and debouncing.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video  \n\n\n\n\nSimon Says\n\n\n\n\n\n\nOverview:  Designed an interactive memory game on a Teensy 4.0 microcontroller. A sequence is played on the white LEDs and players repeat the correct pattern. Incorrect answers light the red LED and correct answers light the green LED to increase the sequence length by 1. If the final sequence is played correctly, the yellow LED will flash indicating a win.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video"
-  },
-  {
-    "objectID": "projects.html#manufacturing",
-    "href": "projects.html#manufacturing",
-    "title": "Personal Projects",
-    "section": "Manufacturing",
-    "text": "Manufacturing\n\nMudd Amateur Rocketry Club\n\n\n\n\n\n\nOverview:  Contributed to the design and fabrication of fins for the Mudd Amateur Rocketry Club (MARC) high-powered rocket. Machined and attached carbon fiber fins using power tools, sand paper, and epoxy to ensure accurate fit within the aft rocket body. Pursuing L1 certification (Expected Fall 2025).\n\n\nSkills:  Dremel, Power Tools, Epoxy\n\n  ▶ Video  \n\n\n\n\nPickleball Paddle\n\n\n\n\n\n\nOverview:  Designed and built a pickleball paddle for the 2025 Machine Shop Proctor Tournament. Modeled paddle dimensions based on reference measurements and programmed toolpaths on the ShopBot CNC Router, including cutting strategies, feed rates, and tab placement for safe and precise milling. Painted and laser-cut a stencil for precise lettering.\n\n\nSkills:  ShopBot, CNC Router, Laser Cutter, Calipers\n\n  ▶ Video  \n\n\n\n\nBallpoint Pen\n\n\n\n\n\n\nOverview:  Created a ballpoint pen through precision woodturning. Operated a lathe with gouges to achieve consistent cylindrical symmetry, followed by progressive grit sanding for smoothness. Applied protective varnish finishing before press-fitting the mechanical hardware using an arbor press.\n\n\nSkills:  Wood Lathe, Gouges, Wood Varnish, Arbor Press\n\n\n\n\n\nCheese Knife\n\n\n\n\n\n\nOverview:  Produced a set of custom wooden utensils, including a cheese knife, as family holiday gifts. Sketched utensil profiles based on Wooden Utensils from the Bandsaw. Rough-cut stock material on the bandsaw, and shaped contours with sanders and hand-finishing. Applied mineral oil treatment for food safety and durability.\n\n\nSkills:  Bandsaw, Belt Sander, Spindle Sander"
-  },
-  {
-    "objectID": "projects.html#web-development",
-    "href": "projects.html#web-development",
-    "title": "Personal Projects",
-    "section": "Web Development",
-    "text": "Web Development\n\nUCLA GIM CV Formatter\n\n\n\n\n\n\nOverview:  Developed a user-frienly, web-based application using Streamlit for creating, editing, and exporting CVs in compliance with the General Internal Medicine (GIM) CV Guidelines. Designed an interactive dashboard interface where users can select a CV from a manager panel, populate accordion-style surveys corresponding to guideline sections, and export a formatted MS Word file.\n\n\nSkills:  Python, Streamlit, APIs, Firebase, Design Process\n\n\n\n\n\nUCLA DOMStat Website\n\n\n\n\n\n\nOverview:  Contributed to the redesign and population of the updated UCLA Department of Medicine Statistics Core (DOMStat) website, ensuring a user-centered interface with emphasis on accessibility and intuitive navigation. Applied consistent visual design principles to align with UCLA Health brand identity.\n\n\nSkills:  Content Strategy, UI/UX, SEO"
-  },
-  {
-    "objectID": "engineering.html",
-    "href": "engineering.html",
-    "title": "Engineering Class Projects",
-    "section": "",
-    "text": "At Harvey Mudd, the General Engineering major is highly robust. Our program consists of three main approaches to tackling Engineering: Systems, Sciences, and Design. The Systems appraoch focuses on how to apply mathematically model general system outputs and functions of their input. The Sciences are intended to give a broad education in engineering, where students explore Chemical and Thermal Processes, Mechanics, Electronic and Magnet Circuits, Computer Architecture, and Material Science. Lastly, the Design field teaches Professional skills necessary to apply theory learned in class. These skills include, teamwork, communication, project management, and design and prototyping. During my time at Mudd, I’ve worked on a variety of interesting projects to complete practical tasks. Below, I’ve listed a few of my favorite Engineering class projects.\nBy clicking the  Show More  buttons below, learn more about the What, How, and Results of each project."
-  },
-  {
-    "objectID": "engineering.html#e4-design-manufacturing",
-    "href": "engineering.html#e4-design-manufacturing",
-    "title": "Engineering Class Projects",
-    "section": "E4: Design & Manufacturing",
-    "text": "E4: Design & Manufacturing\n\nMachinist Hammer\n\n\n\n\n\n\n\nOverview:  Manufactured a functional machinist hammer from clear oak, AISI 1015 & 4340 steel, and nylon, following strict technical specifications. The experience inspired me to become a Harvey Mudd Machine Shop proctor.\n\n\nSkills:  GD&T, Lathe, Mill, Bandsaw, Router, Taps, Digital Micrometers, HRC Hardness Tester, Laser Cutter\n\n\n Show More \n  Tech Drawing  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nCrafted a functional machinist hammer from oak, steel, and nylon, adhering to precise GD&T specifications. \nContributed to the Harvey Mudd College tradition of student-made hammers while developing hands-on machining skills.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nMachined head stock to length using lathe and milling operations and verified with digital micrometers. \nHeat treated hardface, verified HRC Hardness for durability, and sandblasted for smooth finish. \n\n\n\n\n\n\n\n\nResults\n\n\n\nDelivered a high-quality, durable machinist hammer that scored near perfect in quality of manufacturing. \nBecame a Machine Shop proctor, training and mentoring new students to ensure shop safety.\n\n\n\n\n\n\n\n\n\n\n\n\n\nOptimizing Neuroimaging Device\n\n\n\n\n\n\n\nOverview:  Developed three mechanisms to improve Functional Near-Infrared Spectroscopy (fNIRS) infrared (IR) light delivery to the scalp, addressing signal loss from thick or dark hair.\n\n\nSkills:  Project & Design Management, Client Communication\n\n\nTeam: Brock B. | Annette C. | Gabrielle R..\n\n\n Show More \n  Memo  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nFiber Optic Attachment with Custom Spring Cap: Threads IR light through thick hair to the scalp. \nHair Moving Pick: Moves hair away from covering the scalp. \nWider Mounting Base: Improves contact between the IR emitters and scalp.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nMachined prototypes to verify proof of concept and refined iterations based on client input and professor feedback. \nDeveloped process routers for all prototype designs and documented findings into reports to be shared with the team and the client.\n\n\n\n\n\n\n\n\nResults\n\n\n\nIncreased signal clarity of fNIR device for users with dense hair types (3C, 4A), improving readings from critical to acceptable. \nGained experience arranging and executing client meetings to determine client needs and pain points."
-  },
-  {
-    "objectID": "engineering.html#e79-engineering-systems",
-    "href": "engineering.html#e79-engineering-systems",
-    "title": "Engineering Class Projects",
-    "section": "E79: Engineering Systems",
-    "text": "E79: Engineering Systems\n\nRemotely Operated Vehicle (ROV)\n\n\n\n\n\n\n\nOverview:  Built an underwater Remotely Operated Vehicle (ROV) to simultaneously measure depth and temperature at the Robert J. Bernard Biological Field Station.\n\n\nSkills:  LabVIEW, Soldering, Oscilloscope, PCB Assembly, DMM, Breadboarding\n\n\nTeam: Brock B.\n\n Show More \n\n\n\n\n\n\n\n\nWhat?\n\n\n\nCreated a fully waterproof ROV to measure temperature across varying depths. \nImplemented P control for motor operation.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nModeled and simulated vertical motion of the ROV by changing the motor PWM duty cycle in LabVIEW. \nSoldered MPX5700 pressure sensor and NXFT15XH103 thermistor circuits to the project PCB.\n\n\n\n\n\n\n\n\nResults\n\n\n\nDeployed ROV in a real-world application and collected reasonable environmental data. \nGained hands-on experience in circuit breadboarding, soldering, and oscilloscope use."
-  },
-  {
-    "objectID": "engineering.html#e80-experimental-engineering",
-    "href": "engineering.html#e80-experimental-engineering",
-    "title": "Engineering Class Projects",
-    "section": "E80: Experimental Engineering",
-    "text": "E80: Experimental Engineering\n\nAutonomous Surface Vehicle (ASV)\n\n\n\n\n\n\n\nOverview:  Designed and deployed an Autonomous Surface Vehicle (ASV) to map water depth at Baby Beach, Dana Point Harbor, CA using mechanical, electrical, and pressure-based sensing techniques.\n\n\nSkills:  Arduino, MATLAB, Power Tools, BOM, 3D-Printing\n\n\nTeam: John S. | Georgia T. | Simone Y.\n\n\n Show More \n  ▶ Video     Memo  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\n\n\nMeasured underwater depth using three complementary sensing methods: \n\n\nHall effect sensor embedded in a 3D-printed winch and spool for mechanical depth measurement. \nPressure sensor calibrated for direct depth readings. \nMotor-based voltage integration to estimate depth during retrieval. \n\n\n\n\n\n\n\n\nHow?\n\n\n\n\n\nDesigned and created a lightweight, buoyant ASV frame using power tools. \nWaterproofed electronics housing container using epoxy and Parafilm. \nIterated Arduino code on the Teensy 4.0 microcontroller in order to interface components. \nPerformed magnetometer calibration on the ASV’s IMU.\n\n\n\n\n\n\n\n\nResults\n\n\n\n\n\nGained experience with the fast-pace reality of product development in a real-world environment. \nLearned how to effectively manage a project and adhere to time and budget constraints. \nValidated the effectiveness of low-cost ($50 budget), multi-sensor ASVs for generating high-resolution shore plots."
-  },
-  {
-    "objectID": "engineering.html#e85-digital-electronics-comp.-architecture-risc-v",
-    "href": "engineering.html#e85-digital-electronics-comp.-architecture-risc-v",
-    "title": "Engineering Class Projects",
-    "section": "E85: Digital Electronics & Comp. Architecture (RISC-V)",
-    "text": "E85: Digital Electronics & Comp. Architecture (RISC-V)\n\n2D-Digital Level\n\n\n\n\n\n\n\nOverview:  Built a 2D-digital level using a microcontroller, a 7x7 LED matrix, and a triple-axis accelerometer with SPI communication. Gained experince with embedded software and signal processing in real-time.\n\n\nSkills:  C/C++, SPI Communication, Calibration, Soldering\n\n\n Show More \n  ▶ Video     Code  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\n\n\nCreated a digital level that maps tilt angles from a triple-axis accelerometer to a 7x7 LED matrix “bubble” display. \nBubble motion indicated surface tilt in X and Y axes, stopping at matrix edges for extreme angles.\n\n\n\n\n\n\n\n\nHow?\n\n\n\n\n\nProgrammed a RED-V ThingPlus microcontroller in C using SPI communication to interface with the accelerometer. \nImplemented real-time signal processing and calibration to ensure smooth, flicker-free bubble motion across the display. \n\n\n\n\n\n\n\n\nResults\n\n\n\n\n\nAchieved accurate, smooth, and reliable bubble display, validating full end-to-end embeded system integration. \nDesigned a sensitive and practical 2D-digital tool with immediate real-world use.\n\n\n\n\n\n\n\n\n\n\n\n\n\n32-Bit Multicycle Processor\n\n\n\n\n\n\n\nOverview:  Designed and implemented a 32-bit RISC-V multicycle processor in SystemVerilog usign Quartus and Questa. Developed experience in digital design, datapath and control logic, and modular architecture.\n\n\nSkills:  SystemVerilog, HDL, Assembly, Machine Language, RISC-V, Quartus FPGA, Questa\n\n\n Show More \n  Code  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nClick here to see diagrams. \nBuilt a multicycle CPU capable of executing arithmetic instructions, managing memory, adn performing real-time instruction execution. \nLeveraged single-cycle processor components such as muxes, registers, adders, and control logic to construct a modular multicycle architecture.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nWrote SystemVerilog datapath connecting controller, memory, and register file modules. \nSystematically debugged by comparing assembly and machine language test benches against waveforms to correct errors. \nConsulted Quartus RLT schematic to ensure accurate I/O connections.\n\n\n\n\n\n\n\n\nResults\n\n\n\n32-Bit RISC-V Multicycle processor matched waveform expectations, indicating that the corret values where written to the correct addresses. \nDeepened understanding of RISC-V architecture, processor design principles, and real-time instruction execution."
   },
   {
     "objectID": "E155_Lab_1.html",

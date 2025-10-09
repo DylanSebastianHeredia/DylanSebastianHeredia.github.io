@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sports &amp; Outdoors – D. Sebastian Heredia</title>
+<title>Lab 5: Interrupts – D. Sebastian Heredia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Music &amp; Performance</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./outdoors.html" aria-current="page"> 
+    <a class="nav-link" href="./outdoors.html"> 
 <span class="menu-text">Sports &amp; Outdoors</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -153,7 +153,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sports &amp; Outdoors</h1>
+<h1 class="title">Lab 5: Interrupts</h1>
+<p class="subtitle lead">Sebastian Heredia | dheredia@g.hmc.edu | October 9, 2025</p>
 </div>
 
 
@@ -170,103 +171,116 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ultimate-frisbee" class="level2">
-<h2 class="anchored" data-anchor-id="ultimate-frisbee">Ultimate Frisbee</h2>
-<p class="justified-indent">
-The <a href="https://linktr.ee/brainsult">Claremont Braineaters</a> are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p class="justify-text">
+In this lab, the <a href="https://hmc-e155.github.io/assets/doc/ds11451-stm32l432kc.pdf">STM32L432KC MCU</a> was configured with interrupts to measure the rotational speed and direction of a <a href="https://www.tronsunmotor.com/data/upload/file/201910/e78fcf93ed604a64c69852b5db49a03f.pdf">25GA-370</a> brushed DC motor containing a quadrature encoder. Pulses from the encoder were detected on the rising and falling edges of both encoder signals to achieve a high degree of accuracy in real-time.
 </p>
-<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
-<div style="flex: 2; width: 300px;">
-<img src="images/braineaters_nationals.png" alt="Braineater Team Picture" style="width:100%; border-radius: 15px;">
-<div style="height: 10px;">
-
-</div>
-<p>
-<em>Braineaters at 2024 D-III Nationals in Milwaukee, WI</em>
-</p>
-</div>
-<div style="flex: 2; min-width: 300px;">
-<img src="images/spirit_award_cropped.png" alt="D3 2024 Spirit Award" style="width:100%; border-radius: 15px;">
-<div style="height: 10px;">
-
-</div>
-<p>
-<em>Recipients of the 2024 Men’s D-III Spirit Award</em>
-</p>
-</div>
+<div style="display: flex; gap: 10px;">
+<p><a href="https://youtube.com/shorts/_3dX2f85GPs?si=QGl4zoE-1pl1GI4M" target="_blank"> <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;"> ▶ Lab 5: Encoder Demo </button> </a></p>
+<p><a href="https://github.com/DylanSebastianHeredia/E155_Lab_5" target="_blank"> <button style="border-radius: 6px; padding: 8px 14px; background-color: #1128dc; color: rgb(255, 255, 255); border: none; font-weight: bold; cursor: pointer;"> Code </button> </a></p>
 </div>
 </section>
-<section id="running" class="level2">
-<h2 class="anchored" data-anchor-id="running">Running</h2>
-<p class="justified-indent">
-I began running consistently in Summer 2024 and have since achieved several personal milestones. Fall 2024, I ran a 10K Turkey Trot with my dad. Over Winter break, I logged 100 miles. And most recently, I completed my first half marathon this Summer 2025. I often complement my runs with jump rope, stair climbing, yoga, and weight training. Feel free to connect with me on <a href="https://strava.app.link/4ifxnmrPQUb">Strava</a>!
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<section id="lab-overview" class="level3">
+<h3 class="anchored" data-anchor-id="lab-overview">Lab Overview</h3>
+<p class="justify-text">
+This lab consisted of two primary goals. The first goal was to implement an interrupt algorithm to sense quadrature encoder pulses and convert them into motor velocity. The second goal was to display the measured speed with direction to a user with an update rate of at least 1Hz. Moreover, the interrupts were set to trigger on both the rising and falling edges of the encoder pulses to optimize accuracy when determining elapsed time between pulses.
 </p>
-<div style="display: flex; flex-wrap: wrap; gap: 20px;">
-<div style="flex: 1 1 100px;">
-<img src="images/strava.png" alt="Sunset 7 mile run" style="width: 100%; border-radius: 15px;">
-<div style="height: 10px;">
-
-</div>
-<p>
-<em>Run at sunset in Los Angeles, CA</em>
-</p>
-</div>
-<div style="flex: 1 1 100px;">
-<img src="images/run_club.jpg" alt="Brentwood Run Club" style="width: 100%; border-radius: 15px;">
-<div style="height: 10px;">
-
-</div>
-<p>
-<em>Neighborhood run club with friends</em>
-</p>
-</div>
-<div style="flex: 1 1 100px;">
-<img src="images/half-marathon.jpg" alt="Sunset 5 mile run" style="width: 100%; border-radius: 15px;">
-<div style="height: 10px;">
-
-</div>
-<p>
-<em>Half marathon in Santa Monica, CA</em>
-</p>
-</div>
-</div>
 </section>
-<section id="pickleball" class="level2">
-<h2 class="anchored" data-anchor-id="pickleball">Pickleball</h2>
-<p class="justified-indent">
-On weekends, my friends and I play pickleball at the <a href="https://roberts-pavilion.cmc.edu/">Robert’s Pavillion</a> at Claremont McKenna College. We play singles, doubles, and king of the court style play. It’s always a good time and our play sessions last anywhere from 2-4 hours each.
+<section id="quadrature-encoder" class="level3">
+<h3 class="anchored" data-anchor-id="quadrature-encoder">Quadrature Encoder</h3>
+<p class="justify-text">
+A quadrature encoder is an incremental sensor with two or more out-of-phase output channels that can detect the speed and direction of motion of a rotating shaft. Since the channels are offset by 90º as shown in <em>Figure 1</em>, when channel A leads channel B, the motion is clockwise (CW), and when B leads A, the direction is reversed (CCW). In this specific lab, the quadrature encoder measures the angle of the DC brushed motor axle using Hall effect sensors which count pulses in the form of magnetic fields.
 </p>
-<div style="display: flex; flex-wrap: wrap; gap: 20px;">
-<div style="flex: 1 1 100px;">
-<img src="images/broderick_pickleball.png" alt="Weekend pickleball at Robert's Pavillion" style="width: 100%; border-radius: 15px;">
-<div style="height: 10px;">
-
-</div>
-<p>
-<em>Weekend pickleball with friends</em>
+<p><img src="images/E155_Lab5/hall_effect.png" alt="Quadrature Encoder Graphic" style="width:100%; border-radius: 15px;"> <em>Figure 1: Quadrature encoder setup with Hall effect sensors 90º out of phase to determine direction.</em></p>
+<p class="justify-text">
+As the motor rotates, the Hall effect sensors will output will register HIGH (1) when passing a fixed point within the motor casing, otherwise they register LOW (0). In this way, a square wave alternating between HIGH and LOW is created for each encoder.
 </p>
-</div>
-<div style="flex: 1 1 100px;">
-<img src="images/proctor_pb.png" alt="Machine Shop tournament" style="width: 100%; border-radius: 15px;">
-<div style="height: 10px;">
-
-</div>
-<p>
-<em>Machine Shop proctor tournament</em>
+</section>
+</section>
+<section id="methods-designs" class="level2">
+<h2 class="anchored" data-anchor-id="methods-designs">Methods &amp; Designs</h2>
+<p class="justify-text">
+Unlike the previous lab, the CMSIS libraries were provided which meant <code>structs</code> for each register did not need to be configured from scratch. From the <a href="https://github.com/HMC-E155/tutorial-interrupts/tree/solution">E155 Repository</a>, <code>GPIO</code>, <code>RCC</code>, and <code>TIM</code> files were recycled. For this project, <a href="https://github.com/DylanSebastianHeredia/E155_Lab_5/blob/main/src/main.c">main.c</a> was updated to implement the design. Additionally, the flow of the interrupt design can be visualized in <em>Figure 2</em> pictured below.
 </p>
-</div>
-<div style="flex: 1 1 100px;">
-<img src="images/frisbee_pb.png" alt="Pickeball in Westchester, CA" style="width: 100%; border-radius: 15px;">
-<div style="height: 10px;">
-
-</div>
-<p>
-<em>Pickleball in Westchester, CA</em>
+<p><img src="images/E155_Lab5/flowchart.jpg" alt="Flowchart" style="width:100%; border-radius: 15px;"> <em>Figure 2: Flowchart illustrating the main loop, setups, and interrupt sequence of the design.</em></p>
+<section id="direction-logic" class="level3">
+<h3 class="anchored" data-anchor-id="direction-logic">Direction Logic</h3>
+<p class="justify-text">
+Once an interrupt is triggered in <code>compute_velocity</code>, the interrupt handler determines the direction of the motor by comparing the encoder states before the interrupt to the encoder states when the interrupt is triggered by a motor rotation. The handler, <code>EXTI9_5_IQRHandler</code>, determines direction by checking which encoder is “seen” first from a given initial state combination. Since there are two encoders and each encoder can occupy one of two states (HIGH or LOW), there are 2^2 = 4 total state combinations. <em>Figure 3</em> below shows a visualization of how moving between the four encoder state combinations results in clockwise (CW) motion when <code>ENCODER_A</code> leads versus counter-clockwise (CCW) motion when <code>ENCODER_B</code> leads. For example, if the last state combination is <code>A = 0</code> and <code>B = 0</code> and the next state combination is <code>A = 1</code> and <code>B = 0</code>, then the direction is CW since A is “seen” first and is therefore leading B. Examining this approach more closely, a future design might only check the current state of each encoder since the interrupt actually only fires when the encoder readings change. That is, the current direction does not depend on the previous direction since the interrupt only monitors the current direction.
 </p>
+<p><img src="images/E155_Lab5/leading_lagging.jpg" alt="Leading and Lagging" style="width:100%; border-radius: 15px;"> <em>Figure 3: Visualization of leading and lagging square wave signals between</em> <code>ENCODER_A</code> <em>and</em> <code>ENCODER_B</code>.</p>
+</section>
+<section id="speed-logic" class="level3">
+<h3 class="anchored" data-anchor-id="speed-logic">Speed Logic</h3>
+<p class="justify-text">
+Motor speed in revolutions per second (rev/sec) was calculated by <code>RPS = counter / (PPR * 4)</code> where <code>counter</code> represents the number of pulses in 1 second and <code>PPR = 408</code> is the known pulse per revolution rate provided in the motor <a href="https://www.tronsunmotor.com/data/upload/file/201910/e78fcf93ed604a64c69852b5db49a03f.pdf">datasheet</a>. In this equation, PPR is scaled by 4 to account for the four flags raised per revolution by the rising and falling edge of <code>ENCODER_A</code> and rising and falling edge of <code>ENCODER_B</code>.
+</p>
+<p class="justify-text">
+Moreover, measured speed was verified by the calculations shown below in <em>Figure 4</em> for a 12V input. Importantly, the frequency in <em>Figure 4</em> is read straight from the oscilloscope, so it has already accounted for the four encoder edges, therefore dividing by 4 is ommitted from the RPS calculation.
+</p>
+<p><img src="images/E155_Lab5/calculations.jpg" alt="Verifying Speed Calculations" style="width:100%; border-radius: 15px;"> <em>Figure 4: Verifying motor speed by comparing to the theoretical speed listed in the datasheet for 12V.</em></p>
+<p class="justify-text">
+Since the measured speed of 2.917 rev/sec at 12V is very close to the theoretical speed of 2.5 rev/sec at 12V, the measured speed matches the true motor speed. The slight variation between the measured and theoretical speeds could be a result of the motor speed itself fluctuating or the analog power supply dial being set slightly past the 12V mark internally.
+</p>
+</section>
+<section id="schematic" class="level3">
+<h3 class="anchored" data-anchor-id="schematic">Schematic</h3>
+<p class="justify-text">
+The schematic for this lab was straightforward and can be viewed below in <em>Figure 5</em>.
+</p>
+<p><img src="images/E155_Lab5/lab5_schematic.jpg" alt="Lab 5 Schematic" style="width:100%; border-radius: 15px;"> <em>Figure 5: Electrical schematic for the lab consisting of the MCU, brushed motor, and power supply.</em></p>
+</section>
+</section>
+<section id="polling-vs.-interrupting" class="level2">
+<h2 class="anchored" data-anchor-id="polling-vs.-interrupting">Polling vs.&nbsp;Interrupting</h2>
+<p class="justify-text">
+In order to monitor whether the two encoder signals are HIGH or LOW at a given time, they must continuously read by the MCU. One way to achieve this is through polling—a method where the main loop constantly cheks if the GPIO pins connected to the encoder outputs have changed. The issue with polling, however, is that everything inside the main <code>while</code> loop takes time to execute. As a result, if the processor is occupied with other operations, it may fail to detect a rapid change in the encoder signal. In other words, polling can lead to inaccurate, aliasing behavior. To address this limitation, interrupts are used. Interrupts enables the microcontroller to immediately respond to specific events, such as a change in input state, without waiting for the main loop to complete.
+</p>
+<p class="justify-text">
+The oscilloscope trace in <em>Figure 6</em> shows the following signals: <code>Yellow = ENCODER_B</code>, <code>Blue = POLLING_PIN</code>, and Pink = INTERRUPT_PIN` for a high speed set by 20V. At this fast motor speed, the trace shows that the polling signal frequency is too large to accurately sample the encoder, whereas the interrupt signal can effectively sample the encoder. According to the <a href="https://www.allaboutcircuits.com/technical-articles/nyquist-shannon-theorem-understanding-sampled-systems/">Nyquist-Shannon Sampling Theory</a>, since the interrupt signal frequency of 3.85kHz is greater than double the maximum frequency of the encoder signal which is 1.85kHz, the interrupt signal can accurately read all encoder changes. This shows how applying interrupts instead of polling leads to more accurate encoder readings over a wide range of motor speeds.
+</p>
+<p><img src="images/E155_Lab5/high_speeds.png" alt="High Speed Oscilloscope Trace" style="width:100%; border-radius: 15px;"> <em>Figure 6: Oscilloscope trace showing</em> <code>Yellow = ENCODER_B</code> <em>where</em> <code>Blue = POLLING_PIN</code> <em>aliases and</em> <code>Pink = INTERRUPT_PIN</code> <em>samples correctly.</em></p>
+</section>
+<section id="results-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-discussion">Results &amp; Discussion</h2>
+<p class="justify-text">
+The final implementation successfully measured and displayed the motor speed in rev/sec and direction with an update rate of at least 1Hz. Moreover, all edges of the encoder pulses were used to achieve the highest resolution measurement. Lastly, the MCU did not miss any pulses at high speed and properly output a non-zero velocity at very low speeds.
+</p>
+</section>
+<section id="conclusion-demo" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-demo">Conclusion &amp; Demo</h2>
+<p class="justify-text">
+All designs were successfully implemented. The lab took 21 hours to complete.
+</p>
+<p class="justify-text">
+This lab solidified by understanding of interrupts the comparison between polling and interrupt-driven approaches highlighted the efficiency and accuracy advantages of using interrupts for real-time signal processing. Overall, this lab strengthened my understanding of hardware-level event handling and its importance in embedded system design.
+</p>
+<p><a href="https://youtube.com/shorts/_3dX2f85GPs?si=QGl4zoE-1pl1GI4M" target="_blank"> <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;"> ▶ Lab 5: Encoder Demo </button> </a></p>
+<section id="ai-prototype" class="level3">
+<h3 class="anchored" data-anchor-id="ai-prototype">AI Prototype</h3>
+<p>The purpose of the AI Prototype is to experiment with usign AI as a coding assistant to navigate memory maps and guide the configuration of various peripherals. The following prompt was entered to ChatGPT 5.0.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+LLM Prompt
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>Write me interrupt handlers to interface with a quadrature encoder. I’m using the STM32L432KC, what pins should I connect the encoder to in order to allow it to easily trigger the interrupts?</p>
+</div>
+</div>
+<p class="justify-text">
+While ChatGPT 5.0 was able to produce a response quickly, the code did not compile immediately because it contained lines that we not not spelled the same or did not exist in the libraries I used. For example, I did not have a <code>"stm32l4xx_hal.h"</code> header file. After I replaced this with <code>&lt;stm32l432xx.h&gt;</code>, the code compiled and ran. However, the printed output was incorrect. The magnitude of velocity was always near 0.000 and the direction was constantly CW. ChatGPT may be more helpful if it is familar with your libraries.
+</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
