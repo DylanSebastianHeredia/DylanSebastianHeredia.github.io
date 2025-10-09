@@ -124,7 +124,7 @@ css: styles.css
 </p>
 
 <p class="justify-text"> 
-  The oscilloscope trace in *Figure 6* shows the following signals: `Yellow = ENCODER_B`, `Blue = POLLING_PIN`, and Pink = INTERRUPT_PIN` for a high speed set by 20V. At this fast motor 
+  The oscilloscope trace in *Figure 6* shows the following signals: `Yellow = ENCODER_B`, `Blue = POLLING_PIN`, and `Pink = INTERRUPT_PIN` for a high speed set by 20V. At this fast motor 
   speed, the trace shows that the polling signal frequency is too large to accurately sample the encoder, whereas the interrupt signal can effectively sample the encoder. According to the
   [Nyquist-Shannon Sampling Theory](https://www.allaboutcircuits.com/technical-articles/nyquist-shannon-theorem-understanding-sampled-systems/), since the interrupt signal frequency of 3.85kHz
   is greater than double the maximum frequency of the encoder signal which is 1.85kHz, the interrupt signal can accurately read all encoder changes. This shows how applying interrupts instead
