@@ -23,6 +23,8 @@ website:
             text: Lab 3 - Keypad Scanner
           - href: E155_Lab_4.qmd
             text: Lab 4 - Digital Audio
+          - href: E155_Lab_5.qmd
+            text: Lab 5 - Interrupts
       - href: blog.qmd
         text: Blog
 

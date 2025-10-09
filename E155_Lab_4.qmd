@@ -14,7 +14,6 @@ css: styles.css
     frequency and manage note duration. The MCU was programmed to play *Für Elise* by Beethoven and *Blue (Da Be Dee)* by Eiffel 65. 
 </p>
 
-
 <div style="display: flex; gap: 10px;">
 <a href="https://youtu.be/cxhU5bDPtMg" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
@@ -149,7 +148,7 @@ css: styles.css
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
       ▶ Lab 4: Für Elise & Blue Video
     </button>
-  </a>
+</a>
 
 ### AI Prototype ### 
 
