@@ -34,7 +34,7 @@ format: html
 ## Running ##
 
 <p class="justified-indent"> 
-  I began running consistently in Summer 2024 and have since achieved several personal milestones. Fall 2024, I 
+  I started running consistently in Summer 2024 and have since achieved several personal milestones. Fall 2024, I 
   ran a 10K Turkey Trot with my dad. Over Winter break, I logged 100 miles. And most recently, 
   I completed my first half marathon this Summer 2025. I often complement my runs with jump rope, stair climbing, 
   yoga, and weight training. Feel free to connect with me on [Strava](https://strava.app.link/4ifxnmrPQUb)!

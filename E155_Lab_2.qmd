@@ -47,7 +47,7 @@ css: styles.css
     transistors, and five green LEDs that represent the binary sum of the switch inputs.
 </p>
 
-<img src="images/E155_Lab2/setup.jpg" alt="Time-Multiplexing Setup" style="width:100%; border-radius: 15px;">
+<img src="images/E155_Lab2/setup.png" alt="Time-Multiplexing Setup" style="width:100%; border-radius: 15px;">
 *Figure 1: Setup of the breadboarded system display* `8` *and* `A`*, and their sum* `5'b10010` on the LEDs.
 
 <p class="justify-text">

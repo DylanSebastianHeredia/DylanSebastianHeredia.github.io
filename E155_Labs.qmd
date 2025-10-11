@@ -1,0 +1,132 @@
+---
+title: "Engineering Class Projects"
+toc: false
+format: html
+---
+<p class="justified-indent"> 
+  This Fall I am excited to be a part of the [E155: Microprocessor Systems](https://hmc-e155.github.io/) course at Harvey Mudd College. In this class, we make
+  cool projects to develop complicated digital electronics systems, including FPGAs, microcontrollers and chips of our choosing. By the end of the course in 
+  December, I will create my very own project and demonstrate it to my classmates, faculty, and staff. Please check out my work below! All labs have earned the 
+  highest score of `Excellence`.
+</p>
+
+By clicking the 
+  <button style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
+    Lean More
+  </button>
+buttons below, check out how the full technical report and verification of each lab. 
+
+## Lab 1: FPGA & MCU Setup & Testing ##
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/E155_Lab1/v4_dev_board.png" alt="Lab 1 Development Board" style="width:100%; border-radius: 15px;">
+</div>
+
+
+<div style="flex: 2; min-width: 300px;">
+  <p class="justify-text"> 
+    __Overview:__ <br>
+      In this lab, components were soldered to an FPGA and designs were implemented on the FPGA to demonstrate the functionality of the 
+      on-board high-speed oscillator to light up three on-board LEDs in specific sequences and demonstrate hexademical counting from 
+      `0` to `F` on a 7-segment display. 
+  </p>
+
+<a href="E155_Lab_1.qmd" target="_blank" style="text-decoration: none;">
+  <button style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
+    Learn More About Lab 1
+  </button>
+</a>
+</div>
+</div>
+
+## Lab 2: Time Multiplexing ##
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/E155_Lab2/setup.png" alt="Lab 2 Breadboard Setup" style="width:100%; border-radius: 15px;">
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <p class="justify-text"> 
+    __Overview:__ <br>
+      In this lab, time-divsion multiplexing (DTM) was implemented to drive a single dual 7-segment display with only nine FPGA I/O pins. The
+      hexadecimal values displayed on each half of the dual 7-segment display were added and the sum was displayed as a 5-bit binary number on 
+      five external LEDs. Notably, PNP transistors were used to drive sufficient current to power the common anodes of the dual 7-segment 
+      display while respecting the FGPA's current capacity. 
+  </p>
+
+<a href="E155_Lab_2.qmd" target="_blank" style="text-decoration: none;">
+  <button style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
+    Learn More About Lab 2
+  </button>
+</a>
+</div>
+</div>
+
+## Lab 3: Keypad Scanner ##
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/E155_Lab3/block_diagram.png" alt="Lab 3 Keypad Overview" style="width:100%; border-radius: 15px;">
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <p class="justify-text"> 
+    __Overview:__ <br>
+      Coming Soon
+  </p>
+
+<a href="E155_Lab_3.qmd" target="_blank" style="text-decoration: none;">
+  <button style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
+    Learn More About Lab 3
+  </button>
+</a>
+</div>
+</div>
+
+## Lab 4: Digital Audio ##
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/E155_Lab4/cover_lab4.jpg" alt="Lab 4 Breadboard Setup" style="width:100%; border-radius: 15px;">
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <p class="justify-text"> 
+    __Overview:__ <br>
+      In this lab, the internal peripheral timers of the [STM32L432KC MCU](https://hmc-e155.github.io/assets/doc/ds11451-stm32l432kc.pdf) were used to 
+      drive a small speaker to play music. To implement this function, the PWM timers on the MCU generated square waves to toggle a GPIO pin at a specific 
+      frequency and manage note duration. The MCU was programmed to play *Für Elise* by Beethoven and *Blue (Da Be Dee)* by Eiffel 65. 
+  </p>
+
+<a href="E155_Lab_4.qmd" target="_blank" style="text-decoration: none;">
+  <button style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
+    Learn More About Lab 4
+  </button>
+</a>
+</div>
+</div>
+
+## Lab 5: Interrupts ##
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/E155_Lab5/hall_effect.png" alt="Lab 5 Hall Effect Sensor" style="width:100%; border-radius: 15px;">
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <p class="justify-text"> 
+    __Overview:__ <br>
+      In this lab, the [STM32L432KC MCU](https://hmc-e155.github.io/assets/doc/ds11451-stm32l432kc.pdf) was configured with interrupts to measure the rotational speed and direction 
+      of a [25GA-370](https://www.tronsunmotor.com/data/upload/file/201910/e78fcf93ed604a64c69852b5db49a03f.pdf) brushed DC motor containing a quadrature encoder. Pulses from the 
+      encoder were detected on the rising and falling edges of both encoder signals to achieve a high degree of accuracy in real-time. 
+  </p>
+
+<a href="E155_Lab_5.qmd" target="_blank" style="text-decoration: none;">
+  <button style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
+    Learn More About Lab 5
+  </button>
+</a>
+</div>
+</div>

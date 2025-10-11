@@ -5,6 +5,8 @@ website:
   title: "D. Sebastian Heredia" # Sets side-wide title
   navbar: # Indicates navigation bar
     left: 
+      - href: E155_Labs.qmd
+        text: E155 Microprocessor Labs
       - href: engineering.qmd
         text: Engineering Class Projects
       - href: projects.qmd
@@ -13,18 +15,6 @@ website:
         text: Music & Performance
       - href: outdoors.qmd
         text: Sports & Outdoors
-      - text: E155 Microprocessor Labs
-        menu:
-          - href: E155_Lab_1.qmd
-            text: Lab 1 - FPGA & MCU Setup
-          - href: E155_Lab_2.qmd
-            text: Lab 2 - Time Multiplexing
-          - href: E155_Lab_3.qmd
-            text: Lab 3 - Keypad Scanner
-          - href: E155_Lab_4.qmd
-            text: Lab 4 - Digital Audio
-          - href: E155_Lab_5.qmd
-            text: Lab 5 - Interrupts
       - href: blog.qmd
         text: Blog
 
