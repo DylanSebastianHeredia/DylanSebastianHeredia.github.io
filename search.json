@@ -305,14 +305,14 @@
     "href": "E155_Lab_5.html",
     "title": "Lab 5: Interrupts",
     "section": "",
-    "text": "In this lab, the STM32L432KC MCU was configured with interrupts to measure the rotational speed and direction of a 25GA-370 brushed DC motor containing a quadrature encoder. Pulses from the encoder were detected on the rising and falling edges of both encoder signals to achieve a high degree of accuracy in real-time.\n\n\n  ▶ Lab 5: Encoder Demo  \n  Code"
+    "text": "In this lab, the STM32L432KC MCU was configured with interrupts to measure the rotational speed and direction of a 25GA-370 brushed DC motor containing a quadrature encoder. Pulses from the encoder were detected on the rising and falling edges of both encoder signals to achieve a high degree of accuracy in real-time.\n\n\n  ▶ Lab 5: Encoder Video  \n  Code"
   },
   {
     "objectID": "E155_Lab_5.html#introduction",
     "href": "E155_Lab_5.html#introduction",
     "title": "Lab 5: Interrupts",
     "section": "",
-    "text": "In this lab, the STM32L432KC MCU was configured with interrupts to measure the rotational speed and direction of a 25GA-370 brushed DC motor containing a quadrature encoder. Pulses from the encoder were detected on the rising and falling edges of both encoder signals to achieve a high degree of accuracy in real-time.\n\n\n  ▶ Lab 5: Encoder Demo  \n  Code"
+    "text": "In this lab, the STM32L432KC MCU was configured with interrupts to measure the rotational speed and direction of a 25GA-370 brushed DC motor containing a quadrature encoder. Pulses from the encoder were detected on the rising and falling edges of both encoder signals to achieve a high degree of accuracy in real-time.\n\n\n  ▶ Lab 5: Encoder Video  \n  Code"
   },
   {
     "objectID": "E155_Lab_5.html#background",
@@ -347,7 +347,7 @@
     "href": "E155_Lab_5.html#conclusion-demo",
     "title": "Lab 5: Interrupts",
     "section": "Conclusion & Demo",
-    "text": "Conclusion & Demo\n\nAll designs were successfully implemented. The lab took 21 hours to complete.\n\n\nThis lab solidified by understanding of interrupts the comparison between polling and interrupt-driven approaches highlighted the efficiency and accuracy advantages of using interrupts for real-time signal processing. Overall, this lab strengthened my understanding of hardware-level event handling and its importance in embedded system design.\n\n  ▶ Lab 5: Encoder Demo  \n\nAI Prototype\nThe purpose of the AI Prototype is to experiment with usign AI as a coding assistant to navigate memory maps and guide the configuration of various peripherals. The following prompt was entered to ChatGPT 5.0.\n\n\n\n\n\n\nLLM Prompt\n\n\n\nWrite me interrupt handlers to interface with a quadrature encoder. I’m using the STM32L432KC, what pins should I connect the encoder to in order to allow it to easily trigger the interrupts?\n\n\n\nWhile ChatGPT 5.0 was able to produce a response quickly, the code did not compile immediately because it contained lines that we not not spelled the same or did not exist in the libraries I used. For example, I did not have a \"stm32l4xx_hal.h\" header file. After I replaced this with &lt;stm32l432xx.h&gt;, the code compiled and ran. However, the printed output was incorrect. The magnitude of velocity was always near 0.000 and the direction was constantly CW. ChatGPT may be more helpful if it is familar with your libraries."
+    "text": "Conclusion & Demo\n\nAll designs were successfully implemented. The lab took 21 hours to complete.\n\n\nThis lab solidified by understanding of interrupts the comparison between polling and interrupt-driven approaches highlighted the efficiency and accuracy advantages of using interrupts for real-time signal processing. Overall, this lab strengthened my understanding of hardware-level event handling and its importance in embedded system design.\n\n  ▶ Lab 5: Encoder Video  \n\nAI Prototype\nThe purpose of the AI Prototype is to experiment with usign AI as a coding assistant to navigate memory maps and guide the configuration of various peripherals. The following prompt was entered to ChatGPT 5.0.\n\n\n\n\n\n\nLLM Prompt\n\n\n\nWrite me interrupt handlers to interface with a quadrature encoder. I’m using the STM32L432KC, what pins should I connect the encoder to in order to allow it to easily trigger the interrupts?\n\n\n\nWhile ChatGPT 5.0 was able to produce a response quickly, the code did not compile immediately because it contained lines that we not not spelled the same or did not exist in the libraries I used. For example, I did not have a \"stm32l4xx_hal.h\" header file. After I replaced this with &lt;stm32l432xx.h&gt;, the code compiled and ran. However, the printed output was incorrect. The magnitude of velocity was always near 0.000 and the direction was constantly CW. ChatGPT may be more helpful if it is familar with your libraries."
   },
   {
     "objectID": "E155_Labs.html",
@@ -361,35 +361,35 @@
     "href": "E155_Labs.html#lab-1-fpga-mcu-setup-testing",
     "title": "Engineering Class Projects",
     "section": "Lab 1: FPGA & MCU Setup & Testing",
-    "text": "Lab 1: FPGA & MCU Setup & Testing\n\n\n\n\n\n\nOverview:  In this lab, components were soldered to an FPGA and designs were implemented on the FPGA to demonstrate the functionality of the on-board high-speed oscillator to light up three on-board LEDs in specific sequences and demonstrate hexademical counting from 0 to F on a 7-segment display.\n\n  Learn More About Lab 1"
+    "text": "Lab 1: FPGA & MCU Setup & Testing\n\n\n\n\n\n\nOverview:  In this lab, components were soldered to an FPGA and designs were implemented on the FPGA to demonstrate the functionality of the on-board high-speed oscillator to light up three on-board LEDs in specific sequences and demonstrate hexademical counting from 0 to F on a 7-segment display.\n\n  Learn More About Lab 1  \n  ▶ Lab 1: FPGA Video"
   },
   {
     "objectID": "E155_Labs.html#lab-2-time-multiplexing",
     "href": "E155_Labs.html#lab-2-time-multiplexing",
     "title": "Engineering Class Projects",
     "section": "Lab 2: Time Multiplexing",
-    "text": "Lab 2: Time Multiplexing\n\n\n\n\n\n\nOverview:  In this lab, time-divsion multiplexing (DTM) was implemented to drive a single dual 7-segment display with only nine FPGA I/O pins. The hexadecimal values displayed on each half of the dual 7-segment display were added and the sum was displayed as a 5-bit binary number on five external LEDs. Notably, PNP transistors were used to drive sufficient current to power the common anodes of the dual 7-segment display while respecting the FGPA’s current capacity.\n\n  Learn More About Lab 2"
+    "text": "Lab 2: Time Multiplexing\n\n\n\n\n\n\nOverview:  In this lab, time-divsion multiplexing (DTM) was implemented to drive a single dual 7-segment display with only nine FPGA I/O pins. The hexadecimal values displayed on each half of the dual 7-segment display were added and the sum was displayed as a 5-bit binary number on five external LEDs. Notably, PNP transistors were used to drive sufficient current to power the common anodes of the dual 7-segment display while respecting the FGPA’s current capacity.\n\n  Learn More About Lab 2  \n  ▶ Lab 2: Multiplexing Video"
   },
   {
     "objectID": "E155_Labs.html#lab-3-keypad-scanner",
     "href": "E155_Labs.html#lab-3-keypad-scanner",
     "title": "Engineering Class Projects",
     "section": "Lab 3: Keypad Scanner",
-    "text": "Lab 3: Keypad Scanner\n\n\n\n\n\n\nOverview:  Coming Soon\n\n  Learn More About Lab 3"
+    "text": "Lab 3: Keypad Scanner\n\n\n\n\n\n\nOverview:  In this lab, a design was implemened on an an FPGA to scan a 4x4 keypad matrix for keypad presses and display the input hexadecimal numbers 0 to F on a dual 7-segment display, with the most recent entry appearing on the right. When a key is pressed, it is recorded exactly once no matter how long or short the user holds the key down. Moreover, if additional keys are pressed while still holding down the first key, the additional keys are ignored.\n\n  Learn More About Lab 3"
   },
   {
     "objectID": "E155_Labs.html#lab-4-digital-audio",
     "href": "E155_Labs.html#lab-4-digital-audio",
     "title": "Engineering Class Projects",
     "section": "Lab 4: Digital Audio",
-    "text": "Lab 4: Digital Audio\n\n\n\n\n\n\nOverview:  In this lab, the internal peripheral timers of the STM32L432KC MCU were used to drive a small speaker to play music. To implement this function, the PWM timers on the MCU generated square waves to toggle a GPIO pin at a specific frequency and manage note duration. The MCU was programmed to play Für Elise by Beethoven and Blue (Da Be Dee) by Eiffel 65.\n\n  Learn More About Lab 4"
+    "text": "Lab 4: Digital Audio\n\n\n\n\n\n\nOverview:  In this lab, the internal peripheral timers of the STM32L432KC MCU were used to drive a small speaker to play music. To implement this function, the PWM timers on the MCU generated square waves to toggle a GPIO pin at a specific frequency and manage note duration. The MCU was programmed to play Für Elise by Beethoven and Blue (Da Be Dee) by Eiffel 65.\n\n  Learn More About Lab 4  \n  ▶ Lab 4: Für Elise & Blue Video"
   },
   {
     "objectID": "E155_Labs.html#lab-5-interrupts",
     "href": "E155_Labs.html#lab-5-interrupts",
     "title": "Engineering Class Projects",
     "section": "Lab 5: Interrupts",
-    "text": "Lab 5: Interrupts\n\n\n\n\n\n\nOverview:  In this lab, the STM32L432KC MCU was configured with interrupts to measure the rotational speed and direction of a 25GA-370 brushed DC motor containing a quadrature encoder. Pulses from the encoder were detected on the rising and falling edges of both encoder signals to achieve a high degree of accuracy in real-time.\n\n  Learn More About Lab 5"
+    "text": "Lab 5: Interrupts\n\n\n\n\n\n\nOverview:  In this lab, the STM32L432KC MCU was configured with interrupts to measure the rotational speed and direction of a 25GA-370 brushed DC motor containing a quadrature encoder. Pulses from the encoder were detected on the rising and falling edges of both encoder signals to achieve a high degree of accuracy in real-time.\n\n  Learn More About Lab 5  \n  ▶ Lab 5: Encoder Video"
   },
   {
     "objectID": "blog.html",
