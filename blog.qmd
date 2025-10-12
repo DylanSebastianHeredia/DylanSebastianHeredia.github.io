@@ -35,7 +35,7 @@ format: html
   <p class="justify-text"> 
     __Food Is Fuel__ <br>
       One of my favorite parts of the Hoch (Harvey Mudd's dinning hall) is the wide range of food options. I feel like there is always
-      something both tasty and healthy to available. Depending on the day, the kitchen is always stocked with a variety foods from different
+      something both tasty and healthy to eat available. Depending on the day, the kitchen is always stocked with a variety foods from different
       cultures too: pho, sushi, steak, quesobirria tacos, curry, bao buns, salmon, pasta, and spring rolls. One of my daily goals is to
       make my plate as colorful as possible. Here, I picked out some grilled chicken, mediterranean meatball, and a medley of veggies. This
       meal helped me stay full and be able to concentrate for the rest of the day. Looking forward to dinner!
