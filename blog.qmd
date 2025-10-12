@@ -73,7 +73,7 @@ format: html
   <p class="justify-text"> 
     __Custom Board Game Pieces__ <br>
       This week, I've gotten really excited about 3D printing. It started with printing prototypes for my Harvey Mudd College Clinic Project,
-      but now I can't stop! What better way to use my design and priting skills than to modify one of my favorite family domino games: 
+      but now I can't put it down! What better way to use my design and priting skills than to modify one of my family-favorite domino games: 
       [*Mexican Train*](https://www.jaqueslondon.co.uk/products/mexican-train-dominoes). To enhance the game, I designed and printed trains in my
       family member's favorite colors and have raised the height of the plastic centering ring or "train station" piece to better secure dominoes in place. 
       Going forward, I hope to design my own [Tangram](https://www.amazon.com/Tangram-Geometry-Silhouette-Tangrams-Challenge/dp/B005IDO63Q) 
