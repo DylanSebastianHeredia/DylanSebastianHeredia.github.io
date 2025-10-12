@@ -96,9 +96,27 @@ format: html
     [__Oracle Stock Surge - *Bloomberg*__](https://www.bloomberg.com/news/articles/2025-09-10/oracle-co-founder-larry-ellison-closes-in-on-elon-musk-as-world-s-richest-man)<br>
       This morning, Oracle (ORCL) had one of the most explosive single-day gains in market history with shares soaring 36%. The company 
       announced several multi-billion-dollar AI cloud contracts, including a $300-billion deal with OpenAI over 5 years. Today single 
-      handedly brought Oracle's valuation to over $900 million, making CEO Larry Ellison $100 billion richer and the wealthiest person 
+      handedly brought Oracle's valuation to over $900 million making CEO Larry Ellison $100 billion richer and the wealthiest person 
       in the world. $100 billion is an unimaginable amount of money, and to be acquired in a single day blows my mind. Oracle has 
       definitively claimed their stake in the upward AI movement and we'll see if their momentum continues. 
+  </p>
+</div>
+</div>
+
+### September 4, 2025 ##
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/blog/porsche.png" alt="Porsche EV Charging" style="width:100%; border-radius: 15px;">
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <p class="justify-text"> 
+    [__Porsche Wireless Charging - *Porsche*__](https://newsroom.porsche.com/en/2025/products/porsche-wireless-charging-inductive-charging-40421.html)<br>
+      Porsche is taking electric vehicle convenience a step further with new wireless charging systems. Their new 11 kW “One-Box” base plate can charge the 
+      upcoming Cayenne Electric just by parking over it—no cable or wallbox needed. It's like a magsafe charger for a car! The setup is impressively 90% efficient 
+      since energy transfer through the air is less efficient than by plugging in. The design also incorporates smart features to detect objects or motion
+      above the plate to ensure safety. Porsche plans to launch their product in 2026, starting in Europe, with the Cayenne Electric debuting later this year. 
   </p>
 </div>
 </div>
