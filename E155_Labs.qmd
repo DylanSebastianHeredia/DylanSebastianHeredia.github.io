@@ -12,7 +12,7 @@ format: html
 
 By clicking the 
   <button style="border-radius: 6px; padding: 8px 14px; background-color: #f5f5f5; border: 1px solid #aaa; cursor: pointer;">
-    Lean More
+    Learn More About
   </button>
 buttons below, check out how the full technical report and verification of each lab. 
 
