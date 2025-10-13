@@ -35,7 +35,7 @@ about:
 
 <div style="text-align: center; padding: 0px 0;">
   <iframe 
-    src="documents/HEREDIA_CV_10112025.pdf" 
+    src="documents/HEREDIA_CV_2025.pdf" 
     style="
       width: 100%;            /* responsive width */
       max-width: 1000px;      /* cap width on desktop */
