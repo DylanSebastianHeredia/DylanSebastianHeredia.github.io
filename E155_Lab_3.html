@@ -478,7 +478,7 @@ The <code>wait (w)</code> states keep the FSM in a stable holding pattern while 
 <section id="technical-documentation" class="level2">
 <h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
 <p class="justify-text">
-This lab represented the culmination of Lab 1 and Lab 2 design topics and modules. Namely, components from previous labs such as <code>clock.sv</code> and <code>sevensegment.sv</code> were recycled. Ultimately, the Lab 3 design consisted of <a href="https://github.com/DylanSebastianHeredia/E155_Lab_3/tree/main/fpga">seven modules</a> and the schematic pictured in <em>Figure 6</em> below describes the high-level arrangement of the modules and <em>figure 7</em> shows the electrical schematic for the design.
+This lab represented the culmination of Lab 1 and Lab 2 design topics and modules. Namely, components from previous labs such as <code>clock.sv</code> and <code>sevensegment.sv</code> were recycled. Ultimately, the Lab 3 design consisted of <a href="https://github.com/DylanSebastianHeredia/E155_Lab_3/tree/main/fpga">seven modules</a> and the schematic pictured in <em>Figure 6</em> below describes the high-level arrangement of the modules and <em>Figure 7</em> shows the electrical schematic for the design.
 </p>
 <p><img src="images/E155_Lab3/blockdiagram.png" alt="Lab 3 Block Diagram" style="width:100%; border-radius: 15px;"> <em>Figure 6: Lab 3 leveraged a slow clock divider, synchronizer, FSM, mux, and keypad and segment decoders.</em></p>
 <p><img src="images/E155_Lab3/lab3_schematic.png" alt="Lab 3 Schematic" style="width:100%; border-radius: 15px;"> <em>Figure 7: The main hardware components for Lab 3 were the keypad, a dual 7-segment, and a pair of PNP transistors.</em></p>
@@ -486,7 +486,7 @@ This lab represented the culmination of Lab 1 and Lab 2 design topics and module
 <section id="results-discussion" class="level2">
 <h2 class="anchored" data-anchor-id="results-discussion">Results &amp; Discussion</h2>
 <p class="justify-text">
-</p><p>The design accomplished all the intended tasks. <a href="https://github.com/DylanSebastianHeredia/E155_Lab_3/tree/main/fpga/sim">Testbenches</a> for <code>lab3_dsh.sv</code>, <code>kpad_fsm.sv</code>, and <code>kpad_decoder.sv</code> modules were succesfully simulated in Questa to verify correct functionality of reading rows, debouncing columns, syncing columns, decoding rows and columns, displaying digits, updating digits from right to left, and ensuring all specifications were met.</p>
+</p><p>The design accomplished all the intended tasks. <a href="https://github.com/DylanSebastianHeredia/E155_Lab_3/tree/main/fpga/sim">Testbenches</a> for <code>lab3_dsh.sv</code>, <code>synchronizer.sv</code>, <code>kpad_fsm.sv</code>, and <code>kpad_decoder.sv</code> modules were succesfully simulated in Questa to verify correct functionality of reading rows, debouncing columns, syncing columns, decoding rows and columns, displaying digits, updating digits from right to left, and ensuring all specifications were met. <em>Figures 18-11</em> show the waveforms for modules of interest.</p>
 <ul>
 <li><a href="https://hmc-e155.github.io/lab/lab3/specs.html"><strong>Lab 3 - Specifications:</strong></a> <br>
 <ul>
@@ -499,9 +499,10 @@ This lab represented the culmination of Lab 1 and Lab 2 design topics and module
 <p></p>
 <section id="questa-verification" class="level3">
 <h3 class="anchored" data-anchor-id="questa-verification">Questa Verification</h3>
-<p><img src="images/E155_Lab3/lab3_dsh.png" alt="lab3_dsh testbench" style="width:100%; border-radius: 15px;"> <em>Figure 7: Multiplexing, digit updating, row scanning, and fsm functions were all validated in Questa for</em> <code>lab3_dsh.sv</code>.</p>
-<p><img src="images/E155_Lab3/kpad_fsm.png" alt="kpad_fsm testbench" style="width:100%; border-radius: 15px;"> <em>Figure 8: For all states, current and next state logic for matched expectations in Questa for</em> <code>kpad_fsm.sv</code>.</p>
-<p><img src="images/E155_Lab3/kpad_decoder.png" alt="kpad_decoder testbench" style="width:100%; border-radius: 15px;"> <em>Figure 9: All row and column combinations for the 16 keys were successfully decoded by</em> <code>kpad_decoder.sv</code>.</p>
+<p><img src="images/E155_Lab3/lab3_dsh.png" alt="lab3_dsh testbench" style="width:100%; border-radius: 15px;"> <em>Figure 8: Multiplexing, digit updating, row scanning, and fsm functions were all validated in Questa for</em> <code>lab3_dsh.sv</code>.</p>
+<p><img src="images/E155_Lab3/synchronizer_tb.png" alt="synchronizer testbench" style="width:100%; border-radius: 15px;"> <em>Figure 9: All asynchronous singals were synched in Questa for</em> <code>synchronizer.sv</code>.</p>
+<p><img src="images/E155_Lab3/kpad_fsm.png" alt="kpad_fsm testbench" style="width:100%; border-radius: 15px;"> <em>Figure 10: For all states, current and next state logic for matched expectations in Questa for</em> <code>kpad_fsm.sv</code>.</p>
+<p><img src="images/E155_Lab3/kpad_decoder.png" alt="kpad_decoder testbench" style="width:100%; border-radius: 15px;"> <em>Figure 11: All row and column combinations for the 16 keys were successfully decoded by</em> <code>kpad_decoder.sv</code>.</p>
 </section>
 <section id="design-trade-offs" class="level3">
 <h3 class="anchored" data-anchor-id="design-trade-offs">Design Trade-Offs</h3>
@@ -549,7 +550,7 @@ The purpose of the AI Prototype is to experiment with usign AI as a coding assis
 <p class="justify-text">
 When given the monolithic prompt, ChatpGPT produced a series of SystemVerilog scripts that were capable of being synthesized in Lattice Radiant on the first try. The modules that were produced closely mirrored my design approach with a clock divider, keypad scanner, and a method of aligning rows and columns. However, the design did not follow the same fsm approach that I had. Instead, using a slow clock, the design used a clock with a frequency of 20MHz and required two FSMs: 1) Scanning Logic, 2) Debouncing. <em>Figure 10</em> below shows the neatly organized RTL schematic produced in Lattice Radiant for the Prompt A code. Notably, the design contains two <code>hex7seg</code> decoders when only one is necessary if time multiplexing is applied.
 </p>
-<p><img src="images/E155_Lab3/ai_a.png" alt="Lab 3 AI Prototype A RTL" style="width:100%; border-radius: 15px;"> <em>Figure 9:</em> <code>Prompt A</code> <em>RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.</em></p>
+<p><img src="images/E155_Lab3/ai_a.png" alt="Lab 3 AI Prototype A RTL" style="width:100%; border-radius: 15px;"> <em>Figure 12:</em> <code>Prompt A</code> <em>RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.</em></p>
 </section>
 <section id="prototype-b-modular-prompts-decompose-into-fsms" class="level3">
 <h3 class="anchored" data-anchor-id="prototype-b-modular-prompts-decompose-into-fsms">Prototype B: Modular Prompts (Decompose into FSMs)</h3>
@@ -606,7 +607,7 @@ When given the monolithic prompt, ChatpGPT produced a series of SystemVerilog sc
 <p class="justify-text">
 When given the decomposed prompts, ChatGPT was unable to produce synthesizable code in Lattice Radiant on the first try because I had not uploaded my <code>sevensegment</code> module to the project. Adding the module allowed for the AI generated code to synthesize. However, the code that was produced by Prompt B was not nearly as idiomatically organized as the code given by Prompt A. <em>Figure 10</em> below shows the RTL schematic produced in Lattice Radiant when given the synthesizable Prompt B code. Notably, this time, ChatGPT used a system clock with a frequency of 12MHz. Trying to make sense of the code and RTL for this design was not simple since there are lot more hardware components to account for. Overall, I prefer to work with the code produced from Prompt A since it is more intuitive to me in code and visually, and therefore should be easier to understand and debug.
 </p>
-<p><img src="images/E155_Lab3/ai_b.png" alt="Lab 3 AI Prompt B RTL" style="width:100%; border-radius: 15px;"> <em>Figure 10:</em> <code>Prompt B</code> <em>RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.</em></p>
+<p><img src="images/E155_Lab3/ai_b.png" alt="Lab 3 AI Prompt B RTL" style="width:100%; border-radius: 15px;"> <em>Figure 13:</em> <code>Prompt B</code> <em>RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.</em></p>
 
 
 </section>
