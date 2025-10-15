@@ -184,7 +184,7 @@ css: styles.css
 <p class="justify-text">
     This lab represented the culmination of Lab 1 and Lab 2 design topics and modules. Namely, components from previous labs such as `clock.sv` and `sevensegment.sv` were 
     recycled. Ultimately, the Lab 3 design consisted of [seven modules](https://github.com/DylanSebastianHeredia/E155_Lab_3/tree/main/fpga) and the schematic pictured in 
-    *Figure 6* below describes the high-level arrangement of the modules and *figure 7* shows the electrical schematic for the design.
+    *Figure 6* below describes the high-level arrangement of the modules and *Figure 7* shows the electrical schematic for the design.
 </p>
 
 <img src="images/E155_Lab3/blockdiagram.png" alt="Lab 3 Block Diagram" style="width:100%; border-radius: 15px;">
@@ -196,8 +196,9 @@ css: styles.css
 ## Results & Discussion ##
 <p class="justify-text">
     The design accomplished all the intended tasks. [Testbenches](https://github.com/DylanSebastianHeredia/E155_Lab_3/tree/main/fpga/sim) for `lab3_dsh.sv`, 
-    `kpad_fsm.sv`, and `kpad_decoder.sv` modules were succesfully simulated in Questa to verify correct functionality of reading rows, debouncing columns, syncing columns, decoding 
-    rows and columns, displaying digits, updating digits from right to left, and ensuring all specifications were met. 
+    `synchronizer.sv`, `kpad_fsm.sv`, and `kpad_decoder.sv` modules were succesfully simulated in Questa to verify correct functionality of reading rows, debouncing columns, syncing columns, decoding 
+    rows and columns, displaying digits, updating digits from right to left, and ensuring all specifications were met. *Figures 18-11* show the waveforms
+    for modules of interest.
 
     - [__Lab 3 - Specifications:__](https://hmc-e155.github.io/lab/lab3/specs.html) <br>
     - Each button press registers only once
@@ -209,13 +210,16 @@ css: styles.css
 ### Questa Verification ### 
 
 <img src="images/E155_Lab3/lab3_dsh.png" alt="lab3_dsh testbench" style="width:100%; border-radius: 15px;">
-*Figure 7: Multiplexing, digit updating, row scanning, and fsm functions were all validated in Questa for* `lab3_dsh.sv`.
+*Figure 8: Multiplexing, digit updating, row scanning, and fsm functions were all validated in Questa for* `lab3_dsh.sv`.
+
+<img src="images/E155_Lab3/synchronizer_tb.png" alt="synchronizer testbench" style="width:100%; border-radius: 15px;">
+*Figure 9: All asynchronous singals were synched in Questa for* `synchronizer.sv`.
 
 <img src="images/E155_Lab3/kpad_fsm.png" alt="kpad_fsm testbench" style="width:100%; border-radius: 15px;">
-*Figure 8: For all states, current and next state logic for matched expectations in Questa for* `kpad_fsm.sv`.
+*Figure 10: For all states, current and next state logic for matched expectations in Questa for* `kpad_fsm.sv`.
 
 <img src="images/E155_Lab3/kpad_decoder.png" alt="kpad_decoder testbench" style="width:100%; border-radius: 15px;">
-*Figure 9: All row and column combinations for the 16 keys were successfully decoded by* `kpad_decoder.sv`.
+*Figure 11: All row and column combinations for the 16 keys were successfully decoded by* `kpad_decoder.sv`.
 
 ### Design Trade-Offs ### 
 <p class="justify-text">
@@ -287,7 +291,7 @@ Use idiomatic SystemVerilog (e.g., `logic`, `always_ff`, enumerated states for F
 </p>
 
 <img src="images/E155_Lab3/ai_a.png" alt="Lab 3 AI Prototype A RTL" style="width:100%; border-radius: 15px;">
-*Figure 9:* `Prompt A` *RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.*
+*Figure 12:* `Prompt A` *RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.*
 
 ### Prototype B: Modular Prompts (Decompose into FSMs) ###
 
@@ -370,4 +374,4 @@ Provide any small clock-enable or divider logic you need. You can also assume th
 </p>
 
 <img src="images/E155_Lab3/ai_b.png" alt="Lab 3 AI Prompt B RTL" style="width:100%; border-radius: 15px;">
-*Figure 10:* `Prompt B` *RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.*
+*Figure 13:* `Prompt B` *RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.*
