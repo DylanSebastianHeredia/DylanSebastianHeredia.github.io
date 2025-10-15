@@ -148,10 +148,468 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="coming-soon" class="level3">
-<h3 class="anchored" data-anchor-id="coming-soon">Coming Soon</h3>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p class="justify-text">
+In this lab, a design was implemened on an an FPGA to scan a 4x4 keypad matrix for key presses and display the selected presses as hexadecimal numbers <code>0</code> to <code>F</code> on a dual 7-segment display, with the most recent entry appearing on the right. When a key is pressed, it is recorded exactly once no matter how long or short the user holds the key down. Moreover, if additional keys are pressed while still holding down the first key, the additional keys are ignored.
+</p>
+<div style="display: flex; gap: 10px;">
+<p><a href="https://youtube.com/shorts/XlhlLJF7L-8?si=OlkXNgqgWlVvEJsm" target="_blank"> <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;"> ▶ Lab 3: Keypad Video </button> </a></p>
+<p><a href="https://github.com/DylanSebastianHeredia/E155_Lab_3" target="_blank"> <button style="border-radius: 6px; padding: 8px 14px; background-color: #1128dc; color: rgb(255, 255, 255); border: none; font-weight: bold; cursor: pointer;"> Code </button> </a></p>
+</div>
+</section>
+<section id="methods-design" class="level2">
+<h2 class="anchored" data-anchor-id="methods-design">Methods &amp; Design</h2>
+<section id="lab-overview" class="level3">
+<h3 class="anchored" data-anchor-id="lab-overview">Lab Overview</h3>
+<p class="justify-text">
+When a button is pressed on the keypad, a short is formed between the corresponding row and column of the key connecting them. Since user inputs can occur whenever the user chooses, the two main phenomenons to overcome in this lab were metastability and switch bouncing.
+</p>
+<p class="justify-text">
+In digital electronics, switch bouncing is a phenomenon where signals from a switch can appear as if they are pressed multiple times in short time frame before fully settling as shown in <em>Figure 1</em>. This is a results of the physical nature of a button, where two pieces of metal must touch in order to create an electrical connection. Depending on the type of push button used, switch bouncing can range from microseconds to miliseconds. <em>Figure 2</em> shows the key arrangement and keypad pinout for this lab.
+</p>
+<p class="justify-text">
+To manage switch bouncing, a clock divider was used to generate a slow clock of 240Hz which is slow enough to avoid sampling quick switch bouncing. At 240Hz, the clock is slow enough to sample the stabilized switch input after boucing would occur but still toggle at a rate faster than humans can observe to ensure seamless visual transitions for other time-based functions in the lab (e.i. multiplexing the two halves of the dual 7-segment display.
+</p>
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/E155_Lab3/keypad.jpg" alt="Keypad Pinout" style="width:100%; border-radius: 15px;">
+<div style="height: 10px;">
+
+</div>
+<p>
+<em>Figure 1: 4x4 keypad configuration and pinout.</em>
+</p>
+</div>
+<div style="flex: 2; min-width: 300px;">
+<img src="images/E155_Lab3/switch_bounce1.jpg" alt="Switch Bounce" style="width:100%; border-radius: 15px;">
+<div style="height: 10px;">
+
+</div>
+<p>
+<em>Figure 2: Switch bouncing can trigger multiple signals.</em>
+</p>
+</div>
+</div>
+<p></p>
+<p class="justify-text">
+In addition to switch bouncing, metastability also needed to be accounted for. Metastabiliity describes the temporary unstable state in which a signal does not settle into a defined <code>0</code> or <code>1</code> logic level by the time that it must be sample which can which to incorrect sampling of a signal. This can happen when a asynchronous sinals such as a user input interacts with a synchronous circuit, where the input signal’s timing is unpredictable relative to the circuit’s clock. <em>Figure 3</em> below at left provided by the <a href="https://pages.hmc.edu/harris/class/e85/DDCArv_Ch3.pdf">Harvey Mudd College E85 Chapter 3</a> lectue proovides a visual representation of metastability.
+</p>
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/E155_Lab3/metastability.png" alt="Metastability" style="width:100%; border-radius: 15px;">
+<div style="height: 10px;">
+
+</div>
+<p>
+<em>Figure 3: Metastability leads to unpredictable outcomes.</em>
+</p>
+</div>
+<div style="flex: 2; min-width: 300px;">
+<img src="images/E155_Lab3/synchronizer.png" alt="Synchronizer" style="width:100%; border-radius: 15px;">
+<div style="height: 10px;">
+
+</div>
+<p>
+<em>Figure 4: Synchronizers set signals to a known clock freq.</em>
+</p>
+</div>
+</div>
+<p class="justify-text">
+To resolve metastability and ensure defined user inputs, a synchronizer shown in <em>Figure 4</em> above at right was implemented. A synchronizer works my using one flip-flop to catch an asynchronous signal at D and a second flip-flop to output the signal on Q that is now output synchronously at the same time of the circuit’s clock.
+</p>
+</section>
+<section id="fsm-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="fsm-diagram">FSM Diagram</h3>
+<p class="justify-text">
+In order to ensure that when a button is held it registers as a single press and you can’t press other button while the original press is held, a finite state machine (FSM) was created. <em>Figure 5</em> below shows the FSM design which contains five sets of states: <code>row (r)</code>, <code>pressed (p)</code>, <code>synced (s)</code>, <code>enable (e)</code>, and <code>wait (w)</code>.
+</p>
+<p><img src="images/E155_Lab3/fsm.png" alt="Lab 3 FSM" style="width:100%; border-radius: 15px;"> <em>Figure 5: The FSM created to implement the design used 5 sets of states: row (r), pressed (p), synced (s), enable (e), wait (w).</em></p>
+</section>
+<section id="fsm-logic-state-transition-table" class="level3">
+<h3 class="anchored" data-anchor-id="fsm-logic-state-transition-table">FSM Logic &amp; State Transition Table</h3>
+</section>
+<section id="row-r" class="level3">
+<h3 class="anchored" data-anchor-id="row-r"><code>row (r)</code></h3>
+<p class="justify-text">
+To start, the design was setup so that columns were active HIGH (1) when a button in that column was pressed and the rows were initially set to continuously be scanned. In this way, when no buttons are pressed, <code>press = 0</code> and the current state would loop through the <code>row (r)</code> states according to the state transition table described in <em>Table 1</em> below. The row output <code>row_pressed</code> encodes which physical row is active so that the column inputs can be read relateive to the currently driven row.
+</p>
+</section>
+<section id="pressed-p-synced-s" class="level3">
+<h3 class="anchored" data-anchor-id="pressed-p-synced-s"><code>pressed (p)</code> + <code>synced (s)</code></h3>
+<p class="justify-text">
+A <code>pressed (p)</code> state is entered immediately after the scan logic detects a key press. This state exists to capture the asynchronous column information while isolating it from the row scanner. This effectively marks the beginning of the press-handling pipeline. Since the column signals are asynchronous with respect to the FSM clock, this states always hands off to the <code>synced (s)</code> stage. The <code>synced (s)</code> states serve to align the correct columns and rows in time. Since these states pure exist to align timing between the correct rows and columns, the next state logic is always true.
+</p>
+</section>
+<section id="enable-e" class="level3">
+<h3 class="anchored" data-anchor-id="enable-e"><code>enable (e)</code></h3>
+<p class="justify-text">
+The <code>enable (e)</code> states generate a single-cycle indication that a valid key press has been detected and accepted (e.i. only one key has been pressed). In the <code>enable (e)</code> states, the FSM asserts the enable output and maintains the row_pressed encoding for the pressed row. This pulse is used by the <code>kpad_decoder.sv</code> module to display the newly recognized key exactly once, with new numbers appearing from right to left on the dual 7-segment display.
+</p>
+</section>
+<section id="wait-w" class="level3">
+<h3 class="anchored" data-anchor-id="wait-w"><code>wait (w)</code></h3>
+<p class="justify-text">
+The <code>wait (w)</code> states keep the FSM in a stable holding pattern while the initial key remains pressed. This state repeatedly checks <code>oneCol</code> to detect if the same column is still active. If <code>oneCol</code> remains HIGH (1), the FSM waiting in this state, preventing repeated enables or accepting other keys. When <code>oneCol</code> becomes LOW (0) when the key is released or changed, the FSM returns to the appropriate ’row (r)` scanning state and resumes normal scanning until another key is pressed.
+</p>
+<p class="justify-text">
+<em>Table 1: State transition table for the Lab 3 FSM design.</em>
+</p>
+<div style="font-size: 0.8em;">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 22%">
+<col style="width: 24%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Row</strong></th>
+<th style="text-align: left;"><strong>Current State</strong></th>
+<th style="text-align: left;"><strong>Input Condition</strong></th>
+<th style="text-align: left;"><strong>Next State</strong></th>
+<th style="text-align: left;"><strong>row_pressed / enable</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Row 0</strong></td>
+<td style="text-align: left;">r0</td>
+<td style="text-align: left;"><code>press == 1</code></td>
+<td style="text-align: left;">p0</td>
+<td style="text-align: left;"><code>0100 / 0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">r0</td>
+<td style="text-align: left;"><code>else</code></td>
+<td style="text-align: left;">r1</td>
+<td style="text-align: left;"><code>0100 / 0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">p0</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">s0</td>
+<td style="text-align: left;"><code>0100 / 0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">s0</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">e0</td>
+<td style="text-align: left;"><code>0100 / 0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">e0</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">w0</td>
+<td style="text-align: left;"><code>0100 / 1</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">w0</td>
+<td style="text-align: left;"><code>oneCol == 1</code></td>
+<td style="text-align: left;">w0</td>
+<td style="text-align: left;"><code>0100 / 0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">w0</td>
+<td style="text-align: left;"><code>else</code></td>
+<td style="text-align: left;">r0</td>
+<td style="text-align: left;"><code>0100 / 0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Row 1</strong></td>
+<td style="text-align: left;">r1</td>
+<td style="text-align: left;"><code>press == 1</code></td>
+<td style="text-align: left;">p1</td>
+<td style="text-align: left;"><code>1000 / 0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">r1</td>
+<td style="text-align: left;"><code>else</code></td>
+<td style="text-align: left;">r2</td>
+<td style="text-align: left;"><code>1000 / 0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">p1</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">s1</td>
+<td style="text-align: left;"><code>1000 / 0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">s1</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">e1</td>
+<td style="text-align: left;"><code>1000 / 0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">e1</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">w1</td>
+<td style="text-align: left;"><code>1000 / 1</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">w1</td>
+<td style="text-align: left;"><code>oneCol == 1</code></td>
+<td style="text-align: left;">w1</td>
+<td style="text-align: left;"><code>1000 / 0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">w1</td>
+<td style="text-align: left;"><code>else</code></td>
+<td style="text-align: left;">r1</td>
+<td style="text-align: left;"><code>1000 / 0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Row 2</strong></td>
+<td style="text-align: left;">r2</td>
+<td style="text-align: left;"><code>press == 1</code></td>
+<td style="text-align: left;">p2</td>
+<td style="text-align: left;"><code>0001 / 0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">r2</td>
+<td style="text-align: left;"><code>else</code></td>
+<td style="text-align: left;">r3</td>
+<td style="text-align: left;"><code>0001 / 0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">p2</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">s2</td>
+<td style="text-align: left;"><code>0001 / 0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">s2</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">e2</td>
+<td style="text-align: left;"><code>0001 / 0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">e2</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">w2</td>
+<td style="text-align: left;"><code>0001 / 1</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">w2</td>
+<td style="text-align: left;"><code>oneCol == 1</code></td>
+<td style="text-align: left;">w2</td>
+<td style="text-align: left;"><code>0001 / 0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">w2</td>
+<td style="text-align: left;"><code>else</code></td>
+<td style="text-align: left;">r2</td>
+<td style="text-align: left;"><code>0001 / 0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Row 3</strong></td>
+<td style="text-align: left;">r3</td>
+<td style="text-align: left;"><code>press == 1</code></td>
+<td style="text-align: left;">p3</td>
+<td style="text-align: left;"><code>0010 / 0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">r3</td>
+<td style="text-align: left;"><code>else</code></td>
+<td style="text-align: left;">r0</td>
+<td style="text-align: left;"><code>0010 / 0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">p3</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">s3</td>
+<td style="text-align: left;"><code>0010 / 0</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">s3</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">e3</td>
+<td style="text-align: left;"><code>0010 / 0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">e3</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">w3</td>
+<td style="text-align: left;"><code>0010 / 1</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">w3</td>
+<td style="text-align: left;"><code>oneCol == 1</code></td>
+<td style="text-align: left;">w3</td>
+<td style="text-align: left;"><code>0010 / 0</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">w3</td>
+<td style="text-align: left;"><code>else</code></td>
+<td style="text-align: left;">r3</td>
+<td style="text-align: left;"><code>0010 / 0</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="technical-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-documentation">Technical Documentation</h2>
+<p class="justify-text">
+This lab represented the culmination of Lab 1 and Lab 2 design topics and modules. Namely, components from previous labs such as <code>clock.sv</code> and <code>sevensegment.sv</code> were recycled. Ultimately, the Lab 3 design consisted of <a href="https://github.com/DylanSebastianHeredia/E155_Lab_3/tree/main/fpga">seven modules</a> and the schematic pictured in <em>Figure 6</em> below describes the high-level arrangement of the modules.
+</p>
+<p><img src="images/E155_Lab3/blockdiagram.png" alt="Lab 3 Block Diagram" style="width:100%; border-radius: 15px;"> <em>Figure 6: Lab 3 leveraged a slow clock divider, synchronizer, FSM, mux, and keypad and segment decoders.</em></p>
+<p><img src="images/E155_Lab3/lab3_schematic.png" alt="Lab 3 Schematic" style="width:100%; border-radius: 15px;"> <em>Figure 7: The main hardware components for Lab 3 were the keypad, a dual 7-segment, and a pair of PNP transistors.</em></p>
+</section>
+<section id="results-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="results-discussion">Results &amp; Discussion</h2>
+<p class="justify-text">
+</p><p>The design accomplished all the intended tasks. <a href="https://github.com/DylanSebastianHeredia/E155_Lab_3/tree/main/fpga/sim">Testbenches</a> for <code>lab3_dsh.sv</code>, <code>kpad_fsm.sv</code>, and <code>kpad_decoder.sv</code> modules were succesfully simulated in Questa to verify correct functionality of reading rows, debouncing columns, syncing columns, decoding rows and columns, displaying digits, updating digits from right to left, and ensuring all specifications were met.</p>
+<ul>
+<li><a href="https://hmc-e155.github.io/lab/lab3/specs.html"><strong>Lab 3 - Specifications:</strong></a> <br>
+<ul>
+<li>Each button press registers only once</li>
+<li>Dual seven-segment display shows the last two hexadecimal digits pressed</li>
+<li>Most recent numeric entry is shown on the right</li>
+<li>Only registers first press if additional buttons are pressed while holding down one button</li>
+</ul></li>
+</ul>
+<p></p>
+<section id="questa-verification" class="level3">
+<h3 class="anchored" data-anchor-id="questa-verification">Questa Verification</h3>
+<p><img src="images/E155_Lab3/lab3_dsh.png" alt="lab3_dsh testbench" style="width:100%; border-radius: 15px;"> <em>Figure 7: Multiplexing, digit updating, row scanning, and fsm functions were all validated in Questa for</em> <code>lab3_dsh.sv</code>.</p>
+<p><img src="images/E155_Lab3/kpad_fsm.png" alt="kpad_fsm testbench" style="width:100%; border-radius: 15px;"> <em>Figure 8: For all states, current and next state logic for matched expectations in Questa for</em> <code>kpad_fsm.sv</code>.</p>
+<p><img src="images/E155_Lab3/kpad_decoder.png" alt="kpad_decoder testbench" style="width:100%; border-radius: 15px;"> <em>Figure 9: All row and column combinations for the 16 keys were successfully decoded by</em> <code>kpad_decoder.sv</code>.</p>
+</section>
+<section id="design-trade-offs" class="level3">
+<h3 class="anchored" data-anchor-id="design-trade-offs">Design Trade-Offs</h3>
+<p class="justify-text">
+In this lab, switch bounce was managed by dividing the 48MHz system clock to just 240Hz for keypad scanning logic. This approach effectively served as a sampling-based debounce filter because the sampling period of 4.17 ms is longer than the typical mechanical bounce duration. The main advantage of this strategy is its simplicity—there are no extra hardware components or complex logic required. It also integrates seamlessly with the row-scanning FSM, since the same divided clock can be reused for display multiplexing and state transitions.
+</p>
+<p class="justify-text">
+However, this simplicity comes with trade-offs. The slow clock introduces inherent latency between when a key is pressed and when it is recognized (up to one full sample period in the worst case). For a human-operated keypad this delay is acceptable, but it would be limiting in systems that require rapid input response or simultaneous multi-key handling. The other downside is loss of time resolution because inputs are only checked every 4.17 ms, so the FSM may not be able to accurately manage more complex button pressing patterns.
+</p>
+</section>
+</section>
+<section id="conclusion-demo" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-demo">Conclusion &amp; Demo</h2>
+<p class="justify-text">
+All designs were successfully implemented. The lab took 64 hours to complete.
+</p>
+<p class="justify-text">
+In this lab, I learned to work with asynchronous inputs with a two-stage synchronizer to prevent metastability from messing up key detection. I also gained practice with designing FSMs to complete non-trivial tasks. Moreover, running all simulations in Questa before touching the hardware reinforced the value of thorough testing and made debugging the actual FPGA far faster and less stressful. Above all, this this lab stretched my grit and endurance, as I spent over a full-time job worth of weekly work hours to complete it. This lab taught be valuable lessons in perservance that I will continue to apply to all areas of my life. Never give up!
+</p>
+<p><a href="https://youtube.com/shorts/XlhlLJF7L-8?si=OlkXNgqgWlVvEJsm" target="_blank"> <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;"> ▶ Lab 3: Keypad Video </button> </a></p>
+<section id="ai-prototype" class="level3">
+<h3 class="anchored" data-anchor-id="ai-prototype">AI Prototype</h3>
+<p class="justify-text">
+The purpose of the AI Prototype is to experiment with usign AI as a coding assistant to produce HDL. The following prompt was entered to ChatGPT 5.0.
+</p>
+</section>
+<section id="prototype-a-monolithic-prompt-all-at-once" class="level3">
+<h3 class="anchored" data-anchor-id="prototype-a-monolithic-prompt-all-at-once">Prototype A: Monolithic Prompt (All-at-once)</h3>
+<details class="pretty-callout">
+<summary>
+<strong>LLM Prompt: Whole Lab (Monolithic)</strong>
+</summary>
+<div class="callout-body">
+<p><strong>Target device:</strong> Lattice iCE40 UP5K FPGA with internal high-speed oscillator (~20 MHz).</p>
+<p>Write synthesizable SystemVerilog to scan a 4x4 matrix keypad and display the last two hex keys pressed on a dual 7‑segment display.</p>
+<p><strong>Implement:</strong> <br></p>
+<ul>
+<li>A clock divider that derives a scan clock on the order of 100–200 Hz from the internal oscillator. <br></li>
+<li>A keypad scanning controller that iterates one active‑low column at a time and samples active‑low rows, registering at most one key per press (debounce‑by‑design), ignoring additional presses while any key is held, and allowing a new registration only after release. <br></li>
+<li>A top level that updates two hex digits (older and most recent) when a new key is registered and drives a time‑multiplexed two‑digit 7‑segment display without visible flicker and with balanced brightness. <br></li>
+</ul>
+<p>Use idiomatic SystemVerilog (e.g., <code>logic</code>, <code>always_ff</code>, enumerated states for FSMs). Provide clean module boundaries and keep all state synchronous. Include brief comments explaining the design choices.</p>
+</div>
+</details>
+<p class="justify-text">
+When given the monolithic prompt, ChatpGPT produced a series of SystemVerilog scripts that were capable of being synthesized in Lattice Radiant on the first try. The modules that were produced closely mirrored my design approach with a clock divider, keypad scanner, and a method of aligning rows and columns. However, the design did not follow the same fsm approach that I had. Instead, using a slow clock, the design used a clock with a frequency of 20MHz and required two FSMs: 1) Scanning Logic, 2) Debouncing. <em>Figure 10</em> below shows the neatly organized RTL schematic produced in Lattice Radiant for the Prompt A code. Notably, the design contains two <code>hex7seg</code> decoders when only one is necessary if time multiplexing is applied.
+</p>
+<p><img src="images/E155_Lab3/ai_a.png" alt="Lab 3 AI Prototype A RTL" style="width:100%; border-radius: 15px;"> <em>Figure 9:</em> <code>Prompt A</code> <em>RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.</em></p>
+</section>
+<section id="prototype-b-modular-prompts-decompose-into-fsms" class="level3">
+<h3 class="anchored" data-anchor-id="prototype-b-modular-prompts-decompose-into-fsms">Prototype B: Modular Prompts (Decompose into FSMs)</h3>
+<details class="pretty-callout">
+<summary>
+<strong>LLM Prompt 1: One‑shot Registration (Debounce‑by‑design)</strong>
+</summary>
+<div class="callout-body">
+<p>Target device: Lattice iCE40 UP5K FPGA.</p>
+<p><strong>Overall Goal:</strong> Write SystemVerilog to scan a 4x4 matrix keypad and display the last two hex keys pressed on a dual 7 segment display.</p>
+<p><strong>Current Goal:</strong> Write a synthesizable SystemVerilog module that produces a one‑shot registration signal for the keypad system.</p>
+<p><strong>Behavior:</strong> <br></p>
+<ul>
+<li>When a key press is first detected, capture the current key code and assert a single‑cycle “new key” pulse. <br></li>
+<li>While any key remains pressed, do not accept additional keys. <br></li>
+<li>Only after keys are released should a subsequent press be recognized. <br></li>
+<li>This should handle debouncing of the keys. <br></li>
+</ul>
+<p>Implement as a small synchronous FSM with enumerated states and glitch‑free outputs. Keep names and interfaces reasonable; do not assume any hidden modules beyond what you define here.</p>
+</div>
+</details>
+<details class="pretty-callout">
+<summary>
+<strong>LLM Prompt 2: Keypad Scanner Controller</strong>
+</summary>
+<div class="callout-body">
+<p><strong>Target device:</strong> Lattice iCE40 UP5K FPGA.</p>
+<p>Write a synthesizable SystemVerilog module that cycles through keypad columns (active‑low, one at a time) and samples rows (active‑low) to detect a single key at a time.</p>
+<p><strong>Behavior:</strong> <br></p>
+<ul>
+<li>Iterate columns at a suitable scan rate derived from the divided clock and sample rows. <br></li>
+<li>When a key is detected, report a stable key code consistent with a standard 4x4 keypad layout and maintain it while the key remains pressed. <br></li>
+<li>Provide a boolean signal indicating whether any key is currently pressed. <br></li>
+</ul>
+<p>Use clean state encoding and synchronous logic; avoid combinational feedback and latches.</p>
+</div>
+</details>
+<details class="pretty-callout">
+<summary>
+<strong>LLM Prompt 3: Integrate and Display</strong>
+</summary>
+<div class="callout-body">
+<p><strong>Target device:</strong> Lattice iCE40 UP5K FPGA with internal oscillator as the root clock source.</p>
+<p>Write a top-level SystemVerilog module that instantiates the scanner and one-shot modules, shifts the last two keys (older ← most recent; most recent ← new), and drives a multiplexed two-digit seven-segment display.</p>
+<p><strong>Requirements:</strong> <br></p>
+<ul>
+<li>Update the displayed digits only when a new key is registered. <br></li>
+<li>Ensure equal apparent brightness and no visible flicker. <br></li>
+<li>Keep all logic synthesizable and synchronous; use idiomatic SystemVerilog constructs. <br></li>
+</ul>
+<p>Provide any small clock-enable or divider logic you need. You can also assume that a sevenSegment module exists that takes a 4-bit input and outputs the 7 segments.</p>
+</div>
+</details>
+<p class="justify-text">
+When given the decomposed prompts, ChatGPT was unable to produce synthesizable code in Lattice Radiant on the first try because I had not uploaded my <code>sevensegment</code> module to the project. Adding the module allowed for the AI generated code to synthesize. However, the code that was produced by Prompt B was not nearly as idiomatically organized as the code given by Prompt A. <em>Figure 10</em> below shows the RTL schematic produced in Lattice Radiant when given the synthesizable Prompt B code. Notably, this time, ChatGPT used a system clock with a frequency of 12MHz. Trying to make sense of the code and RTL for this design was not simple since there are lot more hardware components to account for. Overall, I prefer to work with the code produced from Prompt A since it is more intuitive to me in code and visually, and therefore should be easier to understand and debug.
+</p>
+<p><img src="images/E155_Lab3/ai_b.png" alt="Lab 3 AI Prompt B RTL" style="width:100%; border-radius: 15px;"> <em>Figure 10:</em> <code>Prompt B</code> <em>RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.</em></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
