@@ -184,7 +184,7 @@ css: styles.css
 <p class="justify-text">
     This lab represented the culmination of Lab 1 and Lab 2 design topics and modules. Namely, components from previous labs such as `clock.sv` and `sevensegment.sv` were 
     recycled. Ultimately, the Lab 3 design consisted of [seven modules](https://github.com/DylanSebastianHeredia/E155_Lab_3/tree/main/fpga) and the schematic pictured in 
-    *Figure 6* below describes the high-level arrangement of the modules.
+    *Figure 6* below describes the high-level arrangement of the modules and *figure 7* shows the electrical schematic for the design.
 </p>
 
 <img src="images/E155_Lab3/blockdiagram.png" alt="Lab 3 Block Diagram" style="width:100%; border-radius: 15px;">
