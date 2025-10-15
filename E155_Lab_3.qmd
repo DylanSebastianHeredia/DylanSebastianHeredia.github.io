@@ -298,7 +298,7 @@ Use idiomatic SystemVerilog (e.g., `logic`, `always_ff`, enumerated states for F
 
   <div class="callout-body">
 
-Target device: Lattice iCE40 UP5K FPGA.
+**Target device:** Lattice iCE40 UP5K FPGA.
 
 **Overall Goal:** Write SystemVerilog to scan a 4x4 matrix keypad and display the last two hex keys pressed on a dual 7 segment display.
 
