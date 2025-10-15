@@ -113,3 +113,60 @@ img {
         font-size: 0.75rem !important;
     }
 }
+
+/* === CALLOUT STYLING === */
+/* Clean, collapsible tip-style callout box for LLM prompts and notes */
+
+details.pretty-callout {
+    border-left: 5px solid #10b981; /* Green accent */
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 100%);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    margin: 1em 0;
+    transition: all 0.25s ease;
+}
+
+/* Summary (closed bar) */
+details.pretty-callout summary {
+    cursor: pointer;
+    padding: 0.75em 1em;
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #065f46;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Hide default triangle marker */
+details.pretty-callout summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Add custom arrow */
+details.pretty-callout summary::after {
+    content: "▸";
+    color: #10b981;
+    font-size: 1.2em;
+    transition: transform 0.2s ease;
+}
+
+/* Rotate arrow when open */
+details.pretty-callout[open] summary::after {
+    transform: rotate(90deg);
+}
+
+/* Hover effect for closed state */
+details.pretty-callout summary:hover {
+    background: #d1fae5;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Inside content */
+.pretty-callout .callout-body {
+    padding: 0.8em 1.2em 1em;
+    color: #064e3b;
+    font-size: 0.97em;
+    line-height: 1.45em;
+}

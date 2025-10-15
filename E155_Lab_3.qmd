@@ -6,4 +6,368 @@ format: html
 css: styles.css
 ---
 
-### Coming Soon ###
+## Introduction ##
+
+<p class="justify-text"> 
+    In this lab, a design was implemened on an an FPGA to scan a 4x4 keypad matrix for key presses and display the selected presses as hexadecimal numbers `0` to `F`
+    on a dual 7-segment display, with the most recent entry appearing on the right. When a key is pressed, it is recorded exactly once no matter how long 
+    or short the user holds the key down. Moreover, if additional keys are pressed while still holding down the first key, the additional keys are ignored. 
+</p>
+
+<div style="display: flex; gap: 10px;">
+<a href="https://youtube.com/shorts/XlhlLJF7L-8?si=OlkXNgqgWlVvEJsm" target="_blank">
+    <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
+      ▶ Lab 3: Keypad Video
+    </button>
+  </a>
+
+<a href="https://github.com/DylanSebastianHeredia/E155_Lab_3" target="_blank">
+    <button style="border-radius: 6px; padding: 8px 14px; background-color: #1128dc; color: rgb(255, 255, 255); border: none; font-weight: bold; cursor: pointer;">
+      Code
+    </button>
+  </a>
+</div>
+
+## Methods & Design ##
+
+### Lab Overview ###
+
+<p class="justify-text"> 
+    When a button is pressed on the keypad, a short is formed between the corresponding row and column of the key connecting them. Since user inputs 
+    can occur whenever the user chooses, the two main phenomenons to overcome in this lab were metastability and switch bouncing.
+</p>
+
+<p class="justify-text"> 
+    In digital electronics, switch bouncing is a phenomenon where signals from a switch can appear as if they are pressed multiple times in short time frame before
+    fully settling as shown in *Figure 1*. This is a results of the physical nature of a button, where two pieces of metal must touch in order to create an electrical 
+    connection. Depending on the type of push button used, switch bouncing can range from microseconds to miliseconds. *Figure 2* shows the key arrangement and
+    keypad pinout for this lab. 
+</p>
+
+<p class="justify-text"> 
+    To manage switch bouncing, a clock divider was used to generate a slow clock of 240Hz which is slow enough to avoid sampling quick switch bouncing. At 240Hz, the clock is 
+    slow enough to sample the stabilized switch input after boucing would occur but still toggle at a rate faster than humans can observe to ensure seamless visual transitions 
+    for other time-based functions in the lab (e.i. multiplexing the two halves of the dual 7-segment display. 
+</p>
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+  <img src="images/E155_Lab3/keypad.jpg" alt="Keypad Pinout" style="width:100%; border-radius: 15px;">
+  <div style="height: 10px;"></div>
+  <p>
+    *Figure 1: 4x4 keypad configuration and pinout.*
+  </p>
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <img src="images/E155_Lab3/switch_bounce1.jpg" alt="Switch Bounce" style="width:100%; border-radius: 15px;">
+  <div style="height: 10px;"></div>
+  <p>
+    *Figure 2: Switch bouncing can trigger multiple signals.*
+  </p>
+</div>
+</div>
+
+</p>
+<p class="justify-text"> 
+    In addition to switch bouncing, metastability also needed to be accounted for. Metastabiliity describes the temporary unstable state in which a signal does not settle into a 
+    defined `0` or `1` logic level by the time that it must be sample which can which to incorrect sampling of a signal. This can happen when a asynchronous sinals such as 
+    a user input interacts with a synchronous circuit, where the input signal's timing is unpredictable relative to the circuit's clock. *Figure 3* below at left provided by the 
+    [Harvey Mudd College E85 Chapter 3](https://pages.hmc.edu/harris/class/e85/DDCArv_Ch3.pdf) lectue proovides a visual representation of metastability.
+</p>
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+  <img src="images/E155_Lab3/metastability.png" alt="Metastability" style="width:100%; border-radius: 15px;">
+  <div style="height: 10px;"></div>
+  <p>
+    *Figure 3: Metastability leads to unpredictable outcomes.*
+  </p>
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <img src="images/E155_Lab3/synchronizer.png" alt="Synchronizer" style="width:100%; border-radius: 15px;">
+  <div style="height: 10px;"></div>
+  <p>
+    *Figure 4: Synchronizers set signals to a known clock freq.*
+  </p>
+</div>
+</div>
+
+<p class="justify-text"> 
+    To resolve metastability and ensure defined user inputs, a synchronizer shown in *Figure 4* above at right was implemented. A synchronizer works my using 
+    one flip-flop to catch an asynchronous signal at D and a second flip-flop to output the signal on Q that is now output synchronously at the same time of 
+    the circuit's clock. 
+</p>
+
+### FSM Diagram ### 
+
+<p class="justify-text"> 
+    In order to ensure that when a button is held it registers as a single press and you can't press other button while the original press is held, a finite 
+    state machine (FSM) was created. *Figure 5* below shows the FSM design which contains five sets of states: `row (r)`, `pressed (p)`, `synced (s)`, `enable (e)`, 
+    and `wait (w)`.
+</p>
+
+<img src="images/E155_Lab3/fsm.png" alt="Lab 3 FSM" style="width:100%; border-radius: 15px;">
+*Figure 5: The FSM created to implement the design used 5 sets of states: row (r), pressed (p), synced (s), enable (e), wait (w).*
+
+### FSM Logic & State Transition Table ### 
+
+### `row (r)` ###
+<p class="justify-text"> 
+    To start, the design was setup so that columns were active HIGH (1) when a button in that column was pressed and the rows were initially set to continuously be scanned. In 
+    this way, when no buttons are pressed, `press = 0` and the current state would loop through the `row (r)` states according to the state transition table described in *Table 1* 
+    below. The row output `row_pressed` encodes which physical row is active so that the column inputs can be read relateive to the currently driven row. 
+</p>
+
+### `pressed (p)` + `synced (s)`###
+<p class="justify-text"> 
+    A `pressed (p)` state is entered immediately after the scan logic detects a key press. This state exists to capture the asynchronous column information while isolating it from 
+    the row scanner. This effectively marks the beginning of the press-handling pipeline. Since the column signals are asynchronous with respect to the FSM clock, this states always
+    hands off to the `synced (s)` stage. The `synced (s)` states serve to align the correct columns and rows in time. Since these states pure exist to align timing between the correct 
+    rows and columns, the next state logic is always true. 
+</p>
+
+### `enable (e)` ###
+<p class="justify-text"> 
+    The `enable (e)` states generate a single-cycle indication that a valid key press has been detected and accepted (e.i. only one key has been pressed). In the `enable (e)` states, the FSM asserts the enable output and 
+    maintains the row_pressed encoding for the pressed row. This pulse is used by the `kpad_decoder.sv` module to display the newly recognized key exactly once, with new numbers appearing from right to left on the
+    dual 7-segment display. 
+</p>
+
+### `wait (w)` ###
+<p class="justify-text"> 
+    The `wait (w)` states keep the FSM in a stable holding pattern while the initial key remains pressed. This state repeatedly checks `oneCol` to detect if the same column is still active. If `oneCol` remains HIGH (1), 
+    the FSM waiting in this state, preventing repeated enables or accepting other keys. When `oneCol` becomes LOW (0) when the key is released or changed, the FSM returns to the appropriate 'row (r)` scanning state and 
+    resumes normal scanning until another key is pressed. 
+</p>
+
+<p class="justify-text"> 
+    *Table 1: State transition table for the Lab 3 FSM design.* 
+</p>
+
+<div style="font-size: 0.8em;">
+| **Row** | **Current State** | **Input Condition** | **Next State** | **row_pressed / enable** |
+|:-----------|:------------------|:--------------------|:----------------|:----------------|
+| **Row 0** | r0 | `press == 1` | p0 | `0100 / 0` |
+|  | r0 | `else` | r1 | `0100 / 0` |
+|  | p0 | — | s0 | `0100 / 0` |
+|  | s0 | — | e0 | `0100 / 0` |
+|  | e0 | — | w0 | `0100 / 1` |
+|  | w0 | `oneCol == 1` | w0 | `0100 / 0` |
+|  | w0 | `else` | r0 | `0100 / 0` |
+| **Row 1** | r1 | `press == 1` | p1 | `1000 / 0` |
+|  | r1 | `else` | r2 | `1000 / 0` |
+|  | p1 | — | s1 | `1000 / 0` |
+|  | s1 | — | e1 | `1000 / 0` |
+|  | e1 | — | w1 | `1000 / 1` |
+|  | w1 | `oneCol == 1` | w1 | `1000 / 0` |
+|  | w1 | `else` | r1 | `1000 / 0` |
+| **Row 2** | r2 | `press == 1` | p2 | `0001 / 0` |
+|  | r2 | `else` | r3 | `0001 / 0` |
+|  | p2 | — | s2 | `0001 / 0` |
+|  | s2 | — | e2 | `0001 / 0` |
+|  | e2 | — | w2 | `0001 / 1` |
+|  | w2 | `oneCol == 1` | w2 | `0001 / 0` |
+|  | w2 | `else` | r2 | `0001 / 0` |
+| **Row 3** | r3 | `press == 1` | p3 | `0010 / 0` |
+|  | r3 | `else` | r0 | `0010 / 0` |
+|  | p3 | — | s3 | `0010 / 0` |
+|  | s3 | — | e3 | `0010 / 0` |
+|  | e3 | — | w3 | `0010 / 1` |
+|  | w3 | `oneCol == 1` | w3 | `0010 / 0` |
+|  | w3 | `else` | r3 | `0010 / 0` |
+</div>
+
+## Technical Documentation ##
+
+<p class="justify-text">
+    This lab represented the culmination of Lab 1 and Lab 2 design topics and modules. Namely, components from previous labs such as `clock.sv` and `sevensegment.sv` were 
+    recycled. Ultimately, the Lab 3 design consisted of [seven modules](https://github.com/DylanSebastianHeredia/E155_Lab_3/tree/main/fpga) and the schematic pictured in 
+    *Figure 6* below describes the high-level arrangement of the modules.
+</p>
+
+<img src="images/E155_Lab3/blockdiagram.png" alt="Lab 3 Block Diagram" style="width:100%; border-radius: 15px;">
+*Figure 6: Lab 3 leveraged a slow clock divider, synchronizer, FSM, mux, and keypad and segment decoders.*
+
+<img src="images/E155_Lab3/lab3_schematic.png" alt="Lab 3 Schematic" style="width:100%; border-radius: 15px;">
+*Figure 7: The main hardware components for Lab 3 were the keypad, a dual 7-segment, and a pair of PNP transistors.*
+
+## Results & Discussion ##
+<p class="justify-text">
+    The design accomplished all the intended tasks. [Testbenches](https://github.com/DylanSebastianHeredia/E155_Lab_3/tree/main/fpga/sim) for `lab3_dsh.sv`, 
+    `kpad_fsm.sv`, and `kpad_decoder.sv` modules were succesfully simulated in Questa to verify correct functionality of reading rows, debouncing columns, syncing columns, decoding 
+    rows and columns, displaying digits, updating digits from right to left, and ensuring all specifications were met. 
+
+    - [__Lab 3 - Specifications:__](https://hmc-e155.github.io/lab/lab3/specs.html) <br>
+    - Each button press registers only once
+    - Dual seven-segment display shows the last two hexadecimal digits pressed
+    - Most recent numeric entry is shown on the right
+    - Only registers first press if additional buttons are pressed while holding down one button
+</p>
+
+### Questa Verification ### 
+
+<img src="images/E155_Lab3/lab3_dsh.png" alt="lab3_dsh testbench" style="width:100%; border-radius: 15px;">
+*Figure 7: Multiplexing, digit updating, row scanning, and fsm functions were all validated in Questa for* `lab3_dsh.sv`.
+
+<img src="images/E155_Lab3/kpad_fsm.png" alt="kpad_fsm testbench" style="width:100%; border-radius: 15px;">
+*Figure 8: For all states, current and next state logic for matched expectations in Questa for* `kpad_fsm.sv`.
+
+<img src="images/E155_Lab3/kpad_decoder.png" alt="kpad_decoder testbench" style="width:100%; border-radius: 15px;">
+*Figure 9: All row and column combinations for the 16 keys were successfully decoded by* `kpad_decoder.sv`.
+
+### Design Trade-Offs ### 
+<p class="justify-text">
+    In this lab, switch bounce was managed by dividing the 48MHz system clock to just 240Hz for keypad scanning logic. This approach effectively served as a sampling-based debounce filter 
+    because the sampling period of 4.17 ms is longer than the typical mechanical bounce duration. The main advantage of this strategy is its simplicity—there are no extra hardware components 
+    or complex logic required.  It also integrates seamlessly with the row-scanning FSM, since the same divided clock can be reused for display multiplexing and state transitions.
+</p>
+
+<p class="justify-text">
+    However, this simplicity comes with trade-offs. The slow clock introduces inherent latency between when a key is pressed and when it is recognized (up to one full sample period in the 
+    worst case). For a human-operated keypad this delay is acceptable, but it would be limiting in systems that require rapid input response or simultaneous multi-key handling. The other 
+    downside is loss of time resolution because inputs are only checked every 4.17 ms, so the FSM may not be able to accurately manage more complex button pressing patterns.
+</p>
+
+## Conclusion & Demo ##
+
+<p class="justify-text"> 
+    All designs were successfully implemented. The lab took 64 hours to complete. 
+</p>
+
+<p class="justify-text">
+    In this lab, I learned to work with asynchronous inputs with a two-stage synchronizer to prevent metastability from messing up key detection. I also gained practice with 
+    designing FSMs to complete non-trivial tasks. Moreover, running all simulations in Questa before touching the hardware reinforced the value of thorough 
+    testing and made debugging the actual FPGA far faster and less stressful. Above all, this this lab stretched my grit and endurance, as I spent over a full-time job worth of 
+    weekly work hours to complete it. This lab taught be valuable lessons in perservance that I will continue to apply to all areas of my life. Never give up!
+</p>
+
+<a href="https://youtube.com/shorts/XlhlLJF7L-8?si=OlkXNgqgWlVvEJsm" target="_blank">
+    <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
+      ▶ Lab 3: Keypad Video
+    </button>
+  </a>
+
+### AI Prototype ### 
+
+<p class="justify-text"> 
+    The purpose of the AI Prototype is to experiment with usign AI as a coding assistant to produce HDL. The following prompt was entered to ChatGPT 5.0.
+</p>
+
+### Prototype A: Monolithic Prompt (All-at-once) ###
+
+<details class="pretty-callout">
+  <summary>
+    <strong>LLM Prompt: Whole Lab (Monolithic)</strong>
+  </summary>
+
+  <div class="callout-body">
+
+**Target device:** Lattice iCE40 UP5K FPGA with internal high-speed oscillator (~20 MHz).
+
+Write synthesizable SystemVerilog to scan a 4x4 matrix keypad and display the last two hex keys pressed on a dual 7‑segment display. 
+
+**Implement:** <br>
+
+- A clock divider that derives a scan clock on the order of 100–200 Hz from the internal oscillator. <br>
+- A keypad scanning controller that iterates one active‑low column at a time and samples active‑low rows, registering at most one key per press (debounce‑by‑design), ignoring additional presses while any key is held, and allowing a new registration only after release. <br>
+- A top level that updates two hex digits (older and most recent) when a new key is registered and drives a time‑multiplexed two‑digit 7‑segment display without visible flicker and with balanced brightness. <br>
+
+Use idiomatic SystemVerilog (e.g., `logic`, `always_ff`, enumerated states for FSMs). Provide clean module boundaries and keep all state synchronous. Include brief comments explaining the design choices.
+
+  </div>
+</details>
+
+<p class="justify-text"> 
+    When given the monolithic prompt, ChatpGPT produced a series of SystemVerilog scripts that were capable of being synthesized in Lattice Radiant on the first try. The modules that were produced
+    closely mirrored my design approach with a clock divider, keypad scanner, and a method of aligning rows and columns. However, the design did not follow the same fsm approach that I had. Instead, 
+    using a slow clock, the design used a clock with a frequency of 20MHz and required two FSMs: 1) Scanning Logic, 2) Debouncing. *Figure 10* below shows the neatly organized RTL schematic produced in Lattice Radiant for the Prompt A code. 
+    Notably, the design contains two `hex7seg` decoders when only one is necessary if time multiplexing is applied. 
+</p>
+
+<img src="images/E155_Lab3/ai_a.png" alt="Lab 3 AI Prototype A RTL" style="width:100%; border-radius: 15px;">
+*Figure 9:* `Prompt A` *RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.*
+
+### Prototype B: Modular Prompts (Decompose into FSMs) ###
+
+<details class="pretty-callout">
+  <summary>
+    <strong>LLM Prompt 1: One‑shot Registration (Debounce‑by‑design)</strong>
+  </summary>
+
+  <div class="callout-body">
+
+Target device: Lattice iCE40 UP5K FPGA.
+
+**Overall Goal:** Write SystemVerilog to scan a 4x4 matrix keypad and display the last two hex keys pressed on a dual 7 segment display.
+
+**Current Goal:** Write a synthesizable SystemVerilog module that produces a one‑shot registration signal for the keypad system. 
+
+**Behavior:** <br>
+
+- When a key press is first detected, capture the current key code and assert a single‑cycle “new key” pulse. <br>
+- While any key remains pressed, do not accept additional keys. <br> 
+- Only after keys are released should a subsequent press be recognized. <br> 
+- This should handle debouncing of the keys. <br> 
+
+Implement as a small synchronous FSM with enumerated states and glitch‑free outputs. Keep names and interfaces reasonable; do not assume any hidden modules beyond what you define here.
+
+  </div>
+</details>
+
+
+<details class="pretty-callout">
+  <summary>
+    <strong>LLM Prompt 2: Keypad Scanner Controller</strong>
+  </summary>
+
+  <div class="callout-body">
+
+**Target device:** Lattice iCE40 UP5K FPGA.
+
+Write a synthesizable SystemVerilog module that cycles through keypad columns (active‑low, one at a time) and samples rows (active‑low) to detect a single key at a time. 
+
+**Behavior:** <br>
+
+- Iterate columns at a suitable scan rate derived from the divided clock and sample rows. <br>
+- When a key is detected, report a stable key code consistent with a standard 4x4 keypad layout and maintain it while the key remains pressed. <br>
+- Provide a boolean signal indicating whether any key is currently pressed. <br>
+
+Use clean state encoding and synchronous logic; avoid combinational feedback and latches.
+
+  </div>
+</details>
+
+<details class="pretty-callout">
+  <summary>
+    <strong>LLM Prompt 3: Integrate and Display</strong>
+  </summary>
+
+  <div class="callout-body">
+
+**Target device:** Lattice iCE40 UP5K FPGA with internal oscillator as the root clock source.  
+
+Write a top-level SystemVerilog module that instantiates the scanner and one-shot modules, shifts the last two keys (older ← most recent; most recent ← new), and drives a multiplexed two-digit seven-segment display.  
+
+**Requirements:** <br>
+
+- Update the displayed digits only when a new key is registered. <br>
+- Ensure equal apparent brightness and no visible flicker. <br>
+- Keep all logic synthesizable and synchronous; use idiomatic SystemVerilog constructs.  <br>
+
+Provide any small clock-enable or divider logic you need. You can also assume that a sevenSegment module exists that takes a 4-bit input and outputs the 7 segments.  
+
+  </div>
+</details>
+
+<p class="justify-text"> 
+    When given the decomposed prompts, ChatGPT was unable to produce synthesizable code in Lattice Radiant on the first try because I had not uploaded my `sevensegment` module to the project.
+    Adding the module allowed for the AI generated code to synthesize. However, the code that was produced by Prompt B was not nearly as idiomatically organized as the code given by Prompt A. 
+    *Figure 10* below shows the RTL schematic produced in Lattice Radiant when given the synthesizable Prompt B code. Notably, this time, ChatGPT used a system clock with a frequency of 12MHz. 
+    Trying to make sense of the code and RTL for this design was not simple since there are lot more hardware components to account for. Overall, I prefer to work with the code produced from 
+    Prompt A since it is more intuitive to me in code and visually, and therefore should be easier to understand and debug. 
+</p>
+
+<img src="images/E155_Lab3/ai_b.png" alt="Lab 3 AI Prompt B RTL" style="width:100%; border-radius: 15px;">
+*Figure 10:* `Prompt B` *RLT schematic of the SystemVerilog script produced by ChatGPT 5.0.*
