@@ -29,7 +29,7 @@ about:
 <div style="height: 15px;"></div>
 
 <h2 style="margin: 0; padding: 0; text-align: left;">Resume Fall 2025</h2>
-<a href="documents/HEREDIA_CV_10112025.pdf" target="_blank" style="display:block; text-align:center; margin:0; padding:0px 0;">
+<a href="documents/HEREDIA_CV_2025.pdf" target="_blank" style="display:block; text-align:center; margin:0; padding:0px 0;">
   *Open Full Resume in New Tab*
 </a>
 
