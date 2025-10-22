@@ -185,7 +185,7 @@ buttons below, check out how the full technical report and verification of each 
     </button>
   </a>
 
-  <a href="https://www.youtube.com/shorts/_3dX2f85GPs?si=QGl4zoE-1pl1GI4M" target="_blank">
+  <a href="https://youtu.be/i5u0AH16xaY" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
       ▶ Lab 6: Temperature & LED Video
     </button>

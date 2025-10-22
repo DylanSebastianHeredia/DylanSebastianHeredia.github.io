@@ -16,7 +16,7 @@ css: styles.css
 </p>
 
 <div style="display: flex; gap: 10px;">
-<a href="https://youtube.com/shorts/_3dX2f85GPs?si=QGl4zoE-1pl1GI4M" target="_blank">
+<a href="https://youtu.be/i5u0AH16xaY" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
       ▶ Lab 6: Temperature & LED Video
     </button>
@@ -141,7 +141,7 @@ css: styles.css
   This lab successfully built an IoT system that used SPI and USART to read temperature from a DS1722 and control an LED through a webpage. Getting accurate temperature readings required careful sensor configuration and timing, and generating the webpage on the MCU let users interact with the hardware in real time via the ESP8266. Watching the SPI lines on a logic analyzer made it clear how important proper communication and debugging are. Overall, this project really showed how IoT can connect physical devices to the internet, making it possible to monitor and control hardware remotely, and reinforced how precise configuration and reliable protocols are key for responsive embedded systems.
 </p>
 
-<a href="https://youtube.com/shorts/_3dX2f85GPs?si=QGl4zoE-1pl1GI4M" target="_blank">
+<a href="https://youtu.be/i5u0AH16xaY" target="_blank">
     <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
       ▶ Lab 6: Temperature & LED Video
     </button>
