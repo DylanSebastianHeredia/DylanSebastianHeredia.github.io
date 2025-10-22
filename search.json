@@ -175,32 +175,95 @@
     "text": "Conclusion & Demo\n\nAll designs were successfully implemented. The lab took 18 hours to complete.\n\n\nThe lab reinforced the importance of precise timers configuration and sequencingin PWM updates for digital audio. Notable challenges included ensuring smooth PWM output when changing frequencies, accurately calculating PSC and ARR values for a wide range of notes, and finding base addresses in the MCU datasheet. After overcoming these challenges, the implementation was capable of playign mutiple songs with correct pitch and timing, which provided practical experience with bare-metal C programming.\n\n  ▶ Lab 4: Für Elise & Blue Video  \n\nAI Prototype\nThe purpose of the AI Prototype is to experiment with usign AI as a coding assistant to navigate memory maps and guide the configuration of various peripherals. The following prompt was entered to ChatGPT 5.0.\n\n\n\n\n\n\nLLM Prompt\n\n\n\n\nWhat timers should I use on the STM32L432KC to generate frequencies ranging from 220Hz to 1kHz?\nWhat’s the best choice of timer if I want to easily connect it to a GPIO pin?\nWhat formulae are relevant, and what registers need to be set to configure them properly?\n\n\n\n\nFor Question 1, the LLM suggested using TIM1, TIM2, TIM15, TIM16, TIM17 as they are general-purpose or advanced timers capable of direclty driving GPIO. This is very resonable to me because I implemented TIM15 and TIM16 in my own design approach. Notably, the STM32L432KC Reference Manual. was provided along with the prompts above.\n\n\nFor Question 2, the LLM proposed using TIM2 as a timer since TIM2_CH1 is available on PA0 which is a very accessible GPIO pin. The LLM also recommended usign TIM16_CH1 on PA6. This is reasonable to me because I used PA6 to map directly to GPIO pins with alternate function mode.\n\n\nFor Question 3, the LLM provided the formulas shown in Figure 5 below as well as advice on how to configure registers correctly. Both the formulas and register configuration approach are valid.\n\n\n\n Figure 5: LLM response to relevant formula for selecting ARR and PSC."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "D. Sebastian Heredia",
+    "objectID": "engineering.html",
+    "href": "engineering.html",
+    "title": "Engineering Class Projects",
     "section": "",
-    "text": "He/Him\nHello! My name is Sebastian and I’m a Junior at Harvey Mudd College majoring in Engineering, with a strong foundation in math and a growing interest in electrical engineering—especially as it connects to embedded systems, robotics, and automation. I’m passionate about working at the intersection of hardware and systems that sense, respond, and interact in the world. I thrive in hands-on, fast paced environments and seek technical opportunities that will allow me to deepen my engineering skills and contribute to meaningful, systems-driven projects.\nOutside of engineering, I’m drawn to visual and audio storytelling in the form of photography, sketching, and editing sound and video. These hobbies sharpen my attention to detail, structure, and rhythm, which contribute to how I approach engineering problems. Whether I’m designing an electrical system, writing embedded code, or building a website—like the one I created here using Quarto x GitHub—I focus on how components work together and how the system behaves as a whole. This perspective allows me to prototype efficiently, communicate ideas clearly, and approach challenges both methodically and creatively.\nOpen Full Resume in New Tab"
+    "text": "At Harvey Mudd, the General Engineering major is highly robust. Our program consists of three main approaches to tackling Engineering: Systems, Sciences, and Design. The Systems appraoch focuses on how to apply mathematically model general system outputs and functions of their input. The Sciences are intended to give a broad education in engineering, where students explore Chemical and Thermal Processes, Mechanics, Electronic and Magnet Circuits, Computer Architecture, and Material Science. Lastly, the Design field teaches Professional skills necessary to apply theory learned in class. These skills include, teamwork, communication, project management, and design and prototyping. During my time at Mudd, I’ve worked on a variety of interesting projects to complete practical tasks. Below, I’ve listed a few of my favorite Engineering class projects.\nBy clicking the  Show More  buttons below, learn more about the What, How, and Results of each project."
   },
   {
-    "objectID": "index.html#additional-links",
-    "href": "index.html#additional-links",
-    "title": "D. Sebastian Heredia",
-    "section": "Additional Links",
-    "text": "Additional Links\n\n\n\n  \n  Judging Performance \n\n  Transcript Key"
+    "objectID": "engineering.html#e4-design-manufacturing",
+    "href": "engineering.html#e4-design-manufacturing",
+    "title": "Engineering Class Projects",
+    "section": "E4: Design & Manufacturing",
+    "text": "E4: Design & Manufacturing\n\nMachinist Hammer\n\n\n\n\n\n\n\nOverview:  Manufactured a functional machinist hammer from clear oak, AISI 1015 & 4340 steel, and nylon, following strict technical specifications. The experience inspired me to become a Harvey Mudd Machine Shop proctor.\n\n\nSkills:  GD&T, Lathe, Mill, Bandsaw, Router, Taps, Digital Micrometers, HRC Hardness Tester, Laser Cutter\n\n\n Show More \n  Tech Drawing  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nCrafted a functional machinist hammer from oak, steel, and nylon, adhering to precise GD&T specifications. \nContributed to the Harvey Mudd College tradition of student-made hammers while developing hands-on machining skills.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nMachined head stock to length using lathe and milling operations and verified with digital micrometers. \nHeat treated hardface, verified HRC Hardness for durability, and sandblasted for smooth finish. \n\n\n\n\n\n\n\n\nResults\n\n\n\nDelivered a high-quality, durable machinist hammer that scored near perfect in quality of manufacturing. \nBecame a Machine Shop proctor, training and mentoring new students to ensure shop safety.\n\n\n\n\n\n\n\n\n\n\n\n\n\nOptimizing Neuroimaging Device\n\n\n\n\n\n\n\nOverview:  Developed three mechanisms to improve Functional Near-Infrared Spectroscopy (fNIRS) infrared (IR) light delivery to the scalp, addressing signal loss from thick or dark hair.\n\n\nSkills:  Project & Design Management, Client Communication\n\n\nTeam: Brock B. | Annette C. | Gabrielle R..\n\n\n Show More \n  Memo  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nFiber Optic Attachment with Custom Spring Cap: Threads IR light through thick hair to the scalp. \nHair Moving Pick: Moves hair away from covering the scalp. \nWider Mounting Base: Improves contact between the IR emitters and scalp.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nMachined prototypes to verify proof of concept and refined iterations based on client input and professor feedback. \nDeveloped process routers for all prototype designs and documented findings into reports to be shared with the team and the client.\n\n\n\n\n\n\n\n\nResults\n\n\n\nIncreased signal clarity of fNIR device for users with dense hair types (3C, 4A), improving readings from critical to acceptable. \nGained experience arranging and executing client meetings to determine client needs and pain points."
   },
   {
-    "objectID": "projects/demo-project/index.html",
-    "href": "projects/demo-project/index.html",
-    "title": "Demo Project",
-    "section": "",
-    "text": "alt text\n\n\n\n\nFigure 1: This is the figure caption."
+    "objectID": "engineering.html#e79-engineering-systems",
+    "href": "engineering.html#e79-engineering-systems",
+    "title": "Engineering Class Projects",
+    "section": "E79: Engineering Systems",
+    "text": "E79: Engineering Systems\n\nRemotely Operated Vehicle (ROV)\n\n\n\n\n\n\n\nOverview:  Built an underwater Remotely Operated Vehicle (ROV) to simultaneously measure depth and temperature at the Robert J. Bernard Biological Field Station.\n\n\nSkills:  LabVIEW, Soldering, Oscilloscope, PCB Assembly, DMM, Breadboarding\n\n\nTeam: Brock B.\n\n Show More \n\n\n\n\n\n\n\n\nWhat?\n\n\n\nCreated a fully waterproof ROV to measure temperature across varying depths. \nImplemented P control for motor operation.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nModeled and simulated vertical motion of the ROV by changing the motor PWM duty cycle in LabVIEW. \nSoldered MPX5700 pressure sensor and NXFT15XH103 thermistor circuits to the project PCB.\n\n\n\n\n\n\n\n\nResults\n\n\n\nDeployed ROV in a real-world application and collected reasonable environmental data. \nGained hands-on experience in circuit breadboarding, soldering, and oscilloscope use."
   },
   {
-    "objectID": "projects/demo-project/index.html#demo-section",
-    "href": "projects/demo-project/index.html#demo-section",
-    "title": "Demo Project",
+    "objectID": "engineering.html#e80-experimental-engineering",
+    "href": "engineering.html#e80-experimental-engineering",
+    "title": "Engineering Class Projects",
+    "section": "E80: Experimental Engineering",
+    "text": "E80: Experimental Engineering\n\nAutonomous Surface Vehicle (ASV)\n\n\n\n\n\n\n\nOverview:  Designed and deployed an Autonomous Surface Vehicle (ASV) to map water depth at Baby Beach, Dana Point Harbor, CA using mechanical, electrical, and pressure-based sensing techniques.\n\n\nSkills:  Arduino, MATLAB, Power Tools, BOM, 3D-Printing\n\n\nTeam: John S. | Georgia T. | Simone Y.\n\n\n Show More \n  ▶ Video     Memo  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\n\n\nMeasured underwater depth using three complementary sensing methods: \n\n\nHall effect sensor embedded in a 3D-printed winch and spool for mechanical depth measurement. \nPressure sensor calibrated for direct depth readings. \nMotor-based voltage integration to estimate depth during retrieval. \n\n\n\n\n\n\n\n\nHow?\n\n\n\n\n\nDesigned and created a lightweight, buoyant ASV frame using power tools. \nWaterproofed electronics housing container using epoxy and Parafilm. \nIterated Arduino code on the Teensy 4.0 microcontroller in order to interface components. \nPerformed magnetometer calibration on the ASV’s IMU.\n\n\n\n\n\n\n\n\nResults\n\n\n\n\n\nGained experience with the fast-pace reality of product development in a real-world environment. \nLearned how to effectively manage a project and adhere to time and budget constraints. \nValidated the effectiveness of low-cost ($50 budget), multi-sensor ASVs for generating high-resolution shore plots."
+  },
+  {
+    "objectID": "engineering.html#e85-digital-electronics-comp.-architecture-risc-v",
+    "href": "engineering.html#e85-digital-electronics-comp.-architecture-risc-v",
+    "title": "Engineering Class Projects",
+    "section": "E85: Digital Electronics & Comp. Architecture (RISC-V)",
+    "text": "E85: Digital Electronics & Comp. Architecture (RISC-V)\n\n2D-Digital Level\n\n\n\n\n\n\n\nOverview:  Built a 2D-digital level using a microcontroller, a 7x7 LED matrix, and a triple-axis accelerometer with SPI communication. Gained experince with embedded software and signal processing in real-time.\n\n\nSkills:  C/C++, SPI Communication, Calibration, Soldering\n\n\n Show More \n  ▶ Video     Code  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\n\n\nCreated a digital level that maps tilt angles from a triple-axis accelerometer to a 7x7 LED matrix “bubble” display. \nBubble motion indicated surface tilt in X and Y axes, stopping at matrix edges for extreme angles.\n\n\n\n\n\n\n\n\nHow?\n\n\n\n\n\nProgrammed a RED-V ThingPlus microcontroller in C using SPI communication to interface with the accelerometer. \nImplemented real-time signal processing and calibration to ensure smooth, flicker-free bubble motion across the display. \n\n\n\n\n\n\n\n\nResults\n\n\n\n\n\nAchieved accurate, smooth, and reliable bubble display, validating full end-to-end embeded system integration. \nDesigned a sensitive and practical 2D-digital tool with immediate real-world use.\n\n\n\n\n\n\n\n\n\n\n\n\n\n32-Bit Multicycle Processor\n\n\n\n\n\n\n\nOverview:  Designed and implemented a 32-bit RISC-V multicycle processor in SystemVerilog usign Quartus and Questa. Developed experience in digital design, datapath and control logic, and modular architecture.\n\n\nSkills:  SystemVerilog, HDL, Assembly, Machine Language, RISC-V, Quartus FPGA, Questa\n\n\n Show More \n  Code  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nClick here to see diagrams. \nBuilt a multicycle CPU capable of executing arithmetic instructions, managing memory, adn performing real-time instruction execution. \nLeveraged single-cycle processor components such as muxes, registers, adders, and control logic to construct a modular multicycle architecture.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nWrote SystemVerilog datapath connecting controller, memory, and register file modules. \nSystematically debugged by comparing assembly and machine language test benches against waveforms to correct errors. \nConsulted Quartus RLT schematic to ensure accurate I/O connections.\n\n\n\n\n\n\n\n\nResults\n\n\n\n32-Bit RISC-V Multicycle processor matched waveform expectations, indicating that the corret values where written to the correct addresses. \nDeepened understanding of RISC-V architecture, processor design principles, and real-time instruction execution."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Personal Projects",
     "section": "",
-    "text": "alt text\n\n\n\n\nFigure 1: This is the figure caption."
+    "text": "Through a wide range of hands-on projects, I’ve applied engineering principles beyond the classroom to design, prototype, and build solutions across electronics, manufacturing, and web development. These projects reflect my curiosity and persistence. Whether programming microcontrollers, machining custom hardware, or developing user-friendly software tools, I approach each challenge with an iterative problem-solving mindset. By experimenting, testing, and refining, I’ve expanded my technical toolbox while cultivating creativity, precision, and adaptability."
+  },
+  {
+    "objectID": "projects.html#electronics",
+    "href": "projects.html#electronics",
+    "title": "Personal Projects",
+    "section": "Electronics",
+    "text": "Electronics\n\nDigital Stop Watch\n\n\n\n\n\n\nOverview:  Programmed an Arduino UNO R3 mcu and a 5461BS 7-segment 4-digit display to create a stopwatch-style timer. The timer was equipped with two buttons: one to play/pause and another to reset the time. Gained proficiency with multiplexing, managing states, and debouncing.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video  \n\n\n\n\nSimon Says\n\n\n\n\n\n\nOverview:  Designed an interactive memory game on a Teensy 4.0 microcontroller. A sequence is played on the white LEDs and players repeat the correct pattern. Incorrect answers light the red LED and correct answers light the green LED to increase the sequence length by 1. If the final sequence is played correctly, the yellow LED will flash indicating a win.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video"
+  },
+  {
+    "objectID": "projects.html#manufacturing",
+    "href": "projects.html#manufacturing",
+    "title": "Personal Projects",
+    "section": "Manufacturing",
+    "text": "Manufacturing\n\nMudd Amateur Rocketry Club\n\n\n\n\n\n\nOverview:  Contributed to the design and fabrication of fins for the Mudd Amateur Rocketry Club (MARC) high-powered rocket. Machined and attached carbon fiber fins using power tools, sand paper, and epoxy to ensure accurate fit within the aft rocket body. Pursuing L1 certification (Expected Fall 2025).\n\n\nSkills:  Dremel, Power Tools, Epoxy\n\n  ▶ Video  \n\n\n\n\nPickleball Paddle\n\n\n\n\n\n\nOverview:  Designed and built a pickleball paddle for the 2025 Machine Shop Proctor Tournament. Modeled paddle dimensions based on reference measurements and programmed toolpaths on the ShopBot CNC Router, including cutting strategies, feed rates, and tab placement for safe and precise milling. Painted and laser-cut a stencil for precise lettering.\n\n\nSkills:  ShopBot, CNC Router, Laser Cutter, Calipers\n\n  ▶ Video  \n\n\n\n\nBallpoint Pen\n\n\n\n\n\n\nOverview:  Created a ballpoint pen through precision woodturning. Operated a lathe with gouges to achieve consistent cylindrical symmetry, followed by progressive grit sanding for smoothness. Applied protective varnish finishing before press-fitting the mechanical hardware using an arbor press.\n\n\nSkills:  Wood Lathe, Gouges, Wood Varnish, Arbor Press\n\n\n\n\n\nCheese Knife\n\n\n\n\n\n\nOverview:  Produced a set of custom wooden utensils, including a cheese knife, as family holiday gifts. Sketched utensil profiles based on Wooden Utensils from the Bandsaw. Rough-cut stock material on the bandsaw, and shaped contours with sanders and hand-finishing. Applied mineral oil treatment for food safety and durability.\n\n\nSkills:  Bandsaw, Belt Sander, Spindle Sander"
+  },
+  {
+    "objectID": "projects.html#web-development",
+    "href": "projects.html#web-development",
+    "title": "Personal Projects",
+    "section": "Web Development",
+    "text": "Web Development\n\nUCLA GIM CV Formatter\n\n\n\n\n\n\nOverview:  Developed a user-frienly, web-based application using Streamlit for creating, editing, and exporting CVs in compliance with the General Internal Medicine (GIM) CV Guidelines. Designed an interactive dashboard interface where users can select a CV from a manager panel, populate accordion-style surveys corresponding to guideline sections, and export a formatted MS Word file.\n\n\nSkills:  Python, Streamlit, APIs, Firebase, Design Process\n\n\n\n\n\nUCLA DOMStat Website\n\n\n\n\n\n\nOverview:  Contributed to the redesign and population of the updated UCLA Department of Medicine Statistics Core (DOMStat) website, ensuring a user-centered interface with emphasis on accessibility and intuitive navigation. Applied consistent visual design principles to align with UCLA Health brand identity.\n\n\nSkills:  Content Strategy, UI/UX, SEO"
+  },
+  {
+    "objectID": "outdoors.html",
+    "href": "outdoors.html",
+    "title": "Sports & Outdoors",
+    "section": "",
+    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
+  },
+  {
+    "objectID": "outdoors.html#ultimate-frisbee",
+    "href": "outdoors.html#ultimate-frisbee",
+    "title": "Sports & Outdoors",
+    "section": "",
+    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
+  },
+  {
+    "objectID": "outdoors.html#running",
+    "href": "outdoors.html#running",
+    "title": "Sports & Outdoors",
+    "section": "Running",
+    "text": "Running\n\nI started running consistently in Summer 2024 and have since achieved several personal milestones. Fall 2024, I ran a 10K Turkey Trot with my dad. Over Winter break, I logged 100 miles. And most recently, I completed my first half marathon this Summer 2025. I often complement my runs with jump rope, stair climbing, yoga, and weight training. Feel free to connect with me on Strava!\n\n\n\n\n\n\n\n\nRun at sunset in Los Angeles, CA\n\n\n\n\n\n\n\n\nNeighborhood run club with friends\n\n\n\n\n\n\n\n\nHalf marathon in Santa Monica, CA"
+  },
+  {
+    "objectID": "outdoors.html#pickleball",
+    "href": "outdoors.html#pickleball",
+    "title": "Sports & Outdoors",
+    "section": "Pickleball",
+    "text": "Pickleball\n\nOn weekends, my friends and I play pickleball at the Robert’s Pavillion at Claremont McKenna College. We play singles, doubles, and king of the court style play. It’s always a good time and our play sessions last anywhere from 2-4 hours each.\n\n\n\n\n\n\n\n\nWeekend pickleball with friends\n\n\n\n\n\n\n\n\nMachine Shop proctor tournament\n\n\n\n\n\n\n\n\nPickleball in Westchester, CA"
   },
   {
     "objectID": "music.html",
@@ -245,95 +308,81 @@
     "text": "Recordings & Compositions\n\n\n\n\n\n\nI love playing duets with recordings of myself or digital instruments, and throughout the years I’ve started writing down my compositions. After class and on weekends, I also enjoy learning pop songs with my friends, pianist, Kai Mawhinney, and vocalist and guitarist, Emmett Levine. We often improvise together and have performed on the Claremont College student radio, KSPC, and at Emmett’s Guitar Club recitals.\n\n  ▶ Video"
   },
   {
-    "objectID": "outdoors.html",
-    "href": "outdoors.html",
-    "title": "Sports & Outdoors",
+    "objectID": "projects/demo-project/index.html",
+    "href": "projects/demo-project/index.html",
+    "title": "Demo Project",
     "section": "",
-    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
+    "text": "alt text\n\n\n\n\nFigure 1: This is the figure caption."
   },
   {
-    "objectID": "outdoors.html#ultimate-frisbee",
-    "href": "outdoors.html#ultimate-frisbee",
-    "title": "Sports & Outdoors",
+    "objectID": "projects/demo-project/index.html#demo-section",
+    "href": "projects/demo-project/index.html#demo-section",
+    "title": "Demo Project",
     "section": "",
-    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
+    "text": "alt text\n\n\n\n\nFigure 1: This is the figure caption."
   },
   {
-    "objectID": "outdoors.html#running",
-    "href": "outdoors.html#running",
-    "title": "Sports & Outdoors",
-    "section": "Running",
-    "text": "Running\n\nI started running consistently in Summer 2024 and have since achieved several personal milestones. Fall 2024, I ran a 10K Turkey Trot with my dad. Over Winter break, I logged 100 miles. And most recently, I completed my first half marathon this Summer 2025. I often complement my runs with jump rope, stair climbing, yoga, and weight training. Feel free to connect with me on Strava!\n\n\n\n\n\n\n\n\nRun at sunset in Los Angeles, CA\n\n\n\n\n\n\n\n\nNeighborhood run club with friends\n\n\n\n\n\n\n\n\nHalf marathon in Santa Monica, CA"
-  },
-  {
-    "objectID": "outdoors.html#pickleball",
-    "href": "outdoors.html#pickleball",
-    "title": "Sports & Outdoors",
-    "section": "Pickleball",
-    "text": "Pickleball\n\nOn weekends, my friends and I play pickleball at the Robert’s Pavillion at Claremont McKenna College. We play singles, doubles, and king of the court style play. It’s always a good time and our play sessions last anywhere from 2-4 hours each.\n\n\n\n\n\n\n\n\nWeekend pickleball with friends\n\n\n\n\n\n\n\n\nMachine Shop proctor tournament\n\n\n\n\n\n\n\n\nPickleball in Westchester, CA"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Personal Projects",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "D. Sebastian Heredia",
     "section": "",
-    "text": "Through a wide range of hands-on projects, I’ve applied engineering principles beyond the classroom to design, prototype, and build solutions across electronics, manufacturing, and web development. These projects reflect my curiosity and persistence. Whether programming microcontrollers, machining custom hardware, or developing user-friendly software tools, I approach each challenge with an iterative problem-solving mindset. By experimenting, testing, and refining, I’ve expanded my technical toolbox while cultivating creativity, precision, and adaptability."
+    "text": "He/Him\nHello! My name is Sebastian and I’m a Junior at Harvey Mudd College majoring in Engineering, with a strong foundation in math and a growing interest in electrical engineering—especially as it connects to embedded systems, robotics, and automation. I’m passionate about working at the intersection of hardware and systems that sense, respond, and interact in the world. I thrive in hands-on, fast paced environments and seek technical opportunities that will allow me to deepen my engineering skills and contribute to meaningful, systems-driven projects.\nOutside of engineering, I’m drawn to visual and audio storytelling in the form of photography, sketching, and editing sound and video. These hobbies sharpen my attention to detail, structure, and rhythm, which contribute to how I approach engineering problems. Whether I’m designing an electrical system, writing embedded code, or building a website—like the one I created here using Quarto x GitHub—I focus on how components work together and how the system behaves as a whole. This perspective allows me to prototype efficiently, communicate ideas clearly, and approach challenges both methodically and creatively.\nOpen Full Resume in New Tab"
   },
   {
-    "objectID": "projects.html#electronics",
-    "href": "projects.html#electronics",
-    "title": "Personal Projects",
-    "section": "Electronics",
-    "text": "Electronics\n\nDigital Stop Watch\n\n\n\n\n\n\nOverview:  Programmed an Arduino UNO R3 mcu and a 5461BS 7-segment 4-digit display to create a stopwatch-style timer. The timer was equipped with two buttons: one to play/pause and another to reset the time. Gained proficiency with multiplexing, managing states, and debouncing.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video  \n\n\n\n\nSimon Says\n\n\n\n\n\n\nOverview:  Designed an interactive memory game on a Teensy 4.0 microcontroller. A sequence is played on the white LEDs and players repeat the correct pattern. Incorrect answers light the red LED and correct answers light the green LED to increase the sequence length by 1. If the final sequence is played correctly, the yellow LED will flash indicating a win.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video"
+    "objectID": "index.html#additional-links",
+    "href": "index.html#additional-links",
+    "title": "D. Sebastian Heredia",
+    "section": "Additional Links",
+    "text": "Additional Links\n\n\n\n  \n  Judging Performance \n\n  Transcript Key"
   },
   {
-    "objectID": "projects.html#manufacturing",
-    "href": "projects.html#manufacturing",
-    "title": "Personal Projects",
-    "section": "Manufacturing",
-    "text": "Manufacturing\n\nMudd Amateur Rocketry Club\n\n\n\n\n\n\nOverview:  Contributed to the design and fabrication of fins for the Mudd Amateur Rocketry Club (MARC) high-powered rocket. Machined and attached carbon fiber fins using power tools, sand paper, and epoxy to ensure accurate fit within the aft rocket body. Pursuing L1 certification (Expected Fall 2025).\n\n\nSkills:  Dremel, Power Tools, Epoxy\n\n  ▶ Video  \n\n\n\n\nPickleball Paddle\n\n\n\n\n\n\nOverview:  Designed and built a pickleball paddle for the 2025 Machine Shop Proctor Tournament. Modeled paddle dimensions based on reference measurements and programmed toolpaths on the ShopBot CNC Router, including cutting strategies, feed rates, and tab placement for safe and precise milling. Painted and laser-cut a stencil for precise lettering.\n\n\nSkills:  ShopBot, CNC Router, Laser Cutter, Calipers\n\n  ▶ Video  \n\n\n\n\nBallpoint Pen\n\n\n\n\n\n\nOverview:  Created a ballpoint pen through precision woodturning. Operated a lathe with gouges to achieve consistent cylindrical symmetry, followed by progressive grit sanding for smoothness. Applied protective varnish finishing before press-fitting the mechanical hardware using an arbor press.\n\n\nSkills:  Wood Lathe, Gouges, Wood Varnish, Arbor Press\n\n\n\n\n\nCheese Knife\n\n\n\n\n\n\nOverview:  Produced a set of custom wooden utensils, including a cheese knife, as family holiday gifts. Sketched utensil profiles based on Wooden Utensils from the Bandsaw. Rough-cut stock material on the bandsaw, and shaped contours with sanders and hand-finishing. Applied mineral oil treatment for food safety and durability.\n\n\nSkills:  Bandsaw, Belt Sander, Spindle Sander"
-  },
-  {
-    "objectID": "projects.html#web-development",
-    "href": "projects.html#web-development",
-    "title": "Personal Projects",
-    "section": "Web Development",
-    "text": "Web Development\n\nUCLA GIM CV Formatter\n\n\n\n\n\n\nOverview:  Developed a user-frienly, web-based application using Streamlit for creating, editing, and exporting CVs in compliance with the General Internal Medicine (GIM) CV Guidelines. Designed an interactive dashboard interface where users can select a CV from a manager panel, populate accordion-style surveys corresponding to guideline sections, and export a formatted MS Word file.\n\n\nSkills:  Python, Streamlit, APIs, Firebase, Design Process\n\n\n\n\n\nUCLA DOMStat Website\n\n\n\n\n\n\nOverview:  Contributed to the redesign and population of the updated UCLA Department of Medicine Statistics Core (DOMStat) website, ensuring a user-centered interface with emphasis on accessibility and intuitive navigation. Applied consistent visual design principles to align with UCLA Health brand identity.\n\n\nSkills:  Content Strategy, UI/UX, SEO"
-  },
-  {
-    "objectID": "engineering.html",
-    "href": "engineering.html",
-    "title": "Engineering Class Projects",
+    "objectID": "E155_Lab_6.html",
+    "href": "E155_Lab_6.html",
+    "title": "Lab 6: IoT & SPI",
     "section": "",
-    "text": "At Harvey Mudd, the General Engineering major is highly robust. Our program consists of three main approaches to tackling Engineering: Systems, Sciences, and Design. The Systems appraoch focuses on how to apply mathematically model general system outputs and functions of their input. The Sciences are intended to give a broad education in engineering, where students explore Chemical and Thermal Processes, Mechanics, Electronic and Magnet Circuits, Computer Architecture, and Material Science. Lastly, the Design field teaches Professional skills necessary to apply theory learned in class. These skills include, teamwork, communication, project management, and design and prototyping. During my time at Mudd, I’ve worked on a variety of interesting projects to complete practical tasks. Below, I’ve listed a few of my favorite Engineering class projects.\nBy clicking the  Show More  buttons below, learn more about the What, How, and Results of each project."
+    "text": "In this lab, an Internet of Things (IoT) device was designed and implemented using the STM32L432KC MCU interfaced with a DS1722 digital temperature sensor over serial peripheral interface (SPI) and an ESP8266 WiFi module via USART. The purpose of the IoT device was to generate a webpage that displayed real-time ambient temperature readings (ºC) of the lab room, while allowing users to toggle an LED and select temperature resolution.\n\n\n  ▶ Lab 6: Temperature & LED Video  \n  Code"
   },
   {
-    "objectID": "engineering.html#e4-design-manufacturing",
-    "href": "engineering.html#e4-design-manufacturing",
-    "title": "Engineering Class Projects",
-    "section": "E4: Design & Manufacturing",
-    "text": "E4: Design & Manufacturing\n\nMachinist Hammer\n\n\n\n\n\n\n\nOverview:  Manufactured a functional machinist hammer from clear oak, AISI 1015 & 4340 steel, and nylon, following strict technical specifications. The experience inspired me to become a Harvey Mudd Machine Shop proctor.\n\n\nSkills:  GD&T, Lathe, Mill, Bandsaw, Router, Taps, Digital Micrometers, HRC Hardness Tester, Laser Cutter\n\n\n Show More \n  Tech Drawing  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nCrafted a functional machinist hammer from oak, steel, and nylon, adhering to precise GD&T specifications. \nContributed to the Harvey Mudd College tradition of student-made hammers while developing hands-on machining skills.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nMachined head stock to length using lathe and milling operations and verified with digital micrometers. \nHeat treated hardface, verified HRC Hardness for durability, and sandblasted for smooth finish. \n\n\n\n\n\n\n\n\nResults\n\n\n\nDelivered a high-quality, durable machinist hammer that scored near perfect in quality of manufacturing. \nBecame a Machine Shop proctor, training and mentoring new students to ensure shop safety.\n\n\n\n\n\n\n\n\n\n\n\n\n\nOptimizing Neuroimaging Device\n\n\n\n\n\n\n\nOverview:  Developed three mechanisms to improve Functional Near-Infrared Spectroscopy (fNIRS) infrared (IR) light delivery to the scalp, addressing signal loss from thick or dark hair.\n\n\nSkills:  Project & Design Management, Client Communication\n\n\nTeam: Brock B. | Annette C. | Gabrielle R..\n\n\n Show More \n  Memo  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nFiber Optic Attachment with Custom Spring Cap: Threads IR light through thick hair to the scalp. \nHair Moving Pick: Moves hair away from covering the scalp. \nWider Mounting Base: Improves contact between the IR emitters and scalp.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nMachined prototypes to verify proof of concept and refined iterations based on client input and professor feedback. \nDeveloped process routers for all prototype designs and documented findings into reports to be shared with the team and the client.\n\n\n\n\n\n\n\n\nResults\n\n\n\nIncreased signal clarity of fNIR device for users with dense hair types (3C, 4A), improving readings from critical to acceptable. \nGained experience arranging and executing client meetings to determine client needs and pain points."
+    "objectID": "E155_Lab_6.html#introduction",
+    "href": "E155_Lab_6.html#introduction",
+    "title": "Lab 6: IoT & SPI",
+    "section": "",
+    "text": "In this lab, an Internet of Things (IoT) device was designed and implemented using the STM32L432KC MCU interfaced with a DS1722 digital temperature sensor over serial peripheral interface (SPI) and an ESP8266 WiFi module via USART. The purpose of the IoT device was to generate a webpage that displayed real-time ambient temperature readings (ºC) of the lab room, while allowing users to toggle an LED and select temperature resolution.\n\n\n  ▶ Lab 6: Temperature & LED Video  \n  Code"
   },
   {
-    "objectID": "engineering.html#e79-engineering-systems",
-    "href": "engineering.html#e79-engineering-systems",
-    "title": "Engineering Class Projects",
-    "section": "E79: Engineering Systems",
-    "text": "E79: Engineering Systems\n\nRemotely Operated Vehicle (ROV)\n\n\n\n\n\n\n\nOverview:  Built an underwater Remotely Operated Vehicle (ROV) to simultaneously measure depth and temperature at the Robert J. Bernard Biological Field Station.\n\n\nSkills:  LabVIEW, Soldering, Oscilloscope, PCB Assembly, DMM, Breadboarding\n\n\nTeam: Brock B.\n\n Show More \n\n\n\n\n\n\n\n\nWhat?\n\n\n\nCreated a fully waterproof ROV to measure temperature across varying depths. \nImplemented P control for motor operation.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nModeled and simulated vertical motion of the ROV by changing the motor PWM duty cycle in LabVIEW. \nSoldered MPX5700 pressure sensor and NXFT15XH103 thermistor circuits to the project PCB.\n\n\n\n\n\n\n\n\nResults\n\n\n\nDeployed ROV in a real-world application and collected reasonable environmental data. \nGained hands-on experience in circuit breadboarding, soldering, and oscilloscope use."
+    "objectID": "E155_Lab_6.html#background-lab-overview",
+    "href": "E155_Lab_6.html#background-lab-overview",
+    "title": "Lab 6: IoT & SPI",
+    "section": "Background & Lab Overview",
+    "text": "Background & Lab Overview\n\nThis lab demonstrated an Internet of Things (IoT) system that integrates sensor measurements, microcontroller processing, and web-based user interaction using the hardware setup shown in Figure 1 below. The term “Internet of Things” refers to a network of physical devices connected through the internet that can collect, share, and carry out actions based on data. Some of most familiar examples of IoT devices include smart thermostats and kitchen appliances, fitness-tracking watches, self-driving cars, and home security systems. IoT systems are becoming more and more common in daily life as they can communicate with one another or with cloud servers to enable remote monitoring, automation, and control. Figure 2 shows the HTML webpage user interface for this lab. Through this webpage, users were able to remotely monitor the live temperature and toggle the LED connected to the MCU, highlighting the two-way interaction between the hardware and the internet.\n\n\n\n\n\n\n\n\nFigure 1: Layout of the MCU, ESP8266, and DS1722.\n\n\n\n\n\n\n\n\nFigure 2: HTML webpage hosted by the ESP8266."
   },
   {
-    "objectID": "engineering.html#e80-experimental-engineering",
-    "href": "engineering.html#e80-experimental-engineering",
-    "title": "Engineering Class Projects",
-    "section": "E80: Experimental Engineering",
-    "text": "E80: Experimental Engineering\n\nAutonomous Surface Vehicle (ASV)\n\n\n\n\n\n\n\nOverview:  Designed and deployed an Autonomous Surface Vehicle (ASV) to map water depth at Baby Beach, Dana Point Harbor, CA using mechanical, electrical, and pressure-based sensing techniques.\n\n\nSkills:  Arduino, MATLAB, Power Tools, BOM, 3D-Printing\n\n\nTeam: John S. | Georgia T. | Simone Y.\n\n\n Show More \n  ▶ Video     Memo  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\n\n\nMeasured underwater depth using three complementary sensing methods: \n\n\nHall effect sensor embedded in a 3D-printed winch and spool for mechanical depth measurement. \nPressure sensor calibrated for direct depth readings. \nMotor-based voltage integration to estimate depth during retrieval. \n\n\n\n\n\n\n\n\nHow?\n\n\n\n\n\nDesigned and created a lightweight, buoyant ASV frame using power tools. \nWaterproofed electronics housing container using epoxy and Parafilm. \nIterated Arduino code on the Teensy 4.0 microcontroller in order to interface components. \nPerformed magnetometer calibration on the ASV’s IMU.\n\n\n\n\n\n\n\n\nResults\n\n\n\n\n\nGained experience with the fast-pace reality of product development in a real-world environment. \nLearned how to effectively manage a project and adhere to time and budget constraints. \nValidated the effectiveness of low-cost ($50 budget), multi-sensor ASVs for generating high-resolution shore plots."
+    "objectID": "E155_Lab_6.html#methods-designs",
+    "href": "E155_Lab_6.html#methods-designs",
+    "title": "Lab 6: IoT & SPI",
+    "section": "Methods & Designs",
+    "text": "Methods & Designs\n\nThis lab consisted of three main components: 1) SPI communication with the DS1722 temperature sensor, 2) USART communication with the ESP8266 module, and 3) Dynamic webpage generation on the MCU.\n\n\nSPI Interface\n\nIn this implementation, the MCU interfaced with a DS1722 digital thermometer via the Serial Peripheral Interface (SPI) protocol, using the Chip Enable (CE), Serial Clock (SCK), Serial Data In (SDI), and Serial Data Out (SDO) lines to retrieve temperature data in real-time. While the DS1722 can support both SPI and 3-wire communication modes, only the SPI protocol which is configured for 8-bit transfer was used. To read temperature data, the MCU wrote to the LSB (0x01) and MSB (0x02) temperature resgisters, then concatenated their outputs into a 16-bit value representing the current temperature.\n\n\nSince the DS1722 encodes temperature data as two’s complement values, the MCU converted the binary result into a signed decimal temperature value in ºC. The precision of the reading depended on the sensor’s configutaion register which could be set for 8, 9, 10, 11, of 12-bit resolutions. Table 1 below shows the corresponding temperature resolutions in decimal format. To configure the resolution, the MCU first called the write address (0x80) of the sensor followed by an 8-bit hexadecimal control word to indicate the desired resolution. In this lab, the variable configStatus contained the control word.\n\n\n\nTable 1: The relationship between nominal bit resolution, configStatus, and temperature resolution.\n\n\n\n\n\n\n\n\n\nNominal Bit Resolution\nconfigStatus\nTemperature Resolution (ºC)\n\n\n\n\n8-bit\n0xE0\nX.0000\n\n\n9-bit\n0xE2\nX.5000\n\n\n10-bit\n0xE4\nX.2500\n\n\n12-bit\n0xE8\nX.0625\n\n\n\n\n\n\nUSART Interface\n\nThe MCU and ESP8266 communicated over a 125000 baud USART link with crossed TX/RX lines. This means the ESP8266 TX connected to RX/PA10 of the MCU and the RX connected to the TX/PA9, per the MCU pinout and ESP8266 datasheet. User requests were transmitted from the ESP8266 in the format /REQ:'&lt;command&gt;'\\n. The MCU parsed these requests to toggle an external LED on PB7/D4 and update temperature reading each time the webpage was refreshed. After processing a request, the MCU transmitted the complete HTML page to the ESP8266, which then served it to the user’s web browser. Notably, USART starter code was provided.\n\n\n\nWebpage Generation\n\nThe HTML webpage was dynamically generated by the MCU and included buttons for toggling the LED as well as a display of the current temperature reading with the status of the bit resolution. Importabtly, the webpage started with &lt;!DOCTYPE html&gt; and ended with &lt;/html&gt; to comply with standard HTML formatting. Moreover, the webpage was updated every time the MCU processed a new USART request, so the page refreshed after every user input. Notably, HTML stater code was provided."
   },
   {
-    "objectID": "engineering.html#e85-digital-electronics-comp.-architecture-risc-v",
-    "href": "engineering.html#e85-digital-electronics-comp.-architecture-risc-v",
-    "title": "Engineering Class Projects",
-    "section": "E85: Digital Electronics & Comp. Architecture (RISC-V)",
-    "text": "E85: Digital Electronics & Comp. Architecture (RISC-V)\n\n2D-Digital Level\n\n\n\n\n\n\n\nOverview:  Built a 2D-digital level using a microcontroller, a 7x7 LED matrix, and a triple-axis accelerometer with SPI communication. Gained experince with embedded software and signal processing in real-time.\n\n\nSkills:  C/C++, SPI Communication, Calibration, Soldering\n\n\n Show More \n  ▶ Video     Code  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\n\n\nCreated a digital level that maps tilt angles from a triple-axis accelerometer to a 7x7 LED matrix “bubble” display. \nBubble motion indicated surface tilt in X and Y axes, stopping at matrix edges for extreme angles.\n\n\n\n\n\n\n\n\nHow?\n\n\n\n\n\nProgrammed a RED-V ThingPlus microcontroller in C using SPI communication to interface with the accelerometer. \nImplemented real-time signal processing and calibration to ensure smooth, flicker-free bubble motion across the display. \n\n\n\n\n\n\n\n\nResults\n\n\n\n\n\nAchieved accurate, smooth, and reliable bubble display, validating full end-to-end embeded system integration. \nDesigned a sensitive and practical 2D-digital tool with immediate real-world use.\n\n\n\n\n\n\n\n\n\n\n\n\n\n32-Bit Multicycle Processor\n\n\n\n\n\n\n\nOverview:  Designed and implemented a 32-bit RISC-V multicycle processor in SystemVerilog usign Quartus and Questa. Developed experience in digital design, datapath and control logic, and modular architecture.\n\n\nSkills:  SystemVerilog, HDL, Assembly, Machine Language, RISC-V, Quartus FPGA, Questa\n\n\n Show More \n  Code  \n\n\n\n\n\n\n\n\n\nWhat?\n\n\n\nClick here to see diagrams. \nBuilt a multicycle CPU capable of executing arithmetic instructions, managing memory, adn performing real-time instruction execution. \nLeveraged single-cycle processor components such as muxes, registers, adders, and control logic to construct a modular multicycle architecture.\n\n\n\n\n\n\n\n\nHow?\n\n\n\nWrote SystemVerilog datapath connecting controller, memory, and register file modules. \nSystematically debugged by comparing assembly and machine language test benches against waveforms to correct errors. \nConsulted Quartus RLT schematic to ensure accurate I/O connections.\n\n\n\n\n\n\n\n\nResults\n\n\n\n32-Bit RISC-V Multicycle processor matched waveform expectations, indicating that the corret values where written to the correct addresses. \nDeepened understanding of RISC-V architecture, processor design principles, and real-time instruction execution."
+    "objectID": "E155_Lab_6.html#technical-documentation",
+    "href": "E155_Lab_6.html#technical-documentation",
+    "title": "Lab 6: IoT & SPI",
+    "section": "Technical Documentation",
+    "text": "Technical Documentation\n\nSchematic\n\nThe MCU, DS1722, and ESP8266 were powered using 3.3 V supplies and an external green LED wired to PB7/D4 was used to avoid conflicts with multi-function pins. Moreover, a 330Ω resistor was used to limit the current through the green LED while ensuring sufficient brightness.\n\n Figure 3: Lab 6 schematic outlining wiring of the MCU, DS1722, ESP8266, and an external green LED."
+  },
+  {
+    "objectID": "E155_Lab_6.html#results-discussion",
+    "href": "E155_Lab_6.html#results-discussion",
+    "title": "Lab 6: IoT & SPI",
+    "section": "Results & Discussion",
+    "text": "Results & Discussion\n\nThe final implementation successfully measured temperatures from –10 °C to 30 °C, updated the displayed value upon refresh, and correctly toggled the LED state. Figure 4 shows the changes in resolution for increasing temperature as well as a temperature reading when MSB = 0xF5 and LSB = 0xE0 which should produce a temperature of -10.125ºC according to the DS1722 datasheet. To confirm correct SPI communication, the oscilloscope’s logic analyzer was configured to monitor the SCK, CE, MOSI, and MISO lines. As shown in Figure 5 and Figure 6, proper SPI operation was observed: The chip enable (CE) line on D4 went low during each transaction, clock pulses appeared only while CE was active, and the LSB and MSB temperature registers were transmitted over MOSI while corresponding data was received on MISO. This verified that the master and sensor were communicating in sync and exchanging valid data.\n\n Figure 4: Temperatures are accurately be captured for -10ºC to 30ºC and bit resolutions are accurate.\n Figure 5: Logic analyzer trace for 8-bit temperature resolution configStatus = 0xE0.\n Figure 6: Logic analyzer trace for 12-bit temperature resolution configStatus = 0xE8."
+  },
+  {
+    "objectID": "E155_Lab_6.html#conclusion-demo",
+    "href": "E155_Lab_6.html#conclusion-demo",
+    "title": "Lab 6: IoT & SPI",
+    "section": "Conclusion & Demo",
+    "text": "Conclusion & Demo\n\nAll designs were successfully implemented. The lab took 16 hours to complete.\n\n\nThis lab successfully built an IoT system that used SPI and USART to read temperature from a DS1722 and control an LED through a webpage. Getting accurate temperature readings required careful sensor configuration and timing, and generating the webpage on the MCU let users interact with the hardware in real time via the ESP8266. Watching the SPI lines on a logic analyzer made it clear how important proper communication and debugging are. Overall, this project really showed how IoT can connect physical devices to the internet, making it possible to monitor and control hardware remotely, and reinforced how precise configuration and reliable protocols are key for responsive embedded systems.\n\n  ▶ Lab 6: Temperature & LED Video  \n\nAI Prototype\nThe purpose of the AI Prototype is to experiment with usign AI as a coding assistant to navigate memory maps and guide the configuration of various peripherals. The following prompt was entered to ChatGPT 5.0.\n\n\n\n\n\n\nLLM Prompt\n\n\n\nI’m making a web portal to interface with a temperature sensor. Create a HTML page that looks good and is intuitive to show the temperature, control an LED, and change the precision of the readout.\n\n\n\nThe LLM was able to quickly produce HTML code however, the code did not compile properly in Segger and was unable to display after multiple re-prompts. A lot of the errors were syntactical, as the LLM called temperature functions that did not exist.\n\n\n\n\n\n\n\nLLM Prompt\n\n\n\nWrite me a C function to carry out a SPI transaction to retrieve a temperature reading from a DS1722 sensor. Make use of CMSIS libraries for the STM32L432KC.\n\n\n\nSimilar to the first prompt, the LLM quickly produced code. However, since the variable names did not quite match with the original names, the code was unable to compile. Inspecting the code, the logic appeared to be sound since the scale factor and two’s compliment features were correctly accounted for in temperature calculations. Additionally, pin assingments did not match my hardware and thre were duplicates of pins defined in the macros of other modules in the project. Overall, the combination of misaligned variables and hardware led to the LLM code not being usable to produce a front-end webpage."
   },
   {
     "objectID": "E155_Lab_5.html",
@@ -425,6 +474,13 @@
     "title": "Engineering Class Projects",
     "section": "Lab 5: Interrupts",
     "text": "Lab 5: Interrupts\n\n\n\n\n\n\nOverview:  In this lab, the STM32L432KC MCU was configured with interrupts to measure the rotational speed and direction of a 25GA-370 brushed DC motor containing a quadrature encoder. Pulses from the encoder were detected on the rising and falling edges of both encoder signals to achieve a high degree of accuracy in real-time.\n\n  Learn More About Lab 5  \n  ▶ Lab 5: Encoder Video"
+  },
+  {
+    "objectID": "E155_Labs.html#lab-6-iot-spi",
+    "href": "E155_Labs.html#lab-6-iot-spi",
+    "title": "Engineering Class Projects",
+    "section": "Lab 6: IoT & SPI",
+    "text": "Lab 6: IoT & SPI\n\n\n\n\n\n\nOverview:  In this lab, an Internet of Things (IoT) device was designed and implemented using the STM32L432KC MCU interfaced with a DS1722 digital temperature sensor over serial peripheral interface (SPI) and an ESP8266 WiFi module via USART. The purpose of the IoT device was to generate a webpage that displayed real-time ambient temperature readings (ºC) of the lab room, while allowing users to toggle an LED and select temperature resolution.\n\n  Learn More About Lab 6  \n  ▶ Lab 6: Temperature & LED Video"
   },
   {
     "objectID": "blog.html",
