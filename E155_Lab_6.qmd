@@ -127,10 +127,10 @@ css: styles.css
 <img src="images/E155_Lab6/temp_range.jpg" alt="10C to 30C Temperature Range with Resolution" style="width:100%; border-radius: 15px;">
 *Figure 4: Temperatures are accurately be captured for -10ºC to 30ºC and bit resolutions are accurate.* 
 
-<img src="images/E155_Lab6/8bit_LA_v2.png" alt="8-bit Logic Analyzer Trace" style="width:100%; border-radius: 15px;">
+<img src="images/E155_Lab6/logic_analyzer8.jpg" alt="8-bit Logic Analyzer Trace" style="width:100%; border-radius: 15px;">
 *Figure 5: Logic analyzer trace for 8-bit temperature resolution* `configStatus = 0xE0`. 
 
-<img src="images/E155_Lab6/12bit_LA_v2.png" alt="12-bit Logic Analyzer Trace" style="width:100%; border-radius: 15px;">
+<img src="images/E155_Lab6/logic_analyzer12.jpg" alt="12-bit Logic Analyzer Trace" style="width:100%; border-radius: 15px;">
 *Figure 6: Logic analyzer trace for 12-bit temperature resolution* `configStatus = 0xE8`.
 
 ## Conclusion & Demo ##
