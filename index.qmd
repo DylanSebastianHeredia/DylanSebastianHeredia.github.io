@@ -29,13 +29,13 @@ about:
 <div style="height: 15px;"></div>
 
 <h2 style="margin: 0; padding: 0; text-align: left;">Resume Fall 2025</h2>
-<a href="documents/Heredia_CV.pdf" target="_blank" style="display:block; text-align:center; margin:0; padding:0px 0;">
+<a href="documents/Heredia_CV_2026.pdf" target="_blank" style="display:block; text-align:center; margin:0; padding:0px 0;">
   *Open Full Resume in New Tab*
 </a>
 
 <div style="text-align: center; padding: 0px 0;">
   <iframe 
-    src="documents/Heredia_CV.pdf" 
+    src="documents/Heredia_CV_2026.pdf" 
     style="
       width: 100%;            /* responsive width */
       max-width: 1000px;      /* cap width on desktop */
