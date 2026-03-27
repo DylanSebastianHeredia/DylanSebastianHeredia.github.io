@@ -13,6 +13,33 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
 
 ## Electronics ##
 
+### LED Heart ###
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/led_heart/led_heart2.png" alt="LED Heart" style="width:100%; border-radius: 15px;">
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <p class="justify-text"> 
+    __Overview:__ <br>
+    Designed a PCB heart in EAGLE and used In-System Programming (ISP) to program an [ATTiny84 MCU](images/led_heart/attiny84_datasheet.pdf) to light up a customizable 
+    sequence of LEDs. Gained experience with PCB design and surface mount technology (SMT) soldering with solder paste and heat. 
+  </p>
+
+  <p class="justify-text"> 
+    __Skills:__ <br>
+    EAGLE PCB Design, Arduino, BoM
+  </p>
+
+  <a href="images/led_heart/led_heart_demo.mp4" target="_blank">
+    <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
+      ▶ Video
+    </button>
+  </a>
+</div>
+</div>
+
 ### Digital Stop Watch ###
 
 <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
@@ -52,8 +79,7 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
     __Overview:__ <br>
     Designed an interactive memory game on a [Teensy 4.0](https://www.pjrc.com/teensy/card10a_rev2_web.pdf) microcontroller. 
     A sequence is played on the white LEDs and players repeat the correct pattern. Incorrect answers light the red LED and correct 
-    answers light the green LED to increase the sequence length by 1. If the final sequence is played correctly, the yellow LED 
-    will flash indicating a win.
+    answers light the green LED to increase the sequence length by 1. A full correct sequence is indicated as a flashing yellow LED. 
   </p>
 
   <p> 
@@ -71,6 +97,32 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
 
 
 ## Manufacturing ##
+### Spirograph Machine ###
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 2; width: 300px;">
+<img src="images/spirograph/spirograph_machine.png" alt="Spirograph Machine" style="width:100%; border-radius: 15px;">
+</div>
+
+<div style="flex: 2; min-width: 300px;">
+  <p class="justify-text">
+    __Overview:__ <br>
+    Created a spirograph machine using a two stage linkage system powered by two unique pulleys and a motor with a gearbox. With adjustable linkage orientations, 
+    the machine can create 20+ different spiral drawings! The video below is a 5x timelapse.
+  </p>
+
+  <p>
+    __Skills:__ <br>
+    Lathe, 3D printer, SolidWorks, Mechanical Design
+  </p>
+
+  <a href="images/spirograph/spirograph_demo.mp4" target="_blank">
+    <button style="border-radius: 6px; padding: 8px 14px; background-color: #ff0000; color: white; border: none; font-weight: bold; cursor: pointer;">
+      ▶ Video
+    </button>
+  </a>
+</div>
+</div>
 
 ### Mudd Amateur Rocketry Club ###
 
@@ -84,8 +136,7 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
     __Overview:__ <br>
     Contributed to the design and fabrication of fins for the Mudd Amateur Rocketry Club (MARC) 
     high-powered rocket. Machined and attached carbon fiber fins using power tools, sand paper, 
-    and epoxy to ensure accurate fit within the aft rocket body. Pursuing L1 certification
-    (*Expected Fall 2025*).
+    and epoxy to ensure accurate fit within the aft rocket body.
   </p>
 
   <p>

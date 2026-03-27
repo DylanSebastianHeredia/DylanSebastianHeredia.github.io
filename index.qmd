@@ -10,32 +10,27 @@ about:
 </p>
 
 <p class="justified-indent"> 
-    Hello! My name is Sebastian and I’m a Junior at [Harvey Mudd College](https://www.hmc.edu) majoring in Engineering, with a strong foundation in math and a growing 
-    interest in electrical engineering—especially as it connects to embedded systems, robotics, and automation. 
-    I’m passionate about working at the intersection of hardware and systems that sense, respond, and interact 
-    in the world. I thrive in hands-on, fast paced environments and seek technical opportunities that will allow 
-    me to deepen my engineering skills and contribute to meaningful, systems-driven projects.
+  Hello! My name is Sebastian, and I’m a junior at [Harvey Mudd College](https://www.hmc.edu) studying Engineering with a focus on electrical and embedded systems. 
+  I’m interested in building hardware–software systems that sense, process, and interact with the physical world, with applications in robotics 
+  and automation. I enjoy working in fast-paced, hands-on environments where I can design, prototype, and iterate on real systems.
 </p>
 
 <p class="justified-indent"> 
-    Outside of engineering, I’m drawn to visual and audio storytelling in the form of photography, sketching, and editing 
-    sound and video. These hobbies sharpen my attention to detail, structure, and rhythm, which contribute to 
-    how I approach engineering problems. Whether I’m designing an electrical system, writing embedded code, or building a website—like 
-    the one I created here using [Quarto x GitHub](https://github.com/DylanSebastianHeredia/DylanSebastianHeredia.github.io)—I 
-    focus on how components work together and how the system behaves as a whole. This perspective allows me to prototype 
-    efficiently, communicate ideas clearly, and approach challenges both methodically and creatively.
+  Outside of engineering, I explore visual and audio storytelling through photography, sketching, and sound/video editing. These practices strengthen my sense of 
+  structure, timing, and attention to detail, which I bring into my engineering work. Whether designing embedded systems or building technical tools, I focus on how components 
+  integrate and how the system behaves as a whole—allowing me to prototype efficiently and communicate ideas clearly.
 </p>
 
 <div style="height: 15px;"></div>
 
 <h2 style="margin: 0; padding: 0; text-align: left;">Resume Fall 2025</h2>
-<a href="documents/Heredia_CV_2026.pdf" target="_blank" style="display:block; text-align:center; margin:0; padding:0px 0;">
+<a href="documents/Dylan_Sebastian_Heredia_Resume.pdf" target="_blank" style="display:block; text-align:center; margin:0; padding:0px 0;">
   *Open Full Resume in New Tab*
 </a>
 
 <div style="text-align: center; padding: 0px 0;">
   <iframe 
-    src="documents/Heredia_CV_2026.pdf" 
+    src="documents/Dylan_Sebastian_Heredia_Resume.pdf" 
     style="
       width: 100%;            /* responsive width */
       max-width: 1000px;      /* cap width on desktop */
