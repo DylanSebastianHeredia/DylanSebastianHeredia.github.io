@@ -6,7 +6,9 @@ website:
   navbar: # Indicates navigation bar
     left: 
       - href: E155_Labs.qmd
-        text: E155 Microprocessor Labs
+        text: Microprocessor Applications
+      - href: E177_Iris_Table.qmd
+        text: Mechanical Design
       - href: engineering.qmd
         text: Engineering Class Projects
       - href: projects.qmd

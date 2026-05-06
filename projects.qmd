@@ -29,7 +29,7 @@ testing, and refining, I’ve expanded my technical toolbox while cultivating cr
 
   <p class="justify-text"> 
     __Skills:__ <br>
-    EAGLE PCB Design, Arduino, BoM
+    EAGLE PCB Design, Oshpark, Arduino, BoM
   </p>
 
   <a href="images/led_heart/led_heart_demo.mp4" target="_blank">
