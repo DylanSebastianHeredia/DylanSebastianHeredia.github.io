@@ -221,7 +221,7 @@
     "href": "projects.html#electronics",
     "title": "Personal Projects",
     "section": "Electronics",
-    "text": "Electronics\n\nLED Heart\n\n\n\n\n\n\nOverview:  Designed a PCB heart in EAGLE and used In-System Programming (ISP) to program an ATTiny84 MCU to light up a customizable sequence of LEDs. Gained experience with PCB design and surface mount technology (SMT) soldering with solder paste and heat.\n\n\nSkills:  EAGLE PCB Design, Arduino, BoM\n\n  ▶ Video  \n\n\n\n\nDigital Stop Watch\n\n\n\n\n\n\nOverview:  Programmed an Arduino UNO R3 mcu and a 5461BS 7-segment 4-digit display to create a stopwatch-style timer. The timer was equipped with two buttons: one to play/pause and another to reset the time. Gained proficiency with multiplexing, managing states, and debouncing.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video  \n\n\n\n\nSimon Says\n\n\n\n\n\n\nOverview:  Designed an interactive memory game on a Teensy 4.0 microcontroller. A sequence is played on the white LEDs and players repeat the correct pattern. Incorrect answers light the red LED and correct answers light the green LED to increase the sequence length by 1. A full correct sequence is indicated as a flashing yellow LED.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video"
+    "text": "Electronics\n\nLED Heart\n\n\n\n\n\n\nOverview:  Designed a PCB heart in EAGLE and used In-System Programming (ISP) to program an ATTiny84 MCU to light up a customizable sequence of LEDs. Gained experience with PCB design and surface mount technology (SMT) soldering with solder paste and heat.\n\n\nSkills:  EAGLE PCB Design, Oshpark, Arduino, BoM\n\n  ▶ Video  \n\n\n\n\nDigital Stop Watch\n\n\n\n\n\n\nOverview:  Programmed an Arduino UNO R3 mcu and a 5461BS 7-segment 4-digit display to create a stopwatch-style timer. The timer was equipped with two buttons: one to play/pause and another to reset the time. Gained proficiency with multiplexing, managing states, and debouncing.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video  \n\n\n\n\nSimon Says\n\n\n\n\n\n\nOverview:  Designed an interactive memory game on a Teensy 4.0 microcontroller. A sequence is played on the white LEDs and players repeat the correct pattern. Incorrect answers light the red LED and correct answers light the green LED to increase the sequence length by 1. A full correct sequence is indicated as a flashing yellow LED.\n\n\nSkills:  Arduino, Breadboarding, DMM\n\n  ▶ Video"
   },
   {
     "objectID": "projects.html#manufacturing",
@@ -238,32 +238,11 @@
     "text": "Web Development\n\nUCLA GIM CV Formatter\n\n\n\n\n\n\nOverview:  Developed a user-frienly, web-based application using Streamlit for creating, editing, and exporting CVs in compliance with the General Internal Medicine (GIM) CV Guidelines. Designed an interactive dashboard interface where users can select a CV from a manager panel, populate accordion-style surveys corresponding to guideline sections, and export a formatted MS Word file.\n\n\nSkills:  Python, Streamlit, APIs, Firebase, Design Process\n\n\n\n\n\nUCLA DOMStat Website\n\n\n\n\n\n\nOverview:  Contributed to the redesign and population of the updated UCLA Department of Medicine Statistics Core (DOMStat) website, ensuring a user-centered interface with emphasis on accessibility and intuitive navigation. Applied consistent visual design principles to align with UCLA Health brand identity.\n\n\nSkills:  Content Strategy, UI/UX, SEO"
   },
   {
-    "objectID": "outdoors.html",
-    "href": "outdoors.html",
-    "title": "Sports & Outdoors",
+    "objectID": "E177_Iris_Table.html",
+    "href": "E177_Iris_Table.html",
+    "title": "Mechanical Design",
     "section": "",
-    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
-  },
-  {
-    "objectID": "outdoors.html#ultimate-frisbee",
-    "href": "outdoors.html#ultimate-frisbee",
-    "title": "Sports & Outdoors",
-    "section": "",
-    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
-  },
-  {
-    "objectID": "outdoors.html#running",
-    "href": "outdoors.html#running",
-    "title": "Sports & Outdoors",
-    "section": "Running",
-    "text": "Running\n\nGrowing up playing soccer throughout high school, transitioning into recreational running in college felt like a natural next step. I began my running journey in Summer 2024, starting with 5K and 10K runs alongside my dad. Since then, I’ve built consistency and endurance by setting personal challenges—most notably running 100 miles over 4 weeks during both of my past winter breaks (averaging about 3 miles per day). In Summer 2025, I completed my first half marathon at an 8:34 pace, and I’m currently working toward running a full marathon. Outside of running, I like to mix in jump rope, stair climbing, yoga, and weight training to stay well-rounded and prevent injury. Feel free to connect with me on Strava!\n\n\n\n\n\n\n\n\nRun at sunset in Los Angeles, CA\n\n\n\n\n\n\n\n\nNeighborhood run club with friends\n\n\n\n\n\n\n\n\nHalf marathon in Santa Monica, CA"
-  },
-  {
-    "objectID": "outdoors.html#pickleball",
-    "href": "outdoors.html#pickleball",
-    "title": "Sports & Outdoors",
-    "section": "Pickleball",
-    "text": "Pickleball\n\nOn weekends, my friends and I play pickleball at the Robert’s Pavillion at Claremont McKenna College. We play singles, doubles, and king of the court style play. It’s always a good time and our play sessions last anywhere from 2-4 hours each.\n\n\n\n\n\n\n\n\nWeekend pickleball with friends\n\n\n\n\n\n\n\n\nMachine Shop proctor tournament\n\n\n\n\n\n\n\n\nPickleball in Westchester, CA"
+    "text": "In Spring 2026, I was a part of the E177: Mechanical Design, a project-based upper-division engineering course at Harvey Mudd College focused on the design, analysis, and fabrication of mechanical systems. The course emphasizes iterative design, precision manufacturing, and working within real-world constraints.\n\n\nThe Iris Box\n\nFor the six-week culminating project, my team designed and built a five-petal mechanical Iris Box that opens to reveal a hidden bowl when the tabletop is rotated. The goal was to create a manually actuated mechanism that was both mechanically intricate and visually satisfying as a piece of functional decor. While inspired by a concept seen online, all components were independently designed and fabricated by our team.\n\n\nTo increase the complexity of the project, we implemented a five-sided enclosure to match the iris geometry. This introduced unique fabrication and assembly challenges, as traditional clamping methods relying on parallel faces were not possible. Internally, arranging components in a five-fold symmetric layout required careful planning to maintain balance while avoiding interference between parts. Material choices and overall system dimensions were also carefully selected to stay within a $350 budget without sacrificing performance or aesthetics.\n\n\nTo learn more about the project, click the links below to access the full project website and demo video!\n\n\n  ▶ Iris Box Demo Video  \n  Full Project Website  \n  Technical Drawings"
   },
   {
     "objectID": "music.html",
@@ -306,6 +285,34 @@
     "title": "Music & Performance",
     "section": "Recordings & Compositions",
     "text": "Recordings & Compositions\n\n\n\n\n\n\nI love playing duets with recordings of myself or digital instruments, and throughout the years I’ve started writing down my compositions. After class and on weekends, I also enjoy learning pop songs with my friends, pianist, Kai Mawhinney, and vocalist and guitarist, Emmett Levine. We often improvise together and have performed on the Claremont College student radio, KSPC, and at Emmett’s Guitar Club recitals.\n\n  ▶ Video"
+  },
+  {
+    "objectID": "outdoors.html",
+    "href": "outdoors.html",
+    "title": "Sports & Outdoors",
+    "section": "",
+    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
+  },
+  {
+    "objectID": "outdoors.html#ultimate-frisbee",
+    "href": "outdoors.html#ultimate-frisbee",
+    "title": "Sports & Outdoors",
+    "section": "",
+    "text": "The Claremont Braineaters are a group of frisbee enthusiasts from all over the Claremont Colleges. We are an inclusive, gender expansive team and hold trainings three times a week for 2-hours to practice gameplay, strategy, and have a good time. We represented the South West region at the 2024 and 2025 USAU Men’s Division-III Nationals, earning the Team Spirit Award for outstanding knownledge of the game and sportsmanship in 2024. I’ve made countless memories with the team both on and off field, and I’m excited to see where we go this season.\n\n\n\n\n\n\n\n\nBraineaters at 2024 D-III Nationals in Milwaukee, WI\n\n\n\n\n\n\n\n\nRecipients of the 2024 Men’s D-III Spirit Award"
+  },
+  {
+    "objectID": "outdoors.html#running",
+    "href": "outdoors.html#running",
+    "title": "Sports & Outdoors",
+    "section": "Running",
+    "text": "Running\n\nGrowing up playing soccer throughout high school, transitioning into recreational running in college felt like a natural next step. I began my running journey in Summer 2024, starting with 5K and 10K runs alongside my dad. Since then, I’ve built consistency and endurance by setting personal challenges—most notably running 100 miles over 4 weeks during both of my past winter breaks (averaging about 3 miles per day). In Summer 2025, I completed my first half marathon at an 8:34 pace, and I’m currently working toward running a full marathon. Outside of running, I like to mix in jump rope, stair climbing, yoga, and weight training to stay well-rounded and prevent injury. Feel free to connect with me on Strava!\n\n\n\n\n\n\n\n\nRun at sunset in Los Angeles, CA\n\n\n\n\n\n\n\n\nNeighborhood run club with friends\n\n\n\n\n\n\n\n\nHalf marathon in Santa Monica, CA"
+  },
+  {
+    "objectID": "outdoors.html#pickleball",
+    "href": "outdoors.html#pickleball",
+    "title": "Sports & Outdoors",
+    "section": "Pickleball",
+    "text": "Pickleball\n\nOn weekends, my friends and I play pickleball at the Robert’s Pavillion at Claremont McKenna College. We play singles, doubles, and king of the court style play. It’s always a good time and our play sessions last anywhere from 2-4 hours each.\n\n\n\n\n\n\n\n\nWeekend pickleball with friends\n\n\n\n\n\n\n\n\nMachine Shop proctor tournament\n\n\n\n\n\n\n\n\nPickleball in Westchester, CA"
   },
   {
     "objectID": "projects/demo-project/index.html",
