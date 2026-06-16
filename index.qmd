@@ -10,7 +10,7 @@ about:
 </p>
 
 <p class="justified-indent"> 
-  Hello! My name is Sebastian, and I’m a junior at [Harvey Mudd College](https://www.hmc.edu) studying Engineering with a focus on electrical and embedded systems. 
+  Hello! My name is Sebastian, and I’m a senior at [Harvey Mudd College](https://www.hmc.edu) studying Engineering with a focus on electrical and embedded systems. 
   I’m interested in building hardware–software systems that sense, process, and interact with the physical world, with applications in robotics 
   and automation. I enjoy working in fast-paced, hands-on environments where I can design, prototype, and iterate on real systems.
 </p>
