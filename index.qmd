@@ -24,13 +24,13 @@ about:
 <div style="height: 15px;"></div>
 
 <h2 style="margin: 0; padding: 0; text-align: left;"> Spring 2026 Resume </h2>
-<a href="documents/Dylan_Sebastian_Heredia_Resume_FA2026_Website.pdf" target="_blank" style="display:block; text-align:center; margin:0; padding:0px 0;">
+<a href="documents/Dylan_Sebastian_Heredia_Resume_FA2026_Web.pdf" target="_blank" style="display:block; text-align:center; margin:0; padding:0px 0;">
   *Open Full Resume in New Tab*
 </a>
 
 <div style="text-align: center; padding: 0px 0;">
   <iframe 
-    src="documents/Dylan_Sebastian_Heredia_Resume_FA2026_Website.pdf"
+    src="documents/Dylan_Sebastian_Heredia_Resume_FA2026_Web.pdf"
     style="
       width: 100%;            /* responsive width */
       max-width: 1000px;      /* cap width on desktop */
