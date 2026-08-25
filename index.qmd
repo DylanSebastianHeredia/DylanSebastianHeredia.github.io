@@ -16,7 +16,7 @@ about:
 </p>
 
 <p class="justified-indent"> 
-  Outside of engineering, I explore visual and audio storytelling through photography, sketching, and sound/video editing. These practices strengthen my sense of 
+  Outside of engineering, I enjoy exploring visual and audio storytelling through photography, sketching, and sound/video editing. These practices strengthen my sense of 
   structure, timing, and attention to detail, which I bring into my engineering work. Whether designing embedded systems or building technical tools, I focus on how components 
   integrate and how the system behaves as a whole—allowing me to prototype efficiently and communicate ideas clearly.
 </p>
@@ -24,13 +24,13 @@ about:
 <div style="height: 15px;"></div>
 
 <h2 style="margin: 0; padding: 0; text-align: left;"> Spring 2026 Resume </h2>
-<a href="documents/Dylan_Sebastian_Heredia_Resume_Starship.pdf" target="_blank" style="display:block; text-align:center; margin:0; padding:0px 0;">
+<a href="documents/Dylan_Sebastian_Heredia_Resume_FA2026_Website.pdf" target="_blank" style="display:block; text-align:center; margin:0; padding:0px 0;">
   *Open Full Resume in New Tab*
 </a>
 
 <div style="text-align: center; padding: 0px 0;">
   <iframe 
-    src="documents/Dylan_Sebastian_Heredia_Resume_Starship.pdf"
+    src="documents/Dylan_Sebastian_Heredia_Resume_FA2026_Website.pdf"
     style="
       width: 100%;            /* responsive width */
       max-width: 1000px;      /* cap width on desktop */
